@@ -1,0 +1,6 @@
+metric	value
+max_slack_ns	0.126
+min_slack_ns	0.019
+blackboxes	0
+drc_errors	0
+drc_critical_warnings	0

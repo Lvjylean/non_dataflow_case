@@ -1,0 +1,6 @@
+{
+  "ports": 70,
+  "all_ports_preserved": true,
+  "only_clock_remapped": true,
+  "wrapper_sha256": "9605c1ab9814d0bfbff372411f77e7c003ef51f61f552f7b86e8fb0d60017228"
+}

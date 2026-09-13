@@ -1,0 +1,155 @@
+{
+  "run": "vta64_recovery_20260913_01",
+  "configuration_run": "vta64_container_20260913_01",
+  "resource_audit": "vta64_resource_review_20260913_01",
+  "status": "REVIEW_REQUIRED",
+  "checks": {
+    "artifact_generation_exit_zero": true,
+    "configuration_hash_present": true,
+    "configuration_package_matches": true,
+    "interface_audit_pass": true,
+    "reopen_exit_zero": true,
+    "reopen_marker": true,
+    "dcp_unchanged": true,
+    "exactly_two_accelerator_slrs": true,
+    "compute_dsp_in_both_slrs": true,
+    "expected_engine_count": true,
+    "native_slr_resources_reproduced": true,
+    "region_counts_reproduced": true,
+    "route_counts_reproduced": true,
+    "timing_reproduced": true,
+    "root_route_complete": true,
+    "root_route_flags": true,
+    "root_clean_drc_and_no_blackboxes": true,
+    "reopen_route_complete": true,
+    "reopen_route_flags": true,
+    "reopen_clean_drc_and_no_blackboxes": true,
+    "full_timing_closed": true,
+    "pulse_width_pass_and_reproduced": true,
+    "full_timing_summary_reproduced": true,
+    "detailed_cdc_available": true,
+    "cdc_no_unreviewed_critical_paths": false,
+    "additional_resource_audit_exit_zero": true,
+    "additional_resource_audit_same_unchanged_dcp": true,
+    "container_metadata_pass": true,
+    "recovery_first_audit_exit_zero": true,
+    "recovery_source_consistent": true,
+    "container_payload_matches": true,
+    "container_payload_from_this_recovery": true,
+    "source_checkpoint_unchanged": true,
+    "root_timing_coverage_clean": false,
+    "root_methodology_no_unreviewed_warnings": false,
+    "root_verbose_coverage_and_cdc_present": true,
+    "reopen_timing_coverage_clean": false,
+    "reopen_methodology_no_unreviewed_warnings": false,
+    "reopen_verbose_coverage_and_cdc_present": true
+  },
+  "metrics": {
+    "max_slack_ns": "0.013",
+    "min_slack_ns": "0.010",
+    "blackboxes": "0",
+    "drc_errors": "0",
+    "drc_critical_warnings": "0"
+  },
+  "timing_summary": {
+    "wns_ns": 0.013,
+    "tns_ns": 0.0,
+    "setup_failing_endpoints": 0,
+    "setup_total_endpoints": 944030,
+    "whs_ns": 0.01,
+    "ths_ns": 0.0,
+    "hold_failing_endpoints": 0,
+    "hold_total_endpoints": 941913,
+    "wpws_ns": 0.0,
+    "tpws_ns": 0.0,
+    "pulse_failing_endpoints": 0,
+    "pulse_total_endpoints": 223463
+  },
+  "timing_coverage": {
+    "root": {
+      "no_clock": 0,
+      "constant_clock": 0,
+      "pulse_width_clock": 0,
+      "unconstrained_internal_endpoints": 0,
+      "no_input_delay": 10,
+      "no_output_delay": 9,
+      "multiple_clock": 0,
+      "generated_clocks": 0,
+      "loops": 0,
+      "partial_input_delay": 0,
+      "partial_output_delay": 0,
+      "latch_loops": 0
+    },
+    "reopen": {
+      "no_clock": 0,
+      "constant_clock": 0,
+      "pulse_width_clock": 0,
+      "unconstrained_internal_endpoints": 0,
+      "no_input_delay": 10,
+      "no_output_delay": 9,
+      "multiple_clock": 0,
+      "generated_clocks": 0,
+      "loops": 0,
+      "partial_input_delay": 0,
+      "partial_output_delay": 0,
+      "latch_loops": 0
+    }
+  },
+  "accelerator_regions": [
+    {
+      "kernel": "level0_i/level1/level1_i/ulp/vta64_kernel_1",
+      "slr": "SLR0",
+      "primitive_count": "0"
+    },
+    {
+      "kernel": "level0_i/level1/level1_i/ulp/vta64_kernel_1",
+      "slr": "SLR1",
+      "primitive_count": "0"
+    },
+    {
+      "kernel": "level0_i/level1/level1_i/ulp/vta64_kernel_1",
+      "slr": "SLR2",
+      "primitive_count": "96012"
+    },
+    {
+      "kernel": "level0_i/level1/level1_i/ulp/vta64_kernel_1",
+      "slr": "SLR3",
+      "primitive_count": "64727"
+    }
+  ],
+  "native_slr_resources": {
+    "level0_i_level1_level1_i_ulp_vta64_kernel_1_utilization.rpt": {
+      "CLB LUTs": [
+        0.0,
+        0.0,
+        43068.0,
+        33923.0
+      ],
+      "CLB Registers": [
+        0.0,
+        0.0,
+        24645.0,
+        3731.0
+      ],
+      "Block RAM Tile": [
+        0.0,
+        0.0,
+        596.0,
+        643.0
+      ],
+      "URAM": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "DSPs": [
+        0.0,
+        0.0,
+        1803.0,
+        2304.0
+      ]
+    }
+  },
+  "note": "Full U250 platform; accelerator hierarchy counted separately. Native utilization tables are authoritative; legacy REF_NAME DSP/BRAM leaf counters are ignored. Coverage/methodology findings require documented review; positive slack alone cannot pass. No board execution validation."
+}

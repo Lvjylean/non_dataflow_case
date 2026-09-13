@@ -1,0 +1,88 @@
+[
+  {
+    "name": "vision_isp_bayer_4k_npc2",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/isppipeline/xf_isp_accel.cpp",
+    "parameters_changed": {},
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_isp_hdr_4k_npc1",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/isppipeline_hdr/xf_isp_accel.cpp",
+    "parameters_changed": {},
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_isp_rgbir_4k_npc1",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/isppipeline_rgbir/xf_isp_accel.cpp",
+    "parameters_changed": {},
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_isp_global_tonemap_4k",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/isppipeline_gtm/xf_isp_accel.cpp",
+    "parameters_changed": {},
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_isp_all_in_one_1080p",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/all_in_one/xf_isp_accel.cpp",
+    "parameters_changed": {},
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_tvl1_optical_flow_512x512_npc2",
+    "top": "tvl1_accel",
+    "cpp": "xf_tvl1_accel.cpp",
+    "origin": "vision/L3/examples/tvl1/xf_tvl1_accel.cpp",
+    "parameters_changed": {},
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_orb_matcher_k8192_pu64",
+    "top": "bfmatcher_accel",
+    "cpp": "xf_bfmatcher_accel.cpp",
+    "origin": "vision/L2/examples/bfmatcher/xf_bfmatcher_accel.cpp",
+    "parameters_changed": {
+      "PARALLEL_COMPUTEUNIT": "64",
+      "MAX_KEYPOINTS": "8192"
+    },
+    "expected_internal_dataflow": false,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_orb_matcher_k8192_pu128",
+    "top": "bfmatcher_accel",
+    "cpp": "xf_bfmatcher_accel.cpp",
+    "origin": "vision/L2/examples/bfmatcher/xf_bfmatcher_accel.cpp",
+    "parameters_changed": {
+      "PARALLEL_COMPUTEUNIT": "128",
+      "MAX_KEYPOINTS": "8192"
+    },
+    "expected_internal_dataflow": false,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  }
+]

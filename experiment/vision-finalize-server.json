@@ -1,0 +1,76 @@
+[
+  {
+    "directory": "vision_orb_matcher_k8192_pu256__LUT_193p2pctSLR__20260911_v01",
+    "verified_unchanged_payload_files": 417,
+    "updated_metadata": [
+      "run.tcl",
+      "hls/hls.app",
+      "hls/sol/.autopilot/db/global.setting.tcl"
+    ],
+    "source_sha256": "457f537bc84bb7448fbdefd02172bb1425799e6a11bcc545fc7cae8352e66f48"
+  },
+  {
+    "directory": "vision_tvl1_optical_flow_512x512_npc2__LUT_60p1pctSLR__20260911_v02",
+    "verified_unchanged_payload_files": 5413,
+    "updated_metadata": [
+      "run.tcl",
+      "hls/hls.app",
+      "hls/sol/.autopilot/db/global.setting.tcl",
+      "hls/sol/.autopilot/db/tvl1_accel.DependenceCheck.tcl"
+    ],
+    "source_sha256": "c1d668afee0eb0c9ad52bf5ae4a2aa975b8fe6925fd28b2bfce8304e7dac7cd9"
+  },
+  {
+    "directory": "vision_orb_matcher_k8192_pu64__LUT_49p5pctSLR__20260911_v02",
+    "verified_unchanged_payload_files": 417,
+    "updated_metadata": [
+      "run.tcl",
+      "hls/hls.app",
+      "hls/sol/.autopilot/db/global.setting.tcl"
+    ],
+    "source_sha256": "457f537bc84bb7448fbdefd02172bb1425799e6a11bcc545fc7cae8352e66f48"
+  },
+  {
+    "directory": "vision_orb_matcher_k8192_pu128__LUT_97p5pctSLR__20260911_v02",
+    "verified_unchanged_payload_files": 417,
+    "updated_metadata": [
+      "run.tcl",
+      "hls/hls.app",
+      "hls/sol/.autopilot/db/global.setting.tcl"
+    ],
+    "source_sha256": "457f537bc84bb7448fbdefd02172bb1425799e6a11bcc545fc7cae8352e66f48"
+  },
+  {
+    "directory": "vision_isp_all_in_one_1080p_npc4__LUT_29p7pctSLR__20260911_v03",
+    "verified_unchanged_payload_files": 3673,
+    "updated_metadata": [
+      "run.tcl",
+      "hls/hls.app",
+      "hls/sol/.autopilot/db/global.setting.tcl",
+      "hls/sol/.autopilot/db/ISPPipeline_accel.DependenceCheck.tcl"
+    ],
+    "source_sha256": "25d7429fe54a52c5d84002f516f6e76d66d14b95c9a2449beb8a2ff07b86fcb0"
+  },
+  {
+    "directory": "vision_tvl1_optical_flow_512x512_flow10__LUT_72p3pctSLR__20260911_v04",
+    "verified_unchanged_payload_files": 5419,
+    "updated_metadata": [
+      "run.tcl",
+      "hls/hls.app",
+      "hls/sol/.autopilot/db/global.setting.tcl",
+      "hls/sol/.autopilot/db/tvl1_accel.DependenceCheck.tcl"
+    ],
+    "source_sha256": "c1d668afee0eb0c9ad52bf5ae4a2aa975b8fe6925fd28b2bfce8304e7dac7cd9"
+  },
+  {
+    "directory": "vision_tvl1_optical_flow_1024x1024_npc2__LUT_59p6pctSLR__20260911_v04",
+    "verified_unchanged_payload_files": 5413,
+    "updated_metadata": [
+      "run.tcl",
+      "hls/hls.app",
+      "hls/sol/.autopilot/db/global.setting.tcl",
+      "hls/sol/.autopilot/db/tvl1_accel.DependenceCheck.tcl"
+    ],
+    "source_sha256": "c1d668afee0eb0c9ad52bf5ae4a2aa975b8fe6925fd28b2bfce8304e7dac7cd9"
+  }
+]

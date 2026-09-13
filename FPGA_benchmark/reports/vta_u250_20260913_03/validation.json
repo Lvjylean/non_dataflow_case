@@ -1,0 +1,45 @@
+{
+  "case": "VTA",
+  "run": "vta_u250_20260913_03",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/FPGA_benchmark/runs/vta_u250_20260913_03",
+  "checkpoint": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/FPGA_benchmark/runs/vta_u250_20260913_03/routed.dcp",
+  "physical_status": "SUPERSEDED_CLOCK_GAP",
+  "timing_status": "FAIL",
+  "wns_ns": 2.776,
+  "whs_ns": -1.014,
+  "checks": {
+    "implementation_exit_zero": true,
+    "route_complete": true,
+    "reopen_exit_zero": false,
+    "reopen_marker": false,
+    "reopen_route_complete": false,
+    "reopen_route_counts_match": false,
+    "no_blackboxes": false,
+    "no_drc_errors": false,
+    "no_drc_critical_warnings": false,
+    "timing_reproduced": false
+  },
+  "route": {
+    "routable": 46961,
+    "routed": 46961,
+    "errors": 0,
+    "complete": true
+  },
+  "metrics": {
+    "max_slack_ns": "2.776",
+    "min_slack_ns": "-1.014",
+    "blackboxes": "0",
+    "drc_errors": "0",
+    "drc_critical_warnings": "0"
+  },
+  "resources": {
+    "CLB LUTs": 20106.0,
+    "CLB Registers": 19184.0,
+    "Block RAM Tile": 136.0,
+    "DSPs": 267.0,
+    "URAM": 0.0,
+    "Total SLLs Used": 0.0
+  },
+  "hls_provenance": "Vitis HLS 2023.2 regenerated; upstream C simulation passed",
+  "limitation": "One explicit OOC clock gap; aggregate routed counts alone are insufficient."
+}

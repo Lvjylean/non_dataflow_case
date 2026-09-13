@@ -1,0 +1,79 @@
+{
+    "ip_layout": {
+        "m_count": "10",
+        "m_ip_data": [
+            {
+                "m_type": "IP_KERNEL",
+                "m_int_enable": "0",
+                "m_interrupt_id": "0",
+                "m_ip_control": "AP_CTRL_NONE",
+                "m_base_address": "0x1410000",
+                "m_name": "cnna_kernel:cnna_kernel_1"
+            },
+            {
+                "m_type": "IP_KERNEL",
+                "m_int_enable": "0",
+                "m_interrupt_id": "0",
+                "m_ip_control": "AP_CTRL_NONE",
+                "m_base_address": "0x1420000",
+                "m_name": "cnna_kernel:cnna_kernel_2"
+            },
+            {
+                "m_type": "IP_KERNEL",
+                "m_int_enable": "0",
+                "m_interrupt_id": "0",
+                "m_ip_control": "AP_CTRL_NONE",
+                "m_base_address": "0x1430000",
+                "m_name": "cnna_kernel:cnna_kernel_3"
+            },
+            {
+                "m_type": "IP_KERNEL",
+                "m_int_enable": "0",
+                "m_interrupt_id": "0",
+                "m_ip_control": "AP_CTRL_NONE",
+                "m_base_address": "0x1810000",
+                "m_name": "cnna_kernel:cnna_kernel_4"
+            },
+            {
+                "m_type": "IP_KERNEL",
+                "m_int_enable": "0",
+                "m_interrupt_id": "0",
+                "m_ip_control": "AP_CTRL_NONE",
+                "m_base_address": "0x1820000",
+                "m_name": "cnna_kernel:cnna_kernel_5"
+            },
+            {
+                "m_type": "IP_KERNEL",
+                "m_int_enable": "0",
+                "m_interrupt_id": "0",
+                "m_ip_control": "AP_CTRL_NONE",
+                "m_base_address": "0x1830000",
+                "m_name": "cnna_kernel:cnna_kernel_6"
+            },
+            {
+                "m_type": "IP_DDR4_CONTROLLER",
+                "properties": "0x0",
+                "m_base_address": "0x900000",
+                "m_name": "AXI-LITE-BANK0"
+            },
+            {
+                "m_type": "IP_DDR4_CONTROLLER",
+                "properties": "0x1",
+                "m_base_address": "0x100000",
+                "m_name": "AXI-LITE-BANK1"
+            },
+            {
+                "m_type": "IP_DDR4_CONTROLLER",
+                "properties": "0x2",
+                "m_base_address": "0x910000",
+                "m_name": "AXI-LITE-BANK2"
+            },
+            {
+                "m_type": "IP_DDR4_CONTROLLER",
+                "properties": "0x3",
+                "m_base_address": "0x920000",
+                "m_name": "AXI-LITE-BANK3"
+            }
+        ]
+    }
+}

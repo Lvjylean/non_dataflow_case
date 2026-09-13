@@ -1,0 +1,47 @@
+{
+  "name": "vision_orb_matcher_k8192_pu64",
+  "top": "bfmatcher_accel",
+  "cpp": "xf_bfmatcher_accel.cpp",
+  "origin": "vision/L2/examples/bfmatcher/xf_bfmatcher_accel.cpp",
+  "parameters_changed": {
+    "PARALLEL_COMPUTEUNIT": "64",
+    "MAX_KEYPOINTS": "8192"
+  },
+  "expected_internal_dataflow": false,
+  "clock_ns": 5,
+  "part": "xcu250-figd2104-2L-e",
+  "status": "COMPLETE",
+  "started": 1789109119.6793385,
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_orb_matcher_k8192_pu64__LUT_49p5pctSLR__20260911_v02",
+  "returncode": 0,
+  "seconds": 21.03,
+  "resources": {
+    "LUT": 214043,
+    "FF": 32603,
+    "DSP": 3,
+    "BRAM_18K": 148,
+    "URAM": 0
+  },
+  "slr_ratios": {
+    "LUT": 0.49546990740740743,
+    "FF": 0.0377349537037037,
+    "DSP": 0.0009765625,
+    "BRAM_18K": 0.11011904761904762,
+    "URAM": 0.0
+  },
+  "size_resource": "LUT",
+  "size_slr_ratio": 0.49546990740740743,
+  "top_pipeline_type": "no",
+  "dataflow_reports": [],
+  "lut_in_range": true,
+  "all_resources_fit_device": true,
+  "batch": "vision-nested-dataflow-20260911-v02",
+  "accepted": true,
+  "internal_dataflow": false,
+  "size_percent": 49.546990740740746,
+  "reason": "PASS",
+  "directory": "vision_orb_matcher_k8192_pu64__LUT_49p5pctSLR__20260911_v02",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision-nested-dataflow-20260911-v02/runs/vision_orb_matcher_k8192_pu64",
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_orb_matcher_k8192_pu64__LUT_49p5pctSLR__20260911_v02/hls/sol/syn/verilog",
+  "source_sha256": "457f537bc84bb7448fbdefd02172bb1425799e6a11bcc545fc7cae8352e66f48"
+}

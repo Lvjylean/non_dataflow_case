@@ -1,0 +1,79 @@
+{
+  "batch": "hls-nondataflow-scale-20260911-02",
+  "part": "xcu250-figd2104-2L-e",
+  "clock_ns": 5.0,
+  "max_workers": 1,
+  "cases": {
+    "getrf": [
+      {
+        "id": "getrf_n1024_u512",
+        "source": "sources/getrf/n1024_u512/kernel.cpp",
+        "top": "kernel_getrf_0",
+        "parameters": {
+          "NRC": 1024,
+          "NCU": 512
+        },
+        "origin": "solver/L2/tests/hw/getrf/kernel_getrf.cpp",
+        "origin_sha256": "7bb37531498528d7e52f5b4d7949abd50115bcd9d23f7893169d8cabca50dcd7"
+      }
+    ],
+    "getrf_nopivot": [
+      {
+        "id": "getrf_nopivot_n1024_u512",
+        "source": "sources/getrf_nopivot/n1024_u512/kernel.cpp",
+        "top": "kernel_getrf_nopivot_0",
+        "parameters": {
+          "NRC": 1024,
+          "NCU": 512
+        },
+        "origin": "solver/L2/tests/hw/getrf_nopivot/kernel_getrf_nopivot.cpp",
+        "origin_sha256": "68e9663364703eacf980593d3514c557644a8b98c3bc7d36d340ea2dac495e2e"
+      }
+    ],
+    "geqrf": [
+      {
+        "id": "geqrf_n1024_u512",
+        "source": "sources/geqrf/n1024_u512/kernel.cpp",
+        "top": "kernel_geqrf_0",
+        "parameters": {
+          "MA": 1024,
+          "NA": 1024,
+          "NCU": 512
+        },
+        "origin": "solver/L2/tests/hw/geqrf/kernel_geqrf.cpp",
+        "origin_sha256": "6bef3f79c731d603ffff6bed45b35a92ae4e5fb6e33658d61101c5a9cf793527"
+      }
+    ],
+    "gematrixinverse": [
+      {
+        "id": "gematrixinverse_n1024_u512",
+        "source": "sources/gematrixinverse/n1024_u512/kernel.cpp",
+        "top": "kernel_gematrixinverse_0",
+        "parameters": {
+          "NCU": 512,
+          "MAXN": 1024,
+          "LDA": 1024
+        },
+        "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+        "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646"
+      }
+    ],
+    "trtrs": [
+      {
+        "id": "trtrs_n1024_u512",
+        "source": "sources/trtrs/n1024_u512/kernel.cpp",
+        "top": "kernel_trtrs_0",
+        "parameters": {
+          "NCU": 512,
+          "MAXN": 1024,
+          "LDA": 1024,
+          "LDB": 2
+        },
+        "origin": "solver/L2/tests/hw/trtrs/kernel_trtrs.cpp",
+        "origin_sha256": "96c9bdf3ab3b8e236afefdbfb1a354e6ebec8f174aa9cd3f81544ce97c20f375"
+      }
+    ]
+  },
+  "source_revision": "3ab1ecd20",
+  "acceptance": "max(LUT/432000,FF/864000,DSP/3072)>=0.60 and every resource <= device capacity; storage-only listed separately; HLS estimates only"
+}

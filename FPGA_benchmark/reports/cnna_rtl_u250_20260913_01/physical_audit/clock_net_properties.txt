@@ -1,0 +1,103 @@
+Property                        Type     Read-only  Value
+AIE.BUFFER_COUNT                int      false      
+AIE.FIFO_DEPTH                  int      false      
+AIE.MARGIN                      int      false      
+AREA_GROUP                      string   true       
+AUTOPIPELINE_GROUP              string   false      
+AUTOPIPELINE_INCLUDE            string   false      
+AUTOPIPELINE_LIMIT              int      false      
+BEL                             string   true       
+BLKNM                           string   true       
+BUFFER_TYPE                     enum     false      
+BUFG                            enum     true       
+BUS_NAME                        string   true       
+BUS_START                       int      true       
+BUS_STOP                        int      true       
+BUS_WIDTH                       int      true       
+CLASS                           string   true       net
+CLK_EXPANSION_WINDOW            string   true       
+CLOCK_BUFFER_TYPE               enum     false      
+CLOCK_DEDICATED_ROUTE           enum     false      
+CLOCK_DELAY_GROUP               string   false      
+CLOCK_LOW_FANOUT                bool     false      
+CLOCK_REGION_ASSIGNMENT         string   false      
+CLOCK_ROOT                      string*  true       
+COLLAPSE                        bool     true       
+COOL_CLK                        bool     true       
+CROSSING_SLRS                   string   true       
+DATA_GATE                       bool     true       
+DCI_VALUE                       int      false      
+DIRECT_ENABLE                   bool     false      
+DIRECT_RESET                    bool     false      
+DONT_TOUCH                      bool     false      
+DRIVER_COUNT                    int      true       1
+DSP_FOLDING_FASTCLOCK           bool     false      
+ESSENTIAL_CLASSIFICATION_VALUE  int      false      
+EXTRACT_ENABLE                  bool     false      
+EXTRACT_RESET                   bool     false      
+FILE_NAME                       string   true       
+FIXED_ROUTE                     string   false      
+FLAT_PIN_COUNT                  int      true       80839
+FLOAT                           bool     true       
+FORCE_MAX_FANOUT                string   false      
+GATED_CLOCK                     bool     false      
+GCLK_DESKEW                     enum     false      
+HBLKNM                          string   true       
+HD.NO_ROUTE_CONTAINMENT         bool     false      
+HIGH_PRIORITY                   bool     false      
+IBUF_DELAY_VALUE                double   true       
+IFD_DELAY_VALUE                 double   true       
+IN_TERM                         enum     true       
+IOB                             enum     false      
+IOBDELAY                        enum     false      
+IO_BUFFER_TYPE                  enum     false      
+IS_CONTAIN_ROUTING              bool     true       0
+IS_INTERNAL                     bool     true       0
+IS_REUSED                       bool     true       1
+IS_ROUTE_FIXED                  bool     false      0
+KEEP                            bool     false      
+KEEPER                          bool     true       
+LINE_NUMBER                     int      true       
+LOC                             string   true       
+MARK_DEBUG                      bool     false      0
+MAXDELAY                        double   true       
+MAXSKEW                         double   true       
+MAX_FANOUT                      string   false      
+MAX_FANOUT_MODE                 enum     false      
+MBUFG_GROUP                     string   false      
+METHODOLOGY_DRC_VIOS            string   false      
+NAME                            string   true       aclk
+NODELAY                         bool     true       
+NOREDUCE                        bool     true       
+OUT_TERM                        enum     true       
+PARENT                          string   true       aclk
+PARENT_CELL                     string   true       
+PARTITION_ID                    int      true       0
+PIN_COUNT                       int      true       7
+PULLDOWN                        bool     true       
+PULLUP                          bool     true       
+PWR_MODE                        enum     true       
+RAM_DECOMP                      enum     false      
+RAM_STYLE                       enum     false      
+REUSE_STATUS                    enum     true       
+RLOC                            string   true       
+ROM_STYLE                       enum     false      
+ROUTE                           string   false      
+ROUTE_STATUS                    enum     true       PARTIAL
+RPM_GRID                        enum     true       
+S                               bool     true       
+SCHMITT_TRIGGER                 bool     true       
+SLEW                            string   true       
+SRL_STYLE                       enum     false      
+SUSPEND                         string   true       
+TDM_KEEP                        bool     true       
+TYPE                            enum     true       LOCAL_CLOCK
+USELOWSKEWLINES                 bool     true       
+USER_CLOCK_ROOT                 string*  false      
+USER_CROSSING_SLR               string   false      
+USER_MAX_PROG_DELAY             int      false      
+USE_DSP                         enum     false      
+USE_DSP48                       enum     false      
+WEIGHT                          int      false      
+WIREAND                         bool     true       
+XBLKNM                          string   true       

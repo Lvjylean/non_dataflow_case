@@ -1,0 +1,1 @@
+User-requested cleanup on 2026-09-11 removed excluded Allo variants and failed attempts. Only the successful cases in jobs.json / runs remain. Per-case source, Tcl, logs, reports and generated RTL are unchanged. Historical batch launch logs and prepare.py were removed because they referenced deleted cases.

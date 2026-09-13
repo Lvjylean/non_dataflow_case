@@ -1,0 +1,71 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri Sep 11 17:53:30 2026
+| Host         : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_high_fanout_nets -max_nets 50 -file high_fanout.rpt
+| Design       : bfmatcher_accel
+| Device       : xcu250
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| Net Name                                                                                                                            | Fanout | Driver Type |
++-------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| ap_CS_fsm_state1                                                                                                                    |    281 | FDSE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_102_fu_40580                          |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_103_fu_40620                          |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_105_fu_40700                          |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_106_fu_40740                          |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_107_fu_40780                          |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_108_fu_40820                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_109_fu_40860                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_110_fu_40900                          |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_112_fu_40980                          |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_113_fu_41020                          |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_114_fu_41060                          |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_116_fu_41140                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_117_fu_41180                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_118_fu_41220                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_119_fu_41260                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_120_fu_41300                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_121_fu_41340                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_122_fu_41380                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_123_fu_41420                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_124_fu_41460                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_125_fu_41500                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_126_fu_41540                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_127_fu_41580                          |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_40_fu_3810[255]_i_1_n_2               |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_41_fu_3814[255]_i_1_n_2               |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_43_fu_3822[255]_i_1_n_2               |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_84_fu_39860                           |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_85_fu_39900                           |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_87_fu_39980                           |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_89_fu_40060                           |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_90_fu_40100                           |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_91_fu_40140                           |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_92_fu_40180                           |    256 | LUT3        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_94_fu_40260                           |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_98_fu_40420                           |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_INIT_LOOP_1_fu_5399/query_set_fu_36500                              |    256 | LUT2        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[119] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[126] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[128] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[131] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[138] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[154] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[156] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[176] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[181] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[184] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[187] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[188] |    255 | FDRE        |
+| grp_bfMatcher_128_8192_s_fu_108/grp_bfMatcher_128_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_6304/grp_computeHamming_fu_26814_p_din2[190] |    255 | FDRE        |
++-------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+
+

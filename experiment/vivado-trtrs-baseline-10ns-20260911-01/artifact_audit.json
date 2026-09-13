@@ -1,0 +1,31 @@
+{
+  "rtl_files": 20,
+  "rtl_unchanged": true,
+  "inputs": {
+    "clock.xdc": "11892d9e88e00aa644cbf8096e7e97fda7903455655674f5552bf121f8851a41",
+    "run.sh": "adacf880dcb299a168a8af57cf4f1d8b8cb61001475ec99f42f189226b892ea5",
+    "._run.tcl": "6e78c21d19c4da040f47ba086f103fc33dac410f70d1744e94282edc8e0517af",
+    "reports.tcl": "71100305f0ba091baf1203fb24709fc03fa24b12d2330fe36713e2632635bf60",
+    "reopen.tcl": "a87b2177ad6a57e3dceeb91ddda63a4c5019f5e5b164b3422118d8a3c592dfa2",
+    "._run.sh": "6e78c21d19c4da040f47ba086f103fc33dac410f70d1744e94282edc8e0517af",
+    "._clock.xdc": "6e78c21d19c4da040f47ba086f103fc33dac410f70d1744e94282edc8e0517af",
+    "._reopen.tcl": "6e78c21d19c4da040f47ba086f103fc33dac410f70d1744e94282edc8e0517af",
+    "run.tcl": "66392a6b57f2f24254e0ee76e7ea5f9f6230d6d195cbe074399dd005443c6dff",
+    "._reports.tcl": "6e78c21d19c4da040f47ba086f103fc33dac410f70d1744e94282edc8e0517af",
+    "._.": "6e78c21d19c4da040f47ba086f103fc33dac410f70d1744e94282edc8e0517af"
+  },
+  "checkpoints": {
+    "post_synth.dcp": {
+      "bytes": 214355206,
+      "sha256": "6c81db68bcc81e61b298a8ea7452304c2fc8642f7684971ec6f2a3289ac57700"
+    },
+    "post_place.dcp": {
+      "bytes": 302984837,
+      "sha256": "d8c6ee7998833b00d91770ffd53ea087203f194bff4d0b5c84a9535d0d5f9667"
+    },
+    "routed.dcp": {
+      "bytes": 371627011,
+      "sha256": "c11213c862f037ff49dfd125e3cb07d14a9a2e2d3fa90d91903dbec5a18b1d32"
+    }
+  }
+}

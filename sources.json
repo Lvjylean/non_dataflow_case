@@ -1,0 +1,19 @@
+{
+  "allo-pldi24-artifact": {
+    "url": "https://github.com/cornell-zhang/allo-pldi24-artifact.git",
+    "commit": "f7e3fa200049ff9bf3cc730d68b1a162c1a63f31",
+    "retained_paths": [
+      "polybench/vitis/2mm",
+      "polybench/vitis/3mm",
+      "polybench/vitis/jacobi-2d"
+    ]
+  },
+  "minimap2-acceleration": {
+    "url": "https://github.com/UCLA-VAST/minimap2-acceleration.git",
+    "commit": "a50f8c503c3e25b7babe6c78367cd4b672fcb395",
+    "retained_paths": [
+      "kernel/hls",
+      "testbed"
+    ]
+  }
+}

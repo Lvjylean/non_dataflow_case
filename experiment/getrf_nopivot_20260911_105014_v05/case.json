@@ -1,0 +1,53 @@
+{
+  "id": "getrf_nopivot_n512_u256",
+  "source": "sources/kernel.cpp",
+  "top": "kernel_getrf_nopivot_0",
+  "parameters": {
+    "NRC": 512,
+    "NCU": 256
+  },
+  "origin": "solver/L2/tests/hw/getrf_nopivot/kernel_getrf_nopivot.cpp",
+  "origin_sha256": "68e9663364703eacf980593d3514c557644a8b98c3bc7d36d340ea2dac495e2e",
+  "status": "COMPLETE",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/getrf_nopivot_20260911_105014_v05",
+  "started_epoch": 1789095014.6910813,
+  "source_sha256": "cb04df0d32adc281bd79ddfeb0a83df2619bb72ed5e190b8a7fa3e95c8cd7714",
+  "returncode": 0,
+  "seconds": 60.7,
+  "classification": "PASS_COMPUTE_60",
+  "resources": {
+    "LUT": 423395,
+    "FF": 462819,
+    "DSP": 2816,
+    "BRAM_18K": 516,
+    "URAM": 256
+  },
+  "slr_equivalents": {
+    "LUT": 0.9800810185185185,
+    "FF": 0.5356701388888889,
+    "DSP": 0.9166666666666666,
+    "BRAM_18K": 0.38392857142857145,
+    "URAM": 0.8
+  },
+  "compute_peak_slr": 0.9800810185185185,
+  "all_peak_slr": 0.9800810185185185,
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/getrf_nopivot_20260911_105014_v05/hls/sol/syn/verilog",
+  "verilog_files": 20,
+  "estimated_clock_ns": "3.650",
+  "latency_min": "558679",
+  "latency_max": "1863773",
+  "hls_resource_classification": "PASS_COMPUTE_60",
+  "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+  "top_pipeline_type": "no",
+  "capacity_lower_bound_slrs": 1,
+  "near_60": false,
+  "loop_constraints_unmet": false,
+  "warning_count": 321,
+  "max_rss_kib": 999708,
+  "case": "getrf_nopivot",
+  "directory": "getrf_nopivot_20260911_105014_v05",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/getrf_nopivot_n512_u256",
+  "validation": null,
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "original_source": "sources/getrf_nopivot/n512_u256/kernel.cpp"
+}

@@ -1,0 +1,8 @@
+{
+  "retained_cases": 27,
+  "qualified_cases": 8,
+  "deleted_configurations": 9,
+  "passed_csim_retained": 4,
+  "stale_execution_paths": 0,
+  "trtrs_routed_dcp_unchanged": true
+}

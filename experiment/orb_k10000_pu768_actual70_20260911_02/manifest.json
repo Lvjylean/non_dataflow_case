@@ -1,0 +1,19 @@
+{
+  "id": "orb_k10000_pu768_actual70_20260911_02",
+  "server": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_k10000_pu768_actual70_20260911_02",
+  "cases": [
+    {
+      "pu": 768,
+      "run": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_k10000_pu768_actual70_20260911_02/pu768",
+      "session": "orb-k10000-pu768-actual70-0911-r2",
+      "case": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_k10000_pu768_actual70_20260911_02/pu768",
+      "max_keypoints": 10000
+    }
+  ],
+  "target_actual_lut_min": 302400,
+  "part": "xcu250-figd2104-2L-e",
+  "clock_ns": 5,
+  "library_source": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_orb_matcher_k8192_pu256__LUT_193p2pctSLR__20260911_v01/library",
+  "rtl_source": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_k10000_pu768_actual70_20260911_01/pu768/rtl",
+  "hls_provenance": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_k10000_pu768_actual70_20260911_01/pu768"
+}

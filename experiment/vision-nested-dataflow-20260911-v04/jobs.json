@@ -1,0 +1,45 @@
+[
+  {
+    "name": "vision_isp_hdr_8k_npc4",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/isppipeline_hdr/xf_isp_accel.cpp",
+    "parameters_changed": {
+      "XF_WIDTH": "8192",
+      "XF_HEIGHT": "4320",
+      "XF_NPPCX": "XF_NPPC4",
+      "INPUT_PTR_WIDTH": "128",
+      "OUTPUT_PTR_WIDTH": "128"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_tvl1_optical_flow_512x512_flow10",
+    "top": "tvl1_accel",
+    "cpp": "xf_tvl1_accel.cpp",
+    "origin": "vision/L3/examples/tvl1/xf_tvl1_accel.cpp",
+    "parameters_changed": {
+      "MAX_FLOW_VALUE": "10"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_tvl1_optical_flow_1024x1024_npc2",
+    "top": "tvl1_accel",
+    "cpp": "xf_tvl1_accel.cpp",
+    "origin": "vision/L3/examples/tvl1/xf_tvl1_accel.cpp",
+    "parameters_changed": {
+      "WIDTH": "1024",
+      "HEIGHT": "1024",
+      "NEWWIDTH": "1024",
+      "NEWHEIGHT": "1024"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  }
+]

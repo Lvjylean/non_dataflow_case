@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01_vitis_2mm",
+    "repo": "allo-pldi24-artifact",
+    "files": [
+      "polybench/vitis/2mm/2mm.cpp"
+    ],
+    "top": "kernel",
+    "part": "xcu250-figd2104-2L-e",
+    "period_ns": "3.33"
+  },
+  {
+    "id": "02_vitis_3mm",
+    "repo": "allo-pldi24-artifact",
+    "files": [
+      "polybench/vitis/3mm/3mm.cpp"
+    ],
+    "top": "kernel",
+    "part": "xcu250-figd2104-2L-e",
+    "period_ns": "3.33"
+  },
+  {
+    "id": "03_vitis_jacobi_2d",
+    "repo": "allo-pldi24-artifact",
+    "files": [
+      "polybench/vitis/jacobi-2d/jacobi-2d.cpp"
+    ],
+    "top": "kernel",
+    "part": "xcu280-fsvh2892-2L-e",
+    "period_ns": "3.33"
+  }
+]

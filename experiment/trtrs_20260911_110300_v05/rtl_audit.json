@@ -1,0 +1,86 @@
+{
+  "original_batch": "hls-nondataflow-scale-20260911-02",
+  "unchanged": true,
+  "files": {
+    "kernel_trtrs_0_mul_32ns_32ns_64_1_1.v": {
+      "bytes": 564,
+      "sha256": "dcae33b3f5db7a7081d6736f2dc5b0c65403597b00944daa40a8777c1c03265d"
+    },
+    "kernel_trtrs_0_kernel_trtrs_0_Pipeline_VITIS_LOOP_125_4.v": {
+      "bytes": 16269,
+      "sha256": "77e9487c0917e9c0726d63c285dad0ff094b9b0b4b6665f23147bd683e37fc66"
+    },
+    "kernel_trtrs_0_kernel_trtrs_0_Pipeline_Loop_read_VITIS_LOOP_107_1.v": {
+      "bytes": 941828,
+      "sha256": "830ff4cd66fb9fd08b5b50d04f9ae194d4ced0651b86ccaef9feedcf4d725e03"
+    },
+    "kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip.tcl": {
+      "bytes": 2584,
+      "sha256": "b98b54efde5f8d091ae674e3696ec4f29cc2f713f4809627049f47bc268094ed"
+    },
+    "kernel_trtrs_0_trisolver_L_double_1024_512_s.v": {
+      "bytes": 4108244,
+      "sha256": "e4d1a03f80bc8eb51891ae1c5bb305a4f9926326f0445e1bf67d91eb9b91df01"
+    },
+    "kernel_trtrs_0_flow_control_loop_pipe_sequential_init.v": {
+      "bytes": 2780,
+      "sha256": "effe1ab558d9cbec25e448b403ae0e90857892e7dcf4f33961c52215c9ac0972"
+    },
+    "kernel_trtrs_0_dataX_RAM_AUTO_1R1W.v": {
+      "bytes": 913,
+      "sha256": "6b0802cc23260661cc869c4aaa86ce229c879b591f2d0e7b72974325a61a789c"
+    },
+    "kernel_trtrs_0_trisolver_L_double_1024_512_Pipeline_Loop_col.v": {
+      "bytes": 3938261,
+      "sha256": "1698be45122458a954e76125d31f88c90fe96e5cb35665221bfe255726eee3cd"
+    },
+    "kernel_trtrs_0_sparsemux_1025_9_64_1_1.v": {
+      "bytes": 75814,
+      "sha256": "037aa98e7654180d6363076111a293c70baed99cc833e1b28eff3418200874a2"
+    },
+    "kernel_trtrs_0_void_trtrs_char_int_double_int_double_int_int_int_matA_9_XPM_MEMORY_URAM_1R1W.v": {
+      "bytes": 4293,
+      "sha256": "d366d4434095f02548637423b721a6e94cd9494078e8747f736155926237c81f"
+    },
+    "kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1.v": {
+      "bytes": 2184,
+      "sha256": "114aab476c898188009329506aad4b2c9cf6da685444f4fa8000f4a465b1eaf3"
+    },
+    "kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1.v": {
+      "bytes": 2187,
+      "sha256": "ae6f1a37b9649b51d5e3aab397cb639b8682a532b37539febe129d2147f94b4b"
+    },
+    "kernel_trtrs_0.v": {
+      "bytes": 4972199,
+      "sha256": "1c9cb1391b6f0144f8cd2a48c5020eaa71bddcc5bc8aa794a8f01a8fbca0bf4f"
+    },
+    "kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip.tcl": {
+      "bytes": 2570,
+      "sha256": "e73bdc525f45b980843f33de46b5625a58450b838112425e9ae05fab17f465cf"
+    },
+    "kernel_trtrs_0_gmem0_m_axi.v": {
+      "bytes": 97924,
+      "sha256": "1dcb43b2affe3718ee2874716fb240964dd63cc5e9f0d529d5308b92a7ccd159"
+    },
+    "kernel_trtrs_0_gmem1_m_axi.v": {
+      "bytes": 97924,
+      "sha256": "845e88c33c8a67ba56585570c23d8d29e4f94e204aaaf3a5d95f02269fefaa8f"
+    },
+    "kernel_trtrs_0_control_s_axi.v": {
+      "bytes": 14643,
+      "sha256": "d3d58490f2c776810737cbf2205bdf7b23946b88cc12804630b20738d9f27294"
+    },
+    "kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1.v": {
+      "bytes": 2184,
+      "sha256": "f37b6f71766fb303b461323d9fdee1b7e19078a8ab8635e9105338a1c08bb791"
+    },
+    "kernel_trtrs_0_kernel_trtrs_0_Pipeline_VITIS_LOOP_114_3.v": {
+      "bytes": 1103148,
+      "sha256": "f2f2cb0e3752a9c2fb5c4c6a915b71c958a6eba0ec9e6c6b0f535e676755ce8d"
+    },
+    "kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip.tcl": {
+      "bytes": 2568,
+      "sha256": "62a3e232981906f2b89a6e52d31080aee13ee2d551f7a2e840bfaf4d224c6ca1"
+    }
+  }
+}

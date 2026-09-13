@@ -1,0 +1,638 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date              : Sun Sep 13 01:18:41 2026
+| Host              : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command           : report_timing -from [all_registers -output_pins] -to [all_registers -data_pins] -delay_type max -max_paths 10 -file internal_max_timing.rpt
+| Design            : cnn_top_u250_buffered
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Routed
+| Temperature Grade : E
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             4.224ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[50]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.564ns  (logic 0.177ns (3.181%)  route 5.387ns (96.819%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.116ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.851ns = ( 12.851 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.791ns (routing 1.748ns, distribution 1.043ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.294     8.780    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[50]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.791    12.851    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[50]/C
+                         clock pessimism              0.249    13.100    
+                         clock uncertainty           -0.035    13.064    
+    SLICE_X120Y173       FDRE (Setup_HFF2_SLICEL_C_CE)
+                                                     -0.060    13.004    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[50]
+  -------------------------------------------------------------------
+                         required time                         13.004    
+                         arrival time                          -8.780    
+  -------------------------------------------------------------------
+                         slack                                  4.224    
+
+Slack (MET) :             4.224ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[56]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.564ns  (logic 0.177ns (3.181%)  route 5.387ns (96.819%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.116ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.851ns = ( 12.851 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.791ns (routing 1.748ns, distribution 1.043ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.294     8.780    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[56]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.791    12.851    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[56]/C
+                         clock pessimism              0.249    13.100    
+                         clock uncertainty           -0.035    13.064    
+    SLICE_X120Y173       FDRE (Setup_GFF2_SLICEL_C_CE)
+                                                     -0.060    13.004    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[56]
+  -------------------------------------------------------------------
+                         required time                         13.004    
+                         arrival time                          -8.780    
+  -------------------------------------------------------------------
+                         slack                                  4.224    
+
+Slack (MET) :             4.224ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[60]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.564ns  (logic 0.177ns (3.181%)  route 5.387ns (96.819%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.116ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.851ns = ( 12.851 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.791ns (routing 1.748ns, distribution 1.043ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.294     8.780    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[60]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.791    12.851    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[60]/C
+                         clock pessimism              0.249    13.100    
+                         clock uncertainty           -0.035    13.064    
+    SLICE_X120Y173       FDRE (Setup_FFF2_SLICEL_C_CE)
+                                                     -0.060    13.004    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[60]
+  -------------------------------------------------------------------
+                         required time                         13.004    
+                         arrival time                          -8.780    
+  -------------------------------------------------------------------
+                         slack                                  4.224    
+
+Slack (MET) :             4.257ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[12]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.530ns  (logic 0.177ns (3.201%)  route 5.353ns (96.799%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.118ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.849ns = ( 12.849 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.789ns (routing 1.748ns, distribution 1.041ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.260     8.746    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[12]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.789    12.849    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[12]/C
+                         clock pessimism              0.249    13.098    
+                         clock uncertainty           -0.035    13.062    
+    SLICE_X120Y173       FDRE (Setup_DFF2_SLICEL_C_CE)
+                                                     -0.059    13.003    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[12]
+  -------------------------------------------------------------------
+                         required time                         13.003    
+                         arrival time                          -8.746    
+  -------------------------------------------------------------------
+                         slack                                  4.257    
+
+Slack (MET) :             4.257ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[14]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.530ns  (logic 0.177ns (3.201%)  route 5.353ns (96.799%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.118ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.849ns = ( 12.849 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.789ns (routing 1.748ns, distribution 1.041ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.260     8.746    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[14]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.789    12.849    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[14]/C
+                         clock pessimism              0.249    13.098    
+                         clock uncertainty           -0.035    13.062    
+    SLICE_X120Y173       FDRE (Setup_CFF2_SLICEL_C_CE)
+                                                     -0.059    13.003    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[14]
+  -------------------------------------------------------------------
+                         required time                         13.003    
+                         arrival time                          -8.746    
+  -------------------------------------------------------------------
+                         slack                                  4.257    
+
+Slack (MET) :             4.257ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[15]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.530ns  (logic 0.177ns (3.201%)  route 5.353ns (96.799%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.118ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.849ns = ( 12.849 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.789ns (routing 1.748ns, distribution 1.041ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.260     8.746    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[15]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.789    12.849    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[15]/C
+                         clock pessimism              0.249    13.098    
+                         clock uncertainty           -0.035    13.062    
+    SLICE_X120Y173       FDRE (Setup_BFF2_SLICEL_C_CE)
+                                                     -0.059    13.003    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[15]
+  -------------------------------------------------------------------
+                         required time                         13.003    
+                         arrival time                          -8.746    
+  -------------------------------------------------------------------
+                         slack                                  4.257    
+
+Slack (MET) :             4.257ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[2]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.530ns  (logic 0.177ns (3.201%)  route 5.353ns (96.799%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.118ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.849ns = ( 12.849 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.789ns (routing 1.748ns, distribution 1.041ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.260     8.746    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.789    12.849    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y173       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[2]/C
+                         clock pessimism              0.249    13.098    
+                         clock uncertainty           -0.035    13.062    
+    SLICE_X120Y173       FDRE (Setup_AFF2_SLICEL_C_CE)
+                                                     -0.059    13.003    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[2]
+  -------------------------------------------------------------------
+                         required time                         13.003    
+                         arrival time                          -8.746    
+  -------------------------------------------------------------------
+                         slack                                  4.257    
+
+Slack (MET) :             4.270ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[53]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.519ns  (logic 0.177ns (3.207%)  route 5.342ns (96.793%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.115ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.852ns = ( 12.852 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.792ns (routing 1.748ns, distribution 1.044ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.249     8.735    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y174       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[53]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.792    12.852    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y174       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[53]/C
+                         clock pessimism              0.249    13.101    
+                         clock uncertainty           -0.035    13.065    
+    SLICE_X120Y174       FDRE (Setup_HFF2_SLICEL_C_CE)
+                                                     -0.060    13.005    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[53]
+  -------------------------------------------------------------------
+                         required time                         13.005    
+                         arrival time                          -8.735    
+  -------------------------------------------------------------------
+                         slack                                  4.270    
+
+Slack (MET) :             4.270ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[55]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.519ns  (logic 0.177ns (3.207%)  route 5.342ns (96.793%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.115ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.852ns = ( 12.852 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.792ns (routing 1.748ns, distribution 1.044ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.249     8.735    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y174       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[55]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.792    12.852    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y174       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[55]/C
+                         clock pessimism              0.249    13.101    
+                         clock uncertainty           -0.035    13.065    
+    SLICE_X120Y174       FDRE (Setup_GFF2_SLICEL_C_CE)
+                                                     -0.060    13.005    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[55]
+  -------------------------------------------------------------------
+                         required time                         13.005    
+                         arrival time                          -8.735    
+  -------------------------------------------------------------------
+                         slack                                  4.270    
+
+Slack (MET) :             4.270ns  (required time - arrival time)
+  Source:                 core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[57]/CE
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (core_clk rise@10.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        5.519ns  (logic 0.177ns (3.207%)  route 5.342ns (96.793%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.115ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.852ns = ( 12.852 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.216ns
+    Clock Pessimism Removal (CPR):    0.249ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.145ns (routing 1.925ns, distribution 1.220ns)
+  Clock Net Delay (Destination): 2.792ns (routing 1.748ns, distribution 1.044ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.145     3.216    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X125Y160       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y160       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.295 r  core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg/Q
+                         net (fo=4, routed)           0.093     3.388    core/cnn_S_AXIS_BUF_if_U/rs/s_ready_t_reg_0
+    SLICE_X125Y161       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.098     3.486 r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2[144]_i_1__0/O
+                         net (fo=144, routed)         5.249     8.735    core/cnn_S_AXIS_BUF_if_U/rs/load_p2
+    SLICE_X120Y174       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[57]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                     10.000    10.000 r  
+                                                      0.000    10.000 r  aclk (IN)
+                         net (fo=0)                   0.036    10.036    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       2.792    12.852    core/cnn_S_AXIS_BUF_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X120Y174       FDRE                                         r  core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[57]/C
+                         clock pessimism              0.249    13.101    
+                         clock uncertainty           -0.035    13.065    
+    SLICE_X120Y174       FDRE (Setup_FFF2_SLICEL_C_CE)
+                                                     -0.060    13.005    core/cnn_S_AXIS_BUF_if_U/rs/data_p2_reg[57]
+  -------------------------------------------------------------------
+                         required time                         13.005    
+                         arrival time                          -8.735    
+  -------------------------------------------------------------------
+                         slack                                  4.270    
+
+
+
+

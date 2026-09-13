@@ -1,0 +1,3 @@
+Primitive instances: 51015; mapped nonconstant: 49845; unmapped nonconstant: 0
+Unmapped types: {}
+Counts are primitive instances, not occupied CLB sites or LUT resource equivalents.

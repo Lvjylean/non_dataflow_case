@@ -1,0 +1,16 @@
+{
+  "id": "orb_pu256_bramfix_20260911_03",
+  "server": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_pu256_bramfix_20260911_03",
+  "cases": [
+    {
+      "pu": 256,
+      "case": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_orb_matcher_k8192_pu256__LUT_193p2pctSLR__20260911_v01",
+      "run": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_pu256_bramfix_20260911_03/pu256",
+      "session": "orb-pu256-bramfix-0911",
+      "hls_lut_percent_slr": 193.17777777777778,
+      "baseline_run": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_resetfix_20260911_02/pu256"
+    }
+  ],
+  "baseline_id": "orb_u250_5ns_fanout256_20260911_01",
+  "lock_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_20260911_01"
+}

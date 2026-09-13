@@ -1,0 +1,65 @@
+{
+  "case": "CNNA",
+  "run": "cnna_buffered_u250_20260913_04",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/FPGA_benchmark/runs/cnna_buffered_u250_20260913_04",
+  "checkpoint": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/FPGA_benchmark/runs/cnna_buffered_u250_20260913_04/routed.dcp",
+  "physical_status": "VERIFIED",
+  "timing_status": "FAIL",
+  "wns_ns": 4.224,
+  "whs_ns": -2.338,
+  "checks": {
+    "explicit_route_flags": true,
+    "audit_exit_zero": true,
+    "audit_dcp_unchanged": true,
+    "implementation_exit_zero": true,
+    "route_complete": true,
+    "reopen_exit_zero": true,
+    "reopen_marker": true,
+    "reopen_route_complete": true,
+    "reopen_route_counts_match": true,
+    "no_blackboxes": true,
+    "no_drc_errors": true,
+    "no_drc_critical_warnings": true,
+    "timing_reproduced": true
+  },
+  "route": {
+    "routable": 108985,
+    "routed": 108985,
+    "errors": 0,
+    "explicit_gaps": 0,
+    "complete": true
+  },
+  "metrics": {
+    "max_slack_ns": "4.224",
+    "min_slack_ns": "-2.338",
+    "blackboxes": "0",
+    "drc_errors": "0",
+    "drc_critical_warnings": "0"
+  },
+  "resources": {
+    "CLB LUTs": 35746.0,
+    "CLB Registers": 72369.0,
+    "Block RAM Tile": 138.5,
+    "DSPs": 405.0,
+    "URAM": 0.0,
+    "Total SLLs Used": 0.0
+  },
+  "wall_time": "16:15.24",
+  "peak_rss_mib": 6613.5390625,
+  "route_flags": {
+    "PLACED_FULLY": "1",
+    "PARTIALLY_ROUTED": "0",
+    "ROUTED_FULLY": "1",
+    "ERRORS_IN_ROUTES": "0",
+    "GAPS": "0",
+    "PARTIAL": "0",
+    "UNROUTED": "0",
+    "CONFLICTS": "0"
+  },
+  "internal_timing": {
+    "max_slack_ns": "4.224",
+    "min_slack_ns": "0.009"
+  },
+  "region_audit": "Primitive instances: 126371; mapped nonconstant: 125367; unmapped nonconstant: 0\nUnmapped types: {}\nCounts are primitive instances, not occupied CLB sites or LUT resource equivalents.\n",
+  "hls_provenance": "Upstream 2019.1 exported HDL; 2023.2 source HLS failed at missing systemc.h"
+}

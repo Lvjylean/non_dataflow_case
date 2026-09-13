@@ -1,0 +1,53 @@
+{
+  "id": "getrf_nopivot_n256_u128",
+  "source": "sources/kernel.cpp",
+  "top": "kernel_getrf_nopivot_0",
+  "parameters": {
+    "NRC": 256,
+    "NCU": 128
+  },
+  "origin": "solver/L2/tests/hw/getrf_nopivot/kernel_getrf_nopivot.cpp",
+  "origin_sha256": "68e9663364703eacf980593d3514c557644a8b98c3bc7d36d340ea2dac495e2e",
+  "status": "COMPLETE",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/getrf_nopivot_20260911_103401_v03",
+  "started_epoch": 1789094041.9360807,
+  "source_sha256": "3f28eb4823a6467165bb63910fc6df10362f17fce8e97c2b28d214306730c53a",
+  "returncode": 0,
+  "seconds": 29.4,
+  "classification": "BELOW_60",
+  "resources": {
+    "LUT": 200255,
+    "FF": 217934,
+    "DSP": 1408,
+    "BRAM_18K": 260,
+    "URAM": 128
+  },
+  "slr_equivalents": {
+    "LUT": 0.4635532407407407,
+    "FF": 0.25223842592592594,
+    "DSP": 0.4583333333333333,
+    "BRAM_18K": 0.19345238095238096,
+    "URAM": 0.4
+  },
+  "compute_peak_slr": 0.4635532407407407,
+  "all_peak_slr": 0.4635532407407407,
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/getrf_nopivot_20260911_103401_v03/hls/sol/syn/verilog",
+  "verilog_files": 20,
+  "estimated_clock_ns": "3.650",
+  "latency_min": "148311",
+  "latency_max": "473181",
+  "hls_resource_classification": "BELOW_60",
+  "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+  "top_pipeline_type": "no",
+  "capacity_lower_bound_slrs": 1,
+  "near_60": false,
+  "loop_constraints_unmet": false,
+  "warning_count": 193,
+  "max_rss_kib": 728984,
+  "case": "getrf_nopivot",
+  "directory": "getrf_nopivot_20260911_103401_v03",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/getrf_nopivot_n256_u128",
+  "validation": null,
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "original_source": "sources/getrf_nopivot/n256_u128/kernel.cpp"
+}

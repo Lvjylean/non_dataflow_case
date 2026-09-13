@@ -1,0 +1,52 @@
+{
+  "id": "gesvdj_baseline",
+  "source": "sources/kernel.cpp",
+  "top": "kernel_gesvdj_0",
+  "parameters": {
+    "MA": 16
+  },
+  "origin": "solver/L2/benchmarks/gesvdj/kernel_gesvdj.cpp",
+  "origin_sha256": "426b344444f202d23547329934ea3bf529dab0aced51dcbd2253b466552c6f61",
+  "status": "COMPLETE",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/gesvdj_20260911_103045_v01",
+  "started_epoch": 1789093845.6751995,
+  "source_sha256": "426b344444f202d23547329934ea3bf529dab0aced51dcbd2253b466552c6f61",
+  "returncode": 0,
+  "seconds": 27.5,
+  "classification": "BELOW_60",
+  "resources": {
+    "LUT": 38265,
+    "FF": 44618,
+    "DSP": 106,
+    "BRAM_18K": 18,
+    "URAM": 8
+  },
+  "slr_equivalents": {
+    "LUT": 0.08857638888888889,
+    "FF": 0.0516412037037037,
+    "DSP": 0.034505208333333336,
+    "BRAM_18K": 0.013392857142857142,
+    "URAM": 0.025
+  },
+  "compute_peak_slr": 0.08857638888888889,
+  "all_peak_slr": 0.08857638888888889,
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/gesvdj_20260911_103045_v01/hls/sol/syn/verilog",
+  "verilog_files": 37,
+  "estimated_clock_ns": "3.650",
+  "latency_min": "13783",
+  "latency_max": "403517",
+  "hls_resource_classification": "BELOW_60",
+  "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+  "top_pipeline_type": "no",
+  "capacity_lower_bound_slrs": 1,
+  "near_60": false,
+  "loop_constraints_unmet": false,
+  "warning_count": 296,
+  "max_rss_kib": 645644,
+  "case": "gesvdj",
+  "directory": "gesvdj_20260911_103045_v01",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gesvdj_baseline",
+  "validation": null,
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "original_source": "sources/gesvdj/baseline/kernel.cpp"
+}

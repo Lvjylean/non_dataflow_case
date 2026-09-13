@@ -1,0 +1,17 @@
+{
+  "id": "09_minimap2_u250",
+  "repo": "minimap2-acceleration",
+  "files": [
+    "kernel/hls/src/device_kernel.cpp"
+  ],
+  "top": "device_chain_kernel",
+  "part": "xcu250-figd2104-2L-e",
+  "period_ns": "5",
+  "status": "COMPLETE",
+  "started": "2026-09-11T03:23:15.093983+00:00",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/09_minimap2_vitis_u250",
+  "returncode": 0,
+  "elapsed_seconds": 189.9445102890022,
+  "rtl_files": 54,
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-public-cases-20260911-01/runs/09_minimap2_u250"
+}

@@ -1,0 +1,855 @@
+{
+  "retained": [
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_20260911_103020_v01",
+      "verified_unchanged_files": 474,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_getrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_nopivot_20260911_103020_v01",
+      "verified_unchanged_files": 383,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/kernel_getrf_nopivot_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "geqrf_20260911_103020_v01",
+      "verified_unchanged_files": 710,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_geqrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "trtrs_20260911_103043_v01",
+      "verified_unchanged_files": 369,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "gesvdj_20260911_103045_v01",
+      "verified_unchanged_files": 675,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_gesvdj_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "gtsv_20260911_103106_v01",
+      "verified_unchanged_files": 384,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "rsa_20260911_103107_v01",
+      "verified_unchanged_files": 266,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_nopivot_20260911_103129_v02",
+      "verified_unchanged_files": 419,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/kernel_getrf_nopivot_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_20260911_103129_v02",
+      "verified_unchanged_files": 510,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_getrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "geqrf_20260911_103129_v02",
+      "verified_unchanged_files": 710,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_geqrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "trtrs_20260911_103154_v02",
+      "verified_unchanged_files": 375,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "gesvdj_20260911_103156_v02",
+      "verified_unchanged_files": 675,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_gesvdj_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "gtsv_20260911_103218_v02",
+      "verified_unchanged_files": 426,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/kernel_gtsv_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "rsa_20260911_103221_v02",
+      "verified_unchanged_files": 266,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_20260911_103401_v03",
+      "verified_unchanged_files": 510,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_getrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "geqrf_20260911_103401_v03",
+      "verified_unchanged_files": 734,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_geqrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_nopivot_20260911_103401_v03",
+      "verified_unchanged_files": 419,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/kernel_getrf_nopivot_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "trtrs_20260911_103437_v03",
+      "verified_unchanged_files": 366,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "gesvdj_20260911_103438_v03",
+      "verified_unchanged_files": 675,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_gesvdj_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_20260911_103710_v04",
+      "verified_unchanged_files": 530,
+      "updated_metadata": [
+        "run.tcl",
+        "validation/run.tcl",
+        "validation/sim/hls.app",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_getrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_nopivot_20260911_104359_v04",
+      "verified_unchanged_files": 439,
+      "updated_metadata": [
+        "run.tcl",
+        "validation/run.tcl",
+        "validation/sim/hls.app",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/kernel_getrf_nopivot_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_nopivot_20260911_105014_v05",
+      "verified_unchanged_files": 419,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/kernel_getrf_nopivot_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "getrf_20260911_105014_v05",
+      "verified_unchanged_files": 510,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_getrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "geqrf_20260911_105014_v04",
+      "verified_unchanged_files": 734,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_geqrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "trtrs_20260911_105125_v04",
+      "verified_unchanged_files": 366,
+      "updated_metadata": [
+        "run.tcl",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "geqrf_20260911_105252_v05",
+      "verified_unchanged_files": 766,
+      "updated_metadata": [
+        "run.tcl",
+        "validation/run.tcl",
+        "validation/sim/hls.app",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/kernel_geqrf_0.DependenceCheck.tcl",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    },
+    {
+      "root": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment",
+      "directory": "trtrs_20260911_110300_v05",
+      "verified_unchanged_files": 386,
+      "updated_metadata": [
+        "run.tcl",
+        "validation/run.tcl",
+        "validation/sim/hls.app",
+        "hls/hls.app",
+        "hls/sol/.autopilot/db/global.setting.tcl",
+        "hls/sol/.autopilot/db/all.directive.json"
+      ]
+    }
+  ],
+  "deleted_configurations": [
+    {
+      "id": "gematrixinverse_baseline",
+      "source": "sources/gematrixinverse/baseline/kernel.cpp",
+      "top": "kernel_gematrixinverse_0",
+      "parameters": {
+        "NCU": 2,
+        "MAXN": 4,
+        "LDA": 4
+      },
+      "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+      "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646",
+      "status": "COMPLETE",
+      "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_baseline",
+      "started_epoch": 1789093843.3411508,
+      "source_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646",
+      "returncode": 0,
+      "seconds": 24.2,
+      "classification": "EXCLUDED_NUMERICAL_FAILURE",
+      "resources": {
+        "LUT": 21548,
+        "FF": 22684,
+        "DSP": 29,
+        "BRAM_18K": 12,
+        "URAM": 4
+      },
+      "slr_equivalents": {
+        "LUT": 0.04987962962962963,
+        "FF": 0.02625462962962963,
+        "DSP": 0.009440104166666666,
+        "BRAM_18K": 0.008928571428571428,
+        "URAM": 0.0125
+      },
+      "compute_peak_slr": 0.04987962962962963,
+      "all_peak_slr": 0.04987962962962963,
+      "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_baseline/hls/sol/syn/verilog",
+      "verilog_files": 35,
+      "estimated_clock_ns": "3.650",
+      "latency_min": "undef",
+      "latency_max": "undef",
+      "batch": "hls-nondataflow-scale-20260911-01",
+      "hls_resource_classification": "BELOW_60",
+      "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+      "top_pipeline_type": "no",
+      "capacity_lower_bound_slrs": 1,
+      "near_60": false,
+      "loop_constraints_unmet": true,
+      "warning_count": 71,
+      "max_rss_kib": 622388
+    },
+    {
+      "id": "gematrixinverse_n256_u32",
+      "source": "sources/gematrixinverse/n256_u32/kernel.cpp",
+      "top": "kernel_gematrixinverse_0",
+      "parameters": {
+        "NCU": 32,
+        "MAXN": 256,
+        "LDA": 256
+      },
+      "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+      "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646",
+      "status": "COMPLETE",
+      "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n256_u32",
+      "started_epoch": 1789093913.2558706,
+      "source_sha256": "c0f339f8e0f2170ec50ea66de35bdb5da8772c053f0816cfa4fdf818bd45d268",
+      "returncode": 0,
+      "seconds": 28.6,
+      "classification": "EXCLUDED_NUMERICAL_FAILURE",
+      "resources": {
+        "LUT": 225633,
+        "FF": 252081,
+        "DSP": 708,
+        "BRAM_18K": 369,
+        "URAM": 64
+      },
+      "slr_equivalents": {
+        "LUT": 0.5222986111111111,
+        "FF": 0.2917604166666667,
+        "DSP": 0.23046875,
+        "BRAM_18K": 0.27455357142857145,
+        "URAM": 0.2
+      },
+      "compute_peak_slr": 0.5222986111111111,
+      "all_peak_slr": 0.5222986111111111,
+      "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n256_u32/hls/sol/syn/verilog",
+      "verilog_files": 38,
+      "estimated_clock_ns": "3.650",
+      "latency_min": "undef",
+      "latency_max": "undef",
+      "batch": "hls-nondataflow-scale-20260911-01",
+      "hls_resource_classification": "BELOW_60",
+      "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+      "top_pipeline_type": "no",
+      "capacity_lower_bound_slrs": 1,
+      "near_60": false,
+      "loop_constraints_unmet": true,
+      "warning_count": 153,
+      "max_rss_kib": 781348
+    },
+    {
+      "id": "gematrixinverse_n256_u128",
+      "source": "sources/gematrixinverse/n256_u128/kernel.cpp",
+      "top": "kernel_gematrixinverse_0",
+      "parameters": {
+        "NCU": 128,
+        "MAXN": 256,
+        "LDA": 256
+      },
+      "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+      "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646",
+      "status": "COMPLETE",
+      "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n256_u128",
+      "started_epoch": 1789094071.3661616,
+      "source_sha256": "33dcd542679d84f93c8aba02eaed0cd0f5d80a186e893c0f0bd7153e223d5a2d",
+      "returncode": 0,
+      "seconds": 425.9,
+      "classification": "EXCLUDED_NUMERICAL_FAILURE",
+      "resources": {
+        "LUT": 957355,
+        "FF": 1082467,
+        "DSP": 2820,
+        "BRAM_18K": 753,
+        "URAM": 256
+      },
+      "slr_equivalents": {
+        "LUT": 2.216099537037037,
+        "FF": 1.252855324074074,
+        "DSP": 0.91796875,
+        "BRAM_18K": 0.5602678571428571,
+        "URAM": 0.8
+      },
+      "compute_peak_slr": 2.216099537037037,
+      "all_peak_slr": 2.216099537037037,
+      "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n256_u128/hls/sol/syn/verilog",
+      "verilog_files": 37,
+      "estimated_clock_ns": "3.650",
+      "latency_min": "undef",
+      "latency_max": "undef",
+      "batch": "hls-nondataflow-scale-20260911-01",
+      "hls_resource_classification": "PASS_COMPUTE_60",
+      "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+      "top_pipeline_type": "no",
+      "capacity_lower_bound_slrs": 3,
+      "near_60": false,
+      "loop_constraints_unmet": true,
+      "warning_count": 242,
+      "max_rss_kib": 2869012
+    },
+    {
+      "id": "gtsv_n256_u128",
+      "source": "sources/gtsv/n256_u128/kernel.cpp",
+      "top": "kernel_gtsv_0",
+      "parameters": {
+        "NRC": 256,
+        "NCU": 128
+      },
+      "origin": "solver/L2/benchmarks/gtsv/kernel_gtsv.cpp",
+      "origin_sha256": "67f91bc348d1f1d7a954e26c18294e4cf76f6f13fd72ffbfeba8ecd584fd2839",
+      "status": "TIMED_OUT",
+      "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gtsv_n256_u128",
+      "started_epoch": 1789094112.7368033,
+      "source_sha256": "fd274c5a74cd93c40e159488a019563aaf733edeef9bbe69978522033e45a65b",
+      "returncode": -15,
+      "seconds": 902.0,
+      "errors": [],
+      "batch": "hls-nondataflow-scale-20260911-01",
+      "hls_resource_classification": null,
+      "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+      "classification": "INCONCLUSIVE_TIME_BUDGET",
+      "timeout": {
+        "reason": "HLS screening time budget exceeded; resource qualification unknown",
+        "limit_seconds": 900,
+        "epoch": 1789095014.6884093,
+        "processes": [
+          {
+            "pid": 419571,
+            "argv": [
+              "/usr/bin/time",
+              "-v",
+              "-o",
+              "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gtsv_n256_u128/time.txt",
+              "vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gtsv_n256_u128"
+          },
+          {
+            "pid": 419572,
+            "argv": [
+              "/bin/bash",
+              "/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/bin/vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gtsv_n256_u128"
+          },
+          {
+            "pid": 419590,
+            "argv": [
+              "/bin/bash",
+              "/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/bin/loader",
+              "-exec",
+              "vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gtsv_n256_u128"
+          },
+          {
+            "pid": 419591,
+            "argv": [
+              "tee",
+              "vitis_hls.log"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gtsv_n256_u128"
+          },
+          {
+            "pid": 419612,
+            "argv": [
+              "/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gtsv_n256_u128"
+          }
+        ]
+      },
+      "loop_constraints_unmet": false,
+      "warning_count": 40,
+      "max_rss_kib": null
+    },
+    {
+      "id": "rsa_w8192",
+      "source": "sources/rsa/8192/kernel.cpp",
+      "top": "rsa_test",
+      "parameters": {
+        "N": 8192,
+        "L": 20
+      },
+      "origin": "security/L1/tests/rsa/test.cpp",
+      "status": "FAILED",
+      "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/rsa_w8192",
+      "started_epoch": 1789094121.7956817,
+      "source_sha256": "09b3a2b974507aef2e7caf34fe980515044f8f900854f0cb83a3219fda81483e",
+      "returncode": 1,
+      "seconds": 2.1,
+      "errors": [
+        "ERROR: [HLS 207-2163] 'bitwidth' attribute requires integer constant between 1 and 8191 inclusive (/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_common.h:520:35)",
+        "ERROR: [HLS 207-2163] 'bitwidth' attribute requires integer constant between 1 and 8191 inclusive (/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_common.h:521:29)",
+        "ERROR: [HLS 207-2163] 'bitwidth' attribute requires integer constant between 1 and 8191 inclusive (/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_common.h:523:104)",
+        "ERROR: [HLS 207-2163] 'bitwidth' attribute requires integer constant between 1 and 8191 inclusive (/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_int.h:212:114)"
+      ],
+      "batch": "hls-nondataflow-scale-20260911-01",
+      "hls_resource_classification": null,
+      "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+      "loop_constraints_unmet": false,
+      "warning_count": 0,
+      "max_rss_kib": 346748
+    },
+    {
+      "id": "geqrf_n1024_u512",
+      "source": "sources/geqrf/n1024_u512/kernel.cpp",
+      "top": "kernel_geqrf_0",
+      "parameters": {
+        "MA": 1024,
+        "NA": 1024,
+        "NCU": 512
+      },
+      "origin": "solver/L2/tests/hw/geqrf/kernel_geqrf.cpp",
+      "origin_sha256": "6bef3f79c731d603ffff6bed45b35a92ae4e5fb6e33658d61101c5a9cf793527",
+      "status": "COMPLETE",
+      "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/geqrf_n1024_u512",
+      "started_epoch": 1789094840.6187425,
+      "source_sha256": "9e850f4fa956d4f51aa00ee7c06ae374430a425066ecdbbadfdce3ab0acf40a4",
+      "returncode": 0,
+      "seconds": 228.8,
+      "classification": "OVERSIZE_DEVICE",
+      "resources": {
+        "LUT": 1702681,
+        "FF": 1849738,
+        "DSP": 8715,
+        "BRAM_18K": 5768,
+        "URAM": 512
+      },
+      "slr_equivalents": {
+        "LUT": 3.9413912037037035,
+        "FF": 2.140900462962963,
+        "DSP": 2.8369140625,
+        "BRAM_18K": 4.291666666666667,
+        "URAM": 1.6
+      },
+      "compute_peak_slr": 3.9413912037037035,
+      "all_peak_slr": 4.291666666666667,
+      "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/geqrf_n1024_u512/hls/sol/syn/verilog",
+      "verilog_files": 36,
+      "estimated_clock_ns": "3.650",
+      "latency_min": "4304934",
+      "latency_max": "9169769275430",
+      "batch": "hls-nondataflow-scale-20260911-02",
+      "hls_resource_classification": "OVERSIZE_DEVICE",
+      "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+      "top_pipeline_type": "no",
+      "capacity_lower_bound_slrs": 5,
+      "near_60": false,
+      "loop_constraints_unmet": false,
+      "warning_count": 599,
+      "max_rss_kib": 1970564
+    },
+    {
+      "id": "gematrixinverse_n1024_u512",
+      "source": "sources/gematrixinverse/n1024_u512/kernel.cpp",
+      "top": "kernel_gematrixinverse_0",
+      "parameters": {
+        "NCU": 512,
+        "MAXN": 1024,
+        "LDA": 1024
+      },
+      "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+      "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646",
+      "status": "CANCELLED",
+      "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/gematrixinverse_n1024_u512",
+      "started_epoch": 1789095069.4543614,
+      "source_sha256": "dc93dff91d257855ca279411bda463cd6e797bc96dbabe681a66740f06501b59",
+      "returncode": -15,
+      "seconds": 711.1,
+      "errors": [],
+      "batch": "hls-nondataflow-scale-20260911-02",
+      "hls_resource_classification": null,
+      "classification": "EXCLUDED_NUMERICAL_FAILURE",
+      "cancellation": {
+        "reason": "Excluded: original and scaled gematrixinverse both fail A=2I inverse identity check with residual 0.5. Larger HLS runs cancelled; their resource totals remain unknown.",
+        "epoch": 1789095780.6033523,
+        "processes": [
+          {
+            "pid": 421321,
+            "argv": [
+              "/usr/bin/time",
+              "-v",
+              "-o",
+              "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/gematrixinverse_n1024_u512/time.txt",
+              "vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/gematrixinverse_n1024_u512"
+          },
+          {
+            "pid": 421322,
+            "argv": [
+              "/bin/bash",
+              "/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/bin/vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/gematrixinverse_n1024_u512"
+          },
+          {
+            "pid": 421340,
+            "argv": [
+              "/bin/bash",
+              "/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/bin/loader",
+              "-exec",
+              "vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/gematrixinverse_n1024_u512"
+          },
+          {
+            "pid": 421341,
+            "argv": [
+              "tee",
+              "vitis_hls.log"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/gematrixinverse_n1024_u512"
+          },
+          {
+            "pid": 421362,
+            "argv": [
+              "/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/gematrixinverse_n1024_u512"
+          }
+        ]
+      },
+      "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+      "loop_constraints_unmet": false,
+      "warning_count": 568,
+      "max_rss_kib": null
+    },
+    {
+      "id": "gematrixinverse_n512_u256",
+      "source": "sources/gematrixinverse/n512_u256/kernel.cpp",
+      "top": "kernel_gematrixinverse_0",
+      "parameters": {
+        "NCU": 256,
+        "MAXN": 512,
+        "LDA": 512
+      },
+      "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+      "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646",
+      "status": "CANCELLED",
+      "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n512_u256",
+      "started_epoch": 1789095075.401401,
+      "source_sha256": "c1d4fc27f53aa53d58d5d95294247dfacacd9e48633cba37671e1b4343f24a25",
+      "returncode": -15,
+      "seconds": 705.2,
+      "errors": [],
+      "batch": "hls-nondataflow-scale-20260911-01",
+      "hls_resource_classification": null,
+      "classification": "EXCLUDED_NUMERICAL_FAILURE",
+      "cancellation": {
+        "reason": "Excluded: original and scaled gematrixinverse both fail A=2I inverse identity check with residual 0.5. Larger HLS runs cancelled; their resource totals remain unknown.",
+        "epoch": 1789095780.6004627,
+        "processes": [
+          {
+            "pid": 421377,
+            "argv": [
+              "/usr/bin/time",
+              "-v",
+              "-o",
+              "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n512_u256/time.txt",
+              "vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n512_u256"
+          },
+          {
+            "pid": 421378,
+            "argv": [
+              "/bin/bash",
+              "/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/bin/vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n512_u256"
+          },
+          {
+            "pid": 421396,
+            "argv": [
+              "/bin/bash",
+              "/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/bin/loader",
+              "-exec",
+              "vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n512_u256"
+          },
+          {
+            "pid": 421397,
+            "argv": [
+              "tee",
+              "vitis_hls.log"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n512_u256"
+          },
+          {
+            "pid": 421418,
+            "argv": [
+              "/home/lduac/Software/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls",
+              "-f",
+              "run.tcl"
+            ],
+            "cwd": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gematrixinverse_n512_u256"
+          }
+        ]
+      },
+      "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+      "loop_constraints_unmet": false,
+      "warning_count": 312,
+      "max_rss_kib": null
+    },
+    {
+      "id": "gesvdj_n256_u32",
+      "source": "sources/gesvdj/n256_u32/kernel.cpp",
+      "top": "kernel_gesvdj_0",
+      "parameters": {
+        "MA": 256,
+        "UN": 32
+      },
+      "origin": "solver/L2/benchmarks/gesvdj/kernel_gesvdj.cpp",
+      "origin_sha256": "426b344444f202d23547329934ea3bf529dab0aced51dcbd2253b466552c6f61",
+      "status": "COMPLETE",
+      "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gesvdj_n256_u32",
+      "started_epoch": 1789095109.5101678,
+      "source_sha256": "3c68e36c567f68f056e30f4004b6e69f03fd9821ebab38e7b4cf39fe875f3ef8",
+      "returncode": 0,
+      "seconds": 90.2,
+      "classification": "INVALID_PARAMETERS",
+      "resources": {
+        "LUT": 145676,
+        "FF": 146121,
+        "DSP": 302,
+        "BRAM_18K": 625,
+        "URAM": 64
+      },
+      "slr_equivalents": {
+        "LUT": 0.33721296296296294,
+        "FF": 0.16912152777777778,
+        "DSP": 0.09830729166666667,
+        "BRAM_18K": 0.4650297619047619,
+        "URAM": 0.2
+      },
+      "compute_peak_slr": 0.33721296296296294,
+      "all_peak_slr": 0.4650297619047619,
+      "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/gesvdj_n256_u32/hls/sol/syn/verilog",
+      "verilog_files": 39,
+      "estimated_clock_ns": "3.650",
+      "latency_min": "689982",
+      "latency_max": "386849236",
+      "batch": "hls-nondataflow-scale-20260911-01",
+      "hls_resource_classification": "BELOW_60",
+      "parameter_validity": "NCU32 exceeds fixed tmp[16] indexing in gesvdj.hpp:871,895-923",
+      "top_pipeline_type": "no",
+      "capacity_lower_bound_slrs": 1,
+      "near_60": false,
+      "loop_constraints_unmet": false,
+      "warning_count": 769,
+      "max_rss_kib": 2514716
+    }
+  ],
+  "all_retained_payloads_verified": true
+}

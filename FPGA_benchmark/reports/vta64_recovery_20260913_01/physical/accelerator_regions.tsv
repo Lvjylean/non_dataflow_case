@@ -1,0 +1,5 @@
+kernel	slr	primitive_count	dsp48e2	ramb36	ramb18
+level0_i/level1/level1_i/ulp/vta64_kernel_1	SLR0	0	0	0	0
+level0_i/level1/level1_i/ulp/vta64_kernel_1	SLR1	0	0	0	0
+level0_i/level1/level1_i/ulp/vta64_kernel_1	SLR2	96012	0	589	2
+level0_i/level1/level1_i/ulp/vta64_kernel_1	SLR3	64727	0	641	0

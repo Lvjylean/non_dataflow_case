@@ -1,0 +1,66 @@
+{
+  "name": "vision_flip_8k_rgb_npc8",
+  "top": "flip_accel",
+  "cpp": "xf_flip_accel.cpp",
+  "origin": "vision/L2/examples/flip/xf_flip_accel.cpp",
+  "parameters_changed": {
+    "HEIGHT": "4320",
+    "WIDTH": "8192",
+    "NPPCX": "XF_NPPC8",
+    "IN_TYPE": "XF_8UC3",
+    "OUT_TYPE": "XF_8UC3",
+    "INPUT_PTR_WIDTH": "256",
+    "OUTPUT_PTR_WIDTH": "256",
+    "RGB": "1",
+    "GRAY": "0"
+  },
+  "expected_internal_dataflow": true,
+  "clock_ns": 5,
+  "part": "xcu250-figd2104-2L-e",
+  "status": "COMPLETE",
+  "started": 1789108780.9814854,
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision-nested-dataflow-20260911-v01/runs/vision_flip_8k_rgb_npc8",
+  "returncode": 0,
+  "seconds": 14.54,
+  "resources": {
+    "LUT": 23667,
+    "FF": 11064,
+    "DSP": 5,
+    "BRAM_18K": 92,
+    "URAM": 0
+  },
+  "slr_ratios": {
+    "LUT": 0.05478472222222222,
+    "FF": 0.012805555555555556,
+    "DSP": 0.0016276041666666667,
+    "BRAM_18K": 0.06845238095238096,
+    "URAM": 0.0
+  },
+  "size_resource": "BRAM_18K",
+  "size_slr_ratio": 0.06845238095238096,
+  "top_pipeline_type": "no",
+  "dataflow_reports": [
+    {
+      "report": "Mat2Axi_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Axi2Mat_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "AxiStream2Mat_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Mat2AxiStream_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "dataflow_in_loop_VITIS_LOOP_180_1_1_csynth.xml",
+      "pipeline_type": "dataflow"
+    }
+  ],
+  "lut_in_range": false,
+  "all_resources_fit_device": true
+}

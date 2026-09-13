@@ -1,0 +1,7 @@
+# Generated FPGA state belongs on the server only.
+runs/
+*.dcp
+*.bit
+*.xclbin
+.Xil/
+__pycache__/

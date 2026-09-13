@@ -1,0 +1,15 @@
+{
+  "run": "vta64_container_20260913_01",
+  "status": "PASS",
+  "checks": {
+    "exit_zero": true,
+    "kernel_count": true,
+    "connectivity_exact": true,
+    "ddr_high_addresses": true,
+    "address_window_covers_used_banks": true,
+    "data_clock_100_mhz": true,
+    "platform_interface": true,
+    "payload_compared": true
+  },
+  "scope": "Container metadata/payload consistency only; physical signoff and board validation are separate."
+}

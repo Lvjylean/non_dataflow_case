@@ -1,0 +1,98 @@
+{
+  "original_batch": "hls-nondataflow-scale-20260911-02",
+  "unchanged": true,
+  "files": {
+    "kernel_getrf_nopivot_0_control_s_axi.v": {
+      "bytes": 12092,
+      "sha256": "cff6459f8ff085afaf98dbc77f42b920851c16a57261343cb2f126b9664b4fcc"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_2_1024_512_Pipeline_LoopDiv.v": {
+      "bytes": 2342338,
+      "sha256": "036b81f0ca4b66f34283eec289428a1c15c5fe72ff372bb7c6580f41800ecba2"
+    },
+    "kernel_getrf_nopivot_0_rowUpdate_double_2_1024_Pipeline_LoopMulSub.v": {
+      "bytes": 29510,
+      "sha256": "2a8ccb4305a46dbe8c39618704e8ce2b3c2758513ceba93c5153963cd5623922"
+    },
+    "kernel_getrf_nopivot_0_ddiv_64ns_64ns_64_22_no_dsp_1.v": {
+      "bytes": 2208,
+      "sha256": "5d22b7c6ff8837dacb378674cb7495c3745e306e9c1ba83e7f962eec80d3fa38"
+    },
+    "kernel_getrf_nopivot_0_udiv_11ns_10ns_1_15_seq_1.v": {
+      "bytes": 4439,
+      "sha256": "10565ab45f7f88670a78ebf34cd5a09e1cf42858f698458ffd275cd1cd10c06e"
+    },
+    "kernel_getrf_nopivot_0.v": {
+      "bytes": 2559157,
+      "sha256": "ff43370d939ad9fb84bff43a672a634404f8390b058eb8c9e1a7a73a1a714f56"
+    },
+    "kernel_getrf_nopivot_0_dsub_64ns_64ns_64_5_full_dsp_1.v": {
+      "bytes": 2211,
+      "sha256": "6c4a8a807b4181dedae521ee8bc8991718ec30b1f57663ce2f3b8f1afab042e3"
+    },
+    "kernel_getrf_nopivot_0_matA_XPM_MEMORY_URAM_1R1W.v": {
+      "bytes": 6336,
+      "sha256": "1abf8e3162089d18eb745a58d6ad622b57a909ecddb1dbce2c1dbabe52db4978"
+    },
+    "kernel_getrf_nopivot_0_mul_10ns_2ns_12_1_1.v": {
+      "bytes": 571,
+      "sha256": "73c91bdd560df9f673da376dcce3b99fd161e94110ea9115db2c3852112ea789"
+    },
+    "kernel_getrf_nopivot_0_dmul_64ns_64ns_64_5_max_dsp_1.v": {
+      "bytes": 2208,
+      "sha256": "56eb745eeb389df4ec5e054f89007fefc485cfe241283a5f8c5486863ca1017e"
+    },
+    "kernel_getrf_nopivot_0_dsub_64ns_64ns_64_5_full_dsp_1_ip.tcl": {
+      "bytes": 2624,
+      "sha256": "849fd3f0b636fc75eeb2e40012251518d761137b05bdfaa4638190bcd3b3215a"
+    },
+    "kernel_getrf_nopivot_0_sparsemux_1025_9_64_1_1.v": {
+      "bytes": 75822,
+      "sha256": "ce1520bc9c1512eedee51e7548d106b650ab342fb94ec8fe0ec7a73753c7823c"
+    },
+    "kernel_getrf_nopivot_0_kernel_getrf_nopivot_0_Pipeline_LoopWrite_VITIS_LOOP_138_2.v": {
+      "bytes": 283642,
+      "sha256": "f54212cf93443ebd3f118a091e5ac9e70033e00f45556a63b854a72f351c1fad"
+    },
+    "kernel_getrf_nopivot_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip.tcl": {
+      "bytes": 2608,
+      "sha256": "878e4bd5db6f4806c477eff80ec66cd411a56d9217fc58bcd6e17234d57f8aeb"
+    },
+    "kernel_getrf_nopivot_0_kernel_getrf_nopivot_0_Pipeline_LoopRead_VITIS_LOOP_128_1.v": {
+      "bytes": 414638,
+      "sha256": "25547e109eaf5dd71830ad3e361aa38630c9a7677681e38dc9ebe63003ecb1f0"
+    },
+    "kernel_getrf_nopivot_0_flow_control_loop_pipe_sequential_init.v": {
+      "bytes": 2788,
+      "sha256": "51f6c5130cf1006e213edc63341bdb3243d36ebbcbb85d27b879a69de7dc3a91"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_2_1024_512_s_pivot_RAM_2P_BRAM_1R1W.v": {
+      "bytes": 1105,
+      "sha256": "f6d334459f325ed2e4ac24af9f5ea1ca9b6e8c5b078edf463e74acf21c813d88"
+    },
+    "kernel_getrf_nopivot_0_urem_11ns_10ns_10_15_1.v": {
+      "bytes": 3910,
+      "sha256": "75fdb47945a020139c17fc3f630093bcf913915c8f1dcbd871a80e34c0f3b858"
+    },
+    "kernel_getrf_nopivot_0_gmem0_m_axi.v": {
+      "bytes": 98268,
+      "sha256": "2ab3152326450d014d439be28619148e355d6afac7cf54b37ab082f20f0f7d73"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_2_1024_512_Pipeline_LoopPivot.v": {
+      "bytes": 650322,
+      "sha256": "6e43f5aea4294aaca6189ca3d794fa9d84ca75a1f99908e2872971627960ab78"
+    },
+    "kernel_getrf_nopivot_0_dmul_64ns_64ns_64_5_max_dsp_1_ip.tcl": {
+      "bytes": 2610,
+      "sha256": "fb4dd6ce2558ce24ef5ca3656cf45cf8eff847b0c462188fc143e04657343255"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_2_1024_512_s.v": {
+      "bytes": 4802070,
+      "sha256": "a2d4e9e8b48f000998f7bb0a89f504263b217ee4b8f45d5b3aad1a4714bdcbbb"
+    },
+    "kernel_getrf_nopivot_0_rowUpdate_double_2_1024_s.v": {
+      "bytes": 8289,
+      "sha256": "ca9d766090f99900aa272a11c3bad04170ae8c409284e9320ab566d6b95885dd"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "name": "vision_tvl1_optical_flow_1024x1024_npc2",
+  "top": "tvl1_accel",
+  "cpp": "xf_tvl1_accel.cpp",
+  "origin": "vision/L3/examples/tvl1/xf_tvl1_accel.cpp",
+  "parameters_changed": {
+    "WIDTH": "1024",
+    "HEIGHT": "1024",
+    "NEWWIDTH": "1024",
+    "NEWHEIGHT": "1024"
+  },
+  "expected_internal_dataflow": true,
+  "clock_ns": 5,
+  "part": "xcu250-figd2104-2L-e",
+  "status": "COMPLETE",
+  "started": 1789109447.550576,
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_tvl1_optical_flow_1024x1024_npc2__LUT_59p6pctSLR__20260911_v04",
+  "returncode": 0,
+  "seconds": 166.51,
+  "resources": {
+    "LUT": 257500,
+    "FF": 136532,
+    "DSP": 345,
+    "BRAM_18K": 258,
+    "URAM": 6
+  },
+  "slr_ratios": {
+    "LUT": 0.5960648148148148,
+    "FF": 0.15802314814814813,
+    "DSP": 0.1123046875,
+    "BRAM_18K": 0.19196428571428573,
+    "URAM": 0.01875
+  },
+  "size_resource": "LUT",
+  "size_slr_ratio": 0.5960648148148148,
+  "top_pipeline_type": "no",
+  "dataflow_reports": [
+    {
+      "report": "Axi2Mat_1_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Mat2Axi_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Axi2Mat_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "warpGradientFunct_128_64_0_16_0_8_1024_1024_1_32_6_s_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Mat2AxiStream_1_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "TVL_INNER_Core_64_0_16_0_8_1024_1024_2_32_32_s_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "resizeScale_flow_64_8_16_1024_1024_1_32_s_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "merge_out_64_128_8_1024_1024_1_16_s_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "AxiStream2Mat_1_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "medianBlurFunct_1inst_64_8_1024_1024_1_5_2_s_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "AxiStream2Mat_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Mat2Axi_1_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Mat2AxiStream_csynth.xml",
+      "pipeline_type": "dataflow"
+    }
+  ],
+  "lut_in_range": true,
+  "all_resources_fit_device": true,
+  "batch": "vision-nested-dataflow-20260911-v04",
+  "accepted": true,
+  "internal_dataflow": true,
+  "size_percent": 59.606481481481474,
+  "reason": "PASS",
+  "directory": "vision_tvl1_optical_flow_1024x1024_npc2__LUT_59p6pctSLR__20260911_v04",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision-nested-dataflow-20260911-v04/runs/vision_tvl1_optical_flow_1024x1024_npc2",
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_tvl1_optical_flow_1024x1024_npc2__LUT_59p6pctSLR__20260911_v04/hls/sol/syn/verilog",
+  "source_sha256": "c1d668afee0eb0c9ad52bf5ae4a2aa975b8fe6925fd28b2bfce8304e7dac7cd9"
+}

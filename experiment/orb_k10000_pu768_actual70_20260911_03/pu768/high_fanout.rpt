@@ -1,0 +1,71 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri Sep 11 23:54:34 2026
+| Host         : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_high_fanout_nets -max_nets 50 -file high_fanout.rpt
+| Design       : bfmatcher_accel
+| Device       : xcu250
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| Net Name                                                                                                                                                      | Fanout | Driver Type |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| grp_bfMatcher_768_10000_s_fu_108/ap_CS_fsm_state17_BUFG                                                                                                       |  26114 | BUFGCE      |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_2   |    453 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_74  |    442 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_11  |    436 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_27  |    436 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_37  |    410 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_51  |    410 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_35  |    384 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_114 |    379 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_20  |    374 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_55  |    373 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_47  |    371 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_45  |    368 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_42  |    363 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_24  |    360 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_39  |    357 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_32  |    355 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_38  |    351 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_62  |    349 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_19  |    346 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_30  |    345 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init          |    342 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_43  |    339 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_8   |    337 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_57  |    328 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_71  |    328 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_140 |    326 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_73  |    325 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_72  |    320 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_277 |    316 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_56  |    311 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_66  |    311 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_94  |    311 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_49  |    309 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_INIT_LOOP_1_fu_30995/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_1           |    305 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_53  |    304 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_61  |    303 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_INIT_LOOP_1_fu_30995/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_72          |    300 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_INIT_LOOP_1_fu_30995/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_38          |    297 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_18  |    292 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_29  |    289 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_INIT_LOOP_1_fu_30995/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_22          |    287 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_INIT_LOOP_1_fu_30995/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_28          |    286 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_INIT_LOOP_1_fu_30995/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_47          |    286 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_50  |    286 | LUT2        |
+| ap_CS_fsm_state1                                                                                                                                              |    281 | FDSE        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_INIT_LOOP_1_fu_30995/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_21          |    280 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_INIT_LOOP_1_fu_30995/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_16          |    279 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_PROCESS_LOOP_DESC_2_fu_36378/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_16  |    277 | LUT2        |
+| grp_bfMatcher_768_10000_s_fu_108/grp_bfMatcher_768_10000_Pipeline_INIT_LOOP_1_fu_30995/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_11          |    276 | LUT2        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+
+

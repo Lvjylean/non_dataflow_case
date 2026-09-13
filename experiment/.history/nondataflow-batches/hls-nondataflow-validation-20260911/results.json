@@ -1,0 +1,43 @@
+[
+  {
+    "id": "getrf_n1024_u512",
+    "returncode": 0,
+    "seconds": 7.184241533279419,
+    "status": "PASS",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=1024 KIND=1 ENTRIES=1152 WORST_RELATIVE=3.1607772943064956e-15",
+      "NUMERICAL_SAMPLE_PASS"
+    ]
+  },
+  {
+    "id": "getrf_nopivot_n1024_u512",
+    "returncode": 0,
+    "seconds": 6.258761644363403,
+    "status": "PASS",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=1024 KIND=2 ENTRIES=1152 WORST_RELATIVE=3.1607772943064956e-15",
+      "NUMERICAL_SAMPLE_PASS"
+    ]
+  },
+  {
+    "id": "gematrixinverse_n256_u128",
+    "returncode": 1,
+    "seconds": 5.140669584274292,
+    "status": "FAIL",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=256 KIND=3 ENTRIES=384 WORST_RELATIVE=0.92980322838186347",
+      "NUMERICAL_SAMPLE_FAIL",
+      "ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value."
+    ]
+  },
+  {
+    "id": "geqrf_n768_u384",
+    "returncode": 0,
+    "seconds": 5.451059341430664,
+    "status": "PASS",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=768 KIND=4 ENTRIES=896 WORST_RELATIVE=1.3310463842231002e-12",
+      "NUMERICAL_SAMPLE_PASS"
+    ]
+  }
+]

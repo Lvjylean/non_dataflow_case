@@ -1,0 +1,64 @@
+{
+  "id": "trtrs_n1024_u512",
+  "source": "sources/kernel.cpp",
+  "top": "kernel_trtrs_0",
+  "parameters": {
+    "NCU": 512,
+    "MAXN": 1024,
+    "LDA": 1024,
+    "LDB": 2
+  },
+  "origin": "solver/L2/tests/hw/trtrs/kernel_trtrs.cpp",
+  "origin_sha256": "96c9bdf3ab3b8e236afefdbfb1a354e6ebec8f174aa9cd3f81544ce97c20f375",
+  "status": "COMPLETE",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/trtrs_20260911_110300_v05",
+  "started_epoch": 1789095780.6058888,
+  "source_sha256": "84ffff4df336693675c8b442b13881b448a5c493c9224cd35e92cbd3d272eacb",
+  "returncode": 0,
+  "seconds": 190.3,
+  "classification": "PASS_COMPUTE_60",
+  "resources": {
+    "LUT": 354538,
+    "FF": 268262,
+    "DSP": 1412,
+    "BRAM_18K": 12,
+    "URAM": 512
+  },
+  "slr_equivalents": {
+    "LUT": 0.8206898148148148,
+    "FF": 0.3104884259259259,
+    "DSP": 0.4596354166666667,
+    "BRAM_18K": 0.008928571428571428,
+    "URAM": 1.6
+  },
+  "compute_peak_slr": 0.8206898148148148,
+  "all_peak_slr": 1.6,
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/trtrs_20260911_110300_v05/hls/sol/syn/verilog",
+  "verilog_files": 17,
+  "estimated_clock_ns": "3.650",
+  "latency_min": "undef",
+  "latency_max": "undef",
+  "hls_resource_classification": "PASS_COMPUTE_60",
+  "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+  "top_pipeline_type": "no",
+  "capacity_lower_bound_slrs": 2,
+  "near_60": false,
+  "loop_constraints_unmet": true,
+  "warning_count": 1065,
+  "max_rss_kib": 1681864,
+  "case": "trtrs",
+  "directory": "trtrs_20260911_110300_v05",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/trtrs_n1024_u512",
+  "validation": {
+    "id": "trtrs_n1024_u512",
+    "returncode": 0,
+    "seconds": 4.980003356933594,
+    "status": "PASS",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=1024 KIND=5 ALL_RHS=2048 WORST_ABSOLUTE=1.6653345369377348e-16",
+      "NUMERICAL_SAMPLE_PASS"
+    ]
+  },
+  "original_batch": "hls-nondataflow-scale-20260911-02",
+  "original_source": "sources/trtrs/n1024_u512/kernel.cpp"
+}

@@ -1,0 +1,64 @@
+{
+  "name": "vision_isp_bayer_4k_npc4",
+  "top": "ISPPipeline_accel",
+  "cpp": "xf_isp_accel.cpp",
+  "origin": "vision/L3/examples/isppipeline/xf_isp_accel.cpp",
+  "parameters_changed": {
+    "XF_NPPCX": "XF_NPPC4",
+    "INPUT_PTR_WIDTH": "128",
+    "OUTPUT_PTR_WIDTH": "128"
+  },
+  "expected_internal_dataflow": true,
+  "clock_ns": 5,
+  "part": "xcu250-figd2104-2L-e",
+  "status": "COMPLETE",
+  "started": 1789109165.3960578,
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision-nested-dataflow-20260911-v03/runs/vision_isp_bayer_4k_npc4",
+  "returncode": 0,
+  "seconds": 59.68,
+  "resources": {
+    "LUT": 58321,
+    "FF": 31621,
+    "DSP": 169,
+    "BRAM_18K": 156,
+    "URAM": 6
+  },
+  "slr_ratios": {
+    "LUT": 0.1350023148148148,
+    "FF": 0.03659837962962963,
+    "DSP": 0.055013020833333336,
+    "BRAM_18K": 0.11607142857142858,
+    "URAM": 0.01875
+  },
+  "size_resource": "LUT",
+  "size_slr_ratio": 0.1350023148148148,
+  "top_pipeline_type": "no",
+  "dataflow_reports": [
+    {
+      "report": "Mat2Axi_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Axi2Mat_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "AxiStream2Mat_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "fifo_awb_13_13_2160_3840_4_2_2_s_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "ISPpipeline_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Mat2AxiStream_csynth.xml",
+      "pipeline_type": "dataflow"
+    }
+  ],
+  "lut_in_range": false,
+  "all_resources_fit_device": true
+}

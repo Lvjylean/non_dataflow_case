@@ -1,0 +1,7 @@
+metric	value
+physical_signal_violations	0
+unknown_physical_counts	0
+fd_lut_above256_logical	1
+other_signal_above256_logical	0
+max_signal_logical_loads_among_high_logical	281
+max_signal_physical_site_pins_among_high_logical	124

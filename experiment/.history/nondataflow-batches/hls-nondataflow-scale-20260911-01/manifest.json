@@ -1,0 +1,379 @@
+{
+  "batch": "hls-nondataflow-scale-20260911-01",
+  "part": "xcu250-figd2104-2L-e",
+  "clock_ns": 5.0,
+  "max_workers": 3,
+  "cases": {
+    "getrf": [
+      {
+        "id": "getrf_baseline",
+        "source": "sources/getrf/baseline/kernel.cpp",
+        "top": "kernel_getrf_0",
+        "parameters": {
+          "NRC": 16,
+          "NCU": 1
+        },
+        "origin": "solver/L2/tests/hw/getrf/kernel_getrf.cpp",
+        "origin_sha256": "7bb37531498528d7e52f5b4d7949abd50115bcd9d23f7893169d8cabca50dcd7"
+      },
+      {
+        "id": "getrf_n256_u32",
+        "source": "sources/getrf/n256_u32/kernel.cpp",
+        "top": "kernel_getrf_0",
+        "parameters": {
+          "NRC": 256,
+          "NCU": 32
+        },
+        "origin": "solver/L2/tests/hw/getrf/kernel_getrf.cpp",
+        "origin_sha256": "7bb37531498528d7e52f5b4d7949abd50115bcd9d23f7893169d8cabca50dcd7"
+      },
+      {
+        "id": "getrf_n256_u128",
+        "source": "sources/getrf/n256_u128/kernel.cpp",
+        "top": "kernel_getrf_0",
+        "parameters": {
+          "NRC": 256,
+          "NCU": 128
+        },
+        "origin": "solver/L2/tests/hw/getrf/kernel_getrf.cpp",
+        "origin_sha256": "7bb37531498528d7e52f5b4d7949abd50115bcd9d23f7893169d8cabca50dcd7"
+      },
+      {
+        "id": "getrf_n512_u256",
+        "source": "sources/getrf/n512_u256/kernel.cpp",
+        "top": "kernel_getrf_0",
+        "parameters": {
+          "NRC": 512,
+          "NCU": 256
+        },
+        "origin": "solver/L2/tests/hw/getrf/kernel_getrf.cpp",
+        "origin_sha256": "7bb37531498528d7e52f5b4d7949abd50115bcd9d23f7893169d8cabca50dcd7"
+      }
+    ],
+    "getrf_nopivot": [
+      {
+        "id": "getrf_nopivot_baseline",
+        "source": "sources/getrf_nopivot/baseline/kernel.cpp",
+        "top": "kernel_getrf_nopivot_0",
+        "parameters": {
+          "NRC": 16,
+          "NCU": 1
+        },
+        "origin": "solver/L2/tests/hw/getrf_nopivot/kernel_getrf_nopivot.cpp",
+        "origin_sha256": "68e9663364703eacf980593d3514c557644a8b98c3bc7d36d340ea2dac495e2e"
+      },
+      {
+        "id": "getrf_nopivot_n256_u32",
+        "source": "sources/getrf_nopivot/n256_u32/kernel.cpp",
+        "top": "kernel_getrf_nopivot_0",
+        "parameters": {
+          "NRC": 256,
+          "NCU": 32
+        },
+        "origin": "solver/L2/tests/hw/getrf_nopivot/kernel_getrf_nopivot.cpp",
+        "origin_sha256": "68e9663364703eacf980593d3514c557644a8b98c3bc7d36d340ea2dac495e2e"
+      },
+      {
+        "id": "getrf_nopivot_n256_u128",
+        "source": "sources/getrf_nopivot/n256_u128/kernel.cpp",
+        "top": "kernel_getrf_nopivot_0",
+        "parameters": {
+          "NRC": 256,
+          "NCU": 128
+        },
+        "origin": "solver/L2/tests/hw/getrf_nopivot/kernel_getrf_nopivot.cpp",
+        "origin_sha256": "68e9663364703eacf980593d3514c557644a8b98c3bc7d36d340ea2dac495e2e"
+      },
+      {
+        "id": "getrf_nopivot_n512_u256",
+        "source": "sources/getrf_nopivot/n512_u256/kernel.cpp",
+        "top": "kernel_getrf_nopivot_0",
+        "parameters": {
+          "NRC": 512,
+          "NCU": 256
+        },
+        "origin": "solver/L2/tests/hw/getrf_nopivot/kernel_getrf_nopivot.cpp",
+        "origin_sha256": "68e9663364703eacf980593d3514c557644a8b98c3bc7d36d340ea2dac495e2e"
+      }
+    ],
+    "geqrf": [
+      {
+        "id": "geqrf_baseline",
+        "source": "sources/geqrf/baseline/kernel.cpp",
+        "top": "kernel_geqrf_0",
+        "parameters": {
+          "MA": 16,
+          "NA": 16,
+          "NCU": 4
+        },
+        "origin": "solver/L2/tests/hw/geqrf/kernel_geqrf.cpp",
+        "origin_sha256": "6bef3f79c731d603ffff6bed45b35a92ae4e5fb6e33658d61101c5a9cf793527"
+      },
+      {
+        "id": "geqrf_n256_u32",
+        "source": "sources/geqrf/n256_u32/kernel.cpp",
+        "top": "kernel_geqrf_0",
+        "parameters": {
+          "MA": 256,
+          "NA": 256,
+          "NCU": 32
+        },
+        "origin": "solver/L2/tests/hw/geqrf/kernel_geqrf.cpp",
+        "origin_sha256": "6bef3f79c731d603ffff6bed45b35a92ae4e5fb6e33658d61101c5a9cf793527"
+      },
+      {
+        "id": "geqrf_n256_u128",
+        "source": "sources/geqrf/n256_u128/kernel.cpp",
+        "top": "kernel_geqrf_0",
+        "parameters": {
+          "MA": 256,
+          "NA": 256,
+          "NCU": 128
+        },
+        "origin": "solver/L2/tests/hw/geqrf/kernel_geqrf.cpp",
+        "origin_sha256": "6bef3f79c731d603ffff6bed45b35a92ae4e5fb6e33658d61101c5a9cf793527"
+      },
+      {
+        "id": "geqrf_n512_u256",
+        "source": "sources/geqrf/n512_u256/kernel.cpp",
+        "top": "kernel_geqrf_0",
+        "parameters": {
+          "MA": 512,
+          "NA": 512,
+          "NCU": 256
+        },
+        "origin": "solver/L2/tests/hw/geqrf/kernel_geqrf.cpp",
+        "origin_sha256": "6bef3f79c731d603ffff6bed45b35a92ae4e5fb6e33658d61101c5a9cf793527"
+      }
+    ],
+    "gematrixinverse": [
+      {
+        "id": "gematrixinverse_baseline",
+        "source": "sources/gematrixinverse/baseline/kernel.cpp",
+        "top": "kernel_gematrixinverse_0",
+        "parameters": {
+          "NCU": 2,
+          "MAXN": 4,
+          "LDA": 4
+        },
+        "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+        "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646"
+      },
+      {
+        "id": "gematrixinverse_n256_u32",
+        "source": "sources/gematrixinverse/n256_u32/kernel.cpp",
+        "top": "kernel_gematrixinverse_0",
+        "parameters": {
+          "NCU": 32,
+          "MAXN": 256,
+          "LDA": 256
+        },
+        "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+        "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646"
+      },
+      {
+        "id": "gematrixinverse_n256_u128",
+        "source": "sources/gematrixinverse/n256_u128/kernel.cpp",
+        "top": "kernel_gematrixinverse_0",
+        "parameters": {
+          "NCU": 128,
+          "MAXN": 256,
+          "LDA": 256
+        },
+        "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+        "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646"
+      },
+      {
+        "id": "gematrixinverse_n512_u256",
+        "source": "sources/gematrixinverse/n512_u256/kernel.cpp",
+        "top": "kernel_gematrixinverse_0",
+        "parameters": {
+          "NCU": 256,
+          "MAXN": 512,
+          "LDA": 512
+        },
+        "origin": "solver/L2/tests/hw/gematrixinverse/kernel_gematrixinverse.cpp",
+        "origin_sha256": "16cc30e06f14a381a43a5926253e1cd2ba873fc79162e78d1d3acffba0edb646"
+      }
+    ],
+    "trtrs": [
+      {
+        "id": "trtrs_baseline",
+        "source": "sources/trtrs/baseline/kernel.cpp",
+        "top": "kernel_trtrs_0",
+        "parameters": {
+          "NCU": 2,
+          "MAXN": 16,
+          "LDA": 16,
+          "LDB": 2
+        },
+        "origin": "solver/L2/tests/hw/trtrs/kernel_trtrs.cpp",
+        "origin_sha256": "96c9bdf3ab3b8e236afefdbfb1a354e6ebec8f174aa9cd3f81544ce97c20f375"
+      },
+      {
+        "id": "trtrs_n256_u32",
+        "source": "sources/trtrs/n256_u32/kernel.cpp",
+        "top": "kernel_trtrs_0",
+        "parameters": {
+          "NCU": 32,
+          "MAXN": 256,
+          "LDA": 256,
+          "LDB": 2
+        },
+        "origin": "solver/L2/tests/hw/trtrs/kernel_trtrs.cpp",
+        "origin_sha256": "96c9bdf3ab3b8e236afefdbfb1a354e6ebec8f174aa9cd3f81544ce97c20f375"
+      },
+      {
+        "id": "trtrs_n256_u128",
+        "source": "sources/trtrs/n256_u128/kernel.cpp",
+        "top": "kernel_trtrs_0",
+        "parameters": {
+          "NCU": 128,
+          "MAXN": 256,
+          "LDA": 256,
+          "LDB": 2
+        },
+        "origin": "solver/L2/tests/hw/trtrs/kernel_trtrs.cpp",
+        "origin_sha256": "96c9bdf3ab3b8e236afefdbfb1a354e6ebec8f174aa9cd3f81544ce97c20f375"
+      },
+      {
+        "id": "trtrs_n512_u256",
+        "source": "sources/trtrs/n512_u256/kernel.cpp",
+        "top": "kernel_trtrs_0",
+        "parameters": {
+          "NCU": 256,
+          "MAXN": 512,
+          "LDA": 512,
+          "LDB": 2
+        },
+        "origin": "solver/L2/tests/hw/trtrs/kernel_trtrs.cpp",
+        "origin_sha256": "96c9bdf3ab3b8e236afefdbfb1a354e6ebec8f174aa9cd3f81544ce97c20f375"
+      }
+    ],
+    "gesvdj": [
+      {
+        "id": "gesvdj_baseline",
+        "source": "sources/gesvdj/baseline/kernel.cpp",
+        "top": "kernel_gesvdj_0",
+        "parameters": {
+          "MA": 16
+        },
+        "origin": "solver/L2/benchmarks/gesvdj/kernel_gesvdj.cpp",
+        "origin_sha256": "426b344444f202d23547329934ea3bf529dab0aced51dcbd2253b466552c6f61"
+      },
+      {
+        "id": "gesvdj_n64_u8",
+        "source": "sources/gesvdj/n64_u8/kernel.cpp",
+        "top": "kernel_gesvdj_0",
+        "parameters": {
+          "MA": 64,
+          "UN": 8
+        },
+        "origin": "solver/L2/benchmarks/gesvdj/kernel_gesvdj.cpp",
+        "origin_sha256": "426b344444f202d23547329934ea3bf529dab0aced51dcbd2253b466552c6f61"
+      },
+      {
+        "id": "gesvdj_n128_u16",
+        "source": "sources/gesvdj/n128_u16/kernel.cpp",
+        "top": "kernel_gesvdj_0",
+        "parameters": {
+          "MA": 128,
+          "UN": 16
+        },
+        "origin": "solver/L2/benchmarks/gesvdj/kernel_gesvdj.cpp",
+        "origin_sha256": "426b344444f202d23547329934ea3bf529dab0aced51dcbd2253b466552c6f61"
+      },
+      {
+        "id": "gesvdj_n256_u32",
+        "source": "sources/gesvdj/n256_u32/kernel.cpp",
+        "top": "kernel_gesvdj_0",
+        "parameters": {
+          "MA": 256,
+          "UN": 32
+        },
+        "origin": "solver/L2/benchmarks/gesvdj/kernel_gesvdj.cpp",
+        "origin_sha256": "426b344444f202d23547329934ea3bf529dab0aced51dcbd2253b466552c6f61"
+      }
+    ],
+    "gtsv": [
+      {
+        "id": "gtsv_baseline",
+        "source": "sources/gtsv/baseline/kernel.cpp",
+        "top": "kernel_gtsv_0",
+        "parameters": {
+          "NRC": 16,
+          "NCU": 1
+        },
+        "origin": "solver/L2/benchmarks/gtsv/kernel_gtsv.cpp",
+        "origin_sha256": "67f91bc348d1f1d7a954e26c18294e4cf76f6f13fd72ffbfeba8ecd584fd2839"
+      },
+      {
+        "id": "gtsv_n256_u32",
+        "source": "sources/gtsv/n256_u32/kernel.cpp",
+        "top": "kernel_gtsv_0",
+        "parameters": {
+          "NRC": 256,
+          "NCU": 32
+        },
+        "origin": "solver/L2/benchmarks/gtsv/kernel_gtsv.cpp",
+        "origin_sha256": "67f91bc348d1f1d7a954e26c18294e4cf76f6f13fd72ffbfeba8ecd584fd2839"
+      },
+      {
+        "id": "gtsv_n256_u128",
+        "source": "sources/gtsv/n256_u128/kernel.cpp",
+        "top": "kernel_gtsv_0",
+        "parameters": {
+          "NRC": 256,
+          "NCU": 128
+        },
+        "origin": "solver/L2/benchmarks/gtsv/kernel_gtsv.cpp",
+        "origin_sha256": "67f91bc348d1f1d7a954e26c18294e4cf76f6f13fd72ffbfeba8ecd584fd2839"
+      },
+      {
+        "id": "gtsv_n512_u256",
+        "source": "sources/gtsv/n512_u256/kernel.cpp",
+        "top": "kernel_gtsv_0",
+        "parameters": {
+          "NRC": 512,
+          "NCU": 256
+        },
+        "origin": "solver/L2/benchmarks/gtsv/kernel_gtsv.cpp",
+        "origin_sha256": "67f91bc348d1f1d7a954e26c18294e4cf76f6f13fd72ffbfeba8ecd584fd2839"
+      }
+    ],
+    "rsa": [
+      {
+        "id": "rsa_w2048",
+        "source": "sources/rsa/2048/kernel.cpp",
+        "top": "rsa_test",
+        "parameters": {
+          "N": 2048,
+          "L": 20
+        },
+        "origin": "security/L1/tests/rsa/test.cpp"
+      },
+      {
+        "id": "rsa_w4096",
+        "source": "sources/rsa/4096/kernel.cpp",
+        "top": "rsa_test",
+        "parameters": {
+          "N": 4096,
+          "L": 20
+        },
+        "origin": "security/L1/tests/rsa/test.cpp"
+      },
+      {
+        "id": "rsa_w8192",
+        "source": "sources/rsa/8192/kernel.cpp",
+        "top": "rsa_test",
+        "parameters": {
+          "N": 8192,
+          "L": 20
+        },
+        "origin": "security/L1/tests/rsa/test.cpp"
+      }
+    ]
+  },
+  "source_revision": "3ab1ecd20",
+  "acceptance": "max(LUT/432000,FF/864000,DSP/3072)>=0.60 and every resource <= device capacity; storage-only listed separately; HLS estimates only"
+}

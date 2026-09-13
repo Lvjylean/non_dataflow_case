@@ -1,0 +1,34 @@
+[
+  {
+    "id": "gematrixinverse_baseline",
+    "returncode": 1,
+    "seconds": 4.897613048553467,
+    "status": "FAIL",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=4 KIND=6 ENTRIES=132 WORST_RELATIVE=0.5",
+      "NUMERICAL_SAMPLE_FAIL",
+      "ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value."
+    ]
+  },
+  {
+    "id": "gematrixinverse_n256_u128",
+    "returncode": 1,
+    "seconds": 5.072181463241577,
+    "status": "FAIL",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=256 KIND=6 ENTRIES=384 WORST_RELATIVE=0.5",
+      "NUMERICAL_SAMPLE_FAIL",
+      "ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value."
+    ]
+  },
+  {
+    "id": "trtrs_n1024_u512",
+    "returncode": 0,
+    "seconds": 4.980003356933594,
+    "status": "PASS",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=1024 KIND=5 ALL_RHS=2048 WORST_ABSOLUTE=1.6653345369377348e-16",
+      "NUMERICAL_SAMPLE_PASS"
+    ]
+  }
+]

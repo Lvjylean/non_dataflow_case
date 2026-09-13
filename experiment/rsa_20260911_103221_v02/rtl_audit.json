@@ -1,0 +1,62 @@
+{
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "unchanged": true,
+  "files": {
+    "rsa_test_icmp_4096ns_4096ns_1_2_1.v": {
+      "bytes": 3397,
+      "sha256": "1364204d271a75fb83c3e9f81c19cf22bb840b63966ddf02976293c815afe7c7"
+    },
+    "rsa_test_icmp_4096ns_4096ns_1_2_1_sub.v": {
+      "bytes": 2583,
+      "sha256": "a0c5a60cc143ff5f8da42083f0f680c0c61cab66081955890ad3591be295fa54"
+    },
+    "rsa_test.v": {
+      "bytes": 3409020,
+      "sha256": "4ecfd443af0a68c51afa963eaddca7cc617050769d73f902a2f1e71e5d555baf"
+    },
+    "rsa_test_sub_4096ns_4096ns_4096_2_1.v": {
+      "bytes": 2575,
+      "sha256": "a6361650566430dd5e7f23998fcd4f81dba572123151ea16b5a8015ac2c8c23a"
+    },
+    "rsa_test_sub_4097ns_4097ns_4097_2_1.v": {
+      "bytes": 2575,
+      "sha256": "75e1f831de78ccfb28578c125944443cf511cced534542d7936515823ee95aac"
+    },
+    "rsa_test_icmp_4097ns_4097ns_1_2_1.v": {
+      "bytes": 3397,
+      "sha256": "47d493e4fa4652cb641b2aa1a14da7708484a5cda1e50a0814c7c9fadc10c12e"
+    },
+    "rsa_test_add_4098ns_4098ns_4098_2_1.v": {
+      "bytes": 2574,
+      "sha256": "d3ff7c6ec7d57c131d201c7230bab8f1bcf982e180b5e047ef01587679d2d754"
+    },
+    "rsa_test_add_4097ns_4097ns_4097_2_1.v": {
+      "bytes": 2574,
+      "sha256": "e01a1003c8a028adb71cf989413ebd2a7b5dfe874bb4b4859be298d6089cb173"
+    },
+    "rsa_test_icmp_4097ns_4097ns_1_2_1_sub.v": {
+      "bytes": 2583,
+      "sha256": "06a3d62f52a66452ae38c996d6411f2779e7e9e48658cdeb6859e3c8a535032f"
+    },
+    "rsa_test_flow_control_loop_pipe_sequential_init.v": {
+      "bytes": 2774,
+      "sha256": "b13c81173e6f04eda25ccb5f431bcdcda0b706486b7b58c0ec661d9758b8df4b"
+    },
+    "rsa_test_monProduct_4096_s.v": {
+      "bytes": 7476,
+      "sha256": "03fd3a15170b59db845448bfe4a087804d810b2da2aa6342d2985a5f8c5a5f3d"
+    },
+    "rsa_test_productMod_4096_s.v": {
+      "bytes": 14179,
+      "sha256": "a6028ce85e9751cacc91fe4c5c63554d64ab5e6e67b015a25360107f26f022a3"
+    },
+    "rsa_test_monProduct_4096_Pipeline_MON_PRODUCT_MOD.v": {
+      "bytes": 9860,
+      "sha256": "f2aead41dc3d0ffc1a7407ad67234a54c27c771725cdd369293d335f41c5b774"
+    },
+    "rsa_test_urem_4097s_4096ns_4096_4101_seq_1.v": {
+      "bytes": 4415,
+      "sha256": "1392aa3ff71e219c5b03217308c8342efa181ad5de9bb36d13d71ed1087c3ae8"
+    }
+  }
+}

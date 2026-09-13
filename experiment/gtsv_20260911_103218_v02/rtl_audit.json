@@ -1,0 +1,102 @@
+{
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "unchanged": true,
+  "files": {
+    "kernel_gtsv_0_gmem2_m_axi.v": {
+      "bytes": 97881,
+      "sha256": "695ac3dfb9c3ce4d1c2bf37dd6a4e1e3266690e4112369c69c8f844841f4e943"
+    },
+    "kernel_gtsv_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip.tcl": {
+      "bytes": 2563,
+      "sha256": "5e0787d4c5c3a391a5af92ee47a1bc7bc5b80c91270ed23ec4213485fbe0efe8"
+    },
+    "kernel_gtsv_0_dmul_64ns_64ns_64_5_max_dsp_1_ip.tcl": {
+      "bytes": 2565,
+      "sha256": "9c067fb842101bd38e99f0f6a5d6eff116298356bc8b9240b3475e9e9d0c6d04"
+    },
+    "kernel_gtsv_0_p_hls_fptoui_double_i32.v": {
+      "bytes": 2266,
+      "sha256": "8b69f642b1673a995fe9669136905338cc75068d2ed1fa833f2de3fa6f134ad6"
+    },
+    "kernel_gtsv_0_ddiv_64ns_64ns_64_22_no_dsp_1.v": {
+      "bytes": 2181,
+      "sha256": "800cb29cef70da235ddbbf7ef77d0c6d432fc8652e95cdd031da43dee3150806"
+    },
+    "kernel_gtsv_0_kernel_gtsv_0_Pipeline_LoopRead.v": {
+      "bytes": 126603,
+      "sha256": "7025ac1f5f4ef7e7ac86d8de671c7d504f35ed178413aa53fd9547b2f3068e04"
+    },
+    "kernel_gtsv_0_gtsv_singlesweep_double_256u_32u_s.v": {
+      "bytes": 1250481,
+      "sha256": "c66a3744070dd2b647200825d1cb52b3980f3bc11740811d4c2e823c84830cde"
+    },
+    "kernel_gtsv_0.v": {
+      "bytes": 699202,
+      "sha256": "800e9291da03b20ba5a55f7b4a9982abf497e44eb68436c9384d2071553bcc97"
+    },
+    "kernel_gtsv_0_gtsv_singlesweep_double_256u_32u_Pipeline_LoopLines.v": {
+      "bytes": 3065863,
+      "sha256": "b8e4815d4b1e4e0959067fb45500ff2b7e6dcadcbc38104b4cd83e0fb65bcfc7"
+    },
+    "kernel_gtsv_0_gmem3_m_axi.v": {
+      "bytes": 97881,
+      "sha256": "9d3ee5dfab7646c7d358e510482a8f1bb906de959a8c89ba8cc9e365095dc147"
+    },
+    "kernel_gtsv_0_gtsv_core_double_256u_32u_s.v": {
+      "bytes": 627161,
+      "sha256": "d36d0d796ed3298ff34af75535ca0d9e91aea987d7b345e4a26272604f834bc1"
+    },
+    "kernel_gtsv_0_kernel_gtsv_0_Pipeline_LoopWrite.v": {
+      "bytes": 96848,
+      "sha256": "9783b4d41d56e5976553769c7a5981a0fc7d54643c60c6944a56729d724bcb29"
+    },
+    "kernel_gtsv_0_gtsv_core_double_256u_32u_s_outlow_RAM_2P_BRAM_1R1W.v": {
+      "bytes": 1082,
+      "sha256": "152200261213b30e1947914091e7757af16d997b3e83de075b6b710b2004cbf4"
+    },
+    "kernel_gtsv_0_gtsv_core_double_256u_32u_Pipeline_LoopWrite.v": {
+      "bytes": 186618,
+      "sha256": "d5f398648c6204d2c0039d1f423091b45c50903ac93d7bde0fb9df9792e4d124"
+    },
+    "kernel_gtsv_0_dmul_64ns_64ns_64_5_max_dsp_1.v": {
+      "bytes": 2181,
+      "sha256": "99aed9fcfa2880dd30d3a5e816f51a4e3065e9a6f8443cee986e8fda6ae164e9"
+    },
+    "kernel_gtsv_0_dsub_64ns_64ns_64_5_full_dsp_1_ip.tcl": {
+      "bytes": 2579,
+      "sha256": "208a151434f122296362066cb88dd69ac5d17c9fc947a654091adf44fbbf40a1"
+    },
+    "kernel_gtsv_0_gmem0_m_axi.v": {
+      "bytes": 97881,
+      "sha256": "922e93dfab45bd5009c79e0be91c8ceeeca955461bfde98fa0edd5858dfdba5f"
+    },
+    "kernel_gtsv_0_gmem1_m_axi.v": {
+      "bytes": 97881,
+      "sha256": "8bfe1d006275d154ede87a606880e09c516f3142ed13c79ad3c6bbcfb63a25f1"
+    },
+    "kernel_gtsv_0_uitodp_32ns_64_4_no_dsp_1.v": {
+      "bytes": 1874,
+      "sha256": "fab3e6985627a7d28b6e71b4054a9107e1020bf0c5940e617f3bd710330c3358"
+    },
+    "kernel_gtsv_0_control_s_axi.v": {
+      "bytes": 16622,
+      "sha256": "1054964d6bdad8596d0be9a0b887597041d903861dd756859e24e23da4b728a5"
+    },
+    "kernel_gtsv_0_uitodp_32ns_64_4_no_dsp_1_ip.tcl": {
+      "bytes": 2549,
+      "sha256": "6e1645323b41954dcf768c1cfbf4dbc052ce5991b0a55119323109b47cce1212"
+    },
+    "kernel_gtsv_0_flow_control_loop_pipe_sequential_init.v": {
+      "bytes": 2779,
+      "sha256": "81a21e21fdccaba22ddf8655d87d268a5ac24fcfeefc077dbb02410aa2cc5e81"
+    },
+    "kernel_gtsv_0_sparsemux_65_5_64_1_1.v": {
+      "bytes": 5247,
+      "sha256": "8283b649b8277c75390cd1c381f78ebee43328d9260c6204388f7ae281c72308"
+    },
+    "kernel_gtsv_0_dsub_64ns_64ns_64_5_full_dsp_1.v": {
+      "bytes": 2184,
+      "sha256": "8cfa853884fb5f14c326c082bb0010d665502267f76f74de7f750675793665c5"
+    }
+  }
+}

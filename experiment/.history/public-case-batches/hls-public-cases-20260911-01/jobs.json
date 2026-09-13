@@ -1,0 +1,12 @@
+[
+  {
+    "id": "09_minimap2_u250",
+    "repo": "minimap2-acceleration",
+    "files": [
+      "kernel/hls/src/device_kernel.cpp"
+    ],
+    "top": "device_chain_kernel",
+    "part": "xcu250-figd2104-2L-e",
+    "period_ns": "5"
+  }
+]

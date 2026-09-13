@@ -1,0 +1,1 @@
+modified_outputs=1 original_sinks=26114 added_identity_LUT1=205 max_initial_branch=128 exact_sink_coverage=1

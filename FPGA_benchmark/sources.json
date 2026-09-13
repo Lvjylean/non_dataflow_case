@@ -1,0 +1,15 @@
+{
+  "tvm-vta": {
+    "url": "https://github.com/apache/tvm-vta",
+    "revision": "d4a15f627d5cc9762a82270d1be60a136e6af9c2"
+  },
+  "CNNA": {
+    "url": "https://github.com/jonathan93sh/CNNA",
+    "revision": "32bbaf4e5450a54033fc58fac7c6ab8984fba5cd",
+    "rtl_archive": {
+      "path": "src/IP_catalog/CNNAccel-436.122.upgrade.170-982e717-1478287700323.zip",
+      "sha256": "cd490467bb3c10fe462d8530cd3ea2e0bbd9873d8cb61371b30e5bab745a53f1"
+    },
+    "snapshot": "Curated unchanged SystemC sources, original HLS scripts and reference IP HDL; board artifacts and git objects excluded."
+  }
+}

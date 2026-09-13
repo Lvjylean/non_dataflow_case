@@ -1,0 +1,32 @@
+{
+  "id": "orb_u250_5ns_fanout256_resetfix_20260911_02",
+  "server": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_resetfix_20260911_02",
+  "cases": [
+    {
+      "pu": 64,
+      "case": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_orb_matcher_k8192_pu64__LUT_49p5pctSLR__20260911_v02",
+      "run": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_resetfix_20260911_02/pu64",
+      "session": "orb-pu64-5ns-fanout256-resetfix-0911",
+      "hls_lut_percent_slr": 49.546990740740746,
+      "baseline_run": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_20260911_01/pu64"
+    },
+    {
+      "pu": 128,
+      "case": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_orb_matcher_k8192_pu128__LUT_97p5pctSLR__20260911_v02",
+      "run": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_resetfix_20260911_02/pu128",
+      "session": "orb-pu128-5ns-fanout256-resetfix-0911",
+      "hls_lut_percent_slr": 97.45462962962964,
+      "baseline_run": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_20260911_01/pu128"
+    },
+    {
+      "pu": 256,
+      "case": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_orb_matcher_k8192_pu256__LUT_193p2pctSLR__20260911_v01",
+      "run": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_resetfix_20260911_02/pu256",
+      "session": "orb-pu256-5ns-fanout256-resetfix-0911",
+      "hls_lut_percent_slr": 193.17777777777778,
+      "baseline_run": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_20260911_01/pu256"
+    }
+  ],
+  "baseline_id": "orb_u250_5ns_fanout256_20260911_01",
+  "lock_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/orb_u250_5ns_fanout256_20260911_01"
+}

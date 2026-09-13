@@ -1,0 +1,74 @@
+{
+  "name": "vision_isp_all_in_one_1080p_npc2",
+  "top": "ISPPipeline_accel",
+  "cpp": "xf_isp_accel.cpp",
+  "origin": "vision/L3/examples/all_in_one/xf_isp_accel.cpp",
+  "parameters_changed": {
+    "XF_NPPCX": "XF_NPPC2"
+  },
+  "expected_internal_dataflow": true,
+  "clock_ns": 5,
+  "part": "xcu250-figd2104-2L-e",
+  "status": "COMPLETE",
+  "started": 1789109225.0851657,
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision-nested-dataflow-20260911-v03/runs/vision_isp_all_in_one_1080p_npc2",
+  "returncode": 0,
+  "seconds": 113.7,
+  "resources": {
+    "LUT": 88350,
+    "FF": 67902,
+    "DSP": 348,
+    "BRAM_18K": 76,
+    "URAM": 2
+  },
+  "slr_ratios": {
+    "LUT": 0.20451388888888888,
+    "FF": 0.07859027777777777,
+    "DSP": 0.11328125,
+    "BRAM_18K": 0.05654761904761905,
+    "URAM": 0.00625
+  },
+  "size_resource": "LUT",
+  "size_slr_ratio": 0.20451388888888888,
+  "top_pipeline_type": "no",
+  "dataflow_reports": [
+    {
+      "report": "fifo_awb_13_13_1080_1920_2_3_3_s_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Mat2Axi_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Axi2Mat_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "process_i_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "AxiStream2Mat_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "autoexposurecorrection_sin_2_2_2_1080_1920_2_0_3_3_4096_s_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "ISPpipeline_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "Mat2AxiStream_csynth.xml",
+      "pipeline_type": "dataflow"
+    },
+    {
+      "report": "function_aec_2_2_1080_1920_2_3_3_s_csynth.xml",
+      "pipeline_type": "dataflow"
+    }
+  ],
+  "lut_in_range": false,
+  "all_resources_fit_device": true
+}

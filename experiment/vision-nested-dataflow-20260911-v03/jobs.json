@@ -1,0 +1,55 @@
+[
+  {
+    "name": "vision_isp_bayer_4k_npc4",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/isppipeline/xf_isp_accel.cpp",
+    "parameters_changed": {
+      "XF_NPPCX": "XF_NPPC4",
+      "INPUT_PTR_WIDTH": "128",
+      "OUTPUT_PTR_WIDTH": "128"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_isp_hdr_4k_npc4",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/isppipeline_hdr/xf_isp_accel.cpp",
+    "parameters_changed": {
+      "XF_NPPCX": "XF_NPPC4",
+      "INPUT_PTR_WIDTH": "128",
+      "OUTPUT_PTR_WIDTH": "128"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_isp_all_in_one_1080p_npc2",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/all_in_one/xf_isp_accel.cpp",
+    "parameters_changed": {
+      "XF_NPPCX": "XF_NPPC2"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_isp_all_in_one_1080p_npc4",
+    "top": "ISPPipeline_accel",
+    "cpp": "xf_isp_accel.cpp",
+    "origin": "vision/L3/examples/all_in_one/xf_isp_accel.cpp",
+    "parameters_changed": {
+      "XF_NPPCX": "XF_NPPC4",
+      "OUTPUT_PTR_WIDTH": "256"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  }
+]

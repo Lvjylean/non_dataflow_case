@@ -1,0 +1,86 @@
+{
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "unchanged": true,
+  "files": {
+    "kernel_gtsv_0_gmem2_m_axi.v": {
+      "bytes": 97881,
+      "sha256": "695ac3dfb9c3ce4d1c2bf37dd6a4e1e3266690e4112369c69c8f844841f4e943"
+    },
+    "kernel_gtsv_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip.tcl": {
+      "bytes": 2563,
+      "sha256": "5e0787d4c5c3a391a5af92ee47a1bc7bc5b80c91270ed23ec4213485fbe0efe8"
+    },
+    "kernel_gtsv_0_gtsv_double_16u_1u_Pipeline_LoopWrite.v": {
+      "bytes": 22098,
+      "sha256": "19448e805d8315562477a54d89d52330bf7904b9b298e54b224bfe90f196e042"
+    },
+    "kernel_gtsv_0_gtsv_double_16u_1u_s.v": {
+      "bytes": 173297,
+      "sha256": "fe72cf0be79ef05d2621f0e9fef9894068621938fb4a44208c43473258a4b702"
+    },
+    "kernel_gtsv_0_dmul_64ns_64ns_64_5_max_dsp_1_ip.tcl": {
+      "bytes": 2565,
+      "sha256": "9c067fb842101bd38e99f0f6a5d6eff116298356bc8b9240b3475e9e9d0c6d04"
+    },
+    "kernel_gtsv_0_ddiv_64ns_64ns_64_22_no_dsp_1.v": {
+      "bytes": 2181,
+      "sha256": "800cb29cef70da235ddbbf7ef77d0c6d432fc8652e95cdd031da43dee3150806"
+    },
+    "kernel_gtsv_0.v": {
+      "bytes": 60614,
+      "sha256": "2eb97d650a1e07a43ea5e9ee97f3687379b7ce4e7d42874bf763cee92cea5ea2"
+    },
+    "kernel_gtsv_0_gmem3_m_axi.v": {
+      "bytes": 97881,
+      "sha256": "9d3ee5dfab7646c7d358e510482a8f1bb906de959a8c89ba8cc9e365095dc147"
+    },
+    "kernel_gtsv_0_gtsv_singlesweep_double_16u_1u_s.v": {
+      "bytes": 15470,
+      "sha256": "87884846cd4689181477ce269a78024ae1d20c8cf5b4dc58767c601f4f8f7279"
+    },
+    "kernel_gtsv_0_gtsv_double_16u_1u_s_outlow_RAM_2P_BRAM_1R1W.v": {
+      "bytes": 1076,
+      "sha256": "b8ee143926a1146fc6251456b3979c6224627c8735da8d43dc3abc8b6e2f0c92"
+    },
+    "kernel_gtsv_0_dmul_64ns_64ns_64_5_max_dsp_1.v": {
+      "bytes": 2181,
+      "sha256": "99aed9fcfa2880dd30d3a5e816f51a4e3065e9a6f8443cee986e8fda6ae164e9"
+    },
+    "kernel_gtsv_0_dsub_64ns_64ns_64_5_full_dsp_1_ip.tcl": {
+      "bytes": 2579,
+      "sha256": "208a151434f122296362066cb88dd69ac5d17c9fc947a654091adf44fbbf40a1"
+    },
+    "kernel_gtsv_0_gtsv_double_16u_1u_Pipeline_LoopWrite1.v": {
+      "bytes": 26177,
+      "sha256": "25ff8c68ee8c9b6482c04c094bc350481bc1c8d37172396d580d6411069f9c6a"
+    },
+    "kernel_gtsv_0_gmem0_m_axi.v": {
+      "bytes": 97881,
+      "sha256": "922e93dfab45bd5009c79e0be91c8ceeeca955461bfde98fa0edd5858dfdba5f"
+    },
+    "kernel_gtsv_0_gmem1_m_axi.v": {
+      "bytes": 97881,
+      "sha256": "8bfe1d006275d154ede87a606880e09c516f3142ed13c79ad3c6bbcfb63a25f1"
+    },
+    "kernel_gtsv_0_gtsv_singlesweep_double_16u_1u_Pipeline_LoopLines.v": {
+      "bytes": 72127,
+      "sha256": "298286dc60c47fd839ea1f6ef109ebdb834a37602aa613979c051a34f7783b32"
+    },
+    "kernel_gtsv_0_control_s_axi.v": {
+      "bytes": 16622,
+      "sha256": "1054964d6bdad8596d0be9a0b887597041d903861dd756859e24e23da4b728a5"
+    },
+    "kernel_gtsv_0_gtsv_double_16u_1u_Pipeline_LoopRead.v": {
+      "bytes": 27611,
+      "sha256": "ad7b298799292d5521b192b7ea4b294afc9935154064f1ad5b8346a4e0bce3e5"
+    },
+    "kernel_gtsv_0_flow_control_loop_pipe_sequential_init.v": {
+      "bytes": 2779,
+      "sha256": "81a21e21fdccaba22ddf8655d87d268a5ac24fcfeefc077dbb02410aa2cc5e81"
+    },
+    "kernel_gtsv_0_dsub_64ns_64ns_64_5_full_dsp_1.v": {
+      "bytes": 2184,
+      "sha256": "8cfa853884fb5f14c326c082bb0010d665502267f76f74de7f750675793665c5"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "critical_detail_rows": 111,
+  "rules": {
+    "CDC-13": 3,
+    "CDC-1": 54,
+    "CDC-11": 32,
+    "CDC-7": 20,
+    "CDC-10": 2
+  },
+  "direct_accelerator_hierarchy_matches": 0,
+  "scope": "Detailed CDC rows, not unique endpoints or waived/safe signoff. Platform findings remain for review."
+}

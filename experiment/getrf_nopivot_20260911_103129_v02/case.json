@@ -1,0 +1,53 @@
+{
+  "id": "getrf_nopivot_n256_u32",
+  "source": "sources/kernel.cpp",
+  "top": "kernel_getrf_nopivot_0",
+  "parameters": {
+    "NRC": 256,
+    "NCU": 32
+  },
+  "origin": "solver/L2/tests/hw/getrf_nopivot/kernel_getrf_nopivot.cpp",
+  "origin_sha256": "68e9663364703eacf980593d3514c557644a8b98c3bc7d36d340ea2dac495e2e",
+  "status": "COMPLETE",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/getrf_nopivot_20260911_103129_v02",
+  "started_epoch": 1789093889.554023,
+  "source_sha256": "9d2bbb566c7e9b71e9c4d7f5b97e232a43f49d2254504f3e4f6b8fcc83061bb5",
+  "returncode": 0,
+  "seconds": 23.7,
+  "classification": "BELOW_60",
+  "resources": {
+    "LUT": 62450,
+    "FF": 69135,
+    "DSP": 352,
+    "BRAM_18K": 68,
+    "URAM": 32
+  },
+  "slr_equivalents": {
+    "LUT": 0.14456018518518518,
+    "FF": 0.08001736111111112,
+    "DSP": 0.11458333333333333,
+    "BRAM_18K": 0.050595238095238096,
+    "URAM": 0.1
+  },
+  "compute_peak_slr": 0.14456018518518518,
+  "all_peak_slr": 0.14456018518518518,
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/getrf_nopivot_20260911_103129_v02/hls/sol/syn/verilog",
+  "verilog_files": 20,
+  "estimated_clock_ns": "3.650",
+  "latency_min": "148821",
+  "latency_max": "1255521",
+  "hls_resource_classification": "BELOW_60",
+  "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+  "top_pipeline_type": "no",
+  "capacity_lower_bound_slrs": 1,
+  "near_60": false,
+  "loop_constraints_unmet": false,
+  "warning_count": 97,
+  "max_rss_kib": 531460,
+  "case": "getrf_nopivot",
+  "directory": "getrf_nopivot_20260911_103129_v02",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/getrf_nopivot_n256_u32",
+  "validation": null,
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "original_source": "sources/getrf_nopivot/n256_u32/kernel.cpp"
+}

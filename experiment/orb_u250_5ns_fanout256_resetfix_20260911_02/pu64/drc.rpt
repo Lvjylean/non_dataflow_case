@@ -1,0 +1,126 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri Sep 11 17:37:32 2026
+| Host         : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_drc -file drc.rpt
+| Design       : bfmatcher_accel
+| Device       : xcu250-figd2104-2L-e
+| Speed File   : -2L
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_post_synth
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 14
++-----------+----------+---------------------------------------------------------------------+------------+
+| Rule      | Severity | Description                                                         | Violations |
++-----------+----------+---------------------------------------------------------------------+------------+
+| DPIP-2    | Warning  | Input pipelining                                                    | 4          |
+| DPOP-3    | Warning  | PREG Output pipelining                                              | 4          |
+| DPOP-4    | Warning  | MREG Output pipelining                                              | 1          |
+| RTSTAT-10 | Warning  | No routable loads                                                   | 1          |
+| AVAL-155  | Advisory | enum_AMULTSEL_BMULTSEL_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 3          |
+| AVAL-156  | Advisory | enum_USE_MULT_NONE__enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND    | 1          |
++-----------+----------+---------------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-2#1 Warning
+Input pipelining  
+DSP grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP input grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#2 Warning
+Input pipelining  
+DSP grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP input grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#3 Warning
+Input pipelining  
+DSP grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP input grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#4 Warning
+Input pipelining  
+DSP grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP input grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-3#1 Warning
+PREG Output pipelining  
+DSP grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP output grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/PATTERNDETECT is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-3#2 Warning
+PREG Output pipelining  
+DSP grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP output grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-3#3 Warning
+PREG Output pipelining  
+DSP grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP output grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/CARRYOUT[3:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-3#4 Warning
+PREG Output pipelining  
+DSP grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP output grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-4#1 Warning
+MREG Output pipelining  
+DSP grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP multiplier stage grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+143 net(s) have no routable loads. The problem bus(es) and/or net(s) are control_s_axi_U/RDATA[31:0],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[0],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[10],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[11],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[12],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[13],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[1],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[2],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[3],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[4],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[5],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[6],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[7],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[8],
+gmem2_m_axi_U/bus_write/wreq_throttle/data_fifo/U_fifo_srl/dout[9]
+ (the first 15 of 41 listed nets/buses).
+Related violations: <none>
+
+AVAL-155#1 Advisory
+enum_AMULTSEL_BMULTSEL_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP: DSP48E2 is not using the D port (AMULTSEL = A and BMULTSEL = B). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-155#2 Advisory
+enum_AMULTSEL_BMULTSEL_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP: DSP48E2 is not using the D port (AMULTSEL = A and BMULTSEL = B). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-155#3 Advisory
+enum_AMULTSEL_BMULTSEL_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP: DSP48E2 is not using the D port (AMULTSEL = A and BMULTSEL = B). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-156#1 Advisory
+enum_USE_MULT_NONE__enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+grp_bfMatcher_64_8192_s_fu_108/fmul_32ns_32ns_32_4_max_dsp_1_U1124/bfmatcher_accel_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP: DSP48E2 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+

@@ -1,0 +1,8 @@
+open_project hls
+set_top ISPPipeline_accel
+add_files {/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_isp_all_in_one_1080p_npc4__LUT_29p7pctSLR__20260911_v03/sources/xf_isp_accel.cpp} -cflags {-std=c++14 -I/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_isp_all_in_one_1080p_npc4__LUT_29p7pctSLR__20260911_v03/sources -I/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision_isp_all_in_one_1080p_npc4__LUT_29p7pctSLR__20260911_v03/library}
+open_solution sol -flow_target vivado
+set_part {xcu250-figd2104-2L-e}
+create_clock -period 5
+csynth_design
+exit

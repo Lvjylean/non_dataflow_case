@@ -1,0 +1,41 @@
+# Generated implementation state; keep source RTL and compact reports.
+.DS_Store
+._*
+__pycache__/
+*.py[cod]
+.Xil/
+.autopilot/
+*.dcp
+*.bit
+*.bin
+*.xclbin
+*.xo
+*.wdb
+*.wcfg
+*.jou
+*.log
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.o
+*.so
+*.a
+/FPGA_benchmark/runs/
+/FPGA_benchmark/ip_cache/
+/experiment/**/hls/
+/experiment/**/project/
+/experiment/**/validation/sim/
+/experiment/**/ip_project/
+*.cache/
+*.runs/
+*.gen/
+*.ip_user_files/
+# Do not globally ignore Verilog/VHDL: upstream CNNA HDL is a build input.
+
+# BEGIN GENERATED LARGE FILES
+/FPGA_benchmark/reports/cnna6_recovery_20260913_01/physical/reopen/timing_summary.rpt
+/FPGA_benchmark/reports/cnna6_recovery_20260913_01/physical/timing_summary.rpt
+/FPGA_benchmark/reports/vta64_recovery_20260913_01/physical/reopen/timing_summary.rpt
+/FPGA_benchmark/reports/vta64_recovery_20260913_01/physical/timing_summary.rpt
+# END GENERATED LARGE FILES

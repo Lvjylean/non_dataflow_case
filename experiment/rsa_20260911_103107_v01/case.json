@@ -1,0 +1,52 @@
+{
+  "id": "rsa_w2048",
+  "source": "sources/kernel.cpp",
+  "top": "rsa_test",
+  "parameters": {
+    "N": 2048,
+    "L": 20
+  },
+  "origin": "security/L1/tests/rsa/test.cpp",
+  "status": "COMPLETE",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/rsa_20260911_103107_v01",
+  "started_epoch": 1789093867.5402389,
+  "source_sha256": "8a4ace4c0f24a9865b7a9cbb1f5315852181d1dab0f45f8a6ce02b6b51b33965",
+  "returncode": 0,
+  "seconds": 14.7,
+  "classification": "BELOW_60",
+  "resources": {
+    "LUT": 28213,
+    "FF": 51998,
+    "DSP": 0,
+    "BRAM_18K": 0,
+    "URAM": 0
+  },
+  "slr_equivalents": {
+    "LUT": 0.06530787037037038,
+    "FF": 0.06018287037037037,
+    "DSP": 0.0,
+    "BRAM_18K": 0.0,
+    "URAM": 0.0
+  },
+  "compute_peak_slr": 0.06530787037037038,
+  "all_peak_slr": 0.06530787037037038,
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/rsa_20260911_103107_v01/hls/sol/syn/verilog",
+  "verilog_files": 14,
+  "estimated_clock_ns": "3.330",
+  "latency_min": "98506",
+  "latency_max": "180546",
+  "hls_resource_classification": "BELOW_60",
+  "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+  "top_pipeline_type": "no",
+  "capacity_lower_bound_slrs": 1,
+  "near_60": false,
+  "loop_constraints_unmet": true,
+  "warning_count": 7,
+  "max_rss_kib": 478504,
+  "case": "rsa",
+  "directory": "rsa_20260911_103107_v01",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-01/runs/rsa_w2048",
+  "validation": null,
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "original_source": "sources/rsa/2048/kernel.cpp"
+}

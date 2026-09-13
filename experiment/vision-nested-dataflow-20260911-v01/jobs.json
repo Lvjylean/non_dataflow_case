@@ -1,0 +1,100 @@
+[
+  {
+    "name": "vision_orb_matcher_k8192_pu256",
+    "top": "bfmatcher_accel",
+    "cpp": "xf_bfmatcher_accel.cpp",
+    "origin": "vision/L2/examples/bfmatcher/xf_bfmatcher_accel.cpp",
+    "parameters_changed": {
+      "PARALLEL_COMPUTEUNIT": "256",
+      "MAX_KEYPOINTS": "8192"
+    },
+    "expected_internal_dataflow": false,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_orb_matcher_k8192_pu512",
+    "top": "bfmatcher_accel",
+    "cpp": "xf_bfmatcher_accel.cpp",
+    "origin": "vision/L2/examples/bfmatcher/xf_bfmatcher_accel.cpp",
+    "parameters_changed": {
+      "PARALLEL_COMPUTEUNIT": "512",
+      "MAX_KEYPOINTS": "8192"
+    },
+    "expected_internal_dataflow": false,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_meanshift_1080p_objects10",
+    "top": "mean_shift_accel",
+    "cpp": "xf_mean_shift_accel.cpp",
+    "origin": "vision/L2/examples/meanshifttracking/xf_mean_shift_accel.cpp",
+    "parameters_changed": {},
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_meanshift_1080p_objects64",
+    "top": "mean_shift_accel",
+    "cpp": "xf_mean_shift_accel.cpp",
+    "origin": "vision/L2/examples/meanshifttracking/xf_mean_shift_accel.cpp",
+    "parameters_changed": {
+      "XF_MAX_OBJECTS": "64"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_rotate_4k_tile256_npc2",
+    "top": "rotate_accel",
+    "cpp": "xf_rotate_accel.cpp",
+    "origin": "vision/L2/examples/rotate/xf_rotate_accel.cpp",
+    "parameters_changed": {
+      "TILE_SIZE": "256",
+      "NPPCX": "XF_NPPC2",
+      "INPUT_PTR_WIDTH": "16",
+      "OUTPUT_PTR_WIDTH": "16"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_flip_8k_rgb_npc8",
+    "top": "flip_accel",
+    "cpp": "xf_flip_accel.cpp",
+    "origin": "vision/L2/examples/flip/xf_flip_accel.cpp",
+    "parameters_changed": {
+      "HEIGHT": "4320",
+      "WIDTH": "8192",
+      "NPPCX": "XF_NPPC8",
+      "IN_TYPE": "XF_8UC3",
+      "OUT_TYPE": "XF_8UC3",
+      "INPUT_PTR_WIDTH": "256",
+      "OUTPUT_PTR_WIDTH": "256",
+      "RGB": "1",
+      "GRAY": "0"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  },
+  {
+    "name": "vision_harris_corners_4k_filter7",
+    "top": "cornerTracker",
+    "cpp": "xf_corner_tracker_accel.cpp",
+    "origin": "vision/L3/examples/cornertracker/xf_corner_tracker_accel.cpp",
+    "parameters_changed": {
+      "HEIGHT": "2160",
+      "WIDTH": "3840",
+      "FILTER_WIDTH": "7",
+      "BLOCK_WIDTH": "7"
+    },
+    "expected_internal_dataflow": true,
+    "clock_ns": 5,
+    "part": "xcu250-figd2104-2L-e"
+  }
+]

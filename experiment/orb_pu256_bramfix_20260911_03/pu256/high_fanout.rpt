@@ -1,0 +1,71 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri Sep 11 19:13:31 2026
+| Host         : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_high_fanout_nets -max_nets 50 -file high_fanout.rpt
+| Design       : bfmatcher_accel
+| Device       : xcu250
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++---------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| Net Name                                                                                                            | Fanout | Driver Type |
++---------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/ap_enable_reg_pp0_iter1_repN_1 |    312 | FDRE        |
+| ap_CS_fsm_state1                                                                                                    |    281 | FDSE        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/ap_enable_reg_pp0_iter1_repN_4 |    259 | FDRE        |
+| gmem0_m_axi_U/bus_read/rs_rdata/load_p2                                                                             |    257 | LUT2        |
+| gmem1_m_axi_U/bus_read/rs_rdata/load_p2                                                                             |    257 | LUT2        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_100_fu_76260         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_101_fu_76300         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_102_fu_76340         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_103_fu_76380         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_104_fu_76420         |    256 | LUT4        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_105_fu_76460         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_106_fu_76500         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_107_fu_76540         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_108_fu_76580         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_109_fu_76620         |    256 | LUT4        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_10_fu_72660          |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_110_fu_76660         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_111_fu_76700         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_112_fu_76740         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_113_fu_76780         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_114_fu_76820         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_115_fu_76860         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_116_fu_76900         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_117_fu_76940         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_118_fu_76980         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_119_fu_77020         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_11_fu_72700          |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_120_fu_77060         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_121_fu_77100         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_122_fu_77140         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_123_fu_77180         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_124_fu_77220         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_125_fu_77260         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_126_fu_77300         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_127_fu_77340         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_128_fu_77380         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_129_fu_77420         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_12_fu_72740          |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_130_fu_77460         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_131_fu_77500         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_132_fu_77540         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_133_fu_77580         |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_134_fu_77620         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_135_fu_77660         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_136_fu_77700         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_137_fu_77740         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_138_fu_77780         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_139_fu_77820         |    256 | LUT3        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_13_fu_72780          |    256 | LUT6        |
+| grp_bfMatcher_256_8192_s_fu_108/grp_bfMatcher_256_8192_Pipeline_INIT_LOOP_1_fu_10507/query_set_140_fu_77860         |    256 | LUT6        |
++---------------------------------------------------------------------------------------------------------------------+--------+-------------+
+
+

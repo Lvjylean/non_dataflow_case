@@ -1,0 +1,15 @@
+{
+  "id": "03_vitis_jacobi_2d",
+  "repo": "allo-pldi24-artifact",
+  "files": [
+    "polybench/vitis/jacobi-2d/jacobi-2d.cpp"
+  ],
+  "top": "kernel",
+  "part": "xcu280-fsvh2892-2L-e",
+  "period_ns": "3.33",
+  "directory": "03_jacobi_2d_vitis_u280",
+  "board": "U280",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/03_jacobi_2d_vitis_u280",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-public-cases-20260911-02/runs/03_vitis_jacobi_2d",
+  "original_batch": "hls-public-cases-20260911-02"
+}

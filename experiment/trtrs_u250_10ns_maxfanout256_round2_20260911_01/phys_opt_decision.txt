@@ -1,0 +1,5 @@
+MAX_FANOUT/FORCE_MAX_FANOUT are evaluated during placement. Additional targeted physical optimization is conditional on remaining FD/LUT nets above 256 logical sink pins.
+RUN: 150 eligible nets exceed 256 logical loads after placement.
+Round 1 eligible net count: 150 -> 2
+Round 2 eligible net count: 2 -> 4
+Stop repeated replication: no decrease in eligible violation count.

@@ -1,0 +1,448 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date              : Sun Sep 13 00:53:46 2026
+| Host              : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command           : report_timing -from [all_registers -output_pins] -to [all_registers -data_pins] -delay_type min -max_paths 10 -file internal_min_timing.rpt
+| Design            : cnn_top
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Routed
+| Temperature Grade : E
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.009ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_352_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][6]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.186ns  (logic 0.058ns (31.260%)  route 0.128ns (68.740%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.114ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.522ns
+    Source Clock Delay      (SCD):    4.022ns
+    Clock Pessimism Removal (CPR):    0.386ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.022     4.022    cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_352_fifo_U/U_fifo_w384_d1_A_x_shiftReg/aclk
+    SLICE_X90Y801        FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_352_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X90Y801        FDRE (Prop_AFF_SLICEL_C_Q)
+                                                      0.058     4.080 r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_352_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][6]/Q
+                         net (fo=3, routed)           0.128     4.208    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[383]_0[6]
+    SLICE_X89Y801        FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.522     4.522    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/aclk
+    SLICE_X89Y801        FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[6]/C
+                         clock pessimism             -0.386     4.136    
+    SLICE_X89Y801        FDRE (Hold_FFF2_SLICEL_C_D)
+                                                      0.062     4.198    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -4.198    
+                         arrival time                           4.208    
+  -------------------------------------------------------------------
+                         slack                                  0.009    
+
+Slack (MET) :             0.009ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_343_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][131]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2288/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[131]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.134ns  (logic 0.060ns (44.910%)  route 0.074ns (55.090%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.062ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.607ns
+    Source Clock Delay      (SCD):    4.111ns
+    Clock Pessimism Removal (CPR):    0.434ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.111     4.111    cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_343_fifo_U/U_fifo_w384_d1_A_x_shiftReg/aclk
+    SLICE_X120Y805       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_343_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][131]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X120Y805       FDRE (Prop_BFF2_SLICEL_C_Q)
+                                                      0.060     4.171 r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_343_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][131]/Q
+                         net (fo=3, routed)           0.074     4.245    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2288/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[383]_0[131]
+    SLICE_X120Y804       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2288/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[131]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.607     4.607    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2288/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/aclk
+    SLICE_X120Y804       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2288/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[131]/C
+                         clock pessimism             -0.434     4.173    
+    SLICE_X120Y804       FDRE (Hold_EFF2_SLICEL_C_D)
+                                                      0.062     4.235    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2288/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/val_data_V_8_reg_11168_reg[131]
+  -------------------------------------------------------------------
+                         required time                         -4.235    
+                         arrival time                           4.245    
+  -------------------------------------------------------------------
+                         slack                                  0.009    
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/re_V_reg_10647_reg[19]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/t_V_5_reg_1006_reg[19]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.158ns  (logic 0.058ns (36.709%)  route 0.100ns (63.291%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.086ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.513ns
+    Source Clock Delay      (SCD):    4.043ns
+    Clock Pessimism Removal (CPR):    0.383ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.043     4.043    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/aclk
+    SLICE_X104Y890       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/re_V_reg_10647_reg[19]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y890       FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.058     4.101 r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/re_V_reg_10647_reg[19]/Q
+                         net (fo=1, routed)           0.100     4.201    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/re_V_reg_10647[19]
+    SLICE_X103Y890       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/t_V_5_reg_1006_reg[19]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.513     4.513    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/aclk
+    SLICE_X103Y890       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/t_V_5_reg_1006_reg[19]/C
+                         clock pessimism             -0.383     4.129    
+    SLICE_X103Y890       FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.062     4.191    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2378/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/t_V_5_reg_1006_reg[19]
+  -------------------------------------------------------------------
+                         required time                         -4.191    
+                         arrival time                           4.201    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/clb_buffer_mVec_read_11_reg_985_reg[148]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/clb_buffer_mVec_0_r_fu_276_reg[148]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.127ns  (logic 0.059ns (46.457%)  route 0.068ns (53.543%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.055ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.579ns
+    Source Clock Delay      (SCD):    4.092ns
+    Clock Pessimism Removal (CPR):    0.432ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.092     4.092    cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/aclk
+    SLICE_X84Y879        FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/clb_buffer_mVec_read_11_reg_985_reg[148]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X84Y879        FDRE (Prop_HFF2_SLICEL_C_Q)
+                                                      0.059     4.151 r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/clb_buffer_mVec_read_11_reg_985_reg[148]/Q
+                         net (fo=2, routed)           0.068     4.219    cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/clb_buffer_mVec_read_11_reg_985[148]
+    SLICE_X84Y880        FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/clb_buffer_mVec_0_r_fu_276_reg[148]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.579     4.579    cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/aclk
+    SLICE_X84Y880        FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/clb_buffer_mVec_0_r_fu_276_reg[148]/C
+                         clock pessimism             -0.432     4.147    
+    SLICE_X84Y880        FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.062     4.209    cnn_U/grp_p_top_cnn_fu_3140/grp_p_data_buffer_TWO_D_fu_2584/grp_p_sc_stream_circularlinebuffer_v2_fu_540/grp_p_sc_stream_circularlinebuffer_v2_thread_clb_fu_250/clb_buffer_mVec_0_r_fu_276_reg[148]
+  -------------------------------------------------------------------
+                         required time                         -4.209    
+                         arrival time                           4.219    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_383_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][99]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_3115_fifo_U/U_fifo_w400_d1_A_shiftReg/SRL_SIG_reg[0][99]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.130ns  (logic 0.058ns (44.615%)  route 0.072ns (55.385%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.060ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.611ns
+    Source Clock Delay      (SCD):    4.117ns
+    Clock Pessimism Removal (CPR):    0.434ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.117     4.117    cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_383_fifo_U/U_fifo_w384_d1_A_x_shiftReg/aclk
+    SLICE_X120Y802       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_383_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][99]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X120Y802       FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.058     4.175 r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_383_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][99]/Q
+                         net (fo=1, routed)           0.072     4.247    cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_3115_fifo_U/U_fifo_w400_d1_A_shiftReg/Q[99]
+    SLICE_X120Y801       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_3115_fifo_U/U_fifo_w400_d1_A_shiftReg/SRL_SIG_reg[0][99]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.611     4.611    cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_3115_fifo_U/U_fifo_w400_d1_A_shiftReg/aclk
+    SLICE_X120Y801       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_3115_fifo_U/U_fifo_w400_d1_A_shiftReg/SRL_SIG_reg[0][99]/C
+                         clock pessimism             -0.434     4.177    
+    SLICE_X120Y801       FDRE (Hold_GFF_SLICEL_C_D)
+                                                      0.060     4.237    cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_3115_fifo_U/U_fifo_w400_d1_A_shiftReg/SRL_SIG_reg[0][99]
+  -------------------------------------------------------------------
+                         required time                         -4.237    
+                         arrival time                           4.247    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[114]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_3/DINADIN[6]
+                            (rising edge-triggered cell RAMB36E2 clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.180ns  (logic 0.059ns (32.778%)  route 0.121ns (67.222%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.198ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.750ns
+    Source Clock Delay      (SCD):    4.152ns
+    Clock Pessimism Removal (CPR):    0.400ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.152     4.152    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/aclk
+    SLICE_X123Y775       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[114]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X123Y775       FDRE (Prop_HFF2_SLICEL_C_Q)
+                                                      0.059     4.211 r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[114]/Q
+                         net (fo=1, routed)           0.121     4.332    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_12_0[114]
+    RAMB36_X8Y155        RAMB36E2                                     r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_3/DINADIN[6]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.750     4.750    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/aclk
+    RAMB36_X8Y155        RAMB36E2                                     r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_3/CLKARDCLK
+                         clock pessimism             -0.400     4.350    
+    RAMB36_X8Y155        RAMB36E2 (Hold_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[6])
+                                                     -0.028     4.322    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2258/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_3
+  -------------------------------------------------------------------
+                         required time                         -4.322    
+                         arrival time                           4.332    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_337_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][110]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2228/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[110]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.176ns  (logic 0.059ns (33.578%)  route 0.117ns (66.422%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.106ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.631ns
+    Source Clock Delay      (SCD):    4.127ns
+    Clock Pessimism Removal (CPR):    0.398ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.127     4.127    cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_337_fifo_U/U_fifo_w384_d1_A_x_shiftReg/aclk
+    SLICE_X117Y770       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_337_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][110]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X117Y770       FDRE (Prop_EFF_SLICEL_C_Q)
+                                                      0.059     4.186 r  cnn_U/grp_p_top_cnn_fu_3140/sc_fifo_chn_337_fifo_U/U_fifo_w384_d1_A_x_shiftReg/SRL_SIG_reg[0][110]/Q
+                         net (fo=3, routed)           0.117     4.303    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2228/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[383]_0[110]
+    SLICE_X118Y769       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2228/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[110]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.631     4.631    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2228/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/aclk
+    SLICE_X118Y769       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2228/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[110]/C
+                         clock pessimism             -0.398     4.233    
+    SLICE_X118Y769       FDRE (Hold_HFF_SLICEM_C_D)
+                                                      0.060     4.293    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2228/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[110]
+  -------------------------------------------------------------------
+                         required time                         -4.293    
+                         arrival time                           4.303    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[228]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_6/DINADIN[12]
+                            (rising edge-triggered cell RAMB36E2 clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.182ns  (logic 0.058ns (31.868%)  route 0.124ns (68.132%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.200ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.843ns
+    Source Clock Delay      (SCD):    4.238ns
+    Clock Pessimism Removal (CPR):    0.405ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.238     4.238    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/aclk
+    SLICE_X149Y837       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[228]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X149Y837       FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.058     4.296 r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[228]/Q
+                         net (fo=1, routed)           0.124     4.420    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_12_0[228]
+    RAMB36_X10Y167       RAMB36E2                                     r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_6/DINADIN[12]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.843     4.843    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/aclk
+    RAMB36_X10Y167       RAMB36E2                                     r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_6/CLKARDCLK
+                         clock pessimism             -0.405     4.438    
+    RAMB36_X10Y167       RAMB36E2 (Hold_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[12])
+                                                     -0.028     4.410    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_6
+  -------------------------------------------------------------------
+                         required time                         -4.410    
+                         arrival time                           4.420    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/p_Result_131_21_s_reg_4051_reg[15]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/p_Result_131_21_s_reg_4051_pp0_iter1_reg_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.166ns  (logic 0.061ns (36.747%)  route 0.105ns (63.253%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.094ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.678ns
+    Source Clock Delay      (SCD):    4.186ns
+    Clock Pessimism Removal (CPR):    0.398ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.186     4.186    cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/aclk
+    SLICE_X128Y870       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/p_Result_131_21_s_reg_4051_reg[15]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X128Y870       FDRE (Prop_DFF2_SLICEM_C_Q)
+                                                      0.061     4.247 r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/p_Result_131_21_s_reg_4051_reg[15]/Q
+                         net (fo=1, routed)           0.105     4.352    cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/p_Result_131_21_s_reg_4051[15]
+    SLICE_X127Y871       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/p_Result_131_21_s_reg_4051_pp0_iter1_reg_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.678     4.678    cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/aclk
+    SLICE_X127Y871       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/p_Result_131_21_s_reg_4051_pp0_iter1_reg_reg[15]/C
+                         clock pessimism             -0.398     4.280    
+    SLICE_X127Y871       FDRE (Hold_HFF2_SLICEL_C_D)
+                                                      0.062     4.342    cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/p_Result_131_21_s_reg_4051_pp0_iter1_reg_reg[15]
+  -------------------------------------------------------------------
+                         required time                         -4.342    
+                         arrival time                           4.352    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[114]/C
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_3/DINADIN[6]
+                            (rising edge-triggered cell RAMB36E2 clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.180ns  (logic 0.059ns (32.778%)  route 0.121ns (67.222%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.198ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.745ns
+    Source Clock Delay      (SCD):    4.147ns
+    Clock Pessimism Removal (CPR):    0.400ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.147     4.147    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/aclk
+    SLICE_X123Y765       FDRE                                         r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[114]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X123Y765       FDRE (Prop_HFF2_SLICEL_C_Q)
+                                                      0.059     4.206 r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/tmpV_data_V_reg_10680_reg[114]/Q
+                         net (fo=1, routed)           0.121     4.327    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_12_0[114]
+    RAMB36_X8Y153        RAMB36E2                                     r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_3/DINADIN[6]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=80838, unset)        4.745     4.745    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/aclk
+    RAMB36_X8Y153        RAMB36E2                                     r  cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_3/CLKARDCLK
+                         clock pessimism             -0.400     4.345    
+    RAMB36_X8Y153        RAMB36E2 (Hold_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[6])
+                                                     -0.028     4.317    cnn_U/grp_p_top_cnn_fu_3140/grp_p_sc_stream_buffer_not_stream_while_write_fu_2198/grp_p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_while_write_fu_84/buf_V_U/p_sc_stream_buffer_not_stream_while_write_thread_sc_stream_buffer_not_stream_bkb_ram_U/ram_reg_bram_3
+  -------------------------------------------------------------------
+                         required time                         -4.317    
+                         arrival time                           4.327    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+
+
+

@@ -1,0 +1,98 @@
+{
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "unchanged": true,
+  "files": {
+    "kernel_getrf_nopivot_0_control_s_axi.v": {
+      "bytes": 12092,
+      "sha256": "cff6459f8ff085afaf98dbc77f42b920851c16a57261343cb2f126b9664b4fcc"
+    },
+    "kernel_getrf_nopivot_0_ddiv_64ns_64ns_64_22_no_dsp_1.v": {
+      "bytes": 2208,
+      "sha256": "5d22b7c6ff8837dacb378674cb7495c3745e306e9c1ba83e7f962eec80d3fa38"
+    },
+    "kernel_getrf_nopivot_0.v": {
+      "bytes": 221416,
+      "sha256": "b54785784d08558f1dba632d92591638d1609125fd7e4cdcfc8fb9671229e76c"
+    },
+    "kernel_getrf_nopivot_0_dsub_64ns_64ns_64_5_full_dsp_1.v": {
+      "bytes": 2211,
+      "sha256": "6c4a8a807b4181dedae521ee8bc8991718ec30b1f57663ce2f3b8f1afab042e3"
+    },
+    "kernel_getrf_nopivot_0_matA_XPM_MEMORY_URAM_1R1W.v": {
+      "bytes": 6336,
+      "sha256": "1abf8e3162089d18eb745a58d6ad622b57a909ecddb1dbce2c1dbabe52db4978"
+    },
+    "kernel_getrf_nopivot_0_mul_8ns_4ns_12_1_1.v": {
+      "bytes": 570,
+      "sha256": "f365705612f2480dab2e6c09aaa4aef61eb4bc36570b796cfa0ccc5f4539c53e"
+    },
+    "kernel_getrf_nopivot_0_rowUpdate_double_8_256_Pipeline_LoopMulSub.v": {
+      "bytes": 23495,
+      "sha256": "d7ebc6c77764921a69854452aa696d9dd83a3b6cccea6d88d7f9b9b539438c79"
+    },
+    "kernel_getrf_nopivot_0_dmul_64ns_64ns_64_5_max_dsp_1.v": {
+      "bytes": 2208,
+      "sha256": "56eb745eeb389df4ec5e054f89007fefc485cfe241283a5f8c5486863ca1017e"
+    },
+    "kernel_getrf_nopivot_0_dsub_64ns_64ns_64_5_full_dsp_1_ip.tcl": {
+      "bytes": 2624,
+      "sha256": "849fd3f0b636fc75eeb2e40012251518d761137b05bdfaa4638190bcd3b3215a"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_8_256_32_Pipeline_LoopPivot.v": {
+      "bytes": 46242,
+      "sha256": "c1205714cba2f792a8a0e34ea2839ced83c95b79aa95597f9f5149b1029a99bd"
+    },
+    "kernel_getrf_nopivot_0_sparsemux_65_5_64_1_1.v": {
+      "bytes": 5256,
+      "sha256": "567cc153a9269f604cefe97b12fcb8b51e5cad38535771fd94968598192b5245"
+    },
+    "kernel_getrf_nopivot_0_kernel_getrf_nopivot_0_Pipeline_LoopWrite_VITIS_LOOP_138_2.v": {
+      "bytes": 30418,
+      "sha256": "e0d6a07f91fd53495c747ed3e54b6da39af2285e0a1ad5a9bb19ff0b7072ec6d"
+    },
+    "kernel_getrf_nopivot_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip.tcl": {
+      "bytes": 2608,
+      "sha256": "878e4bd5db6f4806c477eff80ec66cd411a56d9217fc58bcd6e17234d57f8aeb"
+    },
+    "kernel_getrf_nopivot_0_kernel_getrf_nopivot_0_Pipeline_LoopRead_VITIS_LOOP_128_1.v": {
+      "bytes": 36692,
+      "sha256": "205d70120b64e638ec84ce995a1766b7014492ad35ee5e8f6673949553bce8a3"
+    },
+    "kernel_getrf_nopivot_0_flow_control_loop_pipe_sequential_init.v": {
+      "bytes": 2788,
+      "sha256": "51f6c5130cf1006e213edc63341bdb3243d36ebbcbb85d27b879a69de7dc3a91"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_8_256_32_s_pivot_RAM_2P_BRAM_1R1W.v": {
+      "bytes": 1101,
+      "sha256": "7e06990d47b88844c99fe11774360c5d8ba01cba78c15c13a727c3a948154f32"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_8_256_32_Pipeline_LoopDiv.v": {
+      "bytes": 157962,
+      "sha256": "ba196276ecd6ea3a9d4eea5185dbdf9acaeec38ab7abae8fd1351fd91e2d2b9d"
+    },
+    "kernel_getrf_nopivot_0_gmem0_m_axi.v": {
+      "bytes": 98268,
+      "sha256": "2ab3152326450d014d439be28619148e355d6afac7cf54b37ab082f20f0f7d73"
+    },
+    "kernel_getrf_nopivot_0_dmul_64ns_64ns_64_5_max_dsp_1_ip.tcl": {
+      "bytes": 2610,
+      "sha256": "fb4dd6ce2558ce24ef5ca3656cf45cf8eff847b0c462188fc143e04657343255"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_8_256_32_s.v": {
+      "bytes": 299636,
+      "sha256": "dec3cf37f33638c9a27c9877a8f69945d7ff6ac5a6ed4dfbe24d56ef25bdda69"
+    },
+    "kernel_getrf_nopivot_0_udiv_11ns_8ns_3_15_1.v": {
+      "bytes": 3902,
+      "sha256": "60df1016a178b0a9ee1fcb7aca90ca8caad611710cb6da5d90b7441ac9fb8f44"
+    },
+    "kernel_getrf_nopivot_0_rowUpdate_double_8_256_s.v": {
+      "bytes": 8235,
+      "sha256": "7e725e960f1a5c97f1aeb45c1bc457230d4f4e777b35ad3b239b98d3af9bc79c"
+    },
+    "kernel_getrf_nopivot_0_urem_11ns_8ns_8_15_1.v": {
+      "bytes": 3902,
+      "sha256": "65c99f737d21a6760602f0ca2e0aa93d8bcfda785b28d4f29486cb3cd2aa1492"
+    }
+  }
+}

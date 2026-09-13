@@ -1,0 +1,63 @@
+{
+  "id": "geqrf_n768_u384",
+  "source": "sources/kernel.cpp",
+  "top": "kernel_geqrf_0",
+  "parameters": {
+    "MA": 768,
+    "NA": 768,
+    "NCU": 384
+  },
+  "origin": "solver/L2/tests/hw/geqrf/kernel_geqrf.cpp",
+  "origin_sha256": "6bef3f79c731d603ffff6bed45b35a92ae4e5fb6e33658d61101c5a9cf793527",
+  "status": "COMPLETE",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/geqrf_20260911_105252_v05",
+  "started_epoch": 1789095172.691714,
+  "source_sha256": "95025761bf8145ba95df2d89f633ce68ca067df69a2261488a4e1a9baf9a6751",
+  "returncode": 0,
+  "seconds": 136.2,
+  "classification": "PASS_COMPUTE_60",
+  "resources": {
+    "LUT": 1327773,
+    "FF": 1391246,
+    "DSP": 6925,
+    "BRAM_18K": 3632,
+    "URAM": 384
+  },
+  "slr_equivalents": {
+    "LUT": 3.073548611111111,
+    "FF": 1.610238425925926,
+    "DSP": 2.2542317708333335,
+    "BRAM_18K": 2.7023809523809526,
+    "URAM": 1.2
+  },
+  "compute_peak_slr": 3.073548611111111,
+  "all_peak_slr": 3.073548611111111,
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/geqrf_20260911_105252_v05/hls/sol/syn/verilog",
+  "verilog_files": 38,
+  "estimated_clock_ns": "3.650",
+  "latency_min": "2442301",
+  "latency_max": "6970739523901",
+  "hls_resource_classification": "PASS_COMPUTE_60",
+  "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+  "top_pipeline_type": "no",
+  "capacity_lower_bound_slrs": 4,
+  "near_60": false,
+  "loop_constraints_unmet": false,
+  "warning_count": 460,
+  "max_rss_kib": 1669824,
+  "case": "geqrf",
+  "directory": "geqrf_20260911_105252_v05",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-03/runs/geqrf_n768_u384",
+  "validation": {
+    "id": "geqrf_n768_u384",
+    "returncode": 0,
+    "seconds": 5.451059341430664,
+    "status": "PASS",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=768 KIND=4 ENTRIES=896 WORST_RELATIVE=1.3310463842231002e-12",
+      "NUMERICAL_SAMPLE_PASS"
+    ]
+  },
+  "original_batch": "hls-nondataflow-scale-20260911-03",
+  "original_source": "sources/geqrf/n768_u384/kernel.cpp"
+}

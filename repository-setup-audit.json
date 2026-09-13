@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-13",
+  "repository": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case",
+  "large_files_checked": 186,
+  "large_files_not_ignored": [],
+  "source_checks": [
+    "experiment/trtrs_20260911_110300_v05/sources/kernel.cpp",
+    "FPGA_benchmark/configs",
+    "FPGA_benchmark/rtl",
+    "FPGA_benchmark/upstream/CNNA",
+    "experiment/vision-summary.md"
+  ],
+  "helper_idempotent": true,
+  "commit_created": false,
+  "vitis_commit": "3ab1ecd20cf338b3f8f2824fdfeee115f3398889"
+}

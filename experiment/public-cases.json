@@ -1,0 +1,62 @@
+[
+  {
+    "id": "01_vitis_2mm",
+    "repo": "allo-pldi24-artifact",
+    "files": [
+      "polybench/vitis/2mm/2mm.cpp"
+    ],
+    "top": "kernel",
+    "part": "xcu250-figd2104-2L-e",
+    "period_ns": "3.33",
+    "directory": "01_2mm_vitis_u250",
+    "board": "U250",
+    "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/01_2mm_vitis_u250",
+    "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-public-cases-20260911-02/runs/01_vitis_2mm",
+    "original_batch": "hls-public-cases-20260911-02"
+  },
+  {
+    "id": "02_vitis_3mm",
+    "repo": "allo-pldi24-artifact",
+    "files": [
+      "polybench/vitis/3mm/3mm.cpp"
+    ],
+    "top": "kernel",
+    "part": "xcu250-figd2104-2L-e",
+    "period_ns": "3.33",
+    "directory": "02_3mm_vitis_u250",
+    "board": "U250",
+    "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/02_3mm_vitis_u250",
+    "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-public-cases-20260911-02/runs/02_vitis_3mm",
+    "original_batch": "hls-public-cases-20260911-02"
+  },
+  {
+    "id": "03_vitis_jacobi_2d",
+    "repo": "allo-pldi24-artifact",
+    "files": [
+      "polybench/vitis/jacobi-2d/jacobi-2d.cpp"
+    ],
+    "top": "kernel",
+    "part": "xcu280-fsvh2892-2L-e",
+    "period_ns": "3.33",
+    "directory": "03_jacobi_2d_vitis_u280",
+    "board": "U280",
+    "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/03_jacobi_2d_vitis_u280",
+    "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-public-cases-20260911-02/runs/03_vitis_jacobi_2d",
+    "original_batch": "hls-public-cases-20260911-02"
+  },
+  {
+    "id": "09_minimap2_u250",
+    "repo": "minimap2-acceleration",
+    "files": [
+      "kernel/hls/src/device_kernel.cpp"
+    ],
+    "top": "device_chain_kernel",
+    "part": "xcu250-figd2104-2L-e",
+    "period_ns": "5",
+    "directory": "09_minimap2_vitis_u250",
+    "board": "U250",
+    "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/09_minimap2_vitis_u250",
+    "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-public-cases-20260911-01/runs/09_minimap2_u250",
+    "original_batch": "hls-public-cases-20260911-01"
+  }
+]

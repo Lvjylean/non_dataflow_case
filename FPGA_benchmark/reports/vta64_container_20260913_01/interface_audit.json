@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "axi_address_width": 64,
+  "axi_data_width": 128,
+  "interface_clock_hz": 100000000,
+  "masters": [
+    {
+      "owner": "/fetch_0",
+      "name": "Data_m_axi_ins_port",
+      "offset": "0x0000000000000000",
+      "range": "1T"
+    },
+    {
+      "owner": "/load_0",
+      "name": "Data_m_axi_data_port",
+      "offset": "0x0000000000000000",
+      "range": "1T"
+    },
+    {
+      "owner": "/compute_0",
+      "name": "Data_m_axi_uop_port",
+      "offset": "0x0000000000000000",
+      "range": "1T"
+    },
+    {
+      "owner": "/compute_0",
+      "name": "Data_m_axi_data_port",
+      "offset": "0x0000000000000000",
+      "range": "1T"
+    },
+    {
+      "owner": "/store_0",
+      "name": "Data_m_axi_data_port",
+      "offset": "0x0000000000000000",
+      "range": "1T"
+    }
+  ],
+  "control_page_offsets": [
+    0,
+    4096,
+    8192,
+    12288,
+    16384,
+    20480,
+    24576,
+    28672
+  ],
+  "external_reset_active_high": [
+    "0",
+    "0"
+  ],
+  "auxiliary_reset_active_high": [
+    "1",
+    "1"
+  ],
+  "scope": "Generated DDR decoding/control/reset contract; not functional or physical closure."
+}

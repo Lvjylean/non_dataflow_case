@@ -1,0 +1,121 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri Sep 11 15:39:33 2026
+| Host         : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_high_fanout_nets -max_nets 100 -file preflight_high_fanout.rpt
+| Design       : kernel_trtrs_0
+| Device       : xcu250
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| Net Name                                                                                                                                                                                 | Fanout | Driver Type |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| ap_CS_fsm_state7                                                                                                                                                                         |  66628 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/ap_CS_fsm_state27                                                                                                                              |  66566 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/ap_CS_fsm_pp0_stage2                                                                |  59319 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/ap_CS_fsm_pp0_stage1                                                                |  32894 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/p_0_in                                                                                                                                         |  32775 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/trunc_ln44_reg_33062_pp0_iter2_reg                                                  |  29065 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/ap_CS_fsm_pp0_stage3                                                                |  19531 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/sext_ln36_cast_reg_32541[63]                                                        |  17408 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/ap_enable_reg_pp0_iter1                                                             |  16388 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/trunc_ln36_reg_26959_reg_n_2_[0]                                                                                                               |  16387 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/trunc_ln36_reg_26959_reg_n_2_[1]                                                                                                               |  16387 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/trunc_ln44_reg_33062_pp0_iter1_reg                                                  |  14442 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/ap_enable_reg_pp0_iter3                                                             |  10452 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/ap_CS_fsm_pp0_stage0                                                                |   8588 | FDSE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/trunc_ln36_reg_26959_reg_n_2_[2]                                                                                                               |   8195 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/mul27_100_reg_412550                                                                |   8192 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/mul27_127_reg_420300                                                                |   8192 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/mul27_255_reg_433100                                                                |   8192 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/mul27_383_reg_445900                                                                |   8192 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/trunc_ln36_reg_26959_reg_n_2_[3]                                                                                                               |   4099 | FDRE        |
+| ap_rst_n_inv                                                                                                                                                                             |   3293 | LUT1        |
+| grp_kernel_trtrs_0_Pipeline_VITIS_LOOP_114_3_fu_4223/ap_block_pp0_stage0_subdone                                                                                                         |   1134 | LUT4        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/void_trtrs_char_int_double_int_double_int_int_int_matB_0_o_ap_vld_INST_0_i_1_n_2    |   1048 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/void_trtrs_char_int_double_int_double_int_int_int_matB_10_0_o_ap_vld_INST_0_i_1_n_2 |   1048 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/void_trtrs_char_int_double_int_double_int_int_int_matB_18_0_o[63]_INST_0_i_1_n_2    |   1048 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/void_trtrs_char_int_double_int_double_int_int_int_matB_18_0_o_ap_vld_INST_0_i_1_n_2 |   1048 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/void_trtrs_char_int_double_int_double_int_int_int_matB_o_ap_vld_INST_0_i_1_n_2      |   1048 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/void_trtrs_char_int_double_int_double_int_int_int_matB_10_o_ap_vld_INST_0_i_1_n_2   |   1043 | LUT2        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[10]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[11]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[12]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[13]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[14]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[16]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[17]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[18]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[19]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[1]                                                                    |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[20]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[21]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[22]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[24]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[25]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[26]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[27]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[28]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[29]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[2]                                                                    |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[30]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[32]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[33]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[34]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[35]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[36]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[37]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[38]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[3]                                                                    |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[40]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[41]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[42]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[43]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[44]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[45]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[46]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[48]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[49]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[4]                                                                    |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[50]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[51]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[52]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[53]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[54]                                                                   |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[5]                                                                    |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[6]                                                                    |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[8]                                                                    |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/j_fu_4146_reg[9]                                                                    |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/trunc_ln36_reg_26959_reg_n_2_[4]                                                                                                               |   1027 | FDRE        |
+| grp_trisolver_L_double_1024_512_s_fu_6280/trunc_ln36_reg_26959_reg_n_2_[5]                                                                                                               |   1027 | FDRE        |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[0]                                                                                                                                    |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[10]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[11]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[12]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[13]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[14]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[15]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[16]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[17]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[18]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[19]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[1]                                                                                                                                    |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[20]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[21]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[22]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[23]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[24]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[25]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[26]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[27]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[28]                                                                                                                                   |   1024 | RAMB36E2    |
+| gmem1_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[29]                                                                                                                                   |   1024 | RAMB36E2    |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+
+

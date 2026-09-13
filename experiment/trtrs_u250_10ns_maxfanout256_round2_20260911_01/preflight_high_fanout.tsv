@@ -1,0 +1,3 @@
+net	flat_pin_count	logical_loads	driver_pin	driver_ref	is_clock	dont_touch
+<const0>	66350	65855	GND/G	GND		
+ap_CS_fsm_state7	66629	66628	ap_CS_fsm_reg[6]/Q	FDRE		

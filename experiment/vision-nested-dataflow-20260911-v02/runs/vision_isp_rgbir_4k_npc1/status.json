@@ -1,0 +1,15 @@
+{
+  "name": "vision_isp_rgbir_4k_npc1",
+  "top": "ISPPipeline_accel",
+  "cpp": "xf_isp_accel.cpp",
+  "origin": "vision/L3/examples/isppipeline_rgbir/xf_isp_accel.cpp",
+  "parameters_changed": {},
+  "expected_internal_dataflow": true,
+  "clock_ns": 5,
+  "part": "xcu250-figd2104-2L-e",
+  "status": "FAILED",
+  "started": 1789109009.1118019,
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/vision-nested-dataflow-20260911-v02/runs/vision_isp_rgbir_4k_npc1",
+  "returncode": 1,
+  "seconds": 4.2
+}

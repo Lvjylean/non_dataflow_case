@@ -1,0 +1,128 @@
+[
+  {
+    "batch": "vision-nested-dataflow-20260911-v01",
+    "case": "vision_orb_matcher_k8192_pu256",
+    "files": 22,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v01",
+    "case": "vision_orb_matcher_k8192_pu512",
+    "files": 22,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v01",
+    "case": "vision_meanshift_1080p_objects10",
+    "files": 47,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v01",
+    "case": "vision_meanshift_1080p_objects64",
+    "files": 47,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v01",
+    "case": "vision_rotate_4k_tile256_npc2",
+    "files": 78,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v01",
+    "case": "vision_flip_8k_rgb_npc8",
+    "files": 61,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v01",
+    "case": "vision_harris_corners_4k_filter7",
+    "files": 113,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v02",
+    "case": "vision_isp_bayer_4k_npc2",
+    "files": 145,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v02",
+    "case": "vision_isp_hdr_4k_npc1",
+    "files": 138,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v02",
+    "case": "vision_isp_global_tonemap_4k",
+    "files": 228,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v02",
+    "case": "vision_isp_all_in_one_1080p",
+    "files": 225,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v02",
+    "case": "vision_tvl1_optical_flow_512x512_npc2",
+    "files": 356,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v02",
+    "case": "vision_orb_matcher_k8192_pu64",
+    "files": 22,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v02",
+    "case": "vision_orb_matcher_k8192_pu128",
+    "files": 22,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v03",
+    "case": "vision_isp_bayer_4k_npc4",
+    "files": 152,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v03",
+    "case": "vision_isp_hdr_4k_npc4",
+    "files": 154,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v03",
+    "case": "vision_isp_all_in_one_1080p_npc2",
+    "files": 237,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v03",
+    "case": "vision_isp_all_in_one_1080p_npc4",
+    "files": 244,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v04",
+    "case": "vision_isp_hdr_8k_npc4",
+    "files": 153,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v04",
+    "case": "vision_tvl1_optical_flow_512x512_flow10",
+    "files": 357,
+    "top_exists": true
+  },
+  {
+    "batch": "vision-nested-dataflow-20260911-v04",
+    "case": "vision_tvl1_optical_flow_1024x1024_npc2",
+    "files": 356,
+    "top_exists": true
+  }
+]

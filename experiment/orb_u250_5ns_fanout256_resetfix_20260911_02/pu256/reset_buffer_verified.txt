@@ -1,0 +1,1 @@
+original_sinks=2346 branches=19 max_branch=128 identity_LUT1_INIT=2'h2 no_registers_added=1 exact_sink_coverage=1

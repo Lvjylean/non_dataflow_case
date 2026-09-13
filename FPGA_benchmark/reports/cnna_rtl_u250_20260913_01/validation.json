@@ -1,0 +1,45 @@
+{
+  "case": "CNNA",
+  "run": "cnna_rtl_u250_20260913_01",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/FPGA_benchmark/runs/cnna_rtl_u250_20260913_01",
+  "checkpoint": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/FPGA_benchmark/runs/cnna_rtl_u250_20260913_01/routed.dcp",
+  "physical_status": "SUPERSEDED_CLOCK_GAP",
+  "timing_status": "FAIL",
+  "wns_ns": 2.55,
+  "whs_ns": -3.772,
+  "checks": {
+    "implementation_exit_zero": true,
+    "route_complete": true,
+    "reopen_exit_zero": true,
+    "reopen_marker": true,
+    "reopen_route_complete": true,
+    "reopen_route_counts_match": true,
+    "no_blackboxes": true,
+    "no_drc_errors": true,
+    "no_drc_critical_warnings": true,
+    "timing_reproduced": true
+  },
+  "route": {
+    "routable": 108946,
+    "routed": 108946,
+    "errors": 0,
+    "complete": true
+  },
+  "metrics": {
+    "max_slack_ns": "2.550",
+    "min_slack_ns": "-3.772",
+    "blackboxes": "0",
+    "drc_errors": "0",
+    "drc_critical_warnings": "0"
+  },
+  "resources": {
+    "CLB LUTs": 35745.0,
+    "CLB Registers": 72369.0,
+    "Block RAM Tile": 138.5,
+    "DSPs": 405.0,
+    "URAM": 0.0,
+    "Total SLLs Used": 0.0
+  },
+  "hls_provenance": "Upstream 2019.1 exported HDL; 2023.2 source HLS failed at missing systemc.h",
+  "limitation": "One explicit OOC clock gap; aggregate routed counts alone are insufficient."
+}

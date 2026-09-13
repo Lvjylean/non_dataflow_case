@@ -1,0 +1,5 @@
+metric	value
+fd_lut_above256_logical	5
+other_signal_above256_logical	0
+max_signal_logical_loads_above256	640
+max_signal_physical_site_pins_among_high_logical	632

@@ -1,0 +1,62 @@
+{
+  "id": "getrf_n1024_u512",
+  "source": "sources/kernel.cpp",
+  "top": "kernel_getrf_0",
+  "parameters": {
+    "NRC": 1024,
+    "NCU": 512
+  },
+  "origin": "solver/L2/tests/hw/getrf/kernel_getrf.cpp",
+  "origin_sha256": "7bb37531498528d7e52f5b4d7949abd50115bcd9d23f7893169d8cabca50dcd7",
+  "status": "COMPLETE",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/getrf_20260911_103710_v04",
+  "started_epoch": 1789094230.477983,
+  "source_sha256": "809a4c3e04acf599525b41de523ce5501d8b34841f8a730220e2fb8d73257408",
+  "returncode": 0,
+  "seconds": 409.0,
+  "classification": "PASS_COMPUTE_60",
+  "resources": {
+    "LUT": 1033966,
+    "FF": 1129177,
+    "DSP": 5632,
+    "BRAM_18K": 4101,
+    "URAM": 512
+  },
+  "slr_equivalents": {
+    "LUT": 2.3934398148148146,
+    "FF": 1.306917824074074,
+    "DSP": 1.8333333333333333,
+    "BRAM_18K": 3.0513392857142856,
+    "URAM": 1.6
+  },
+  "compute_peak_slr": 2.3934398148148146,
+  "all_peak_slr": 3.0513392857142856,
+  "verilog_directory": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/getrf_20260911_103710_v04/hls/sol/syn/verilog",
+  "verilog_files": 25,
+  "estimated_clock_ns": "3.650",
+  "latency_min": "4272277",
+  "latency_max": "7410841",
+  "hls_resource_classification": "PASS_COMPUTE_60",
+  "parameter_validity": "No incompatible bound found in the reviewed source paths; not exhaustive",
+  "top_pipeline_type": "no",
+  "capacity_lower_bound_slrs": 4,
+  "near_60": false,
+  "loop_constraints_unmet": true,
+  "warning_count": 580,
+  "max_rss_kib": 2272980,
+  "case": "getrf",
+  "directory": "getrf_20260911_103710_v04",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-nondataflow-scale-20260911-02/runs/getrf_n1024_u512",
+  "validation": {
+    "id": "getrf_n1024_u512",
+    "returncode": 0,
+    "seconds": 7.184241533279419,
+    "status": "PASS",
+    "evidence": [
+      "NUMERICAL_SAMPLE N=1024 KIND=1 ENTRIES=1152 WORST_RELATIVE=3.1607772943064956e-15",
+      "NUMERICAL_SAMPLE_PASS"
+    ]
+  },
+  "original_batch": "hls-nondataflow-scale-20260911-02",
+  "original_source": "sources/getrf/n1024_u512/kernel.cpp"
+}

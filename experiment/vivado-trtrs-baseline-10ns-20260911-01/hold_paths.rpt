@@ -1,0 +1,844 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date              : Fri Sep 11 13:48:23 2026
+| Host              : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command           : report_timing -delay_type min -max_paths 20 -file hold_paths.rpt
+| Design            : kernel_trtrs_0
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Routed
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.030ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[26].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[19]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.081ns  (logic 0.039ns (48.148%)  route 0.042ns (51.852%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/CLK
+    SLICE_X92Y824        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X92Y824        FDRE (Prop_EFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[16]/Q
+                         net (fo=1, routed)           0.042     0.094    grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[26].Q_DEL/i_pipe/D[19]
+    SLICE_X92Y825        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[26].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[19]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.018     0.018    grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[26].Q_DEL/i_pipe/CLK
+    SLICE_X92Y825        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[26].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[19]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X92Y825        FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[26].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[19]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.094    
+  -------------------------------------------------------------------
+                         slack                                  0.030    
+
+Slack (MET) :             0.035ns  (arrival time - required time)
+  Source:                 grp_kernel_trtrs_0_Pipeline_VITIS_LOOP_114_3_fu_4223/trunc_ln3_reg_9432_reg[47]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            gmem1_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][47]_srl6/D
+                            (rising edge-triggered cell SRL16E clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.123ns  (logic 0.038ns (30.894%)  route 0.085ns (69.106%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.026ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_kernel_trtrs_0_Pipeline_VITIS_LOOP_114_3_fu_4223/ap_clk
+    SLICE_X106Y821       FDRE                                         r  grp_kernel_trtrs_0_Pipeline_VITIS_LOOP_114_3_fu_4223/trunc_ln3_reg_9432_reg[47]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X106Y821       FDRE (Prop_AFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  grp_kernel_trtrs_0_Pipeline_VITIS_LOOP_114_3_fu_4223/trunc_ln3_reg_9432_reg[47]/Q
+                         net (fo=1, routed)           0.085     0.136    gmem1_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/din[47]
+    SLICE_X107Y820       SRL16E                                       r  gmem1_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][47]_srl6/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.039     0.039    gmem1_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/clk
+    SLICE_X107Y820       SRL16E                                       r  gmem1_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][47]_srl6/CLK
+                         clock pessimism              0.000     0.039    
+    SLICE_X107Y820       SRL16E (Hold_H5LUT_SLICEM_CLK_D)
+                                                      0.062     0.101    gmem1_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][47]_srl6
+  -------------------------------------------------------------------
+                         required time                         -0.101    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.035    
+
+Slack (MET) :             0.038ns  (arrival time - required time)
+  Source:                 gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.091ns  (logic 0.059ns (64.769%)  route 0.032ns (35.231%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    gmem1_m_axi_U/store_unit/fifo_wrsp/clk
+    SLICE_X98Y826        FDRE                                         r  gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X98Y826        FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr_reg[2]/Q
+                         net (fo=5, routed)           0.026     0.078    gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr_reg_n_2_[2]
+    SLICE_X98Y826        LUT5 (Prop_G5LUT_SLICEL_I0_O)
+                                                      0.020     0.098 r  gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr[3]_i_1/O
+                         net (fo=1, routed)           0.006     0.104    gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr[3]_i_1_n_2
+    SLICE_X98Y826        FDRE                                         r  gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    gmem1_m_axi_U/store_unit/fifo_wrsp/clk
+    SLICE_X98Y826        FDRE                                         r  gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr_reg[3]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X98Y826        FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     0.066    gmem1_m_axi_U/store_unit/fifo_wrsp/mOutPtr_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.104    
+  -------------------------------------------------------------------
+                         slack                                  0.038    
+
+Slack (MET) :             0.039ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.092ns  (logic 0.037ns (40.217%)  route 0.055ns (59.783%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X111Y556       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y556       FDRE (Prop_FFF_SLICEM_C_Q)
+                                                      0.037     0.050 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/Q
+                         net (fo=1, routed)           0.055     0.105    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q[5]
+    SLICE_X112Y556       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X112Y556       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X112Y556       FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1753/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.105    
+  -------------------------------------------------------------------
+                         slack                                  0.039    
+
+Slack (MET) :             0.039ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.092ns  (logic 0.037ns (40.217%)  route 0.055ns (59.783%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X222Y328       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X222Y328       FDRE (Prop_FFF_SLICEM_C_Q)
+                                                      0.037     0.050 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/Q
+                         net (fo=1, routed)           0.055     0.105    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q[5]
+    SLICE_X223Y328       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X223Y328       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X223Y328       FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1670/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.105    
+  -------------------------------------------------------------------
+                         slack                                  0.039    
+
+Slack (MET) :             0.040ns  (arrival time - required time)
+  Source:                 gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.093ns  (logic 0.059ns (63.649%)  route 0.034ns (36.351%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    gmem0_m_axi_U/bus_read/fifo_burst/clk
+    SLICE_X103Y790       FDRE                                         r  gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X103Y790       FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr_reg[2]/Q
+                         net (fo=5, routed)           0.028     0.080    gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr_reg_n_2_[2]
+    SLICE_X103Y790       LUT5 (Prop_G5LUT_SLICEL_I0_O)
+                                                      0.020     0.100 r  gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr[3]_i_1/O
+                         net (fo=1, routed)           0.006     0.106    gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr[3]_i_1_n_2
+    SLICE_X103Y790       FDRE                                         r  gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    gmem0_m_axi_U/bus_read/fifo_burst/clk
+    SLICE_X103Y790       FDRE                                         r  gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr_reg[3]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X103Y790       FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     0.066    gmem0_m_axi_U/bus_read/fifo_burst/mOutPtr_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.106    
+  -------------------------------------------------------------------
+                         slack                                  0.040    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][1]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.093ns  (logic 0.038ns (40.860%)  route 0.055ns (59.140%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X201Y267       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X201Y267       FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[1]/Q
+                         net (fo=1, routed)           0.055     0.106    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q[1]
+    SLICE_X202Y267       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.018     0.018    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X202Y267       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][1]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X202Y267       FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.047     0.065    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1793/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][1]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.106    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][1]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.093ns  (logic 0.038ns (40.860%)  route 0.055ns (59.140%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X187Y418       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X187Y418       FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[1]/Q
+                         net (fo=1, routed)           0.055     0.106    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q[1]
+    SLICE_X188Y418       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.018     0.018    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X188Y418       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][1]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X188Y418       FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.047     0.065    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1650/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][1]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.106    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.039ns (41.489%)  route 0.055ns (58.511%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X75Y681        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X75Y681        FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]/Q
+                         net (fo=1, routed)           0.055     0.107    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q[7]
+    SLICE_X75Y680        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X75Y680        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X75Y680        FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1547/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.039ns (41.489%)  route 0.055ns (58.511%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X75Y556        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X75Y556        FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]/Q
+                         net (fo=1, routed)           0.055     0.107    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q[7]
+    SLICE_X75Y555        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X75Y555        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X75Y555        FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.039ns (41.489%)  route 0.055ns (58.511%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/CLK
+    SLICE_X120Y669       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X120Y669       FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]/Q
+                         net (fo=1, routed)           0.055     0.107    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/opt_has_pipe.first_q
+    SLICE_X120Y668       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/CLK
+    SLICE_X120Y668       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X120Y668       FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1603/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_OVER_NORMAL.LRG_ALMOST_OVER_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.039ns (41.489%)  route 0.055ns (58.511%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X178Y594       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X178Y594       FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[7]/Q
+                         net (fo=1, routed)           0.055     0.107    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q[7]
+    SLICE_X178Y593       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X178Y593       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X178Y593       FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1611/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1757/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[18]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/mul27_211_reg_42450_reg[18]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.037ns (39.284%)  route 0.057ns (60.716%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1757/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.OP/CLK
+    SLICE_X95Y553        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1757/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[18]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X95Y553        FDRE (Prop_FFF_SLICEM_C_Q)
+                                                      0.037     0.050 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1757/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[18]/Q
+                         net (fo=4, routed)           0.057     0.107    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/grp_fu_11684_p2[18]
+    SLICE_X96Y553        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/mul27_211_reg_42450_reg[18]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/ap_clk
+    SLICE_X96Y553        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/mul27_211_reg_42450_reg[18]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X96Y553        FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/mul27_211_reg_42450_reg[18]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.038ns (40.426%)  route 0.056ns (59.574%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X48Y819        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X48Y819        FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/Q
+                         net (fo=1, routed)           0.056     0.107    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q[2]
+    SLICE_X49Y819        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.018     0.018    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X49Y819        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X49Y819        FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.047     0.065    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1677/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.038ns (40.426%)  route 0.056ns (59.574%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X88Y389        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X88Y389        FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/Q
+                         net (fo=1, routed)           0.056     0.107    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q[2]
+    SLICE_X89Y389        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.018     0.018    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X89Y389        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X89Y389        FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.047     0.065    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1770/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][6]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.039ns (41.489%)  route 0.055ns (58.511%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X75Y556        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X75Y556        FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[6]/Q
+                         net (fo=1, routed)           0.055     0.107    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q[6]
+    SLICE_X75Y555        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.018     0.018    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X75Y555        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][6]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X75Y555        FDRE (Hold_DFF2_SLICEL_C_D)
+                                                      0.047     0.065    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1574/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][6]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.038ns (40.426%)  route 0.056ns (59.574%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X109Y690       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y690       FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[2]/Q
+                         net (fo=1, routed)           0.056     0.107    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.first_q[2]
+    SLICE_X110Y690       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.018     0.018    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/CLK
+    SLICE_X110Y690       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X110Y690       FDRE (Hold_BFF2_SLICEL_C_D)
+                                                      0.047     0.065    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dsub_64ns_64ns_64_5_full_dsp_1_U1605/kernel_trtrs_0_dsub_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[20].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.095ns  (logic 0.037ns (38.947%)  route 0.058ns (61.053%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[20].Q_DEL/i_pipe/CLK
+    SLICE_X91Y825        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[20].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X91Y825        FDRE (Prop_FFF_SLICEM_C_Q)
+                                                      0.037     0.050 r  grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[20].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[1]/Q
+                         net (fo=1, routed)           0.058     0.108    grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/D[4]
+    SLICE_X92Y825        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/CLK
+    SLICE_X92Y825        FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[4]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X92Y825        FDRE (Hold_FFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/ddiv_64ns_64ns_64_22_no_dsp_1_U3344/kernel_trtrs_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip_u/inst/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[23].Q_DEL/i_pipe/opt_has_pipe.first_q_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.108    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.095ns  (logic 0.037ns (38.947%)  route 0.058ns (61.053%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X133Y831       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X133Y831       FDRE (Prop_FFF_SLICEM_C_Q)
+                                                      0.037     0.050 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/Q
+                         net (fo=1, routed)           0.058     0.108    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q[5]
+    SLICE_X134Y831       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X134Y831       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X134Y831       FDRE (Hold_FFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1711/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.108    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.095ns  (logic 0.039ns (41.053%)  route 0.056ns (58.947%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.013     0.013    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X125Y569       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X125Y569       FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q_reg[7]/Q
+                         net (fo=1, routed)           0.056     0.108    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.first_q[7]
+    SLICE_X125Y568       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=233950, unset)       0.019     0.019    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/CLK
+    SLICE_X125Y568       FDRE                                         r  grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X125Y568       FDRE (Hold_HFF2_SLICEL_C_D)
+                                                      0.047     0.066    grp_trisolver_L_double_1024_512_s_fu_6280/grp_trisolver_L_double_1024_512_Pipeline_Loop_col_fu_10847/dmul_64ns_64ns_64_5_max_dsp_1_U1735/kernel_trtrs_0_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/EXP_PRE_RND_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][7]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.108    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+
+
+

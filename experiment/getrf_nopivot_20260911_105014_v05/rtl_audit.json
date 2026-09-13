@@ -1,0 +1,98 @@
+{
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "unchanged": true,
+  "files": {
+    "kernel_getrf_nopivot_0_rowUpdate_double_2_512_Pipeline_LoopMulSub.v": {
+      "bytes": 22824,
+      "sha256": "2449ceac5932195a292be9a566c799a09a8210690f8b0c1670827b3659595af0"
+    },
+    "kernel_getrf_nopivot_0_control_s_axi.v": {
+      "bytes": 12092,
+      "sha256": "cff6459f8ff085afaf98dbc77f42b920851c16a57261343cb2f126b9664b4fcc"
+    },
+    "kernel_getrf_nopivot_0_ddiv_64ns_64ns_64_22_no_dsp_1.v": {
+      "bytes": 2208,
+      "sha256": "5d22b7c6ff8837dacb378674cb7495c3745e306e9c1ba83e7f962eec80d3fa38"
+    },
+    "kernel_getrf_nopivot_0.v": {
+      "bytes": 1304734,
+      "sha256": "cb99e41b245e6965269718fa20ea7b76e5daa01bb2305c946a39d7674030d221"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_2_512_256_s.v": {
+      "bytes": 2371481,
+      "sha256": "ac5fc5eb3b3df472ea77b0a5108edc0e14ceaff6ccbfb5cceb75eea9ea089a94"
+    },
+    "kernel_getrf_nopivot_0_dsub_64ns_64ns_64_5_full_dsp_1.v": {
+      "bytes": 2211,
+      "sha256": "6c4a8a807b4181dedae521ee8bc8991718ec30b1f57663ce2f3b8f1afab042e3"
+    },
+    "kernel_getrf_nopivot_0_matA_XPM_MEMORY_URAM_1R1W.v": {
+      "bytes": 6335,
+      "sha256": "13ad42be82f01330360b8759c06344ed1e55d8b1fe7cefbe72121e07b38da719"
+    },
+    "kernel_getrf_nopivot_0_rowUpdate_double_2_512_s.v": {
+      "bytes": 8232,
+      "sha256": "b7641b6fcdb92bf76100d3fbba2a02c6d5978372efa3f073af9344105afe5aac"
+    },
+    "kernel_getrf_nopivot_0_urem_10ns_9ns_9_14_1.v": {
+      "bytes": 3902,
+      "sha256": "6884594445700adae8ca003d01b4bfea67fb21c9bae8af0c918642ac5635da72"
+    },
+    "kernel_getrf_nopivot_0_dmul_64ns_64ns_64_5_max_dsp_1.v": {
+      "bytes": 2208,
+      "sha256": "56eb745eeb389df4ec5e054f89007fefc485cfe241283a5f8c5486863ca1017e"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_2_512_256_Pipeline_LoopDiv.v": {
+      "bytes": 1138265,
+      "sha256": "fdb6ab8324f6d858b34097e8a6b32499484d67351008262667e104f6fd0871a4"
+    },
+    "kernel_getrf_nopivot_0_udiv_10ns_9ns_1_14_seq_1.v": {
+      "bytes": 4435,
+      "sha256": "b3414334faa1fab7a5b493253d6d15e1f5400a416583c3f6c136f042a64000c3"
+    },
+    "kernel_getrf_nopivot_0_dsub_64ns_64ns_64_5_full_dsp_1_ip.tcl": {
+      "bytes": 2624,
+      "sha256": "849fd3f0b636fc75eeb2e40012251518d761137b05bdfaa4638190bcd3b3215a"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_2_512_256_s_pivot_RAM_2P_BRAM_1R1W.v": {
+      "bytes": 1102,
+      "sha256": "ff233cd572077d2b1d750bc222a687687b3ccc9cd28cf624f35f18a07447d665"
+    },
+    "kernel_getrf_nopivot_0_mul_9ns_2ns_11_1_1.v": {
+      "bytes": 570,
+      "sha256": "fd518c364a8800b734bb27860154aafd1c293cbc914229644d2145c821aaa2c0"
+    },
+    "kernel_getrf_nopivot_0_kernel_getrf_nopivot_0_Pipeline_LoopWrite_VITIS_LOOP_138_2.v": {
+      "bytes": 147662,
+      "sha256": "ba9777e5bea4a773ed91aaf1f3b7e88c5666a46347db78f8005bf41f419bab6c"
+    },
+    "kernel_getrf_nopivot_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip.tcl": {
+      "bytes": 2608,
+      "sha256": "878e4bd5db6f4806c477eff80ec66cd411a56d9217fc58bcd6e17234d57f8aeb"
+    },
+    "kernel_getrf_nopivot_0_sparsemux_513_8_64_1_1.v": {
+      "bytes": 37933,
+      "sha256": "c23a76577d733c0b3be5c670d647708f20f0204648b472631ecb5dce18b98984"
+    },
+    "kernel_getrf_nopivot_0_kernel_getrf_nopivot_0_Pipeline_LoopRead_VITIS_LOOP_128_1.v": {
+      "bytes": 205061,
+      "sha256": "4cd6771ae4421354c6be67421465225c0dbb7439b4e6dcac38a2242a3b164e25"
+    },
+    "kernel_getrf_nopivot_0_flow_control_loop_pipe_sequential_init.v": {
+      "bytes": 2788,
+      "sha256": "51f6c5130cf1006e213edc63341bdb3243d36ebbcbb85d27b879a69de7dc3a91"
+    },
+    "kernel_getrf_nopivot_0_getrf_nopivot_core_double_2_512_256_Pipeline_LoopPivot.v": {
+      "bytes": 326173,
+      "sha256": "758e9034b6e7360b4fa515484b5f032163760cbe06e779314dc4d6218c0bc796"
+    },
+    "kernel_getrf_nopivot_0_gmem0_m_axi.v": {
+      "bytes": 98268,
+      "sha256": "2ab3152326450d014d439be28619148e355d6afac7cf54b37ab082f20f0f7d73"
+    },
+    "kernel_getrf_nopivot_0_dmul_64ns_64ns_64_5_max_dsp_1_ip.tcl": {
+      "bytes": 2610,
+      "sha256": "fb4dd6ce2558ce24ef5ca3656cf45cf8eff847b0c462188fc143e04657343255"
+    }
+  }
+}

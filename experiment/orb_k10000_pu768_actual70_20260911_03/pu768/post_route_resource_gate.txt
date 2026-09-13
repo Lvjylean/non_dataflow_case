@@ -1,0 +1,1 @@
+actual_LUT=351580 threshold=302400 single_SLR_LUT=432000

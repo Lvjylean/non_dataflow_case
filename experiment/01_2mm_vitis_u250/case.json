@@ -1,0 +1,15 @@
+{
+  "id": "01_vitis_2mm",
+  "repo": "allo-pldi24-artifact",
+  "files": [
+    "polybench/vitis/2mm/2mm.cpp"
+  ],
+  "top": "kernel",
+  "part": "xcu250-figd2104-2L-e",
+  "period_ns": "3.33",
+  "directory": "01_2mm_vitis_u250",
+  "board": "U250",
+  "server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/01_2mm_vitis_u250",
+  "original_server_path": "/Projects/jinyang/workspace/non_dataflow_crossSLR/case/experiment/hls-public-cases-20260911-02/runs/01_vitis_2mm",
+  "original_batch": "hls-public-cases-20260911-02"
+}

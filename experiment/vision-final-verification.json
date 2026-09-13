@@ -1,0 +1,44 @@
+[
+  {
+    "directory": "vision_orb_matcher_k8192_pu256__LUT_193p2pctSLR__20260911_v01",
+    "rtl_ip_files_unchanged": 22,
+    "source_exists": true,
+    "stale_execution_paths": 0
+  },
+  {
+    "directory": "vision_tvl1_optical_flow_512x512_npc2__LUT_60p1pctSLR__20260911_v02",
+    "rtl_ip_files_unchanged": 356,
+    "source_exists": true,
+    "stale_execution_paths": 0
+  },
+  {
+    "directory": "vision_orb_matcher_k8192_pu64__LUT_49p5pctSLR__20260911_v02",
+    "rtl_ip_files_unchanged": 22,
+    "source_exists": true,
+    "stale_execution_paths": 0
+  },
+  {
+    "directory": "vision_orb_matcher_k8192_pu128__LUT_97p5pctSLR__20260911_v02",
+    "rtl_ip_files_unchanged": 22,
+    "source_exists": true,
+    "stale_execution_paths": 0
+  },
+  {
+    "directory": "vision_isp_all_in_one_1080p_npc4__LUT_29p7pctSLR__20260911_v03",
+    "rtl_ip_files_unchanged": 244,
+    "source_exists": true,
+    "stale_execution_paths": 0
+  },
+  {
+    "directory": "vision_tvl1_optical_flow_512x512_flow10__LUT_72p3pctSLR__20260911_v04",
+    "rtl_ip_files_unchanged": 357,
+    "source_exists": true,
+    "stale_execution_paths": 0
+  },
+  {
+    "directory": "vision_tvl1_optical_flow_1024x1024_npc2__LUT_59p6pctSLR__20260911_v04",
+    "rtl_ip_files_unchanged": 356,
+    "source_exists": true,
+    "stale_execution_paths": 0
+  }
+]

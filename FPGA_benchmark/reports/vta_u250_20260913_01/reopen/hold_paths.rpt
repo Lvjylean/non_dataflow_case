@@ -1,0 +1,818 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date              : Sun Sep 13 00:49:25 2026
+| Host              : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command           : report_timing -delay_type min -max_paths 20 -file hold_paths.rpt
+| Design            : vta_core_wrapper
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Routed
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -1.200ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_0/RSTRAMARSTRAM
+                            (rising edge-triggered cell RAMB36E2 clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.036ns  (logic 0.000ns (0.000%)  route 0.036ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.225ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.225ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.036     1.036    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/SR[0]
+    RAMB36_X12Y38        RAMB36E2                                     r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_0/RSTRAMARSTRAM  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.225     2.225    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/ap_clk
+    RAMB36_X12Y38        RAMB36E2                                     r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_0/CLKARDCLK
+                         clock pessimism              0.000     2.225    
+    RAMB36_X12Y38        RAMB36E2 (Hold_RAMB36E2_RAMB36_CLKARDCLK_RSTRAMARSTRAM)
+                                                      0.011     2.236    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_0
+  -------------------------------------------------------------------
+                         required time                         -2.236    
+                         arrival time                           1.036    
+  -------------------------------------------------------------------
+                         slack                                 -1.200    
+
+Slack (VIOLATED) :        -1.193ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_0/RSTRAMARSTRAM
+                            (rising edge-triggered cell RAMB36E2 clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.036ns  (logic 0.000ns (0.000%)  route 0.036ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.218ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.218ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.036     1.036    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/reset
+    RAMB36_X13Y30        RAMB36E2                                     r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_0/RSTRAMARSTRAM  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.218     2.218    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/ap_clk
+    RAMB36_X13Y30        RAMB36E2                                     r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_0/CLKARDCLK
+                         clock pessimism              0.000     2.218    
+    RAMB36_X13Y30        RAMB36E2 (Hold_RAMB36E2_RAMB36_CLKARDCLK_RSTRAMARSTRAM)
+                                                      0.011     2.229    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_0
+  -------------------------------------------------------------------
+                         required time                         -2.229    
+                         arrival time                           1.036    
+  -------------------------------------------------------------------
+                         slack                                 -1.193    
+
+Slack (VIOLATED) :        -1.191ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_1/RSTRAMARSTRAM
+                            (rising edge-triggered cell RAMB36E2 clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.036ns  (logic 0.000ns (0.000%)  route 0.036ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.216ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.216ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.036     1.036    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/SR[0]
+    RAMB36_X12Y40        RAMB36E2                                     r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_1/RSTRAMARSTRAM  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.216     2.216    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/ap_clk
+    RAMB36_X12Y40        RAMB36E2                                     r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_1/CLKARDCLK
+                         clock pessimism              0.000     2.216    
+    RAMB36_X12Y40        RAMB36E2 (Hold_RAMB36E2_RAMB36_CLKARDCLK_RSTRAMARSTRAM)
+                                                      0.011     2.227    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_1
+  -------------------------------------------------------------------
+                         required time                         -2.227    
+                         arrival time                           1.036    
+  -------------------------------------------------------------------
+                         slack                                 -1.191    
+
+Slack (VIOLATED) :        -1.162ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_1/RSTRAMARSTRAM
+                            (rising edge-triggered cell RAMB36E2 clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.036ns  (logic 0.000ns (0.000%)  route 0.036ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.187ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.187ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.036     1.036    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/reset
+    RAMB36_X12Y31        RAMB36E2                                     r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_1/RSTRAMARSTRAM  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.187     2.187    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/ap_clk
+    RAMB36_X12Y31        RAMB36E2                                     r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_1/CLKARDCLK
+                         clock pessimism              0.000     2.187    
+    RAMB36_X12Y31        RAMB36E2 (Hold_RAMB36E2_RAMB36_CLKARDCLK_RSTRAMARSTRAM)
+                                                      0.011     2.198    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_1
+  -------------------------------------------------------------------
+                         required time                         -2.198    
+                         arrival time                           1.036    
+  -------------------------------------------------------------------
+                         slack                                 -1.162    
+
+Slack (VIOLATED) :        -1.086ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[2]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.116ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.116ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y191       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[2]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.116     2.116    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y191       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[2]/C
+                         clock pessimism              0.000     2.116    
+    SLICE_X219Y191       FDRE (Hold_EFF_SLICEL_C_R)
+                                                     -0.015     2.101    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -2.101    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.086    
+
+Slack (VIOLATED) :        -1.086ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[6]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.116ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.116ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y191       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[6]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.116     2.116    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y191       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[6]/C
+                         clock pessimism              0.000     2.116    
+    SLICE_X219Y191       FDRE (Hold_EFF2_SLICEL_C_R)
+                                                     -0.015     2.101    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -2.101    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.086    
+
+Slack (VIOLATED) :        -1.086ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[7]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.116ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.116ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y191       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[7]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.116     2.116    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y191       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[7]/C
+                         clock pessimism              0.000     2.116    
+    SLICE_X219Y191       FDRE (Hold_FFF_SLICEL_C_R)
+                                                     -0.015     2.101    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -2.101    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.086    
+
+Slack (VIOLATED) :        -1.086ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/ready_for_outstanding_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.116ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.116ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/SR[0]
+    SLICE_X219Y191       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/ready_for_outstanding_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.116     2.116    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/ap_clk
+    SLICE_X219Y191       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/ready_for_outstanding_reg/C
+                         clock pessimism              0.000     2.116    
+    SLICE_X219Y191       FDRE (Hold_FFF2_SLICEL_C_R)
+                                                     -0.015     2.101    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/ready_for_outstanding_reg
+  -------------------------------------------------------------------
+                         required time                         -2.101    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.086    
+
+Slack (VIOLATED) :        -1.085ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.115ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.115ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y192       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[0]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.115     2.115    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y192       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[0]/C
+                         clock pessimism              0.000     2.115    
+    SLICE_X219Y192       FDRE (Hold_EFF_SLICEL_C_R)
+                                                     -0.015     2.100    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -2.100    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.085    
+
+Slack (VIOLATED) :        -1.085ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[1]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.115ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.115ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y192       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[1]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.115     2.115    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y192       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[1]/C
+                         clock pessimism              0.000     2.115    
+    SLICE_X219Y192       FDRE (Hold_EFF2_SLICEL_C_R)
+                                                     -0.015     2.100    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -2.100    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.085    
+
+Slack (VIOLATED) :        -1.085ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[4]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.115ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.115ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y192       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[4]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.115     2.115    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y192       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[4]/C
+                         clock pessimism              0.000     2.115    
+    SLICE_X219Y192       FDRE (Hold_FFF_SLICEL_C_R)
+                                                     -0.015     2.100    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -2.100    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.085    
+
+Slack (VIOLATED) :        -1.085ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[5]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.115ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.115ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y192       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[5]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.115     2.115    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y192       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[5]/C
+                         clock pessimism              0.000     2.115    
+    SLICE_X219Y192       FDRE (Hold_FFF2_SLICEL_C_R)
+                                                     -0.015     2.100    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/raddr_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -2.100    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.085    
+
+Slack (VIOLATED) :        -1.080ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[1]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.110ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.110ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/reset
+    SLICE_X221Y156       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[1]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.110     2.110    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X221Y156       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[1]/C
+                         clock pessimism              0.000     2.110    
+    SLICE_X221Y156       FDRE (Hold_EFF_SLICEL_C_R)
+                                                     -0.015     2.095    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -2.095    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.080    
+
+Slack (VIOLATED) :        -1.078ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.108ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.108ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/reset
+    SLICE_X221Y155       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[0]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.108     2.108    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X221Y155       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[0]/C
+                         clock pessimism              0.000     2.108    
+    SLICE_X221Y155       FDRE (Hold_EFF_SLICEL_C_R)
+                                                     -0.015     2.093    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -2.093    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.078    
+
+Slack (VIOLATED) :        -1.078ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[4]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.108ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.108ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/reset
+    SLICE_X221Y155       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[4]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.108     2.108    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X221Y155       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[4]/C
+                         clock pessimism              0.000     2.108    
+    SLICE_X221Y155       FDRE (Hold_HFF_SLICEL_C_R)
+                                                     -0.015     2.093    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -2.093    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.078    
+
+Slack (VIOLATED) :        -1.078ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[6]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.108ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.108ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/reset
+    SLICE_X221Y155       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[6]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.108     2.108    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X221Y155       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[6]/C
+                         clock pessimism              0.000     2.108    
+    SLICE_X221Y155       FDRE (Hold_GFF_SLICEL_C_R)
+                                                     -0.015     2.093    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -2.093    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.078    
+
+Slack (VIOLATED) :        -1.078ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[7]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.108ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.108ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/reset
+    SLICE_X221Y155       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[7]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.108     2.108    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X221Y155       FDRE                                         r  vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[7]/C
+                         clock pessimism              0.000     2.108    
+    SLICE_X221Y155       FDRE (Hold_FFF_SLICEL_C_R)
+                                                     -0.015     2.093    vta_core_i/load_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -2.093    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.078    
+
+Slack (VIOLATED) :        -1.077ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.107ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.107ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y201       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[0]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.107     2.107    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y201       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[0]/C
+                         clock pessimism              0.000     2.107    
+    SLICE_X219Y201       FDRE (Hold_FFF_SLICEL_C_R)
+                                                     -0.015     2.092    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -2.092    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.077    
+
+Slack (VIOLATED) :        -1.077ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[1]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.107ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.107ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y201       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[1]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.107     2.107    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y201       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[1]/C
+                         clock pessimism              0.000     2.107    
+    SLICE_X219Y201       FDRE (Hold_EFF_SLICEL_C_R)
+                                                     -0.015     2.092    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -2.092    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.077    
+
+Slack (VIOLATED) :        -1.077ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[4]/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        2.107ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.107ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=3699, unset)         0.015     1.015    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/SR[0]
+    SLICE_X219Y201       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[4]/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=23897, unset)        2.107     2.107    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/ap_clk
+    SLICE_X219Y201       FDRE                                         r  vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[4]/C
+                         clock pessimism              0.000     2.107    
+    SLICE_X219Y201       FDRE (Hold_HFF_SLICEL_C_R)
+                                                     -0.015     2.092    vta_core_i/compute_0/inst/data_port_m_axi_U/load_unit/buff_rdata/waddr_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -2.092    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -1.077    
+
+
+
+

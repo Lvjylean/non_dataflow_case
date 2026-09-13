@@ -1,0 +1,21 @@
+{
+  "target_part": "xcu250-figd2104-2L-e",
+  "tool_version": "2023.2",
+  "clock_ns": 10,
+  "io_delay_ns": 1,
+  "scope": "OOC complete accelerator core with one real global clock buffer; no board runtime",
+  "cases": {
+    "vta": {
+      "source": "upstream/tvm-vta",
+      "hls_run": "vta_hls_20260913_02",
+      "csim_run": "vta_csim_20260913_01",
+      "selected_physical_run": "vta_buffered_u250_20260913_04"
+    },
+    "cnna": {
+      "source": "upstream/CNNA/reference_ip/hdl/verilog",
+      "source_hls_status": "FAILED_missing_systemc.h",
+      "rtl_provenance": "pinned upstream Vivado HLS 2019.1 archive",
+      "selected_physical_run": "cnna_buffered_u250_20260913_04"
+    }
+  }
+}

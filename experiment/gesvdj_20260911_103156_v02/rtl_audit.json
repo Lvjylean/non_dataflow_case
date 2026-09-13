@@ -1,0 +1,182 @@
+{
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "unchanged": true,
+  "files": {
+    "kernel_gesvdj_0_Jacobi_svd_double_64_8_8_s_Order_RAM_T2P_BRAM_1R1W.v": {
+      "bytes": 1278,
+      "sha256": "853959a8652d2e22d5cb6a3927a81305b7ac7d3e7babfc545671f12c3619f5e6"
+    },
+    "kernel_gesvdj_0_gesvdj_double_64_8_Pipeline_Loop_postcal_VITIS_LOOP_1187_2.v": {
+      "bytes": 51703,
+      "sha256": "80dce30e39dbf99b1ea27bfdb9bb37a59d70b18e64a2f5cf1b00df94e66618c1"
+    },
+    "kernel_gesvdj_0_funcDataflow_double_64_8_8_3.v": {
+      "bytes": 267642,
+      "sha256": "bfaf5f959e64843bc833a709d637a9d82ac2c9583e236b8d0e54663af2e03529"
+    },
+    "kernel_gesvdj_0_funcDataflow_double_64_8_8_3_Order1_RAM_AUTO_1R1W.v": {
+      "bytes": 1160,
+      "sha256": "83020d56ba75938b77470fa3632967840e1148d99e0e550db4bec851fe38a394"
+    },
+    "kernel_gesvdj_0_Jacobi_svd_double_64_8_8_Pipeline_VITIS_LOOP_1005_1.v": {
+      "bytes": 20608,
+      "sha256": "4ab51416d7fedecc5405773ac22d1be79b7b49e44d91a2e3149beb94e9e109ca"
+    },
+    "kernel_gesvdj_0_flow_control_loop_pipe_sequential_init.v": {
+      "bytes": 2781,
+      "sha256": "453d40654e68a3ec610849457d16db59210e69e1431c159188bd7b470f094c0e"
+    },
+    "kernel_gesvdj_0_jacobi_rotation_2x2_double_64_s.v": {
+      "bytes": 74374,
+      "sha256": "ac86e2b22f31101fc9f331a9f22951cfd1236930571a182dd44839d0aba6e00d"
+    },
+    "kernel_gesvdj_0_dsub_64ns_64ns_64_4_no_dsp_0_ip.tcl": {
+      "bytes": 2577,
+      "sha256": "3691f1091211b155476ae4dd79be19728c450e33a50bfc13c90ff27fe8045905"
+    },
+    "kernel_gesvdj_0_sitodp_32ns_64_4_no_dsp_1.v": {
+      "bytes": 1880,
+      "sha256": "4eebbbcad9f8275c28c4dc1f0ed8f09e4c78ad5f171060d056776b1bbdc13171"
+    },
+    "kernel_gesvdj_0_Jacobi_svd_double_64_8_8_s_tmpOrder_RAM_T2P_BRAM_1R1W.v": {
+      "bytes": 1165,
+      "sha256": "9e948040bc8d6bf0645aed6721038fefb0681e8a3de7d16a6c84b8a22e1d0747"
+    },
+    "kernel_gesvdj_0_dsqrt_64ns_64ns_64_17_no_dsp_0.v": {
+      "bytes": 1935,
+      "sha256": "11e5becbf4846791fcba0f4c33f87e1260ff3f8de831c0ef0715c5c34ac4cf2f"
+    },
+    "kernel_gesvdj_0_gmem1_m_axi.v": {
+      "bytes": 97967,
+      "sha256": "f904ffeb8ad2768f2acb596727d594dee53947ccb45aa502fa96765f387d0ee3"
+    },
+    "kernel_gesvdj_0_gesvdj_2D_double_64_8_8_s.v": {
+      "bytes": 65137,
+      "sha256": "46d37697c2a4a53408baad5efb41f651541c24c466dbd2a6798513b0c46b7bdc"
+    },
+    "kernel_gesvdj_0_unrollCol_double_64_8_8_5.v": {
+      "bytes": 144249,
+      "sha256": "0966fb83209afc2235b258a851b652d63e0b346d40019b4ecd9c757982e4197d"
+    },
+    "kernel_gesvdj_0_gesvdj_double_64_8_s.v": {
+      "bytes": 156149,
+      "sha256": "85d3ef44b80a4488f7c93101b54e5ed9a976a2e9375a877c578c901e5d3662ee"
+    },
+    "kernel_gesvdj_0_gmem0_m_axi.v": {
+      "bytes": 97967,
+      "sha256": "d67ea3409912ca91cdcbb912989850f453e228c9bb14a009c7d2d9a273f31293"
+    },
+    "kernel_gesvdj_0_dsub_64ns_64ns_64_4_no_dsp_0.v": {
+      "bytes": 2184,
+      "sha256": "a4f599d6c6d7f83519bae4698ceba14b844b63454198a46b8223a671dbecd224"
+    },
+    "kernel_gesvdj_0_Jacobi_svd_double_64_8_8_Pipeline_Loop_jacobi2x2.v": {
+      "bytes": 153018,
+      "sha256": "66618bd49ce2f58fb2ad4f56a4c855265feb5310cea168f02158bb424cf9c083"
+    },
+    "kernel_gesvdj_0.v": {
+      "bytes": 57707,
+      "sha256": "d90726476be9fdf8c910819cf155f0f742e35c13abdbff3df85a1ea41022d7b0"
+    },
+    "kernel_gesvdj_0_gesvdj_double_64_8_Pipeline_Loop_init_A_VITIS_LOOP_1168_1.v": {
+      "bytes": 63817,
+      "sha256": "7ed2186f1756b1e7184e0c14a0eac90fa27da3a81ab53323713b23da6dacb0fe"
+    },
+    "kernel_gesvdj_0_control_s_axi.v": {
+      "bytes": 16543,
+      "sha256": "fc17e3d75d4689885abdaba3e888325314f2d8cf5e36946e08c2fbed0c664a30"
+    },
+    "kernel_gesvdj_0_Jacobi_svd_double_64_8_8_s.v": {
+      "bytes": 153181,
+      "sha256": "9690a9606216e25acb911453a96eb7a4aea26c82f3dd9443fb6beca0e77745d2"
+    },
+    "kernel_gesvdj_0_gesvdj_double_64_8_s_dataA_2D_RAM_T2P_URAM_1R1W.v": {
+      "bytes": 1309,
+      "sha256": "ded1c4bd6569e5b98b7dbed835976116ab36bf7b621a2249278a8f097c2fd61e"
+    },
+    "kernel_gesvdj_0_Jacobi_svd_double_64_8_8_Pipeline_Loop_precal.v": {
+      "bytes": 9489,
+      "sha256": "60750cbb28dac8dd208f43391a2fab6db34b38523c23f51a9b96670124a3c0ea"
+    },
+    "kernel_gesvdj_0_dsqrt_64ns_64ns_64_17_no_dsp_0_ip.tcl": {
+      "bytes": 2583,
+      "sha256": "51fbd900d9ca50bf6b4d825b34062325b7f9fc03b3dc900cf13a06e0f33a8b95"
+    },
+    "kernel_gesvdj_0_dcmp_64ns_64ns_1_2_no_dsp_1_ip.tcl": {
+      "bytes": 2562,
+      "sha256": "f96cbc42244b46daf4c9ce0bebd4283be200e572ccd6708bce5626f8d57d5715"
+    },
+    "kernel_gesvdj_0_unrollRow_double_64_8_8_4.v": {
+      "bytes": 157561,
+      "sha256": "b75a02206fcf123680bb05e0d13929555fa4e29c1bd2285332ea97bfb73ba789"
+    },
+    "kernel_gesvdj_0_dadd_64ns_64ns_64_4_no_dsp_0_ip.tcl": {
+      "bytes": 2572,
+      "sha256": "ed65d91db96e037aafe5eadd6323df71c3c93e753ca1bd6be099baed9de80f83"
+    },
+    "kernel_gesvdj_0_mul_7ns_32s_37_1_1.v": {
+      "bytes": 555,
+      "sha256": "d02947218dfaeecf963943c848665caa88b5718e7ea692aea96bf482fae540ec"
+    },
+    "kernel_gesvdj_0_sitodp_32ns_64_4_no_dsp_1_ip.tcl": {
+      "bytes": 2559,
+      "sha256": "0227a0b81c1ad6a4efd35a73fd3914389351db9a51435a683905747cc7f1528c"
+    },
+    "kernel_gesvdj_0_dmul_64ns_64ns_64_5_max_dsp_0.v": {
+      "bytes": 2187,
+      "sha256": "0f98945ce740af1aeb77e1af703dd616f4995dd562a4e64df46d03d85d69782a"
+    },
+    "kernel_gesvdj_0_gmem3_m_axi.v": {
+      "bytes": 97967,
+      "sha256": "8ffca0f61e41631472becb6cc00497a2ff2fd0c688be71879b513d066616c4d7"
+    },
+    "kernel_gesvdj_0_Jacobi_svd_double_64_8_8_Pipeline_VITIS_LOOP_142_1.v": {
+      "bytes": 6835,
+      "sha256": "6d5f93942a740e9784cdec43a01ac1d6222a9d7c8e9ad0a00ce9b873c60bac0e"
+    },
+    "kernel_gesvdj_0_gmem2_m_axi.v": {
+      "bytes": 97967,
+      "sha256": "47e505d2e9f1b8e9a8f1967be86415552572864badcf55cee03a3a43c5c4644d"
+    },
+    "kernel_gesvdj_0_mul_6ns_32s_38_1_1.v": {
+      "bytes": 555,
+      "sha256": "6b8e02634025d3e4d1e2ffcc39b5b98edac6c0a91aebd9b152ee35f1b274b403"
+    },
+    "kernel_gesvdj_0_dmul_64ns_64ns_64_5_max_dsp_0_ip.tcl": {
+      "bytes": 2575,
+      "sha256": "d6a19fb7b7096f4ef0f9851287ef5b36a105b73c907f02542fabeb87da92f025"
+    },
+    "kernel_gesvdj_0_dadd_64ns_64ns_64_4_no_dsp_0.v": {
+      "bytes": 2184,
+      "sha256": "37a9e3b6f055b1ac17065150598b923fa28d5658b4f494426cae327c8999e28f"
+    },
+    "kernel_gesvdj_0_sparsemux_65_5_64_1_1.v": {
+      "bytes": 5249,
+      "sha256": "ef20fe0de836281334d395e6f6c10b4b7150f5eda634372e885a299a4d97b343"
+    },
+    "kernel_gesvdj_0_ddiv_64ns_64ns_64_22_no_dsp_0.v": {
+      "bytes": 2187,
+      "sha256": "434289c2884f6966da8c10b2c34eb7e7fe466f218b5df77ce004e4267cc41a10"
+    },
+    "kernel_gesvdj_0_ddiv_64ns_64ns_64_22_no_dsp_0_ip.tcl": {
+      "bytes": 2573,
+      "sha256": "1d108dabb78bc12e346aca591b0d06c2e3a81306fce60003674dcbb43e33b581"
+    },
+    "kernel_gesvdj_0_funcDataflow_double_64_8_8_3_m_c_right1_RAM_AUTO_1R1W.v": {
+      "bytes": 945,
+      "sha256": "8316db211031b3044974dddc23ae4df3cc016515e5f5fc43d1c19a10c2e1e162"
+    },
+    "kernel_gesvdj_0_dcmp_64ns_64ns_1_2_no_dsp_1.v": {
+      "bytes": 3122,
+      "sha256": "937c3a477dc5a90c6ca2e7583e7041db58edf4a767f9fcebf1172041b130a0aa"
+    },
+    "kernel_gesvdj_0_Jacobi_svd_double_64_8_8_Pipeline_Loop_cal.v": {
+      "bytes": 8036,
+      "sha256": "b75f5019caf1311cea485e91d4611e328ac93bece72173a1cf58d27de9fd32b3"
+    },
+    "kernel_gesvdj_0_sparsemux_17_3_64_1_1.v": {
+      "bytes": 1879,
+      "sha256": "a8cb2a66913f36d280105bee98e2f42ab4c5ad3a85625b6eff691f48e3dc2be5"
+    }
+  }
+}

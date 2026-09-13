@@ -1,0 +1,15 @@
+net	driver_pin	driver_ref	logical_loads	physical_site_pins	classification	max_fanout	force_max_fanout
+grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_REM_DESC_2_fu_3954/<const0>	grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_REM_DESC_2_fu_3954/GND/G	GND	313	NA	CONSTANT		
+grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/<const1>	grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/VCC/P	VCC	304	NA	CONSTANT		
+grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/<const0>	grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/GND/G	GND	16427	NA	CONSTANT		
+ap_clk	ap_clk	NONE	31976	NA	CLOCK		
+grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/<const0>	grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/GND/G	GND	2627	NA	CONSTANT		
+<const0>	GND/G	GND	277	NA	CONSTANT		
+gmem0_m_axi_U/bus_read/rs_rdata/<const0>	gmem0_m_axi_U/bus_read/rs_rdata/GND/G	GND	514	NA	CONSTANT		
+grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_READ_LOOP_DESC_TRAIN_fu_2830/<const0>	grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_READ_LOOP_DESC_TRAIN_fu_2830/GND/G	GND	295	NA	CONSTANT		
+grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_REM_DESC_2_fu_3954/<const1>	grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_REM_DESC_2_fu_3954/VCC/P	VCC	304	NA	CONSTANT		
+grp_bfMatcher_64_8192_s_fu_108/bf_U/<const1>	grp_bfMatcher_64_8192_s_fu_108/bf_U/VCC/P	VCC	3539	NA	CONSTANT		
+gmem1_m_axi_U/bus_read/rs_rdata/<const0>	gmem1_m_axi_U/bus_read/rs_rdata/GND/G	GND	514	NA	CONSTANT		
+grp_bfMatcher_64_8192_s_fu_108/<const0>	grp_bfMatcher_64_8192_s_fu_108/GND/G	GND	2813	NA	CONSTANT		
+ap_CS_fsm_state1	ap_CS_fsm_reg[0]/Q	FDSE	281	124	FD_LUT	256	256
+grp_bfMatcher_64_8192_s_fu_108/bf_U/<const0>	grp_bfMatcher_64_8192_s_fu_108/bf_U/GND/G	GND	3748	NA	CONSTANT		

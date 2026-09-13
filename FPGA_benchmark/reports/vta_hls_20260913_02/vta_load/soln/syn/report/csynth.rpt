@@ -1,0 +1,292 @@
+
+
+================================================================
+== Synthesis Summary Report of 'load'
+================================================================
++ General Information: 
+    * Date:           Sun Sep 13 00:32:34 2026
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        vta_load
+    * Solution:       soln (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcu250-figd2104-2L-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------+------+------+-------------+-----------+----------+-------------+---------+----------+---------+----+------------+------------+-----+
+    |        Modules        | Issue|      |   Latency   |  Latency  | Iteration|             |   Trip  |          |         |    |            |            |     |
+    |        & Loops        | Type | Slack|   (cycles)  |    (ns)   |  Latency |   Interval  |  Count  | Pipelined|  BRAM   | DSP|     FF     |     LUT    | URAM|
+    +-----------------------+------+------+-------------+-----------+----------+-------------+---------+----------+---------+----+------------+------------+-----+
+    |+ load                 |     -|  0.00|  68718231562|  6.872e+11|         -|  68718231563|        -|        no|  8 (~0%)|   -|  2770 (~0%)|  6450 (~0%)|    -|
+    | o VITIS_LOOP_37_1     |     -|  7.30|        65535|  6.554e+05|         1|            -|    65535|        no|        -|   -|           -|           -|    -|
+    | o VITIS_LOOP_62_1     |     -|  7.30|  12886278120|  1.289e+11|    196632|            -|    65535|        no|        -|   -|           -|           -|    -|
+    |  o VITIS_LOOP_37_1    |     -|  7.30|           15|    150.000|         1|            -|       15|        no|        -|   -|           -|           -|    -|
+    |  o VITIS_LOOP_62_1.2  |     -|  7.30|       131070|  1.311e+06|         2|            -|    65535|        no|        -|   -|           -|           -|    -|
+    |  o VITIS_LOOP_37_1    |     -|  7.30|        65535|  6.554e+05|         1|            -|    65535|        no|        -|   -|           -|           -|    -|
+    | o VITIS_LOOP_37_1     |     -|  7.30|        65535|  6.554e+05|         1|            -|    65535|        no|        -|   -|           -|           -|    -|
+    | o VITIS_LOOP_86_1     |     -|  7.30|  68718231555|  6.872e+11|   1048573|            -|    65535|        no|        -|   -|           -|           -|    -|
+    |  + load_Pipeline_1    |     -|  0.00|      1048562|  1.049e+07|         -|      1048562|        -|        no|        -|   -|   176 (~0%)|  3138 (~0%)|    -|
+    |   o Loop 1            |     -|  7.30|      1048560|  1.049e+07|         2|            1|  1048560|       yes|        -|   -|           -|           -|    -|
+    +-----------------------+------+------+-------------+-----------+----------+-------------+---------+----------+---------+----+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface       | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|                 | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_data_port | 128 -> 128 | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=8            |
++-----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++-------------------+------------+---------------+--------+----------+
+| Interface         | Data Width | Address Width | Offset | Register |
++-------------------+------------+---------------+--------+----------+
+| s_axi_CONTROL_BUS | 32         | 4             |        |          |
+| s_axi_control     | 32         | 6             | 16     | 0        |
++-------------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++-------------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface         | Register  | Offset | Width | Access | Description                      | Bit Fields                                                           |
++-------------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CONTROL_BUS | CTRL      | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CONTROL_BUS | GIER      | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CONTROL_BUS | IP_IER    | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CONTROL_BUS | IP_ISR    | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control     | inputs_1  | 0x10   | 32    | W      | Data signal of inputs            |                                                                      |
+| s_axi_control     | inputs_2  | 0x14   | 32    | W      | Data signal of inputs            |                                                                      |
+| s_axi_control     | weights_1 | 0x1c   | 32    | W      | Data signal of weights           |                                                                      |
+| s_axi_control     | weights_2 | 0x20   | 32    | W      | Data signal of weights           |                                                                      |
++-------------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++---------------+-----------+---------------+-------+--------+--------+
+| Interface     | Direction | Register Mode | TDATA | TREADY | TVALID |
++---------------+-----------+---------------+-------+--------+--------+
+| g2l_dep_queue | in        | both          | 8     | 1      | 1      |
+| l2g_dep_queue | out       | both          | 8     | 1      | 1      |
+| load_queue    | in        | both          | 128   | 1      | 1      |
++---------------+-----------+---------------+-------+--------+--------+
+
+* BRAM
++-----------------+------------+---------------+
+| Interface       | Data Width | Address Width |
++-----------------+------------+---------------+
+| inp_mem_PORTA   | 128        | 32            |
+| wgt_mem_0_PORTA | 1024       | 32            |
+| wgt_mem_1_PORTA | 1024       | 32            |
++-----------------+------------+---------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++---------------+-----------+--------------------------+
+| Argument      | Direction | Datatype                 |
++---------------+-----------+--------------------------+
+| inputs        | in        | pointer                  |
+| weights       | in        | pointer                  |
+| load_queue    | in        | stream<ap_uint<128>, 0>& |
+| g2l_dep_queue | in        | stream<bool, 0>&         |
+| l2g_dep_queue | out       | stream<bool, 0>&         |
+| inp_mem       | out       | ap_uint<128>*            |
+| wgt_mem       | inout     | ap_uint<128>*            |
++---------------+-----------+--------------------------+
+
+* SW-to-HW Mapping
++---------------+-----------------+-----------+----------+-------------------------------------+
+| Argument      | HW Interface    | HW Type   | HW Usage | HW Info                             |
++---------------+-----------------+-----------+----------+-------------------------------------+
+| inputs        | m_axi_data_port | interface |          |                                     |
+| inputs        | s_axi_control   | register  | offset   | name=inputs_1 offset=0x10 range=32  |
+| inputs        | s_axi_control   | register  | offset   | name=inputs_2 offset=0x14 range=32  |
+| weights       | m_axi_data_port | interface |          |                                     |
+| weights       | s_axi_control   | register  | offset   | name=weights_1 offset=0x1c range=32 |
+| weights       | s_axi_control   | register  | offset   | name=weights_2 offset=0x20 range=32 |
+| load_queue    | load_queue      | interface |          |                                     |
+| g2l_dep_queue | g2l_dep_queue   | interface |          |                                     |
+| l2g_dep_queue | l2g_dep_queue   | interface |          |                                     |
+| inp_mem       | inp_mem_PORTA   | interface |          |                                     |
+| wgt_mem       | wgt_mem_0_PORTA | interface |          |                                     |
+| wgt_mem       | wgt_mem_1_PORTA | interface |          |                                     |
++---------------+-----------------+-----------+----------+-------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++-----------------+-----------+----------+-------+-----------+
+| HW Interface    | Direction | Length   | Width | Loop      |
++-----------------+-----------+----------+-------+-----------+
+| m_axi_data_port | read      | variable | 128   | anonymous |
++-----------------+-----------+----------+-------+-----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                     | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++--------------------------+-----+--------+-------------+-----+--------+---------+
+| + load                   | 0   |        |             |     |        |         |
+|   mul_4ns_16ns_20_5_1_U5 |     | yes    | mul_ln201   | mul | fabric | 0       |
+|   mul_4ns_16ns_20_5_1_U6 |     | yes    | mul_ln203   | mul | fabric | 0       |
+|   y_4_fu_634_p2          |     |        | y_4         | add | fabric | 0       |
+|   add_ln87_fu_652_p2     |     |        | add_ln87    | add | fabric | 0       |
+|   sram_idx_11_fu_681_p2  |     |        | sram_idx_11 | add | fabric | 0       |
+|   dram_idx_4_fu_686_p2   |     |        | dram_idx_4  | add | fabric | 0       |
+|   i_8_fu_713_p2          |     |        | i_8         | add | fabric | 0       |
+|   add_ln42_fu_727_p2     |     |        | add_ln42    | add | fabric | 0       |
+|   sram_idx_9_fu_743_p2   |     |        | sram_idx_9  | add | fabric | 0       |
+|   y_5_fu_795_p2          |     |        | y_5         | add | fabric | 0       |
+|   add_ln37_fu_813_p2     |     |        | add_ln37    | add | fabric | 0       |
+|   i_11_fu_833_p2         |     |        | i_11        | add | fabric | 0       |
+|   add_ln42_3_fu_844_p2   |     |        | add_ln42_3  | add | fabric | 0       |
+|   sram_idx_12_fu_850_p2  |     |        | sram_idx_12 | add | fabric | 0       |
+|   empty_37_fu_888_p2     |     |        | empty_37    | add | fabric | 0       |
+|   sram_idx_13_fu_894_p2  |     |        | sram_idx_13 | add | fabric | 0       |
+|   dram_idx_5_fu_898_p2   |     |        | dram_idx_5  | add | fabric | 0       |
+|   i_12_fu_908_p2         |     |        | i_12        | add | fabric | 0       |
+|   add_ln42_5_fu_919_p2   |     |        | add_ln42_5  | add | fabric | 0       |
+|   sram_idx_14_fu_925_p2  |     |        | sram_idx_14 | add | fabric | 0       |
+|   i_10_fu_956_p2         |     |        | i_10        | add | fabric | 0       |
+|   add_ln42_1_fu_970_p2   |     |        | add_ln42_1  | add | fabric | 0       |
+|  + load_Pipeline_1       | 0   |        |             |     |        |         |
+|    empty_31_fu_164_p2    |     |        | empty_31    | add | fabric | 0       |
++--------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-----------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name                  | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                       |           |           |      |      |        |          |      |         | Banks            |
++-----------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + load                |           |           | 8    | 0    |        |          |      |         |                  |
+|   CONTROL_BUS_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
+|   control_s_axi_U     | interface | s_axilite |      |      |        |          |      |         |                  |
+|   data_port_m_axi_U   | interface | m_axi     | 8    |      |        |          |      |         |                  |
++-----------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+--------------------------------------------------+------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options                                          | Location                                                         | Messages                                                                                                                         |
++----------+--------------------------------------------------+------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| resource | variable = sram_idx core = Mul_LUT               | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:90 in load_2d  | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+| resource | variable = inp_mem core = RAM_1P                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:185 in load    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                                                  |                                                                  | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | variable = wgt_mem core = RAM_1P                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:186 in load    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                                                  |                                                                  | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | variable = y_offset_0 core = Mul_LUT latency = 4 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:202 in load    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+| resource | variable = y_offset_1 core = Mul_LUT latency = 4 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:204 in load    | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+| resource | variable = inp_mem core = RAM_1P                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:439 in compute | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+| resource | variable = wgt_mem core = RAM_1P                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:440 in compute | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+| resource | variable = out_mem core = RAM_1P                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:441 in compute | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+| resource | variable = out_mem core = RAM_1P                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:529 in store   | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+| resource | variable = sram_idx core = Mul_LUT               | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:554 in store   | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
++----------+--------------------------------------------------+------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------------+--------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Type            | Options                                                      | Location                                                                      |
++-----------------+--------------------------------------------------------------+-------------------------------------------------------------------------------+
+| unroll          |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:39 in reset_mem             |
+| inline          |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:59 in load_pad_2d           |
+| pipeline        |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:63 in load_pad_2d           |
+| inline          |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:84 in load_2d               |
+| inline          |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:101 in read_tensor          |
+| inline          |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:119 in write_tensor         |
+| interface       | s_axilite port = insn_count bundle = CONTROL_BUS offset = 16 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:138 in fetch                |
+| interface       | m_axi port = insns offset = slave bundle = ins_port          | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:139 in fetch                |
+| interface       | axis port = load_queue                                       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:140 in fetch                |
+| interface       | axis port = gemm_queue                                       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:141 in fetch                |
+| interface       | axis port = store_queue                                      | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:142 in fetch                |
+| interface       | s_axilite port = return bundle = CONTROL_BUS                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:143 in fetch                |
+| pipeline        |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:146 in fetch                |
+| interface       | m_axi port = inputs offset = slave bundle = data_port        | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:177 in load                 |
+| interface       | m_axi port = weights offset = slave bundle = data_port       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:178 in load                 |
+| interface       | axis port = load_queue                                       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:179 in load                 |
+| interface       | axis port = g2l_dep_queue                                    | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:180 in load                 |
+| interface       | axis port = l2g_dep_queue                                    | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:181 in load                 |
+| interface       | bram port = wgt_mem                                          | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:182 in load                 |
+| interface       | bram port = inp_mem                                          | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:183 in load                 |
+| interface       | s_axilite port = return bundle = CONTROL_BUS                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:184 in load                 |
+| inline          |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:243 in gemm                 |
+| pipeline        | II = 1                                                       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:263 in gemm                 |
+| inline          |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:334 in alu                  |
+| pipeline        | II = 2                                                       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:351 in alu                  |
+| interface       | s_axilite port = done bundle = CONTROL_BUS offset = 16       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:427 in compute              |
+| interface       | m_axi port = uops offset = slave bundle = uop_port           | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:428 in compute              |
+| interface       | m_axi port = biases offset = slave bundle = data_port        | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:429 in compute              |
+| interface       | axis port = gemm_queue                                       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:430 in compute              |
+| interface       | axis port = l2g_dep_queue                                    | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:431 in compute              |
+| interface       | axis port = s2g_dep_queue                                    | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:432 in compute              |
+| interface       | axis port = g2l_dep_queue                                    | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:433 in compute              |
+| interface       | axis port = g2s_dep_queue                                    | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:434 in compute              |
+| interface       | bram port = inp_mem                                          | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:435 in compute              |
+| interface       | bram port = wgt_mem                                          | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:436 in compute              |
+| interface       | bram port = out_mem                                          | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:437 in compute              |
+| interface       | s_axilite port = return bundle = CONTROL_BUS                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:438 in compute              |
+| array_reshape   | variable = acc_mem complete dim=2                            | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:448 in compute              |
+| dependence      | variable = acc_mem inter false                               | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:450 in compute              |
+| interface       | m_axi port = outputs offset = slave bundle = data_port       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:523 in store                |
+| interface       | axis port = store_queue                                      | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:524 in store                |
+| interface       | axis port = g2s_dep_queue                                    | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:525 in store                |
+| interface       | axis port = s2g_dep_queue                                    | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:526 in store                |
+| interface       | bram port = out_mem                                          | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:527 in store                |
+| interface       | s_axilite port = return bundle = CONTROL_BUS                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:528 in store                |
+| pipeline        |                                                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:548 in store                |
+| interface       | s_axilite port = insn_count bundle = CONTROL_BUS             | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:573 in vta                  |
+| interface       | m_axi port = insns offset = slave bundle = ins_port          | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:574 in vta                  |
+| interface       | m_axi port = uops offset = slave bundle = uop_port           | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:575 in vta                  |
+| interface       | m_axi port = inputs offset = slave bundle = data_port        | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:576 in vta                  |
+| interface       | m_axi port = weights offset = slave bundle = data_port       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:577 in vta                  |
+| interface       | m_axi port = biases offset = slave bundle = data_port        | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:578 in vta                  |
+| interface       | m_axi port = outputs offset = slave bundle = data_port       | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:579 in vta                  |
+| interface       | s_axilite port = return bundle = CONTROL_BUS                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:580 in vta                  |
+| stream          | depth=8 variable=tmp_load_queue                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:584 in vta, tmp_load_queue  |
+| stream          | depth=8 variable=tmp_gemm_queue                              | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:586 in vta, tmp_gemm_queue  |
+| stream          | depth=8 variable=tmp_store_queue                             | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:588 in vta, tmp_store_queue |
+| stream          | depth=8 variable=load_queue                                  | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:592 in vta, load_queue      |
+| stream          | depth=8 variable=gemm_queue                                  | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:594 in vta, gemm_queue      |
+| stream          | depth=8 variable=store_queue                                 | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:596 in vta, store_queue     |
+| stream          | depth=8 variable=l2g_dep_queue                               | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:600 in vta, l2g_dep_queue   |
+| stream          | depth=8 variable=s2g_dep_queue                               | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:602 in vta, s2g_dep_queue   |
+| stream          | depth=8 variable=g2l_dep_queue                               | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:604 in vta, g2l_dep_queue   |
+| stream          | depth=8 variable=g2s_dep_queue                               | ../../upstream/tvm-vta/hardware/xilinx/src/vta.cc:606 in vta, g2s_dep_queue   |
+| array_partition | block dim=2 factor=2 variable=wgt_mem                        | ../../scripts/vta_hls.tcl:30 in compute, wgt_mem                              |
+| array_reshape   | block dim=2 factor=1 variable=inp_mem                        | ../../scripts/vta_hls.tcl:20 in compute, inp_mem                              |
+| array_reshape   | block dim=2 factor=1 variable=out_mem                        | ../../scripts/vta_hls.tcl:33 in compute, out_mem                              |
+| array_reshape   | block dim=2 factor=8 variable=wgt_mem                        | ../../scripts/vta_hls.tcl:27 in compute, wgt_mem                              |
+| array_partition | block dim=2 factor=2 variable=wgt_mem                        | ../../scripts/vta_hls.tcl:29 in load, wgt_mem                                 |
+| array_reshape   | block dim=2 factor=1 variable=inp_mem                        | ../../scripts/vta_hls.tcl:19 in load, inp_mem                                 |
+| array_reshape   | block dim=2 factor=8 variable=wgt_mem                        | ../../scripts/vta_hls.tcl:26 in load, wgt_mem                                 |
+| array_reshape   | block dim=2 factor=1 variable=out_mem                        | ../../scripts/vta_hls.tcl:34 in store, out_mem                                |
++-----------------+--------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+

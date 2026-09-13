@@ -1,0 +1,998 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date              : Sun Sep 13 01:17:07 2026
+| Host              : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command           : report_timing -delay_type min -max_paths 20 -file hold_paths.rpt
+| Design            : cnn_top_u250_buffered
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Routed
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -2.338ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.367ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.367ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.296ns (routing 1.925ns, distribution 1.371ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X37Y174        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.296     3.367    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X37Y174        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg/C
+                         clock pessimism              0.000     3.367    
+                         inter-SLR compensation       0.003     3.370    
+    SLICE_X37Y174        FDRE (Hold_EFF_SLICEM_C_R)
+                                                     -0.015     3.355    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg
+  -------------------------------------------------------------------
+                         required time                         -3.355    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.338    
+
+Slack (VIOLATED) :        -2.330ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter10_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.358ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.358ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.015ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.287ns (routing 1.925ns, distribution 1.362ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.015     1.015    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X40Y186        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter10_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.287     3.358    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X40Y186        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter10_reg/C
+                         clock pessimism              0.000     3.358    
+                         inter-SLR compensation       0.002     3.360    
+    SLICE_X40Y186        FDRE (Hold_EFF_SLICEL_C_R)
+                                                     -0.015     3.345    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter10_reg
+  -------------------------------------------------------------------
+                         required time                         -3.345    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -2.330    
+
+Slack (VIOLATED) :        -2.327ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter12_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.355ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.355ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.015ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.284ns (routing 1.925ns, distribution 1.359ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.015     1.015    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X45Y193        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter12_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.284     3.355    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X45Y193        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter12_reg/C
+                         clock pessimism              0.000     3.355    
+                         inter-SLR compensation       0.002     3.357    
+    SLICE_X45Y193        FDRE (Hold_EFF_SLICEL_C_R)
+                                                     -0.015     3.342    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter12_reg
+  -------------------------------------------------------------------
+                         required time                         -3.342    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -2.327    
+
+Slack (VIOLATED) :        -2.320ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter4_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.348ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.348ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.015ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.277ns (routing 1.925ns, distribution 1.352ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.015     1.015    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X43Y133        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter4_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.277     3.348    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X43Y133        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter4_reg/C
+                         clock pessimism              0.000     3.348    
+                         inter-SLR compensation       0.002     3.350    
+    SLICE_X43Y133        FDRE (Hold_EFF_SLICEL_C_R)
+                                                     -0.015     3.335    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter4_reg
+  -------------------------------------------------------------------
+                         required time                         -3.335    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -2.320    
+
+Slack (VIOLATED) :        -2.320ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter5_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.348ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.348ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.015ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.277ns (routing 1.925ns, distribution 1.352ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.015     1.015    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X43Y133        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter5_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.277     3.348    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X43Y133        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter5_reg/C
+                         clock pessimism              0.000     3.348    
+                         inter-SLR compensation       0.002     3.350    
+    SLICE_X43Y133        FDRE (Hold_EFF2_SLICEL_C_R)
+                                                     -0.015     3.335    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter5_reg
+  -------------------------------------------------------------------
+                         required time                         -3.335    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -2.320    
+
+Slack (VIOLATED) :        -2.319ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter6_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.348ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.348ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.277ns (routing 1.925ns, distribution 1.352ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X42Y133        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter6_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.277     3.348    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X42Y133        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter6_reg/C
+                         clock pessimism              0.000     3.348    
+                         inter-SLR compensation       0.003     3.351    
+    SLICE_X42Y133        FDRE (Hold_EFF_SLICEM_C_R)
+                                                     -0.015     3.336    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter6_reg
+  -------------------------------------------------------------------
+                         required time                         -3.336    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.319    
+
+Slack (VIOLATED) :        -2.319ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter11_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.348ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.348ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.277ns (routing 1.925ns, distribution 1.352ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X44Y184        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter11_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.277     3.348    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X44Y184        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter11_reg/C
+                         clock pessimism              0.000     3.348    
+                         inter-SLR compensation       0.003     3.351    
+    SLICE_X44Y184        FDRE (Hold_EFF_SLICEM_C_R)
+                                                     -0.015     3.336    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter11_reg
+  -------------------------------------------------------------------
+                         required time                         -3.336    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.319    
+
+Slack (VIOLATED) :        -2.316ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter8_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.345ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.345ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.274ns (routing 1.925ns, distribution 1.349ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X39Y175        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter8_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.274     3.345    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X39Y175        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter8_reg/C
+                         clock pessimism              0.000     3.345    
+                         inter-SLR compensation       0.003     3.348    
+    SLICE_X39Y175        FDRE (Hold_AFF_SLICEM_C_R)
+                                                     -0.015     3.333    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter8_reg
+  -------------------------------------------------------------------
+                         required time                         -3.333    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.316    
+
+Slack (VIOLATED) :        -2.316ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter9_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.345ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.345ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.274ns (routing 1.925ns, distribution 1.349ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X39Y175        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter9_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.274     3.345    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X39Y175        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter9_reg/C
+                         clock pessimism              0.000     3.345    
+                         inter-SLR compensation       0.003     3.348    
+    SLICE_X39Y175        FDRE (Hold_AFF2_SLICEM_C_R)
+                                                     -0.015     3.333    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3388/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter9_reg
+  -------------------------------------------------------------------
+                         required time                         -3.333    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.316    
+
+Slack (VIOLATED) :        -2.315ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.344ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.344ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.273ns (routing 1.925ns, distribution 1.348ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X42Y137        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.273     3.344    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X42Y137        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg/C
+                         clock pessimism              0.000     3.344    
+                         inter-SLR compensation       0.003     3.347    
+    SLICE_X42Y137        FDRE (Hold_EFF_SLICEM_C_R)
+                                                     -0.015     3.332    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3326/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg
+  -------------------------------------------------------------------
+                         required time                         -3.332    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.315    
+
+Slack (VIOLATED) :        -2.312ns  (arrival time - required time)
+  Source:                 S_AXIS_CTRL_TDATA[24]
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[24]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.013ns  (logic 0.000ns (0.000%)  route 0.013ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.261ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.261ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.013ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.190ns (routing 1.925ns, distribution 1.265ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 r  S_AXIS_CTRL_TDATA[24] (IN)
+                         net (fo=1, unset)            0.013     1.013    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[72]_0[24]
+    SLICE_X133Y147       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.190     3.261    core/cnn_S_AXIS_CTRL_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X133Y147       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[24]/C
+                         clock pessimism              0.000     3.261    
+                         inter-SLR compensation       0.002     3.263    
+    SLICE_X133Y147       FDRE (Hold_CFF2_SLICEM_C_D)
+                                                      0.062     3.325    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[24]
+  -------------------------------------------------------------------
+                         required time                         -3.325    
+                         arrival time                           1.013    
+  -------------------------------------------------------------------
+                         slack                                 -2.312    
+
+Slack (VIOLATED) :        -2.312ns  (arrival time - required time)
+  Source:                 S_AXIS_CTRL_TDATA[4]
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.013ns  (logic 0.000ns (0.000%)  route 0.013ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.261ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.261ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.013ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.190ns (routing 1.925ns, distribution 1.265ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 r  S_AXIS_CTRL_TDATA[4] (IN)
+                         net (fo=1, unset)            0.013     1.013    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[72]_0[4]
+    SLICE_X133Y147       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.190     3.261    core/cnn_S_AXIS_CTRL_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X133Y147       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[4]/C
+                         clock pessimism              0.000     3.261    
+                         inter-SLR compensation       0.002     3.263    
+    SLICE_X133Y147       FDRE (Hold_BFF2_SLICEM_C_D)
+                                                      0.062     3.325    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -3.325    
+                         arrival time                           1.013    
+  -------------------------------------------------------------------
+                         slack                                 -2.312    
+
+Slack (VIOLATED) :        -2.312ns  (arrival time - required time)
+  Source:                 S_AXIS_CTRL_TDATA[23]
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[23]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.012ns  (logic 0.000ns (0.000%)  route 0.012ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.260ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.260ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.012ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.189ns (routing 1.925ns, distribution 1.264ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 r  S_AXIS_CTRL_TDATA[23] (IN)
+                         net (fo=1, unset)            0.012     1.012    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[72]_0[23]
+    SLICE_X133Y147       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.189     3.260    core/cnn_S_AXIS_CTRL_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X133Y147       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[23]/C
+                         clock pessimism              0.000     3.260    
+                         inter-SLR compensation       0.002     3.262    
+    SLICE_X133Y147       FDRE (Hold_HFF2_SLICEM_C_D)
+                                                      0.062     3.324    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[23]
+  -------------------------------------------------------------------
+                         required time                         -3.324    
+                         arrival time                           1.012    
+  -------------------------------------------------------------------
+                         slack                                 -2.312    
+
+Slack (VIOLATED) :        -2.312ns  (arrival time - required time)
+  Source:                 S_AXIS_CTRL_TDATA[12]
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.011ns  (logic 0.000ns (0.000%)  route 0.011ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.259ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.259ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.011ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.188ns (routing 1.925ns, distribution 1.263ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 r  S_AXIS_CTRL_TDATA[12] (IN)
+                         net (fo=1, unset)            0.011     1.011    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[72]_0[12]
+    SLICE_X132Y143       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.188     3.259    core/cnn_S_AXIS_CTRL_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X132Y143       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[12]/C
+                         clock pessimism              0.000     3.259    
+                         inter-SLR compensation       0.002     3.261    
+    SLICE_X132Y143       FDRE (Hold_HFF2_SLICEL_C_D)
+                                                      0.062     3.323    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[12]
+  -------------------------------------------------------------------
+                         required time                         -3.323    
+                         arrival time                           1.011    
+  -------------------------------------------------------------------
+                         slack                                 -2.312    
+
+Slack (VIOLATED) :        -2.312ns  (arrival time - required time)
+  Source:                 S_AXIS_CTRL_TDATA[6]
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.011ns  (logic 0.000ns (0.000%)  route 0.011ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.259ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.259ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.011ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.188ns (routing 1.925ns, distribution 1.263ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 r  S_AXIS_CTRL_TDATA[6] (IN)
+                         net (fo=1, unset)            0.011     1.011    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[72]_0[6]
+    SLICE_X132Y143       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.188     3.259    core/cnn_S_AXIS_CTRL_if_U/rs/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X132Y143       FDRE                                         r  core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[6]/C
+                         clock pessimism              0.000     3.259    
+                         inter-SLR compensation       0.002     3.261    
+    SLICE_X132Y143       FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.062     3.323    core/cnn_S_AXIS_CTRL_if_U/rs/data_p2_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -3.323    
+                         arrival time                           1.011    
+  -------------------------------------------------------------------
+                         slack                                 -2.312    
+
+Slack (VIOLATED) :        -2.312ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter5_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.341ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.341ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.270ns (routing 1.925ns, distribution 1.345ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X42Y163        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter5_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.270     3.341    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X42Y163        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter5_reg/C
+                         clock pessimism              0.000     3.341    
+                         inter-SLR compensation       0.003     3.344    
+    SLICE_X42Y163        FDRE (Hold_EFF_SLICEM_C_R)
+                                                     -0.015     3.329    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter5_reg
+  -------------------------------------------------------------------
+                         required time                         -3.329    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.312    
+
+Slack (VIOLATED) :        -2.312ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter6_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.341ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.341ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.270ns (routing 1.925ns, distribution 1.345ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X42Y163        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter6_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.270     3.341    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X42Y163        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter6_reg/C
+                         clock pessimism              0.000     3.341    
+                         inter-SLR compensation       0.003     3.344    
+    SLICE_X42Y163        FDRE (Hold_EFF2_SLICEM_C_R)
+                                                     -0.015     3.329    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter6_reg
+  -------------------------------------------------------------------
+                         required time                         -3.329    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.312    
+
+Slack (VIOLATED) :        -2.312ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.341ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.341ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.270ns (routing 1.925ns, distribution 1.345ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X42Y163        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.270     3.341    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X42Y163        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg/C
+                         clock pessimism              0.000     3.341    
+                         inter-SLR compensation       0.003     3.344    
+    SLICE_X42Y163        FDRE (Hold_FFF_SLICEM_C_R)
+                                                     -0.015     3.329    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter7_reg
+  -------------------------------------------------------------------
+                         required time                         -3.329    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.312    
+
+Slack (VIOLATED) :        -2.312ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter11_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.017ns  (logic 0.000ns (0.000%)  route 0.017ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.341ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.341ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.003ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.017ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.270ns (routing 1.925ns, distribution 1.345ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.017     1.017    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X41Y192        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter11_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.270     3.341    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X41Y192        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter11_reg/C
+                         clock pessimism              0.000     3.341    
+                         inter-SLR compensation       0.003     3.344    
+    SLICE_X41Y192        FDRE (Hold_EFF_SLICEM_C_R)
+                                                     -0.015     3.329    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter11_reg
+  -------------------------------------------------------------------
+                         required time                         -3.329    
+                         arrival time                           1.017    
+  -------------------------------------------------------------------
+                         slack                                 -2.312    
+
+Slack (VIOLATED) :        -2.311ns  (arrival time - required time)
+  Source:                 aresetn
+                            (input port clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter13_reg/R
+                            (rising edge-triggered cell FDRE clocked by core_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             core_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (core_clk rise@0.000ns - core_clk rise@0.000ns)
+  Data Path Delay:        0.015ns  (logic 0.000ns (0.000%)  route 0.015ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            1.000ns
+  Clock Path Skew:        3.339ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.339ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Inter-SLR Compensation: 0.002ns  (DPD * PF)
+    Data Path Delay         (DPD):    0.015ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Destination): 3.268ns (routing 1.925ns, distribution 1.343ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                         input delay                  1.000     1.000    
+                                                      0.000     1.000 f  aresetn (IN)
+                         net (fo=2172, unset)         0.015     1.015    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/SS[0]
+    SLICE_X54Y192        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter13_reg/R  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock core_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  aclk (IN)
+                         net (fo=0)                   0.043     0.043    aclk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X3Y1 (CLOCK_ROOT)    net (fo=80839, routed)       3.268     3.339    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/core_clock
+    SLR Crossing[1->0]   
+    SLICE_X54Y192        FDRE                                         r  core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter13_reg/C
+                         clock pessimism              0.000     3.339    
+                         inter-SLR compensation       0.002     3.341    
+    SLICE_X54Y192        FDRE (Hold_EFF_SLICEL_C_R)
+                                                     -0.015     3.326    core/cnn_U/grp_p_top_cnn_fu_3140/grp_p_PE_v2_fu_3264/grp_p_PE_v2_PE_thread_fu_170/ap_enable_reg_pp0_iter13_reg
+  -------------------------------------------------------------------
+                         required time                         -3.326    
+                         arrival time                           1.015    
+  -------------------------------------------------------------------
+                         slack                                 -2.311    
+
+
+
+

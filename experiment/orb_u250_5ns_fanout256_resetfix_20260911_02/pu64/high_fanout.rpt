@@ -1,0 +1,71 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri Sep 11 17:37:59 2026
+| Host         : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_high_fanout_nets -max_nets 50 -file high_fanout.rpt
+| Design       : bfmatcher_accel
+| Device       : xcu250
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| Net Name                                                                                                                                                | Fanout | Driver Type |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| ap_CS_fsm_state1                                                                                                                                        |    281 | FDSE        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN_6                                                                                                 |    252 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state12                                                                                                        |    244 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_6  |    243 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/trunc_ln142_reg_10149[4]_repN_1                                       |    237 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/trunc_ln142_reg_10149[2]_repN_2                                       |    231 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN                                                                                                   |    227 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN_5                                                                                                 |    218 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_12 |    218 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_6          |    215 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_2  |    212 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_8  |    209 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_7  |    208 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN_1                                                                                                 |    203 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN_4                                                                                                 |    203 | FDRE        |
+| gmem2_m_axi_U/store_unit/fifo_wreq/if_full_n                                                                                                            |    199 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN_9                                                                                                 |    196 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_7          |    196 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN_7                                                                                                 |    183 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN    |    181 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN            |    179 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN_3                                                                                                 |    178 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_4          |    178 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_5  |    178 | LUT2        |
+| gmem2_m_axi_U/bus_write/wreq_burst_conv/next_req                                                                                                        |    174 | LUT5        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_WRITE_LOOP_1_fu_3752/grp_fu_3971_p_ce                                                     |    169 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_reg[28]_rep__1_n_2                                                                                             |    165 | FDRE        |
+| gmem0_m_axi_U/bus_read/rreq_burst_conv/next_req                                                                                                         |    162 | LUT5        |
+| gmem1_m_axi_U/bus_read/rreq_burst_conv/next_req                                                                                                         |    162 | LUT5        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN_8                                                                                                 |    162 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/query_set_63_fu_2110[255]_i_2_n_2                                     |    160 | LUT4        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_10 |    159 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/query_set_62_fu_2106[255]_i_2_n_2                                     |    157 | LUT4        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_3  |    157 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/query_set_30_fu_1978[255]_i_2_n_2                                     |    155 | LUT4        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/query_set_31_fu_1982[255]_i_2_n_2                                     |    152 | LUT4        |
+| gmem0_m_axi_U/load_unit/buff_rdata/if_empty_n                                                                                                           |    150 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_2          |    148 | LUT2        |
+| orb_reset_buf_17_out                                                                                                                                    |    148 | LUT1        |
+| grp_bfMatcher_64_8192_s_fu_108/ap_CS_fsm_state16_repN_10                                                                                                |    147 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_4  |    146 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/ap_enable_reg_pp0_iter1                                               |    143 | FDRE        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_9  |    142 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_3          |    138 | LUT2        |
+| orb_reset_buf_5_out                                                                                                                                     |    138 | LUT1        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_PROCESS_LOOP_DESC_2_fu_3296/flow_control_loop_pipe_sequential_init_U/ap_loop_init         |    137 | LUT2        |
+| orb_reset_buf_9_out                                                                                                                                     |    137 | LUT1        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_WRITE_LOOP_1_fu_3752/ap_sig_allocacmp_w_pu_idx_1[3]                                       |    136 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_bfMatcher_64_8192_Pipeline_INIT_LOOP_1_fu_2839/flow_control_loop_pipe_sequential_init_U/ap_loop_init_repN_1          |    132 | LUT2        |
+| grp_bfMatcher_64_8192_s_fu_108/grp_fu_3971_ce                                                                                                           |    130 | LUT2        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+
+

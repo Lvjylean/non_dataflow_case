@@ -1,0 +1,122 @@
+{
+  "original_batch": "hls-nondataflow-scale-20260911-01",
+  "unchanged": true,
+  "files": {
+    "kernel_getrf_0_getrf_core_double_2_512_256_Pipeline_LoopPivot.v": {
+      "bytes": 148675,
+      "sha256": "9e1b8d924cc2cc673005192998c27f3adcbd467d07c9600d16675a450b96327a"
+    },
+    "kernel_getrf_0_getrf_core_double_2_512_256_s.v": {
+      "bytes": 3515789,
+      "sha256": "1eb2f39e48c264ffd590511701227060f97ad38cf4fd2899b0c965c6835400d7"
+    },
+    "kernel_getrf_0_kernel_getrf_0_Pipeline_LoopWrite_VITIS_LOOP_181_3.v": {
+      "bytes": 147614,
+      "sha256": "8d7255c547760d7661cda2543ffb96ef30a36deb8a8537741653d1c295de4b34"
+    },
+    "kernel_getrf_0_gmem0_m_axi.v": {
+      "bytes": 97924,
+      "sha256": "70c634f5ed65add655990e67173652cb03e904f2e2be8a2c00eec9392bfe3058"
+    },
+    "kernel_getrf_0_dcmp_64ns_64ns_1_2_no_dsp_1.v": {
+      "bytes": 3119,
+      "sha256": "e863edfd93336d57cee27e1550d05eb28620931eb26c6ed6dc0186765798d489"
+    },
+    "kernel_getrf_0_getrf_core_double_2_512_256_Pipeline_LoopRows.v": {
+      "bytes": 1144093,
+      "sha256": "0054c152df7c6481311760cd27385e2b0608213edab543ff27dccb7d199a60c2"
+    },
+    "kernel_getrf_0_dsub_64ns_64ns_64_5_full_dsp_1.v": {
+      "bytes": 2187,
+      "sha256": "a70b243407a946c94b3ba9f92c25096205e249b927dffca462feda8b0bd2c1bc"
+    },
+    "kernel_getrf_0_ddiv_64ns_64ns_64_22_no_dsp_1_ip.tcl": {
+      "bytes": 2568,
+      "sha256": "f58067fd1e33b34ac80596fb10dd2c5baa173a01804879cfa377bdef7f18fec6"
+    },
+    "kernel_getrf_0_mul_9ns_2ns_11_1_1.v": {
+      "bytes": 562,
+      "sha256": "fd8e6234d7047be922ba397a1713e4780bacf0ce2f3320627545c9d97d197fc1"
+    },
+    "kernel_getrf_0_control_s_axi.v": {
+      "bytes": 13143,
+      "sha256": "b3561569e7a3306996dad4a489e6b4029f1793be90a814c924873b13d283339b"
+    },
+    "kernel_getrf_0_matA_XPM_MEMORY_URAM_1R1W.v": {
+      "bytes": 6511,
+      "sha256": "2e4d1065c60fa5ae4e9be2b885e52552f9cf7fb74d156ed06a7976d825c4fed1"
+    },
+    "kernel_getrf_0_getrf_core_double_2_512_256_s_rows_RAM_2P_BRAM_1R1W.v": {
+      "bytes": 1085,
+      "sha256": "23e04a5c8e601e33bbcb0d55da4642226c76a3a1468664eebdcaee81e54b1fe7"
+    },
+    "kernel_getrf_0.v": {
+      "bytes": 1387478,
+      "sha256": "59f21a755f5ec74969fb1d4f4948868c6ad7a1858ff016bb868e68980dc201c2"
+    },
+    "kernel_getrf_0_flow_control_loop_pipe_sequential_init.v": {
+      "bytes": 2780,
+      "sha256": "cc1e946513e0ec37d6d912c15cdbc67d19bdee096b3cb2da5fcc85282970b729"
+    },
+    "kernel_getrf_0_getrf_core_double_2_512_256_Pipeline_LoopDiv.v": {
+      "bytes": 1356525,
+      "sha256": "1d2dcf2bc50f505034e883f570f7981d8c674728905571f937d4ff394f43a65e"
+    },
+    "kernel_getrf_0_subUpdate_double_2_512_s.v": {
+      "bytes": 8625,
+      "sha256": "893e26118f7fc60a6b436213a84f6198194f2fbf6523c6666b1f386eb98a4c81"
+    },
+    "kernel_getrf_0_dmul_64ns_64ns_64_5_max_dsp_1_ip.tcl": {
+      "bytes": 2570,
+      "sha256": "7ccfe8295f98e9e483376670379a3316aab6eeed69ca797ad57bd34128cc5bba"
+    },
+    "kernel_getrf_0_subUpdate_double_2_512_Pipeline_LoopMulSub.v": {
+      "bytes": 25360,
+      "sha256": "bba58d00ac17e2b813328647062b2bc1e4c83de711af841a44bd22a2b55f08ed"
+    },
+    "kernel_getrf_0_kernel_getrf_0_Pipeline_VITIS_LOOP_172_2.v": {
+      "bytes": 5284,
+      "sha256": "098bdb7db7798d4d3401a30fd7437af5b21231e15c3268a745f479eee92bf2c4"
+    },
+    "kernel_getrf_0_sparsemux_513_8_64_1_1.v": {
+      "bytes": 37925,
+      "sha256": "20968d47b5bcf2d87190ba383b4542ce1fc2ce413d750e221b7e7a3f585056da"
+    },
+    "kernel_getrf_0_udiv_10ns_9ns_9_14_1.v": {
+      "bytes": 3870,
+      "sha256": "23e57a3bebdd102266550a584a2072c38efebc0d0bc62a58752544074f77b5c2"
+    },
+    "kernel_getrf_0_ddiv_64ns_64ns_64_22_no_dsp_1.v": {
+      "bytes": 2184,
+      "sha256": "d65e8e1d3432d6659c67afa687a2134417cd4380d8c51471ae67f91f4148d63d"
+    },
+    "kernel_getrf_0_dmul_64ns_64ns_64_5_max_dsp_1.v": {
+      "bytes": 2184,
+      "sha256": "74cac16c32c92ac1ec486fc21e7ea98d7900d3588de08f8a83c2adb69b360ee3"
+    },
+    "kernel_getrf_0_dcmp_64ns_64ns_1_2_no_dsp_1_ip.tcl": {
+      "bytes": 2557,
+      "sha256": "8330f60b48c7804900cf70e108f96d08fbcbfbbea464a6143ac7d7a1b97a61cb"
+    },
+    "kernel_getrf_0_dsub_64ns_64ns_64_5_full_dsp_1_ip.tcl": {
+      "bytes": 2584,
+      "sha256": "835f3f7a1a674f69ce22b8fd2fd3acb756d7b84366e564c8b5d2266884e438a9"
+    },
+    "kernel_getrf_0_kernel_getrf_0_Pipeline_LoopRead_VITIS_LOOP_165_1.v": {
+      "bytes": 205021,
+      "sha256": "10a021d997efc15fc4e1c3233f017a45b081d8f6183491482e574bd1bf50962a"
+    },
+    "kernel_getrf_0_kernel_getrf_0_Pipeline_VITIS_LOOP_187_4.v": {
+      "bytes": 48093,
+      "sha256": "5fefec6832fe5f134dd8ccb60fcfe1d13af3bb9a2782b18549fbd2c17c735dac"
+    },
+    "kernel_getrf_0_pivot_RAM_AUTO_1R1W.v": {
+      "bytes": 910,
+      "sha256": "07a65d9ff0a656ab5c580ece457b08a438465e857d876ee6620289a802613075"
+    },
+    "kernel_getrf_0_urem_10ns_9ns_9_14_1.v": {
+      "bytes": 3870,
+      "sha256": "baeced4a13df4de349c6d5bfe5aff75b908800be557c63e2cdaf65a1275f64ce"
+    }
+  }
+}

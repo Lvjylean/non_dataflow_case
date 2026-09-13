@@ -1,0 +1,23 @@
+	Command being timed: "vivado -mode batch -log vivado.log -journal vivado.jou -source inputs/run.tcl"
+	User time (seconds): 11751.70
+	System time (seconds): 101.41
+	Percent of CPU this job got: 183%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:47:54
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 15047304
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 29
+	Minor (reclaiming a frame) page faults: 11720505
+	Voluntary context switches: 19591115
+	Involuntary context switches: 103884
+	Swaps: 0
+	File system inputs: 1992
+	File system outputs: 10433272
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

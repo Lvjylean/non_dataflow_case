@@ -1,0 +1,71 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri Sep 11 18:24:16 2026
+| Host         : ee4e070 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_high_fanout_nets -max_nets 50 -file high_fanout.rpt
+| Design       : bfmatcher_accel
+| Device       : xcu250
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++---------------------------------------------------------+--------+-------------+
+| Net Name                                                | Fanout | Driver Type |
++---------------------------------------------------------+--------+-------------+
+| ap_CS_fsm_state1                                        |    281 | FDSE        |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[0]   |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[100] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[101] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[102] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[103] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[104] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[105] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[106] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[107] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[108] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[109] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[10]  |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[110] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[111] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[112] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[113] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[114] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[115] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[116] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[117] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[118] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[119] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[11]  |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[120] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[121] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[122] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[123] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[124] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[125] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[126] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[127] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[128] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[129] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[12]  |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[130] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[131] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[132] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[133] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[134] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[135] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[136] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[137] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[138] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[139] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[13]  |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[140] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[141] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[142] |    257 | RAMB36E2    |
+| gmem0_m_axi_U/load_unit/buff_rdata/U_fifo_mem/dout[143] |    257 | RAMB36E2    |
++---------------------------------------------------------+--------+-------------+
+
+
