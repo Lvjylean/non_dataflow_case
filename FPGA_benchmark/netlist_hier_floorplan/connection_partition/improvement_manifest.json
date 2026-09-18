@@ -1,0 +1,101 @@
+{
+  "baseline_commit": "8bcc512bf67cd0caa8ff62886bdc8a4e8a60c71e",
+  "scope": "Optional staged connectivity refinement and static heterogeneous-resource evaluation; source only",
+  "validation": {
+    "focused_unit_tests_passed": 15,
+    "baseline_source_unchanged": true,
+    "effectiveness_scope": "Candidate granularity and static resource feasibility; no physical timing or SLL claim"
+  },
+  "files": [
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/BASELINE.md",
+      "bytes": 3616,
+      "sha256": "e85d397750ec518a9dcfdeb7e6d09fc84d44d32142078300848658d6ffb3a88c"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/README.md",
+      "bytes": 4338,
+      "sha256": "a910f60b1f8c19c3f824c8bc3dad24ef529d31e6dae8a4389c3a4b30d052d396"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/baseline_manifest.json",
+      "bytes": 1947,
+      "sha256": "d9f7ffc2c8513f6229f91c6d21237a37fee61914587b0c72fcb56655b6df423a"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/connectivity.tcl",
+      "bytes": 3307,
+      "sha256": "ea5553e9a55e8edef352038859c3eae52c35d6589271082f9c057f735634c700"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/core_adjust.py",
+      "bytes": 5322,
+      "sha256": "89294e4ab70b257bd535769cab0355a9a4dcf400b759844fddf614189b699186"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/export.tcl",
+      "bytes": 1668,
+      "sha256": "275dfbe4d5de7c286ae4dc820b195b8c62286fcab498c23700b0bbfa5dff5ca6"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/finish_improved.py",
+      "bytes": 4424,
+      "sha256": "82a7cc5242cd5a565aebdac541117bf763e5e4fc5840b839e46e53c0e3370721"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/improve.py",
+      "bytes": 16102,
+      "sha256": "3c47431769a2aae3f9b07db104daf94442d12d7aca674ac706ca9e8782faeeae"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/improvements.md",
+      "bytes": 6001,
+      "sha256": "62f5e940aa9277b3c1a1bd97e1890b0fef053e382243ba71abae54bf68061e40"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/km1.ini",
+      "bytes": 2058,
+      "sha256": "fcac49bf0ba547cabee11f0cdb67a45ac402531a18547db65562afdb810c6466"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/partition.py",
+      "bytes": 20556,
+      "sha256": "19f0cfe2d684d8664d2cf5a7376cd114a3b1db8768baf74c5cdafecf9f96e547"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/plot_static_comparison.py",
+      "bytes": 3711,
+      "sha256": "595ec069987f9b66ea38ca70f18c062b42a3a93a0680812f99059073b3793d49"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/report.py",
+      "bytes": 8422,
+      "sha256": "975b93b377a80bf49b6528dbdf50263444218ab456b31e388f5d8bbe1363089b"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/resource_regroup.py",
+      "bytes": 2043,
+      "sha256": "af8d2dcbca2b1d1db85972856c4b5ca115a5ad275c8ee2213dbf5fa8a116769b"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/static_regions.py",
+      "bytes": 11398,
+      "sha256": "05a0dcb100dfe08544321e51c1c4dc0298c92d7302375bb7545bac69ef63c85a"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/test_improve.py",
+      "bytes": 4133,
+      "sha256": "cd877b32ac8578b13dcc5ee06d519f58f95c9d71d38be19f1a274a14a53afd37"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/test_partition.py",
+      "bytes": 3958,
+      "sha256": "e82a5b1985943b83ff2b5924875cc26388fd410bd0a22b4a8e3733c171ba981d"
+    },
+    {
+      "path": "FPGA_benchmark/netlist_hier_floorplan/connection_partition/test_static_regions.py",
+      "bytes": 2026,
+      "sha256": "c419921a73b0d993f6217b9a544aa657b0371d61e59ed17111794d62b41e3aed"
+    }
+  ]
+}
