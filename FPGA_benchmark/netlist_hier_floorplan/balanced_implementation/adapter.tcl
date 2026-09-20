@@ -15,23 +15,40 @@ proc bi_load {input} {
     close $f
 }
 
+# Preserve exact CR sets, including partially expanded nonrectangular regions.
+proc bi_ranges {mid} {
+    set crs [dict get $::planned_regions $mid]
+    if {![llength $crs] || [llength [lsort -unique $crs]] != [llength $crs]} {error "Empty or duplicate CR set: $mid"}
+    lassign [dict get $::planned_bounds $mid] x0 y0 x1 y1
+    set ranges {}
+    foreach cr $crs {
+        if {![regexp {^X([0-9]+)Y([0-9]+)$} $cr -> x y]} {error "Invalid CR: $cr"}
+        if {$x < $x0 || $x > $x1 || $y < $y0 || $y > $y1} {error "CR outside envelope: $mid/$cr"}
+        lappend ranges CLOCKREGION_${cr}:CLOCKREGION_${cr}
+    }
+    if {[llength $crs] == ($x1-$x0+1)*($y1-$y0+1)} {
+        return [list CLOCKREGION_X${x0}Y${y0}:CLOCKREGION_X${x1}Y${y1}]
+    }
+    return $ranges
+}
+
 proc bi_apply {out} {
     if {[llength [get_pblocks -quiet hfp_*]] || [llength [get_cells -quiet f96_identity_*]]} {
         error "Expected the clean post-opt reference, not an earlier physical experiment"
     }
     set f [open $out/constraint_binding.tsv w]
-    puts $f "module\texpected\tfound\tsoft\tclock_region_rectangle"
+    puts $f "module\texpected\tfound\tsoft\tclock_region_ranges"
     dict for {mid bounds} $::planned_bounds {
         lassign $bounds x0 y0 x1 y1
         set names $::cf_members($mid)
         set cells [get_cells -quiet $names]
         if {[lsort [f96::values NAME $cells]] ne [lsort $names]} {error "Exact primitive name binding mismatch: $mid"}
         set pb [create_pblock hfp_$mid]
-        set range CLOCKREGION_X${x0}Y${y0}:CLOCKREGION_X${x1}Y${y1}
-        resize_pblock $pb -add $range
+        set ranges [bi_ranges $mid]
+        foreach range $ranges {resize_pblock $pb -add $range}
         set_property IS_SOFT true $pb
         add_cells_to_pblock $pb $cells
-        puts $f "$mid\t[llength $names]\t[llength $cells]\t[get_property IS_SOFT $pb]\t$range"
+        puts $f "$mid\t[llength $names]\t[llength $cells]\t[get_property IS_SOFT $pb]\t$ranges"
     }
     close $f
     if {[bi_geometry $out/geometry_initial 1]} {error "Initial native binding/geometry failed"}

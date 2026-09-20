@@ -1,0 +1,25 @@
+{
+  "branch": "fanout_new",
+  "base_commit": "d9a10a58eb40cbee1bfb150266c7016fa3ec34c2",
+  "revision": "native-v3-archive",
+  "runtime_and_tests": {
+    "fanout_native/core.tcl": "364b2620fab7ba8f320ee5083a3a56bdf589b625c094c39cff5bef87571806da",
+    "fanout_native/eco.tcl": "76655f263b9c6b328c1e3c3b1506f9cc0ff971d828f7d53320f5645fe3ab729c",
+    "fanout_native/implement.tcl": "ef9ddd6b905ebc0bbfa432399e5cd989ce2b6c5377977fd0cd75ef1c5e9653c6",
+    "fanout_native/memory.tcl": "dec42f2ca28cd8fdfae16e174244b422b7ccd7a809b464c5cfe0b49fd2d7213e",
+    "fanout_native/reopen.tcl": "005170aa71ba81a21eed1924ae053dbc02dd07ffd5907e3dd4cba68f4eea91f9",
+    "fanout_native/run.py": "daec5c700aa4ac845c505bfa7d2fb7ce9d75bb02441c17ee6785c7cecdd14a19",
+    "fanout_native/scan.tcl": "1e42d04791cd1b466da15abe0b7b23e268ece1766fb485a3f63a536c79704ecf",
+    "fanout_native/test_eco.tcl": "4ae6cb9a05855d6da77ad382fe3858cf36816957d83cb6c9673d687977c24d45",
+    "fanout_native/test_policy.tcl": "f72f40cfa972c43cbf8838649b52ca349c84938d20499abe2984df59eded2638",
+    "fanout_native/test_runner.py": "24a617d07283c2cde01745121918006741b82ef1cd809f7b2b333c4d027ab0ee",
+    "fanout96/core.tcl": "9764aad59f6504434c9410c014b29ef9679969c1232de57c4aeffd733be9cba2",
+    "fanout96/fast.tcl": "558185fe526c983e42f13da7be60ec0fdc4d1c5330270b96411653c175983067",
+    "fanout96/quick.tcl": "d47b8f6b9c5fa94afa8378f27704dc4794e5258c349e3eb651c80468c4199465",
+    "balanced_implementation/adapter.tcl": "aeacf11bfcb221bd1e962719b659d1794b13ab8dda65069dfe7e2587d01fe4ce",
+    "balanced_implementation/prepare.py": "ab2719a5a49cbaa7bd17a258022dfe247506ac0e8a8c014538a06a82c590462e",
+    "connection_floorplan/audit.tcl": "59c5dcaee39d4f5f0664dcfdccc3d2dba8d6b6b0fb8e7d1426701d216c360fb7"
+  },
+  "known_spatial_issues_retained": true,
+  "scope": "Source, synthetic tests and documentation only; external experiment artifacts excluded."
+}
