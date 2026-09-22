@@ -5,6 +5,7 @@ import itertools
 import json
 from collections import Counter
 from pathlib import Path
+from routed_density import resource_probabilities
 
 RESOURCES = ('LUT','FF','DSP','BRAM18','URAM','LUTMEM','CARRY8','MUXF7','MUXF8')
 LIMITS = {r:(1.0 if r=='URAM' else .7) for r in RESOURCES}
@@ -63,11 +64,12 @@ def overlap_audit(modules,chosen,device,limits=LIMITS):
     for module in modules:
         mid=module['module_id'];region=chosen[mid]
         assert fits(module,region,limits)
+        probabilities={r:resource_probabilities(region,device,r) for r in RESOURCES}
         for c in region['crs']:
             contributors[c].add(mid)
             for r in RESOURCES:
                 if module.get(r,0) and device[c]['resources'][r]:
-                    occupancy[c][r]+=module[r]/region['capacity'][r]
+                    occupancy[c][r]+=module[r]*probabilities[r][c]/device[c]['resources'][r]
     violations=[dict(cr=c,resource=r,utilization=u,limit=limits[r])
                 for c,v in occupancy.items() for r,u in v.items() if u>limits[r]+1e-6]
     return dict(valid=not violations,violations=violations,

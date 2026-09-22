@@ -1,0 +1,23 @@
+{
+  "schema": "balanced-modules-v1",
+  "core_min_cells": 8,
+  "core_max_cells": 32768,
+  "core_min_cohesion": 0.2,
+  "core_soft_strength": 0.1,
+  "split_seeds": [0, 1],
+  "split_max_parent_fraction": 0.85,
+  "global_added_km1_fraction_of_all_net_weight": 0.025,
+  "local_split_fraction_of_incident_net_weight": 0.1,
+  "budget_sensitivity_multipliers": [0.5, 1.0, 2.0],
+  "slr_distance_weight": 4.0,
+  "cut_weight": 2.0,
+  "logical_core_weight": 2.0,
+  "module_cost_fraction_of_all_net_weight": 0.0025,
+  "region_max_area_factor": 1.5,
+  "region_max_area_extra_crs": 4,
+  "region_solver_seconds": 45,
+  "region_local_search_rounds": 3,
+  "region_local_search_options_per_module": 32,
+  "selection_relative_tolerance": 0.01,
+  "notes": "Engineering calibration defaults fixed before new candidate results; not user-provided budgets or validated physical timing weights. No equal-size or final module-count constraint. Both baselines are rescored."
+}

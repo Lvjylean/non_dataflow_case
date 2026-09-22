@@ -1,0 +1,35 @@
+{
+  "schema": "fixed11-all-directed-branches-v1",
+  "slr_distance_weight": 8.0,
+  "directed_weight": 1.0,
+  "branch_square_weight": 32.0,
+  "critical_distance_weight": 0.0,
+  "path_square_weight": 0.0,
+  "region_max_area_factor": 1.5,
+  "region_max_area_extra_crs": 4,
+  "mip_seconds": 120,
+  "mip_seeds": [
+    0,
+    17
+  ],
+  "local_rounds": 5,
+  "local_seeds": [
+    0,
+    17,
+    31
+  ],
+  "notes": "Fixed 11 memberships; SLR distance 8, URAM 100%, other resources 70%. Original area window and all SLR spans. Local exact-J heuristic; no density fit, MIP or physical implementation.",
+  "resource_limits": {
+    "LUT": 0.7,
+    "FF": 0.7,
+    "DSP": 0.7,
+    "BRAM18": 0.7,
+    "URAM": 1.0,
+    "LUTMEM": 0.7,
+    "CARRY8": 0.7,
+    "MUXF7": 0.7,
+    "MUXF8": 0.7
+  },
+  "anneal_steps_per_seed": 8000,
+  "soft_expansion_threshold": 0.5
+}
