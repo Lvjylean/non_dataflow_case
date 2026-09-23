@@ -389,8 +389,17 @@ def deliver(root):
     hierarchy=[dict(module_id=m['module_id'],original_owner=h,cells=n) for m in modules for h,n in m['original_owners']]
     write_table(out/'module_hierarchy.tsv',hierarchy,['module_id','original_owner','cells'])
     infrastructure_counts=Counter(mid for mid in owner if not mid.startswith('P'))
-    summary=dict(input_dcp='/Projects/jinyang/workspace/non_dataflow_crossSLR/case/FPGA_benchmark/runs/trtrs_postopt_extraction_20260917_01/optimized/post_opt.dcp',
-        input_sha256='acddf4787ec2806da9bbe9131bfee33bf9db1019f636fbe2e605c868275eac7f',
+    binding_path = root/'input_binding.json'
+    if binding_path.exists():
+        binding = json.loads(binding_path.read_text())
+    else:
+        # Preserve the original TRTRS entry point. New designs must provide
+        # input_binding.json so the delivered modules identify their own DCP.
+        binding = dict(
+            input_dcp='/Projects/jinyang/workspace/non_dataflow_crossSLR/case/FPGA_benchmark/runs/trtrs_postopt_extraction_20260917_01/optimized/post_opt.dcp',
+            input_sha256='acddf4787ec2806da9bbe9131bfee33bf9db1019f636fbe2e605c868275eac7f')
+    assert binding['input_dcp'] and len(binding['input_sha256']) == 64
+    summary=dict(input_dcp=binding['input_dcp'], input_sha256=binding['input_sha256'],
         method='KaHyPar 1.3.7 km1; dedicated-cascade/MUX atoms; connected cap-safe block merging',
         resource_semantics='primitive demand, LUTMEM is a subset of LUT; no packing inference',
         control_weight=.25,data_weight=1,resource_caps=CAPS,single_slr_caps=SLR_CAPS,cell_cap=result['cell_cap'],

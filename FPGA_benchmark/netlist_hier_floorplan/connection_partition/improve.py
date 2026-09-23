@@ -244,9 +244,9 @@ def save_candidate(run, name, data, groups, cores, baseline_labels, extra=None):
 def load_context(run):
     with (run/'graph.pkl').open('rb') as f:
         data = pickle.load(f)
-    original = json.loads((run/'baseline/result_k8_s0/partition.json').read_text())
-    baseline = base.normalize_multislr(data, original)
     reference = json.loads((run/'baseline/final/modules.json').read_text())
+    original = json.loads((run/f"baseline/result_k{reference['initial_k']}_s{reference['selected_seed']}/partition.json").read_text())
+    baseline = base.normalize_multislr(data, original)
     assert objective(data['edges'],baseline['membership'])[0] == reference['metrics']['weighted_km1']
     assert digest(reference['input_dcp']) == reference['input_sha256']
     return data, original, baseline, reference

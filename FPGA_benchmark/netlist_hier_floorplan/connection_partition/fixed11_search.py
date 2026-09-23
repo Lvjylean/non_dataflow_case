@@ -83,7 +83,7 @@ def main():
     for seed in [101,117,131,147,161,179]:
         rng=random.Random(seed);chosen={};density=np.zeros((len(search.keys),len(RESOURCES)))
         order=sorted(mids,key=lambda m:(-by_mid[m]['URAM'],-by_mid[m]['LUT']))
-        if seed%2:order=order[:4]+rng.sample(order[4:],len(order)-4)
+        if seed%2 and len(order)>4:order=order[:4]+rng.sample(order[4:],len(order)-4)
         for mid in order:
             valid=np.flatnonzero(np.all(arrays[mid]+density<=limits+1e-8,axis=(1,2)))
             if not len(valid):break
@@ -103,9 +103,9 @@ def main():
         steps=search.cfg['anneal_steps_per_seed']
         for step in range(steps):
             trial=dict(chosen);mode=rng.random()
-            if mode<.18:
+            if mode<.18 and len(mids)>1:
                 a,b=rng.sample(mids,2);trial[a],trial[b]=trial[b],trial[a]
-            elif mode<.42:
+            elif mode<.42 and len(mids)>1:
                 a,b=rng.sample(mids,2)
                 for mid in [a,b]:trial[mid]=rng.choice(search.options[mid])
             else:
@@ -141,7 +141,7 @@ def main():
         candidate_stats=search.stats,total_module_crs=sum(r['area'] for r in best['regions'].values()),
         maximum_slrs_per_unit=max(len(r['slrs']) for r in best['regions'].values()),normalized=False,
         resource_distribution='capacity proportional; no routed fit',runtime_seconds=time.perf_counter()-started,
-        movement_from_reference=movement(best),tie_break='Within absolute J 1e-6: minimum summed center L1 movement from previous w8 core, then tag.',
+        movement_from_reference=movement(best),tie_break='Within absolute J 1e-6: minimum summed center L1 movement from selected partition core, then tag.',
         search_certificate='Finite local search: resource-repaired and packed starts, three exact coordinate descents, 3x8000 annealing proposals, exact final refinement and legal die permutations. No MIP or global optimality proof.',
         timing_validation='Not run; no WNS prediction.')
     dump(ROOT/'solution.json',result);dump(ROOT/'comparison.json',search.trials)

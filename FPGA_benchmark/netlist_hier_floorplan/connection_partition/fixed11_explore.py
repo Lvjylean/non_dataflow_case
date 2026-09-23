@@ -32,9 +32,9 @@ for i,start in enumerate(starts):
     feasible=accepted=0;history=[];steps=24000
     for step in range(steps):
         trial=dict(chosen);mode=rng.random()
-        if mode<.18:
+        if mode<.18 and len(mids)>1:
             a,b=rng.sample(mids,2);trial[a],trial[b]=trial[b],trial[a]
-        elif mode<.43:
+        elif mode<.43 and len(mids)>1:
             for m in rng.sample(mids,2):trial[m]=rng.choice(search.options[m])
         elif mode<.55:
             s=rng.randrange(4);group=[m for m in mids if chosen[m]['slrs']==[s]]

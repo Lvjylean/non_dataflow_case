@@ -1,7 +1,9 @@
 # Connectivity-only coarse modules
 
 The current combined partition/floorplan release is documented in
-[RELEASE_9_22.md](RELEASE_9_22.md), including the cache-only execution entry point.
+[RELEASE_9_23.md](RELEASE_9_23.md), including the optional parallel partition
+proposal generator and the fixed-membership floorplan entry point.
+[RELEASE_9_22.md](RELEASE_9_22.md) records the previous release.
 The baseline description below remains historical. The balanced partition
 objective and the subsequent fixed-membership floorplan have separate configs.
 

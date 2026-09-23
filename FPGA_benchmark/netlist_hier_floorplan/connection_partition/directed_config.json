@@ -18,7 +18,7 @@
     17,
     31
   ],
-  "notes": "Fixed 11 memberships; SLR distance 8, URAM 100%, other resources 70%. Original area window and all SLR spans. Local exact-J heuristic; no density fit, MIP or physical implementation.",
+  "notes": "Fixed supplied memberships; SLR distance 8, URAM 100%, other resources 70%. Original area window and all SLR spans. Local exact-J heuristic; no density fit, MIP or physical implementation.",
   "resource_limits": {
     "LUT": 0.7,
     "FF": 0.7,

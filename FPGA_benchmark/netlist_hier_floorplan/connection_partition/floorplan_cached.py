@@ -1,4 +1,4 @@
-"""Re-run the published fixed-eleven floorplan from trusted, bound local caches."""
+"""Re-run a fixed-membership floorplan from trusted, bound local caches."""
 import argparse
 from fractions import Fraction
 import hashlib
@@ -46,10 +46,17 @@ def prepare(run, previous, references):
         if not (previous / name).is_file():
             raise FileNotFoundError(previous / name)
     modules = load(previous / 'input/export/modules.json')['modules']
-    if [m['module_id'] for m in modules] != [f'S{i:02d}' for i in range(11)]:
-        raise ValueError('This cached search requires the existing S00-S10 membership.')
+    if not modules or [m['module_id'] for m in modules] != [
+            f'S{i:02d}' for i in range(len(modules))]:
+        raise ValueError('Cached search requires ordered S00... module IDs.')
     binding = load(previous / 'binding.json')
-    expected = {v for k, v in binding['immutable_files'].items() if k.endswith('netmodel.pkl')}
+    immutable = binding.get('immutable_files')
+    if immutable is None:
+        local = load(previous / 'local_binding.json')
+        immutable = local['source_sha256']
+    expected = {v for k, v in immutable.items() if k.endswith('netmodel.pkl')}
+    if not expected:
+        raise ValueError('No bound net-model hash is available.')
     if sha(previous / 'netmodel.pkl') not in expected:
         raise ValueError('Net-model cache does not match its input binding.')
     parsed = []

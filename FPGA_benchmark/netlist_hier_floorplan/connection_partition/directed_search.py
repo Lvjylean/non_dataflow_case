@@ -1,4 +1,4 @@
-"""Fixed eleven modules: all directed sink-pin costs, joint proposals and exact refinement."""
+"""Fixed supplied modules: directed sink-pin costs and exact refinement."""
 import copy
 import itertools
 import json
@@ -103,7 +103,7 @@ class Search:
                 new=self.lookup.get((x0,y0+delta,x1,y1+delta))
                 if new is None:break
                 chosen[mid]=new
-            if len(chosen)==11 and self.legal(chosen):yield target,chosen
+            if len(chosen)==len(self.modules) and self.legal(chosen):yield target,chosen
 
     def mip(self,seed,warm):
         import gurobipy as gp
