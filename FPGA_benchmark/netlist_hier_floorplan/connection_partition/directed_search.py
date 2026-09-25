@@ -16,6 +16,7 @@ from balanced_regions import options_for
 from static_regions import RESOURCES,LIMITS,load_device,all_rectangles,fits,overlap_audit
 from directed_model import DirectedModel
 from routed_density import resource_probabilities
+from physical_model import check_cache
 
 
 def emit(data):print(json.dumps(data),flush=True)
@@ -30,6 +31,7 @@ class Search:
         self.original=json.loads((run/'input/original_regions.json').read_text())
         self.data=json.loads((run/'directed.json').read_text())
         with (run/'netmodel.pkl').open('rb') as f:self.netmodel=pickle.load(f)
+        check_cache(self.netmodel,self.cfg)
         self.directed=DirectedModel(self.data,self.device,self.cfg)
         self.fixed_cost=json.loads((run/'binding.json').read_text())['fixed_partition_cost']
         self.rectangles=all_rectangles(self.device)
@@ -37,6 +39,7 @@ class Search:
         self.options={};self.stats={}
         for m in self.modules:
             mid=m['module_id'];self.options[mid],self.stats[mid]=options_for(m,self.rectangles,self.cfg)
+        self.add_inherited_parent_candidates()
         self.keys=list(self.device);self.index={c:i for i,c in enumerate(self.keys)}
         self.resource_mask=np.array([[self.device[c]['resources'][r]>0 for r in RESOURCES] for c in self.keys])
         self.density_cache={};self.score_cache={};self.trials=[];self.unary=None
@@ -44,6 +47,28 @@ class Search:
         self.density_profiles={}
         if profile_path:
             self.density_profiles=json.loads((run/profile_path).read_text())['modules']
+
+    def add_inherited_parent_candidates(self):
+        """Admit the exact supplied parent rectangle without widening the area window.
+
+        The caller binds each child membership to its parent. This optional map
+        changes geometry proposals only; individual and aggregate resources still
+        pass the normal feasibility checks, including overlapping regions.
+        """
+        inherited=self.cfg.get('inherited_parent_regions',{})
+        modules={m['module_id']:m for m in self.modules}
+        if not isinstance(inherited,dict) or set(inherited)-set(modules):
+            raise ValueError('Inherited regions must name existing child modules.')
+        for mid,bounds in inherited.items():
+            if not isinstance(bounds,list) or len(bounds)!=4 or any(type(v) is not int for v in bounds):
+                raise ValueError('Inherited parent bounds must be four integer CR coordinates.')
+            region=self.lookup.get(tuple(bounds))
+            if region is None or not fits(modules[mid],region):
+                raise ValueError('Inherited parent rectangle is absent or resource-infeasible: '+mid)
+            added=not any(r['bounds']==bounds for r in self.options[mid])
+            if added:self.options[mid].append(region)
+            self.stats[mid].update(inherited_parent_bounds=list(bounds),
+                                   inherited_parent_candidate_added=added)
 
     def region(self,mid,region):
         profile=self.density_profiles.get(mid)
@@ -63,7 +88,12 @@ class Search:
         return self.density_cache[key]
 
     def legal(self,chosen):
-        if any(not fits(m,chosen[m['module_id']]) or chosen[m['module_id']]['area'] > self.stats[m['module_id']]['minimum_crs']*self.cfg['region_max_area_factor']+self.cfg['region_max_area_extra_crs'] for m in self.modules):return False
+        inherited=self.cfg.get('inherited_parent_regions',{})
+        for m in self.modules:
+            mid=m['module_id'];region=chosen[mid]
+            within_window=region['area']<=self.stats[mid]['minimum_crs']*self.cfg['region_max_area_factor']+self.cfg['region_max_area_extra_crs']
+            if not fits(m,region) or (not within_window and region['bounds']!=inherited.get(mid)):
+                return False
         density=sum(self.occupancy(m,chosen[m['module_id']]) for m in self.modules)
         return not np.any(density>np.array([LIMITS[r] for r in RESOURCES])+1e-8)
 

@@ -14,10 +14,16 @@ from balanced_physical import admissible, balanced_score
 
 
 def rank(run, cfg, multiplier=1):
+    if cfg.get('partition_objective')=='resource_logic_v1':
+        from resource_pipeline import rank as resource_rank
+        return resource_rank(run,cfg,multiplier)
     binding=json.loads((run/'binding.json').read_text());rows=[]
     for f in sorted((run/'candidates').glob('*/balanced_regions.json')):
         result=json.loads(f.read_text());summary=json.loads((f.parent/'summary.json').read_text())
         if result['status']!='feasible':continue
+        actual='boundary_spatial_v1' if result.get('physical_model')=='boundary_spatial_v1' else 'all_atom_v1'
+        if actual!=cfg.get('hypernet_model','all_atom_v1'):
+            raise ValueError('Cannot rank candidates with different D_hyper models: '+str(f))
         metric=summary['metrics']
         score=balanced_score(result['components'],metric,binding['all_net_weight'],cfg)
         rows.append(dict(candidate=f.parent.name,**metric,**result['components'],score=score,
@@ -34,6 +40,13 @@ def rank(run, cfg, multiplier=1):
 
 def select(run):
     cfg=json.loads((run/'source/balanced_config.json').read_text())
+    if cfg.get('partition_objective')=='resource_logic_v1':
+        selected,rows=rank(run,cfg)
+        if selected is None:raise ValueError('No admissible resource partition candidate.')
+        (run/'comparison.json').write_text(json.dumps(rows,indent=2)+'\n')
+        (run/'selection.json').write_text(json.dumps(dict(selected=selected['candidate'],metrics=selected,
+            rule='Resource-only C+L; no physical score or module-count tie-break.'),indent=2)+'\n')
+        return selected['candidate']
     selected,rows=rank(run,cfg)
     assert selected
     (run/'comparison.json').write_text(json.dumps(rows,indent=2)+'\n')
@@ -59,15 +72,31 @@ def select(run):
 
 
 def deliver(run,name,output_subdir='selected',id_prefix='B'):
-    data,_,baseline,reference=load_context(run)
+    cfg=json.loads((run/'source/balanced_config.json').read_text())
+    resource_only=cfg.get('partition_objective')=='resource_logic_v1'
+    if resource_only:
+        import pickle
+        with (run/'graph.pkl').open('rb') as stream:data=pickle.load(stream)
+        reference=json.loads((run/'baseline/final/modules.json').read_text())
+        assert digest(reference['input_dcp'])==reference['input_sha256']
+    else:
+        data,_,baseline,reference=load_context(run)
     folder=run/'candidates'/name
-    s=json.loads((folder/'summary.json').read_text());regions=json.loads((folder/'balanced_regions.json').read_text())
+    s=json.loads((folder/'summary.json').read_text())
+    regions=None if resource_only else json.loads((folder/'balanced_regions.json').read_text())
     groups=json.loads((folder/'groups.json').read_text());labels=labels_for(data,groups)
+    from joint_units import load_protection, require_intact, export_protection
+    protected,joint,protection_manifest=load_protection(run.parent) if resource_only else ([],[],None)
+    if protection_manifest:
+        require_intact(labels,protected,'delivery admission')
     km1,cut=objective(data['edges'],labels)
     owner,modules,pairs,ports,metrics=base.summaries(data,dict(groups=groups,membership=labels,weighted_km1=km1,weighted_cut=cut))
     assert metrics['weighted_km1']==s['metrics']['weighted_km1']
     mapping={m['module_id']:f'{id_prefix}{i:02d}' for i,m in enumerate(modules)}
     out=run/output_subdir;out.mkdir(parents=True)
+    if protection_manifest:
+        s['protection']=export_protection(out,data,labels,protected,joint,
+            [mapping[m['module_id']] for m in modules],protection_manifest)
     counts=Counter();totals=Counter()
     with gzip.open(out/'leaf_cells.tsv.gz','wt') as f:
         fields=['cell_id','cell_name','primitive','original_hierarchy','module_id',*base.RESOURCES]
@@ -104,19 +133,30 @@ def deliver(run,name,output_subdir='selected',id_prefix='B'):
     connections=[dict(source=mapping[a],sink=mapping[b],**dict(p)) for (a,b),p in sorted(pairs.items())]
     portrows=[dict(source=mapping.get(a,a),sink=mapping.get(b,b),**dict(v)) for (a,b),v in sorted(ports.items())]
     base.write_table(out/'module_resources.tsv',s['modules'],['module_id','cells',*base.RESOURCES,
-        'top_direct_cells','floorplan_eligible','internal_incident_ratio','internal_net_weight','incident_net_weight'])
+        'top_direct_cells','floorplan_eligible','internal_incident_ratio','internal_net_weight','incident_net_weight']+
+        (['equivalent_crs','below_soft_minimum'] if resource_only else []))
     base.write_table(out/'module_connections.tsv',connections,['source','sink','nets','sink_pin_connections','weighted_nets','data_nets','control_nets'])
     base.write_table(out/'port_connections.tsv',portrows,['source','sink','nets','sink_pin_connections'])
     (out/'logical_profiles.json').write_text(json.dumps(profiles,indent=2)+'\n')
-    regions['regions']={mapping[m]:r for m,r in regions['regions'].items()}
-    regions['candidate_stats']={mapping[m]:v for m,v in regions['candidate_stats'].items()}
-    for row in regions['overlap']['contributions']:row['modules']=[mapping[m] for m in row['modules']]
-    (out/'static_regions.json').write_text(json.dumps(regions,indent=2)+'\n')
+    if regions is not None:
+        regions['regions']={mapping[m]:r for m,r in regions['regions'].items()}
+        regions['candidate_stats']={mapping[m]:v for m,v in regions['candidate_stats'].items()}
+        for row in regions['overlap']['contributions']:row['modules']=[mapping[m] for m in row['modules']]
+        (out/'static_regions.json').write_text(json.dumps(regions,indent=2)+'\n')
+    else:
+        audit=json.loads((folder/'resource_evaluation.json').read_text())
+        assert audit['audit']['valid']
+        for row in audit['audit']['modules']:row['module_id']=mapping[row['module_id']]
+        (out/'resource_evaluation.json').write_text(json.dumps(audit,indent=2)+'\n')
+        s['partition_objective']=dict(schema='resource_logic_v1',score=audit['score'],
+            formula='cut_weight*C + logical_core_weight*L',cut_weight=cfg['cut_weight'],
+            logical_core_weight=cfg['logical_core_weight'],positions_assigned=False)
     s.update(input_dcp=reference['input_dcp'],input_sha256=reference['input_sha256'],selected_candidate=name,
              connections=connections,infrastructure={k:v for k,v in counts.items() if k not in mapping.values()},
              validation=dict(all_cells=len(data['cells']),unique_ordered_ids=True,resources_conserved=True,
                              dedicated_atoms_preserved=True,graph_sha256=digest(run/'graph.pkl')),
-             physical_validation='Static resource/connection model only; no new placement or routing.')
+             physical_validation=('Anonymous single-die capacity check only; no position or physical feasibility proof.'
+                                  if resource_only else 'Static resource/connection model only; no new placement or routing.'))
     (out/'modules.json').write_text(json.dumps(s,indent=2)+'\n')
     print(json.dumps(dict(delivered=name,modules=len(groups),ownership=counts)),flush=True)
 

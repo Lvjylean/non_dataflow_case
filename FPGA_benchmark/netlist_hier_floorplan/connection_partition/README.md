@@ -1,8 +1,18 @@
 # Connectivity-only coarse modules
 
-The current combined partition/floorplan release is documented in
-[RELEASE_9_23.md](RELEASE_9_23.md), including the optional parallel partition
-proposal generator and the fixed-membership floorplan entry point.
+The 2026-09-25 source snapshot uses **resource-constrained partition (C+L)**
+followed by independent floorplanning. It removes D and the module-count penalty
+from the active partition objective and enables automatic local memory/compute
+chain discovery and protection throughout that flow. See
+[RELEASE_9_25.md](RELEASE_9_25.md),
+[RESOURCE_PARTITION.md](RESOURCE_PARTITION.md) and
+[JOINT_UNITS.md](JOINT_UNITS.md) for the active `structure_pipeline.py partition`
+entry point, resource bounds and validation limits. The complete GETRF regression
+selected 10 modules with all 256 discovered chains intact; this version has not
+been physically validated by a new floorplan or placement/routing run.
+
+[RELEASE_9_23.md](RELEASE_9_23.md) records the preceding release, including the
+optional parallel partition proposal generator and fixed-membership floorplan.
 [RELEASE_9_22.md](RELEASE_9_22.md) records the previous release.
 The baseline description below remains historical. The balanced partition
 objective and the subsequent fixed-membership floorplan have separate configs.

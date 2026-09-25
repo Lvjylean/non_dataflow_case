@@ -1,0 +1,19 @@
+{
+  "schema": "fixed-modules-timing-floorplan-v1",
+  "slr_distance_weight": 4.0,
+  "critical_distance_weight": 10.0,
+  "path_square_weight": 100.0,
+  "criticality_floor": 1.0,
+  "criticality_ceiling": 10.0,
+  "criticality_window_ns": 0.5,
+  "region_max_area_factor": 1.5,
+  "region_max_area_extra_crs": 4,
+  "mip_seconds": 90,
+  "mip_seeds": [0, 17],
+  "local_seeds": [0, 17],
+  "local_rounds": 4,
+  "local_options": 64,
+  "broadcast_net_id": "n509453",
+  "broadcast_complete_feedback": true,
+  "notes": "Raw additive costs; no objective or path-count normalization. Fixed eleven memberships. Criticality frozen from routed path cache; complete critical broadcast sinks receive that broadcast's maximum observed criticality. All SLRs, multi-SLR rectangles and overlap remain eligible. MIP only proposes seeds using a declared centroid surrogate; acceptance/ranking uses the exact declared static J."
+}

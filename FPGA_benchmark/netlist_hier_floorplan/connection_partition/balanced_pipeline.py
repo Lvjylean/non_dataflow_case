@@ -9,7 +9,7 @@ from pathlib import Path
 from balanced_search import combine, merge, refine
 from balanced_regions import evaluate, options_for, polish
 from balanced_deliver import select, deliver
-from balanced_physical import NetModel
+from physical_model import build as build_physical_model
 from improve import labels_for
 from static_regions import load_device, all_rectangles
 from plot_static_comparison import main as plot
@@ -23,7 +23,7 @@ def stability(run,name):
     original=json.loads((folder/'balanced_regions.json').read_text())
     groups=json.loads((folder/'groups.json').read_text())
     device=load_device(run/'cr.tsv');rectangles=all_rectangles(device)
-    netmodel=NetModel(data,labels_for(data,groups),len(groups),device)
+    netmodel=build_physical_model(data,labels_for(data,groups),len(groups),device,cfg)
     options={m['module_id']:options_for(m,rectangles,cfg)[0] for m in summary['modules']}
     unary={m['module_id']:[netmodel.internal_region_cost(i,r) for r in options[m['module_id']]]
             for i,m in enumerate(summary['modules'])}
@@ -39,6 +39,9 @@ def stability(run,name):
 
 
 def main(run):
+    cfg=json.loads((run/'source/balanced_config.json').read_text())
+    if cfg.get('partition_objective')=='resource_logic_v1':
+        raise ValueError('Use structure_pipeline.py partition/run for resource_logic_v1; this is the legacy physical-ranking controller.')
     start=time.monotonic()
     while not (run/'generation_complete.json').exists() or not (run/'combine_first.exit').exists():
         if time.monotonic()-start>7200:raise TimeoutError('Generation did not finish in the diagnostic waiting window')

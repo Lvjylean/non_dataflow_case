@@ -90,6 +90,9 @@ class NetModel:
 
 
 def balanced_score(components, metrics, all_net_weight, cfg):
+    if cfg.get('partition_objective') == 'resource_logic_v1':
+        from resource_partition import score
+        return score(metrics,cfg)
     physical=components['x_span']+components['y_span']+cfg['slr_distance_weight']*components['slr_span']
     return (physical+cfg['cut_weight']*metrics['weighted_km1']
             +cfg['logical_core_weight']*metrics['logical_core_loss']

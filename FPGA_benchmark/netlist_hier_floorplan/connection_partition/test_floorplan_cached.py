@@ -15,8 +15,9 @@ class CachedFloorplanTests(unittest.TestCase):
         root = Path(self.tmp.name)
         source = root/'code/connection_partition'
         source.mkdir(parents=True)
-        (source/'directed_config.json').write_text(
-            (floorplan_cached.SOURCE/'directed_config.json').read_text())
+        cfg=json.loads((floorplan_cached.SOURCE/'directed_config.json').read_text())
+        cfg['hypernet_model']='all_atom_v1'
+        (source/'directed_config.json').write_text(json.dumps(cfg))
         adapter = root/'code/balanced_implementation/adapter.tcl'
         adapter.parent.mkdir(parents=True)
         adapter.write_text('# test adapter\n')
@@ -58,6 +59,16 @@ class CachedFloorplanTests(unittest.TestCase):
         (self.previous/'binding.json').write_text(json.dumps(self.binding))
         floorplan_cached.prepare(self.output, self.previous, [])
         self.assertTrue((self.output/'source/adapter_reference.tcl').is_file())
+
+    def test_new_model_rejects_old_bound_cache_before_writing(self):
+        cfg_path=floorplan_cached.SOURCE/'directed_config.json'
+        cfg=json.loads(cfg_path.read_text());cfg['hypernet_model']='boundary_spatial_v1'
+        cfg_path.write_text(json.dumps(cfg))
+        (self.previous/'local_binding.json').write_text(json.dumps(dict(
+            source_sha256={'netmodel.pkl':floorplan_cached.sha(self.previous/'netmodel.pkl')})))
+        with self.assertRaisesRegex(ValueError,'Hypernet model changed'):
+            floorplan_cached.prepare(self.output,self.previous,[])
+        self.assertFalse(self.output.exists())
 
 
 if __name__ == '__main__':

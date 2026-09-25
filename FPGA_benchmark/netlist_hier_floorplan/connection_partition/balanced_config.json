@@ -1,5 +1,8 @@
 {
   "schema": "balanced-modules-v1",
+  "partition_objective": "resource_logic_v1",
+  "hypernet_model": "boundary_spatial_v1",
+  "boundary_frontier_max_entries": 10000000,
   "core_min_cells": 8,
   "core_max_cells": 32768,
   "core_min_cohesion": 0.2,
@@ -10,14 +13,14 @@
   "local_split_fraction_of_incident_net_weight": 0.1,
   "budget_sensitivity_multipliers": [0.5, 1.0, 2.0],
   "slr_distance_weight": 4.0,
-  "cut_weight": 2.0,
-  "logical_core_weight": 2.0,
-  "module_cost_fraction_of_all_net_weight": 0.0025,
+  "cut_weight": 1.0,
+  "logical_core_weight": 1.0,
+  "module_cost_fraction_of_all_net_weight": 0.0,
   "region_max_area_factor": 1.5,
   "region_max_area_extra_crs": 4,
   "region_solver_seconds": 45,
   "region_local_search_rounds": 3,
   "region_local_search_options_per_module": 32,
-  "selection_relative_tolerance": 0.01,
-  "notes": "Engineering calibration defaults fixed before new candidate results; not user-provided budgets or validated physical timing weights. No equal-size or final module-count constraint. Both baselines are rescored."
+  "selection_relative_tolerance": 0.0,
+  "notes": "Resource-only partition: J=C+L, no D and no count penalty or fewer-block tie rule. The common factor 2 was removed without changing relative weights or ranking. Capacity/granularity settings are in resource_partition_config.json. Physical keys are retained for legacy experiments and floorplan initialization only."
 }

@@ -29,7 +29,7 @@ def labels_for(data, groups):
             assert labels[a] == -1
             labels[a] = m
     assert all(labels[a] >= 0 for a in data['active_atoms'])
-    assert sum(len(g) for g in groups) == len(data['active_atoms'])
+    assert sum(len(g) for g in groups) in (len(data['active_atoms']),len(data['atoms']))
     return labels
 
 

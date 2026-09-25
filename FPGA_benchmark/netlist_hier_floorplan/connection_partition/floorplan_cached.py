@@ -59,6 +59,10 @@ def prepare(run, previous, references):
         raise ValueError('No bound net-model hash is available.')
     if sha(previous / 'netmodel.pkl') not in expected:
         raise ValueError('Net-model cache does not match its input binding.')
+    model_version = binding.get('hypernet_model', 'all_atom_v1')
+    if model_version != cfg.get('hypernet_model', 'all_atom_v1'):
+        raise ValueError('Hypernet model changed; rebuild netmodel.pkl from the original '
+                         'graph and fixed membership. An old cache cannot activate the new model.')
     parsed = []
     for entry in references:
         name, separator, path = entry.partition('=')

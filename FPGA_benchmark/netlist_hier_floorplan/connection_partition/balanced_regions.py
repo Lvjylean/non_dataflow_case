@@ -8,7 +8,8 @@ from pathlib import Path
 
 import numpy as np
 
-from balanced_physical import NetModel, balanced_score, admissible
+from balanced_physical import balanced_score, admissible
+from physical_model import build as build_physical_model
 from improve import labels_for
 from static_regions import RESOURCES, LIMITS, load_device, all_rectangles, fits, overlap_audit
 
@@ -128,6 +129,8 @@ def local_fractions(data, baseline_labels, labels):
 
 def evaluate(run, names):
     cfg=json.loads((run/'source/balanced_config.json').read_text())
+    if cfg.get('partition_objective') == 'resource_logic_v1':
+        raise ValueError('Resource-only partition cannot evaluate physical regions; use structure_pipeline.py. Regions start in its floorplan stage.')
     with (run/'graph.pkl').open('rb') as f:data=pickle.load(f)
     binding=json.loads((run/'binding.json').read_text())
     basegroups=json.loads((run/'candidates/baseline5/groups.json').read_text())
@@ -135,7 +138,11 @@ def evaluate(run, names):
     device=load_device(run/'cr.tsv');rectangles=all_rectangles(device)
     for name in names:
         folder=run/'candidates'/name
-        if (folder/'balanced_regions.json').exists():continue
+        if (folder/'balanced_regions.json').exists():
+            previous=json.loads((folder/'balanced_regions.json').read_text())
+            if cfg.get('hypernet_model','all_atom_v1')=='boundary_spatial_v1' and previous.get('physical_model')!='boundary_spatial_v1':
+                raise ValueError('Existing region result uses legacy D; use a new experiment directory.')
+            continue
         summary=json.loads((folder/'summary.json').read_text())
         groups=json.loads((folder/'groups.json').read_text());labels=labels_for(data,groups)
         fractions=local_fractions(data,baselabels,labels)
@@ -146,7 +153,7 @@ def evaluate(run, names):
         if not admissible(metrics,cfg,2):
             (folder/'screening.json').write_text(json.dumps(dict(status='outside_even_wide_budget',metrics=metrics),indent=2)+'\n')
             print(json.dumps(dict(name=name,status='screened',**metrics)),flush=True);continue
-        netmodel=NetModel(data,labels,len(groups),device)
+        netmodel=build_physical_model(data,labels,len(groups),device,cfg)
         options={};stats={}
         for m in summary['modules']:
             options[m['module_id']],stats[m['module_id']]=options_for(m,rectangles,cfg)
@@ -165,12 +172,14 @@ def evaluate(run, names):
                     total_module_crs=sum(r['area'] for r in chosen.values()),
                     maximum_slrs_per_unit=max(len(r['slrs']) for r in chosen.values()),
                     eligible_main=admissible(metrics,cfg),limits=LIMITS,
-                    physical_model='Fixed-atom, capacity-weighted independent-location expected hypernet bounding-box spans',
-                    pattern_count=len(netmodel.patterns),all_net_weight=float(netmodel.weights.sum()),
+                    physical_model=cfg.get('hypernet_model','all_atom_v1'),
+                    hypernet_audit=getattr(netmodel,'audit',{}),
+                    pattern_count=len(netmodel.patterns),all_net_weight=binding['all_net_weight'],
+                    modeled_hypernet_weight=float(netmodel.weights.sum()),
                     family_constraints={},logical_parent_overlaps=[],
                     limitations=['Static distributions are not placement or routing.',
                      'Atom locations are independent; dedicated-atom internal geometry is not expanded.',
-                     'All cached signal hyperedges are counted, including internal module nets; external port locations are unknown.',
+                     'Hypernet inclusion follows physical_model and hypernet_audit; external port locations are unknown.',
                      'Region search is bounded; initial MIP gap is not a global gap for final full-net score.'])
         (folder/'balanced_regions.json').write_text(json.dumps(result,indent=2)+'\n')
         print(json.dumps(dict(name=name,**{k:v for k,v in result.items() if k in

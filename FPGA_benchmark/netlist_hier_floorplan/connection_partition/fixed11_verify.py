@@ -33,7 +33,11 @@ def verify(run):
             assert set(r['crs'])=={f'X{x}Y{y}' for x in range(x0,x1+1) for y in range(y0,y1+1)}
             assert r['area']==len(r['crs'])
             assert sorted({device[c]['slr'] for c in r['crs']})==r['slrs']
-            assert r['area']<=solution['candidate_stats'][mid]['minimum_crs']*cfg['region_max_area_factor']+cfg['region_max_area_extra_crs']
+            within_window=r['area']<=solution['candidate_stats'][mid]['minimum_crs']*cfg['region_max_area_factor']+cfg['region_max_area_extra_crs']
+            inherited=cfg.get('inherited_parent_regions',{}).get(mid)
+            assert within_window or (isinstance(inherited,list) and r['bounds']==inherited)
+            if not within_window:
+                assert solution['candidate_stats'][mid]['inherited_parent_bounds']==inherited
             for ri,res in enumerate(RESOURCES):
                 cap=sum(device[c]['capacity'][res] for c in r['crs']);assert cap==r['capacity'][res]
                 assert m[res]<=cap*solution['limits'][res]+1e-8
@@ -46,12 +50,16 @@ def verify(run):
         for c,rs in occupancy.items():
             for r,v in rs.items():assert v<=solution['limits'][r]+1e-8,(c,r,v)
         spans=Counter()
-        for pattern,weight in zip(netmodel.patterns,netmodel.weights):
+        legacy_patterns = [] if getattr(netmodel,'schema',None)=='boundary_spatial_v1' else zip(netmodel.patterns,netmodel.weights)
+        for pattern,weight in legacy_patterns:
             for t,(axis,_) in enumerate(axes):
                 left=right=1.
                 for slot,count in pattern:
                     value=cdf[slot][t];left*=value**count;right*=(1-value)**count
                 spans[axis]+=float(weight)*max(0,1-left-right)
+        if getattr(netmodel,'schema',None)=='boundary_spatial_v1':
+            from boundary_hyper import independent_spans
+            spans.update(independent_spans(netmodel,{f'P{i:02d}':chosen[m['module_id']] for i,m in enumerate(modules)}))
         values=Counter();hist=Counter();family={}
         pair_cache={}
         def pair(a,b):

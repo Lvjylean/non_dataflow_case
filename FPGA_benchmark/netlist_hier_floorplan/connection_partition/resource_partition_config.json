@@ -1,0 +1,22 @@
+{
+  "schema": "resource_logic_v1",
+  "joint_chains": {
+    "enabled": true,
+    "max_scope_cells": 32768,
+    "max_memory_cells": 1024,
+    "max_bridge_hops": 8,
+    "max_bridge_atoms": 4096,
+    "max_data_net_sinks": 64,
+    "min_data_nets": 8,
+    "memory_scope_fraction": 0.9
+  },
+  "resource_ratios": {
+    "LUT": 0.7, "FF": 0.7, "DSP": 0.7, "BRAM18": 0.7,
+    "URAM": 1.0, "LUTMEM": 0.7, "CARRY8": 0.7, "MUXF7": 0.7, "MUXF8": 0.7
+  },
+  "soft_min_crs": 1.0,
+  "initial_target_crs": [1.0, 2.0],
+  "merge_affinity_threshold": 0.02,
+  "max_split_calls_per_candidate": 1024,
+  "notes": "User-confirmed one-die vector upper bounds and 1-CR soft lower bound. Initial 1/2-CR targets are candidate scales, not final equal-size constraints. Preserve the previous selective-merge affinity convention. No locations, D or module-count penalty."
+}

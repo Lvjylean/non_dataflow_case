@@ -1,5 +1,7 @@
 {
   "schema": "fixed11-all-directed-branches-v1",
+  "hypernet_model": "boundary_spatial_v1",
+  "boundary_frontier_max_entries": 10000000,
   "slr_distance_weight": 8.0,
   "directed_weight": 1.0,
   "branch_square_weight": 32.0,

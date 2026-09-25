@@ -1,0 +1,16 @@
+{
+  "schema": "reversible-operator-frontend-v1",
+  "operator_min_cells": 8,
+  "operator_max_cells": 32768,
+  "operator_min_cohesion": 0.5,
+  "operator_min_connected_fraction": 0.9,
+  "bootstrap_k": 8,
+  "bootstrap_cell_cap": 150000,
+  "seeds": [0, 1],
+  "split_max_parent_fraction": 0.85,
+  "local_search_seconds": 60,
+  "local_max_moves": 64,
+  "loose_module_connected_fraction": 0.9,
+  "max_region_candidates": 5,
+  "notes": "Optional frontend only. Names propose operator boundaries; connectivity validates them. No new equal-size target. Preserve original graph for all scoring. Local moves require nonincreasing real km1 and weighted directed pin cuts, operator preservation and resource screening. Config values are initial engineering choices, not physically calibrated guarantees."
+}
