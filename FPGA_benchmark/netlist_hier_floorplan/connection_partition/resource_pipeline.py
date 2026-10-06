@@ -67,10 +67,15 @@ def generate(run):
             require_intact(label_groups(fine,len(data['atoms'])),protected,'KaHyPar expansion')
             assert cut_metrics(coarse['edges'],label_groups(groups,len(mapping))) == cut_metrics(
                 data['edges'],label_groups(fine,len(data['atoms'])))
+            folder=run/'generated'/name;folder.mkdir(parents=True)
+            dump(folder/'premerge_groups.json',fine)
+            dump(folder/'premerge_binding.json',dict(graph_sha256=digest(run/'graph.pkl'),
+                resource_profile_sha256=digest(run/'resource_profile.json'),
+                groups_sha256=digest(folder/'premerge_groups.json'),
+                protection_manifest_sha256=digest(run/'protection_manifest.json')))
             fine,merges=timer(run,name+'_merge',lambda:selective_merge(data,fine,budget,
                 threshold=rcfg['merge_affinity_threshold'],soft_min=rcfg['soft_min_crs']))
             protection=require_intact(label_groups(fine,len(data['atoms'])),protected,'selective merging')
-            folder=run/'generated'/name;folder.mkdir(parents=True)
             dump(folder/'groups.json',fine)
             dump(folder/'generation_detail.json',dict(splits=detail,merges=merges))
             generated.append(dict(name=name,seed=seed,initial_target_crs=target,modules=len(fine),
@@ -103,6 +108,23 @@ def evaluate(run):
     selected=load(old/'balanced/selection.json')['selected']
     reference=load(old/'balanced/candidates'/selected/'groups.json')
     generated=load(run/'generation.json')['candidates']
+    directed = load(run/'request.json').get('directed_units')
+    directed_candidates = None
+    if directed and directed.get('enabled'):
+        from directed_unit_pipeline import prepare as prepare_directed
+        macro_path = Path(directed['macro_timing']) if directed.get('macro_timing') else None
+        directed_candidates, _ = timer(run,'directed_unit_discovery',lambda:prepare_directed(
+            run,data,protected,macro_path,run/'directed_units',directed.get('options')))
+        if macro_path is not None:
+            # Downstream floorplan preparation consumes the same validated
+            # native metadata; no extraction or physical stage runs here.
+            link=run/'macro_timing'
+            if link.exists() or link.is_symlink():
+                if (not link.exists() or
+                        digest(link/'macro_timing.pkl')!=digest(macro_path/'macro_timing.pkl')):
+                    raise ValueError('Conflicting native macro cache in partition run')
+            else:
+                link.symlink_to(macro_path.resolve(),target_is_directory=True)
 
     def save(name,groups,kind,extra=None):
         protection=integrity(label_groups(groups,len(data['atoms'])),protected)
@@ -126,24 +148,43 @@ def evaluate(run):
             status='resource_feasible' if audit['valid'] else 'resource_infeasible',
             audit=audit,score=score(summary['metrics'],pcfg),
             protection=protection,
+            aggregation_eligible=(kind!='unchanged_current_partition' or
+                                  rcfg.get('reuse_historical_candidates',True)),
             admissible=admissible(summary['metrics'],pcfg),positions_assigned=False))
 
     save('control_current',reference,'unchanged_current_partition',dict(source=str(old)))
     proposals=[(r['name'],load(run/'generated'/r['name']/'groups.json')) for r in generated]
     reference_protection=integrity(label_groups(reference,len(data['atoms'])),protected)
     dump(run/'historical_candidate_admission.json',dict(source=str(old),protection=reference_protection,
-        eligible=reference_protection['valid'] and budget.audit(data,reference)['valid']))
-    if budget.audit(data,reference)['valid'] and reference_protection['valid']:
+        policy_allows_reuse=rcfg.get('reuse_historical_candidates',True),
+        eligible=rcfg.get('reuse_historical_candidates',True) and
+                 reference_protection['valid'] and budget.audit(data,reference)['valid']))
+    if (rcfg.get('reuse_historical_candidates',True) and
+            budget.audit(data,reference)['valid'] and reference_protection['valid']):
         proposals.append(('control_candidate',reference))
     for name,groups in proposals:
         # Keep both stages: local pin-cut repair need not decrease logical loss.
         save(name,groups,'before_local_refinement')
         revised,detail=timer(run,name+'_refine',lambda:refine(data,groups,protected,
-            dict(cfg,require_intact_units=True),resource_fits=budget.fits))
+            dict(cfg,require_intact_units=True,
+                 component_affinity_threshold=(rcfg['merge_affinity_threshold']
+                     if rcfg.get('guard_component_affinity',False) else 0.)),resource_fits=budget.fits))
         revised,merges=selective_merge(data,revised,budget,
             threshold=rcfg['merge_affinity_threshold'],soft_min=rcfg['soft_min_crs'],only_small=True)
         dump(run/(name+'.refinement.json'),dict(refinement=detail,small_merges=merges))
         save(name+'_refined',revised,'structured_local_refinement')
+        if directed_candidates is not None:
+            from directed_units import refine as refine_directed
+            # Retain both ordinary candidates. Structural joint moves are an
+            # additional search neighborhood scored by the SAME C+L objective.
+            for stage,start_groups in [('initial',groups),('refined',revised)]:
+                tag=name+'_'+stage+'_directed'
+                changed,detail=timer(run,tag,lambda:refine_directed(
+                    data,start_groups,directed_candidates,cores,protected,budget,pcfg,
+                    rcfg['merge_affinity_threshold'],seconds=cfg['local_search_seconds'],
+                    max_moves=cfg['local_max_moves'],cfg=directed.get('options')))
+                dump(run/(tag+'.json'),detail)
+                save(tag,changed,'directed_local_unit_refinement')
     winner,rows=rank(run/'balanced',pcfg)
     dump(run/'balanced/comparison.json',rows)
     if winner is None:
@@ -176,5 +217,6 @@ def rank(run,cfg,multiplier=1):
         rows.append(dict(metrics,candidate=path.parent.name,score=score(metrics,cfg),
             resource_feasible=result['audit']['valid'],admissible=admissible(metrics,cfg,multiplier),
             protection_feasible=protection['valid'],split_protected_units=protection['split_units'],
+            aggregation_eligible=result.get('aggregation_eligible',True),
             positions_assigned=False,physical_feasibility_proven=False))
     return rank_rows(rows,cfg),rows

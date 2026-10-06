@@ -1,6 +1,6 @@
 # 资源约束下的连接与逻辑划分（2026-09-24）
 
-模式 `resource_logic_v1`：partition 只决定完整 leaf 成员，不计算位置、D、SLR 距离或模块数量惩罚。历史实验及其配置不改写。9/24 的 GETRF 原生 KaHyPar 对照为 9 模块（C=5918、L=137）；9/25 启用自动联合链保护后，完整验证选出 10 模块（C=4668.75、L=85），256 条链全部完整。当前版本和验证范围见 [RELEASE_9_25.md](RELEASE_9_25.md)，自动保护规则见 [JOINT_UNITS.md](JOINT_UNITS.md)。新 10 模块尚未做 floorplan 或时序验证。
+模式 `resource_logic_v1`：partition 只决定完整 leaf 成员，不计算位置、D、SLR 距离或模块数量惩罚。历史实验及其配置不改写。9/24 的 GETRF 原生 KaHyPar 对照为 9 模块（C=5918、L=137）；9/25 启用自动联合链保护后，完整验证选出 10 模块（C=4668.75、L=85），256 条链全部完整。发布版本见 [RELEASE_9_25.md](RELEASE_9_25.md)，自动保护规则见 [JOINT_UNITS.md](JOINT_UNITS.md)。后续十模块物理分组与静态 floorplan 已完成；9/26 的可选弱合并/60%试验另外得到30模块，见下方配置与验证说明。
 
 ## 目标与约束
 
@@ -53,6 +53,20 @@ a_m=\max_r{q_{m,r}\over\bar U_r}.
 
 ## 配置与入口
 
+2026-09-26 的可选弱合并实验保持 `J=C+L`，不新增大小或数量上限。
+`merge_affinity_threshold=0.05` 同时筛选普通合并和最后的小块合并；
+`guard_component_affinity=true` 将同一门槛用于 `loose_component_move`。
+移动对象 A 的 incident 权重包含内部超边，目标模块 B 的 incident 权重按当前成员维护：
+`affinity(A,B)=shared_weight(A,B)/min(incident_weight(A),incident_weight(B))`。
+完整算子的修复仍受原有资源、通信与保护条件约束，不因这个可选分量门槛拒绝修复。
+这不是时序估计，也不是要求最终模块大小一致。
+
+`reuse_historical_candidates=false` 将旧划分仅作为对照，禁止其绕过新聚合策略进入排名。
+省略两个新开关时保留旧行为。每份新原生候选保存 `premerge_groups.json` 和绑定摘要，
+用于在相同细分输入上比较不同合并门槛。60%/URAM100% 属于本轮独立配置；
+运行入口和后续验证见 `reports/getrf_weakmerge60_20260926_01/run_experiment.py`。
+该入口同时冻结 partition、floorplan 配置与静态容量表的阈值；公共历史默认仍为70%/100%。
+
 - `balanced_config.json`：启用模式、C/L 权重；物理字段只为历史兼容和 floorplan 初始化保留，在新 partition 中不调用。
 - `resource_partition_config.json`：70%/100%、1 CR 软下限、初始粒度、亲和度门槛。
 - `structure_config.json`：算子验证、seed、局部调整预算。旧 bootstrap_k/bootstrap_cell_cap/max_region_candidates 在新模式中不参与决策。
@@ -81,4 +95,6 @@ partition 的 `balanced/selected/` 不包含 `static_regions.json`。区域只�
 
 本地测试覆盖匿名 die 的共同向量约束、坐标置换不变性、硬上限、资源偏科、弱连接小块例外、递归标量提案后的多维复核、局部移动预算、D/k 无关评分、完整孤立 leaf 导出、partition 到 floorplan 的阶段隔离与原有回归检查。
 
-小图递归测试用穷举二分作独立提案源；floorplan 初始化测试替代原生 MIP，仅验证真实物理评分、资源审计、ID 转换和阶段衔接。另有完整 GETRF 原生 KaHyPar 运行与原图独立重算证据；没有完整新 Gurobi/floorplan 或物理实现质量验证。
+小图递归测试用穷举二分作独立提案源；本地 floorplan 初始化测试替代原生 MIP。9/26 已完成完整 GETRF 原生 KaHyPar、服务器 Gurobi 初始化及完整 floorplan 搜索：30模块、最大123565cells、核心并集62CR，256条联合链完整，独立资源/目标/成员/路径与导出核验通过。191项本地回归中190通过、1项因无本地Gurobi跳过。
+
+本轮门槛0.05不作为已证实更优的默认值：通信C=24179.75明显增加，预计URAM峰值100%，累计跨界最大值4。没有新placement/route或实测时序、拥塞改善结论。精简结果见 `reports/getrf_weakmerge60_20260926_01/README.md`；完整输入在服务器独立实验目录，旧实验未修改。

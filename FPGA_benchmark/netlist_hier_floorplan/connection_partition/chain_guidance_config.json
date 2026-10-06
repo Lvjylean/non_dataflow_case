@@ -1,0 +1,13 @@
+{
+  "schema": "joint-chain-region-guidance-v1",
+  "min_parent_crs": 16,
+  "min_parent_chains": 16,
+  "target_child_crs": 8,
+  "min_child_crs": 2,
+  "max_children": 8,
+  "max_layouts": 12,
+  "mip_seconds_per_layout": 30,
+  "threads": 2,
+  "seed": 0,
+  "notes": "Optional floorplan-only subdivision of frozen logical modules. Whole joint chains move together. Unassigned chains and other logic retain the parent region. Exact aggregate resource checks include that remainder. No new partition, congestion penalty, density fit or P&R."
+}

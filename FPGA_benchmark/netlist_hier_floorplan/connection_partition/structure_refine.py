@@ -59,11 +59,14 @@ class OriginalIndex:
         self.edge_incident = [array('I') for _ in self.labels]
         self.net_incident = [array('I') for _ in self.labels]
         self.demands = defaultdict(Counter)
+        self.module_volumes = Counter()
         for a, m in enumerate(self.labels):
             self.demands[m].update(data['atom_resources'][a])
-        for i, (aa, _) in enumerate(data['edges']):
+        for i, (aa, weight) in enumerate(data['edges']):
             for a in aa:
                 self.edge_incident[a].append(i)
+            for m in {self.labels[a] for a in aa}:
+                self.module_volumes[m] += weight
         for i, (_, d, ss, _) in enumerate(data['nets']):
             aa = {data['atom_of'][c] for c in (d, *ss)
                   if isinstance(c, int) and data['atom_of'][c] >= 0}
@@ -114,6 +117,11 @@ class OriginalIndex:
         if loss_delta > 0:
             return None
         edges = {e for a in moved for e in self.edge_incident[a]}
+        piece_volume = sum(self.data['edges'][e][1] for e in edges)
+        shared = sum(self.data['edges'][e][1] for e in edges
+                     if any(self.labels[a] == target for a in self.data['edges'][e][0]))
+        denominator = min(piece_volume, self.module_volumes[target])
+        affinity = shared / denominator if denominator else 0.
         delta_cut4 = delta_km4 = 0
         for e in edges:
             aa, w = self.data['edges'][e]
@@ -136,7 +144,8 @@ class OriginalIndex:
         return dict(atoms=sorted(moved), target=target, cells=sum(len(self.data['atoms'][a]) for a in moved),
                     delta_km1=delta_km4/4, delta_cut=delta_cut4/4,
                     delta_weighted_cross_pins=delta_b4/4, delta_cross_pins=delta_pins,
-                    delta_operator_minority=loss_delta, neighbors=sorted(neighbors))
+                    delta_operator_minority=loss_delta, neighbors=sorted(neighbors),
+                    merge_affinity=affinity)
 
     def destinations(self, atoms):
         nets = {i for a in atoms for i in self.net_incident[a]}
@@ -159,11 +168,20 @@ class OriginalIndex:
 
     def apply(self, proposal):
         target = proposal['target']
+        edges = {e for a in proposal['atoms'] for e in self.edge_incident[a]}
+        for e in edges:
+            aa, weight = self.data['edges'][e]
+            for m in {self.labels[a] for a in aa}:
+                self.module_volumes[m] -= weight
         for a in proposal['atoms']:
             old = self.labels[a]
             self.demands[old].subtract(self.data['atom_resources'][a])
             self.demands[target].update(self.data['atom_resources'][a])
             self.labels[a] = target
+        for e in edges:
+            aa, weight = self.data['edges'][e]
+            for m in {self.labels[a] for a in aa}:
+                self.module_volumes[m] += weight
 
 
 def refine(data, groups, units, cfg, resource_fits=None):
@@ -178,9 +196,13 @@ def refine(data, groups, units, cfg, resource_fits=None):
     history = []
     evaluations = 0
     timed_out = False
+    affinity_rejections = 0
+    affinity_threshold = float(cfg.get('component_affinity_threshold', 0.))
+    if not 0. <= affinity_threshold <= 1.:
+        raise ValueError('Component affinity threshold must be between zero and one.')
 
     def process(atoms, kind, key):
-        nonlocal evaluations, timed_out
+        nonlocal evaluations, timed_out, affinity_rejections
         best = None
         for target in index.destinations(atoms):
             if time.monotonic()-started >= cfg['local_search_seconds']:
@@ -189,6 +211,9 @@ def refine(data, groups, units, cfg, resource_fits=None):
             p = index.proposal(atoms, target)
             evaluations += 1
             if p is None or p['delta_km1'] > 0 or p['delta_weighted_cross_pins'] > 0:
+                continue
+            if kind == 'loose_component_move' and p['merge_affinity'] < affinity_threshold:
+                affinity_rejections += 1
                 continue
             if not (p['delta_km1'] < 0 or p['delta_weighted_cross_pins'] < 0 or p['delta_operator_minority'] < 0):
                 continue
@@ -230,6 +255,7 @@ def refine(data, groups, units, cfg, resource_fits=None):
     if cfg.get('require_intact_units'):
         require_intact(final_labels,units,'local refinement output')
     return result, dict(before=before, after=after, history=history, evaluations=evaluations,
+        component_affinity_threshold=affinity_threshold, affinity_rejections=affinity_rejections,
         time_budget_reached=timed_out, indexing_seconds=indexed_seconds, search_seconds=searched_seconds,
         total_seconds=time.monotonic()-t0, old_to_new_modules={str(m):i for i,m in enumerate(retained)},
         connectivity=connectivity_metrics(data, final_labels),

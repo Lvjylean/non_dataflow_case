@@ -30,9 +30,18 @@ class Search:
         self.old=json.loads((run/'input/export/static_regions.json').read_text())
         self.original=json.loads((run/'input/original_regions.json').read_text())
         self.data=json.loads((run/'directed.json').read_text())
+        if self.cfg.get('directed_distance_model')=='boundary_directed_v1':
+            from directed_spatial_cache import validate
+            validate(run)
         with (run/'netmodel.pkl').open('rb') as f:self.netmodel=pickle.load(f)
         check_cache(self.netmodel,self.cfg)
         self.directed=DirectedModel(self.data,self.device,self.cfg)
+        from cumulative_paths import settings, CumulativePaths
+        path_cfg=settings(self.cfg)
+        self.paths=None
+        if path_cfg:
+            from path_cache import read
+            self.paths=CumulativePaths(read(run),path_cfg)
         self.fixed_cost=json.loads((run/'binding.json').read_text())['fixed_partition_cost']
         self.rectangles=all_rectangles(self.device)
         self.lookup={tuple(r['bounds']):r for r in self.rectangles}
@@ -40,6 +49,13 @@ class Search:
         for m in self.modules:
             mid=m['module_id'];self.options[mid],self.stats[mid]=options_for(m,self.rectangles,self.cfg)
         self.add_inherited_parent_candidates()
+        if self.paths:
+            for mid in self.options:
+                self.options[mid]=[r for r in self.options[mid] if len(r['slrs'])==1]
+                self.stats[mid].update(cumulative_path_region_policy='single_slr',
+                                       retained_rectangles=len(self.options[mid]))
+                if not self.options[mid]:
+                    raise ValueError('No single-SLR candidate for '+mid+'; cumulative path model cannot score a multi-SLR core.')
         self.keys=list(self.device);self.index={c:i for i,c in enumerate(self.keys)}
         self.resource_mask=np.array([[self.device[c]['resources'][r]>0 for r in RESOURCES] for c in self.keys])
         self.density_cache={};self.score_cache={};self.trials=[];self.unary=None
@@ -88,6 +104,7 @@ class Search:
         return self.density_cache[key]
 
     def legal(self,chosen):
+        if self.paths and any(len(r['slrs'])!=1 for r in chosen.values()):return False
         inherited=self.cfg.get('inherited_parent_regions',{})
         for m in self.modules:
             mid=m['module_id'];region=chosen[mid]
@@ -105,8 +122,12 @@ class Search:
         base=self.netmodel.components(internal,self.cfg['slr_distance_weight'])
         directed=self.directed.components(chosen,details)
         result=dict(base,**directed,fixed_partition_cost=self.fixed_cost)
-        result['old_J']=base['physical_cost']+self.fixed_cost
+        result['hypernet_term']=self.cfg.get('hypernet_weight',1.)*base['physical_cost']
+        result['old_J']=result['hypernet_term']+self.fixed_cost
         result['J']=result['old_J']+directed['directed_term']+directed['branch_square_term']
+        if self.paths:
+            path=self.paths.components(chosen,details)
+            result.update(path);result['J']+=path['cumulative_path_term']
         if not details:self.score_cache[key]=result
         return result
 
@@ -139,7 +160,7 @@ class Search:
         import gurobipy as gp
         from gurobipy import GRB
         if self.unary is None:
-            self.unary={m['module_id']:[self.netmodel.internal_region_cost(i,self.region(m['module_id'],r),self.cfg['slr_distance_weight'])+self.directed.internal_cost(i,self.region(m['module_id'],r))
+            self.unary={m['module_id']:[self.cfg.get('hypernet_weight',1.)*self.netmodel.internal_region_cost(i,self.region(m['module_id'],r),self.cfg['slr_distance_weight'])+self.directed.internal_cost(i,self.region(m['module_id'],r))
                 for r in self.options[m['module_id']]] for i,m in enumerate(self.modules)}
         model=gp.Model('fixed11_directed_region_proposal');model.Params.OutputFlag=0
         model.Params.Threads=2;model.Params.Seed=seed;model.Params.TimeLimit=self.cfg['mip_seconds']
@@ -165,14 +186,29 @@ class Search:
         for e in self.data['pairs']:
             a,b=e['source'],e['sink']
             if a//n!=b//n:pair_weights[tuple(sorted((a,b)))]+=e['weight']
-        roles=sorted({a for pair in pair_weights for a in pair})
+        from boundary_hyper import TYPES
+        distance_weights=Counter()
+        if self.directed.spatial:
+            for e in self.data['spatial']['pairs']:
+                a,b=e['source'],e['sink']
+                if a//len(TYPES)!=b//len(TYPES):
+                    distance_weights[tuple(sorted((('spatial',a),('spatial',b))))]+=e['weight']
+        else:
+            distance_weights.update({(('raw',a),('raw',b)):w for (a,b),w in pair_weights.items()})
+        branch_weights={(('raw',a),('raw',b)):w for (a,b),w in pair_weights.items()}
+        roles=sorted({a for pairs in (distance_weights,branch_weights) for pair in pairs for a in pair})
         means={}
-        for slot in roles:
-            mid=f'S{slot//n:02d}';ri=slot%n;values=[]
+        for role in roles:
+            kind,slot=role;stride=len(TYPES) if kind=='spatial' else n
+            mid=self.directed.module_ids[slot//stride];ri=slot%stride;values=[]
             for region in self.options[mid]:
-                table,_=self.directed.profile(self.region(mid,region));cdf=table[ri];x,y,s=self.directed.dimensions
-                values.append((x-cdf[:x].sum(),y-cdf[x:x+y].sum(),s-cdf[x+y:].sum()))
-            means[slot]=[gp.quicksum(z[mid][j]*float(v[a]) for j,v in enumerate(values)) for a in range(3)]
+                if kind=='spatial':
+                    distribution=self.directed.spatial.profile(self.region(mid,region))[ri]
+                    values.append(tuple(sum(point[a]*p for point,p in distribution) for a in range(3)))
+                else:
+                    table,_=self.directed.profile(self.region(mid,region));cdf=table[ri];x,y,s=self.directed.dimensions
+                    values.append((x-cdf[:x].sum(),y-cdf[x:x+y].sum(),s-cdf[x+y:].sum()))
+            means[role]=[gp.quicksum(z[mid][j]*float(v[a]) for j,v in enumerate(values)) for a in range(3)]
         absolute={}
         def distance(a,b,axis):
             if a==b:return 0.
@@ -187,12 +223,13 @@ class Search:
         for (a,b),w in pairs.items():
             for axis,factor in enumerate((1,1,self.cfg['slr_distance_weight'])):
                 v=model.addVar(lb=0);model.addConstr(v>=points[a][axis]-points[b][axis]);model.addConstr(v>=points[b][axis]-points[a][axis])
-                terms.append(w*factor*v)
+                terms.append(self.cfg.get('hypernet_weight',1.)*w*factor*v)
         terms.extend(z[m][j]*v for m,vs in self.unary.items() for j,v in enumerate(vs))
         quadratic=[]
-        for (a,b),weight in pair_weights.items():
+        for (a,b),weight in distance_weights.items():
             terms.extend(self.cfg['directed_weight']*weight*factor*distance(a,b,axis)
                          for axis,factor in enumerate((1,1,self.cfg['slr_distance_weight'])))
+        for (a,b),weight in branch_weights.items():
             excess=model.addVar(lb=0);model.addConstr(excess>=distance(a,b,2)-1)
             quadratic.append(self.cfg['branch_square_weight']*weight*excess*excess)
         model.setObjective(gp.quicksum(terms)+gp.quicksum(quadratic),GRB.MINIMIZE)
@@ -276,7 +313,11 @@ class Search:
             objective=best['components']['J'],runtime_seconds=time.time()-started,
             search_certificate='Best exact static J among recorded proposals; no full-J global optimality claim.',
             timing_validation='Not run; no predicted WNS is asserted.',
-            physical_model='Original all-net expected spans plus all modeled directed sink-pin expected distance and E[(single-branch boundaries-1)_+^2]. No path accumulation.')
+            physical_model='Original hypernet and directed branch costs'+(
+                '; register-bounded structural endpoint maxima with exponential cumulative SLR penalty.'
+                if self.paths else '; no path accumulation.'),
+            cumulative_path_coverage=self.paths.graph['coverage'] if self.paths else None,
+            cumulative_path_updates=dict(self.paths.stats) if self.paths else {})
         (self.run/'solution.json').write_text(json.dumps(result,indent=2)+'\n')
         summary=[dict(tag=r['tag'],components=r['components'],families=r['families'],extra=r['extra']) for r in self.trials]
         (self.run/'comparison.json').write_text(json.dumps(summary,indent=2)+'\n')

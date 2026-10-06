@@ -1,5 +1,7 @@
 # 按模块边界与硬资源锚点计算 D_hyper
 
+2026-09-26 更新：有向空间距离现已同步采用此边界简化，见 [BOUNDARY_DIRECTED.md](BOUNDARY_DIRECTED.md)。下文“只修改 D_hyper / D_dir 仍保留”的内容描述 9 月 24 日历史版本。
+
 版本：`boundary_spatial_v1`；用户于 2026-09-24 确认两端均为 DSP/BRAM/URAM 即计入，模块内部允许跨过连续 FF/LUT，到第一个 DSP/RAM 停止。只修改 D_hyper，D_dir、分支平方项、资源约束、KaHyPar、局部调整与 floorplan 求解策略均未修改。
 
 ## 建图规则

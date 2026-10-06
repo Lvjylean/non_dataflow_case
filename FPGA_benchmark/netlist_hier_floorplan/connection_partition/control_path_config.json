@@ -1,0 +1,12 @@
+{
+  "schema": "control-cones-cumulative-path-v1",
+  "path_square_weight": 128.0,
+  "criticality_floor": 1.0,
+  "criticality_ceiling": 16.0,
+  "criticality_window_ns": 2.0,
+  "control_name_pattern": "(?:ap_start|ap_done|ap_CS_fsm|ap_NS_fsm|ap_enable|enable_reg|state_reg)",
+  "max_control_unit_cells": 128,
+  "max_rounds": 4,
+  "max_partition_cut_increase_fraction": 0.05,
+  "notes": "Optional refinement of existing protected membership and core regions. No new pipeline, netlist edits, density fit, URAM subdivision or P&R. Structural FF-to-FF endpoint maxima plus exactly bound routed observations. Raw unnormalized cost; repeated paths do not multiply endpoint weight."
+}

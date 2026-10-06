@@ -29,7 +29,7 @@ def sha(path):
     return h.hexdigest()
 
 
-def prepare(run, previous, references):
+def prepare(run, previous, references, graph_path=None, macro_timing=None):
     from static_regions import LIMITS
     from edge_padding import POLICY
     cfg = load(SOURCE / 'directed_config.json')
@@ -63,6 +63,10 @@ def prepare(run, previous, references):
     if model_version != cfg.get('hypernet_model', 'all_atom_v1'):
         raise ValueError('Hypernet model changed; rebuild netmodel.pkl from the original '
                          'graph and fixed membership. An old cache cannot activate the new model.')
+    from path_cache import preflight, prepare_cached, FILES
+    path_preparation=preflight(previous,cfg,graph_path,macro_timing)
+    import directed_spatial_cache
+    directed_preparation=directed_spatial_cache.preflight(previous,cfg,graph_path)
     parsed = []
     for entry in references:
         name, separator, path = entry.partition('=')
@@ -81,6 +85,8 @@ def prepare(run, previous, references):
     shutil.copytree(previous / 'input', run / 'input')
     for name in ['netmodel.pkl', 'directed.json', 'binding.json']:
         shutil.copy2(previous / name, run / name)
+    prepare_cached(run,previous,path_preparation)
+    directed_spatial_cache.prepare_cached(run,directed_preparation,cfg)
     if not parsed:
         refs = [dict(name='w8', path='input/export/static_regions.json'),
                 dict(name='early', path='input/original_regions.json')]
@@ -98,6 +104,7 @@ def prepare(run, previous, references):
         if p.is_file() and p.name != 'manifest.json'})
     files = [p for p in (run / 'input').rglob('*') if p.is_file()]
     files += [run / n for n in ['netmodel.pkl', 'directed.json', 'search_references.json']]
+    if path_preparation:files += [run/n for n in FILES]
     dump(run / 'local_binding.json', dict(
         reference=str(previous), original_dcp=binding['input_dcp'],
         original_dcp_sha256=binding['input_sha256'],
@@ -105,10 +112,9 @@ def prepare(run, previous, references):
         remote_accessed=False, scope='Local static floorplan; unchanged memberships.'))
 
 
-def export(run):
+def export(run, render=True):
     from edge_padding_export import build_envelope
     from edge_padding import regions_tcl, geometry_adapter
-    from edge_padding_plot_local import plots
     from static_regions import RESOURCES, load_device
     core = load(run / 'solution.json')
     modules = load(run / 'export/modules.json')['modules']
@@ -146,7 +152,9 @@ def export(run):
     (folder / 'regions.tcl').write_text(regions_tcl(soft['regions']))
     (folder / 'soft_region_adapter.tcl').write_text(
         geometry_adapter(run / 'source/adapter_reference.tcl'))
-    plots(folder)
+    if render:
+        from edge_padding_plot_local import plots
+        plots(folder)
     dump(run / 'delivery_verification.json', dict(
         status='PASS', exact_target_centric_expansion=True,
         core_cost_and_resources_unchanged=True, placement_and_route=False))
@@ -158,9 +166,11 @@ def main():
     parser.add_argument('--from-run', required=True, type=Path, help='Existing trusted directed floorplan cache run.')
     parser.add_argument('--reference', action='append', default=[], metavar='NAME=JSON',
                         help='Optional ordered starting plans; replaces the two default references.')
+    parser.add_argument('--graph',type=Path,help='Original graph.pkl, required when adding path costs to a pair-only cache.')
+    parser.add_argument('--macro-timing',type=Path,help='Bound native RAM/DSP timing cache from the original post-opt DCP.')
     args = parser.parse_args()
     run = args.output.resolve()
-    prepare(run, args.from_run.resolve(), args.reference)
+    prepare(run, args.from_run.resolve(), args.reference,args.graph,args.macro_timing)
     for stage in ['fixed11_search', 'fixed11_explore', 'fixed11_verify']:
         with (run / (stage + '.log')).open('w') as log:
             subprocess.run([sys.executable, str(run / 'source' / (stage + '.py')), str(run)],

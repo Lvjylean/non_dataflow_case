@@ -40,9 +40,13 @@ class IntegrationTests(unittest.TestCase):
             (run/'input/export').mkdir(parents=True)
             (run/'source').mkdir()
             for name in ['fixed11_verify.py','boundary_hyper.py','balanced_physical.py',
-                         'static_regions.py','routed_density.py']:
+                         'static_regions.py','routed_density.py','boundary_directed.py']:
                 shutil.copy2(SOURCE/name,run/'source'/name)
             cfg=json.loads((SOURCE/'directed_config.json').read_text())
+            cfg.pop('cumulative_paths',None)  # This fixture exercises legacy D_hyper only.
+            cfg.pop('directed_distance_model',None)
+            cfg['directed_weight']=1.  # Freeze the historical arithmetic fixture.
+            cfg['hypernet_weight']=1.
             dump(run/'source/directed_config.json',cfg)
             (run/'input/cr.tsv').write_text('cr\tx\ty\tslr\tSLICEL\tSLICEM\tDSP\tBRAM36\tURAM\n'
                 'X0Y0\t0\t0\tSLR0\t10\t10\t0\t10\t0\n'

@@ -205,7 +205,7 @@ def evaluate(run):
         baseline_labels_unchanged=True,frontend_candidates=generated,selected_metrics=winner))
 
 
-def setup(output, previous):
+def setup(output, previous, preserve_partition_settings=False):
     from improve import digest
     output.mkdir(parents=True,exist_ok=False)
     shutil.copytree(SOURCE,output/'source',ignore=shutil.ignore_patterns('__pycache__'))
@@ -214,12 +214,16 @@ def setup(output, previous):
         adapter=SOURCE/'adapter_reference.tcl'
     shutil.copy2(adapter,output/'source/adapter_reference.tcl')
     # Freeze the existing GETRF comparison settings, not unrelated later defaults.
+    frozen_source=previous/'planning_source'
+    if preserve_partition_settings and not frozen_source.exists():
+        frozen_source=previous/'source'
     for name in ['balanced_config.json','directed_config.json','static_regions.py']:
-        shutil.copy2(previous/'planning_source'/name,output/'source'/name)
+        shutil.copy2(frozen_source/name,output/'source'/name)
     for name in ['balanced_config.json','directed_config.json']:
         frozen=load(output/'source'/name)
         current=load(SOURCE/name)
         keys=['hypernet_model','boundary_frontier_max_entries']
+        if name=='directed_config.json':keys += ['cumulative_paths','directed_distance_model','directed_weight','hypernet_weight']
         if name=='balanced_config.json':
             keys += ['partition_objective','cut_weight','logical_core_weight','core_soft_strength',
                      'module_cost_fraction_of_all_net_weight','selection_relative_tolerance']
@@ -227,6 +231,13 @@ def setup(output, previous):
             if key in current:
                 frozen[key]=current[key]
         dump(output/'source'/name,frozen)
+    if preserve_partition_settings:
+        # An algorithm-only comparison inherits the experiment, not public
+        # defaults (which can differ in resource ratios and affinity threshold).
+        for name in ['balanced_config.json','resource_partition_config.json','structure_config.json']:
+            shutil.copy2(previous/'source'/name,output/'source'/name)
+        if load(output/'source/balanced_config.json').get('partition_objective')!='resource_logic_v1':
+            raise ValueError('Directed units require an existing resource_logic_v1 reference run')
     dump(output/'request.json',dict(source_run=str(previous),placement_and_route=False,
         floorplan_beta=1,partition_objective=load(output/'source/balanced_config.json').get('partition_objective','legacy'),
         scope='Reversible operator frontend, resource-constrained partition, then independent fixed-membership floorplan.'))
@@ -235,6 +246,8 @@ def setup(output, previous):
     balanced=output/'balanced'
     balanced.mkdir()
     for name,target in [('source',output/'source'),('graph.pkl',previous/'graph.pkl'),('baseline',previous/'baseline')]:
+        if name=='baseline' and not target.exists():
+            target=previous/'balanced/baseline'
         (balanced/name).symlink_to(target)
     shutil.copy2(previous/'cr.tsv',balanced/'cr.tsv')
     shutil.copy2(previous/'balanced/cores.json',balanced/'cores.json')
@@ -255,24 +268,43 @@ def main():
     parser.add_argument('--from-run',type=Path)
     parser.add_argument('--kahypar-python',default='/usr/bin/python3')
     parser.add_argument('--kahypar-path')
+    parser.add_argument('--directed-units', action='store_true',
+                        help='Add name-independent local-cone candidates and exact C+L joint moves.')
+    parser.add_argument('--macro-timing', type=Path,
+                        help='Original graph/DCP-bound native macro timing cache for directed units.')
+    parser.add_argument('--chain-guidance', action='store_true',
+                        help='After parent floorplan, create intact-chain subregions in a separate output.')
     args=parser.parse_args()
     run=args.output.resolve()
+    if args.directed_units and args.action in ('generate','floorplan'):
+        parser.error('--directed-units applies to run, partition or evaluate')
     if args.action=='generate':
         generate(run)
     elif args.action=='evaluate':
+        if args.directed_units:
+            request=load(run/'request.json')
+            request['directed_units']=dict(enabled=True,
+                macro_timing=str(args.macro_timing.resolve()) if args.macro_timing else None)
+            dump(run/'request.json',request)
         evaluate(run)
     elif args.action=='floorplan':
         from structure_floorplan import finish
-        finish(run)
+        if args.chain_guidance:
+            finish(run, chain_guidance=True)
+        else:
+            finish(run)
     else:
         start=time.monotonic()
         if args.from_run is None:
             parser.error('--from-run is required for run')
-        setup(run,args.from_run.resolve())
+        setup(run,args.from_run.resolve(),preserve_partition_settings=args.directed_units)
         request=load(run/'request.json')
         request.update(floorplan_requested=args.action=='run',
                        scope='Partition only; no floorplan or placement/route.' if args.action=='partition'
                        else request['scope'])
+        if args.directed_units:
+            request['directed_units']=dict(enabled=True,
+                macro_timing=str(args.macro_timing.resolve()) if args.macro_timing else None)
         dump(run/'request.json',request)
         # Parent owns NumPy/Gurobi; the tested KaHyPar binding uses a separate runtime.
         env=dict(os.environ,OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1')
@@ -286,7 +318,8 @@ def main():
         for action in (['evaluate'] if args.action=='partition' else ['evaluate','floorplan']):
             with (run/(action+'.log')).open('w') as log:
                 timer(run,action,lambda action=action:subprocess.run([sys.executable,'-B','-u',
-                    str(run/'source/structure_pipeline.py'),action,str(run)],
+                    str(run/'source/structure_pipeline.py'),action,str(run)]+(
+                        ['--chain-guidance'] if action=='floorplan' and args.chain_guidance else []),
                     stdout=log,stderr=subprocess.STDOUT,check=True))
         dump(run/'complete.json',dict(status='PASS',selected=load(run/'partition_complete.json')['selected'],
             seconds=time.monotonic()-start,placement_and_route=False,

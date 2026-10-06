@@ -2,7 +2,8 @@
 
 Internal FF/LUT chains connect first DSP/RAM anchors. Cross-module segments
 stop at sequential/macro boundaries and retain unanchored combinational modules.
-The immutable source graph remains the input to cut, resources and D_directed.
+The same retained anchors can also supply the directed spatial distance.
+The immutable source graph still supplies cut, resources and path propagation.
 """
 from collections import Counter, deque
 import math
@@ -142,7 +143,7 @@ class Frontier:
         return targets, mask
 
 
-def lift(data, labels, module_count, max_entries=10000000):
+def lift(data, labels, module_count, max_entries=10000000, with_directed=False):
     """Emit one rooted hyperedge per source bit-net, with distinct anchor atoms.
 
 Pin timing arcs/register settings are absent in the existing cache. Traversal
@@ -185,6 +186,7 @@ therefore describes conservative cell connectivity, not sensitizable paths.
         reachable[a] = 1
         stack.extend(b for b in adjacency[a] if role[b] == 'comb' and not reachable[b])
     patterns = Counter()
+    directed_weights, directed_counts = Counter(), Counter()
     for _, source, sinks, weight in roots:
         fallback = source >= 0 and role[source] == 'comb'
         if fallback and reachable[source]:
@@ -222,6 +224,24 @@ therefore describes conservative cell connectivity, not sensitizable paths.
         patterns[tuple(sorted(slots.items()))] += weight
         stats['retained_source_nets'] += 1
         stats['comb_module_proxy_occurrences'] += len(proxies)
+        if with_directed:
+            if source < 0:
+                stats['directed_unknown_source_roots'] += 1
+                continue
+            # A spatial source star, not a replacement for the original timing
+            # graph. Distinct receivers survive; reconvergent routes do not
+            # multiply them. A pure-combinational fallback uses a mean source.
+            root = labels[source] * len(TYPES) + TYPES.index(
+                'COMB_CENTER' if fallback else resource[source])
+            targets = Counter(labels[a] * len(TYPES) + TYPES.index(resource[a])
+                              for a in anchors if a != source)
+            for m in proxies:
+                proxy = m * len(TYPES) + len(RESOURCES)
+                if proxy != root:
+                    targets[proxy] += 1
+            for target, count in targets.items():
+                directed_weights[root, target] += weight * count
+                directed_counts[root, target] += count
     audit = dict(stats, schema=SCHEMA, ordinary_frontier=normal.stats,
                  internal_frontier=internal.stats, pattern_count=len(patterns),
                  effective_weight=sum(patterns.values()),
@@ -230,6 +250,14 @@ therefore describes conservative cell connectivity, not sensitizable paths.
                  unknown_positions='Unknown ports/infrastructure are counted and have no invented coordinates.',
                  semantics='Cell-connectivity spatial proxy; internal FF traversal may cross cycles.',
                  same_atom_geometry='Dedicated atoms stay intact; their internal geometry is not expanded.')
+    if with_directed:
+        directed = dict(schema='boundary_directed_v1', module_count=module_count,
+            resource_types=list(TYPES), pairs=[dict(source=a, sink=b, weight=w,
+                endpoints=directed_counts[a,b]) for (a,b),w in sorted(directed_weights.items())],
+            audit=dict(audit, directed_endpoint_branches=sum(directed_counts.values()),
+                directed_effective_weight=sum(directed_weights.values()),
+                semantics='Source bit-net stars to distinct retained anchors and mean combinational proxies; not raw sink-pin or timing-path counts.'))
+        return patterns, audit, directed
     return patterns, audit
 
 
@@ -239,7 +267,8 @@ class BoundaryNetModel:
     def __init__(self, data, labels, module_count, device, max_entries=10000000):
         self.device, self.modules = device, module_count
         self.dimensions = [max(d[k] for d in device.values()) for k in ('x', 'y', 'slr')]
-        patterns, self.audit = lift(data, labels, module_count, max_entries)
+        patterns, self.audit, self.directed_data = lift(
+            data, labels, module_count, max_entries, with_directed=True)
         self.patterns = list(patterns)
         self.weights = np.asarray(list(patterns.values()), dtype=float)
         self.counts = np.zeros((len(patterns), module_count * len(TYPES)))

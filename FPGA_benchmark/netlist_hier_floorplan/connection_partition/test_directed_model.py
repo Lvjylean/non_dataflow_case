@@ -46,4 +46,22 @@ class DirectedTests(unittest.TestCase):
         m=self.model([(0,1,1,1)]);m.cfg=dict(slr_distance_weight=2,directed_weight=3,branch_square_weight=7)
         c=m.components(self.chosen(0,2,0));self.assertEqual(c['directed_term'],18);self.assertEqual(c['branch_square_term'],7)
 
+    def test_named_physical_groups_preserve_slot_order(self):
+        old=self.model([(0,1,3.25,13),(2,0,1,4)])
+        names=['S00','S00G01','S09']
+        data=dict(old.data,module_ids=names)
+        family=dict(nets=2,sink_pins=17,same_atom_pins=0,pairs=data['pairs'])
+        old.data['families']={'test':family};data['families']={'test':family}
+        named=DirectedModel(data,self.device,self.cfg)
+        reference=self.chosen(2,1,3)
+        plan={mid:reference[f'S{i:02d}'] for i,mid in enumerate(names)}
+        self.assertEqual(named.components(plan,True),old.components(reference,True))
+        self.assertEqual(named.family_audit(plan),old.family_audit(reference))
+
+    def test_invalid_named_groups_fail(self):
+        old=self.model([(0,1,1,1)])
+        for names in [['S00'],['S00','S00','S01']]:
+            with self.assertRaises(ValueError):
+                DirectedModel(dict(old.data,module_ids=names),self.device,self.cfg)
+
 if __name__=='__main__':unittest.main()

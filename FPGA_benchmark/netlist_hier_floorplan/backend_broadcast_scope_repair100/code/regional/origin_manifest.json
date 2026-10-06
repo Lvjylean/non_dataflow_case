@@ -1,0 +1,17 @@
+{
+  "source": "../slr_broadcast_eco",
+  "files": {
+    "README.md": "ad9473ffe30621dc4ca035458bb94c82e44257ade8727215617356b7694757e4",
+    "core.tcl": "e74deb965e9a48bfb778db109e6726c1b35b7ac8e0666d2bb1d2b221c7b0ee07",
+    "policy.tcl": "0f5d6276e363764b4bf11942c4e99e3ed4c7c1de571d522e81b340dc0437294a",
+    "run.tcl": "cfa0ac60a6de9aa8ab1be86442909c502257b6df5e97dd4383678d3c851e326d",
+    "run_case.py": "31d764064cb2c3e0dcba2cb645d42941154bb25e0ba0137380cf5437ab9e7d2a",
+    "structural.tcl": "c267c6aa5806a6c8e0e88657b92ca17fc5fcbd1c56ea6c138eeef68e5fa83bfb",
+    "test_memory_ff.tcl": "6ad83e04e78fe1ffb4428665e9f042a345a95ed9e4307091536a6afcd643d8d7",
+    "test_policy.tcl": "925440ef34714301164f92337b9e248011f31246329de382f095fe9dc2bf0459",
+    "test_protection.tcl": "cdd6064a7371265d374274ef9a86be237f2215487df6008d23fd60090cb5a51e",
+    "test_receivers.tcl": "09b93403b98cee35a89673eab725671debe0acb00b992d380e2a38807880bc14",
+    "test_structural.tcl": "a3386409876f4954d13d1bd2f29d02ec9ee8b2ce9db92c5652b101214022a3a2",
+    "view_result.tcl": "dcba54bb8ef7ec401d4d9a22642fe10d6c53b1706221483612d3251fcb84ef0f"
+  }
+}

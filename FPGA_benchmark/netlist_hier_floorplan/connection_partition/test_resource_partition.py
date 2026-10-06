@@ -84,6 +84,9 @@ class ResourceTests(unittest.TestCase):
         self.assertEqual(rank_rows(rows,CFG)['candidate'],'many')
         rows[0]['resource_feasible']=False
         self.assertEqual(rank_rows(rows,CFG)['candidate'],'few')
+        rows[0]['resource_feasible']=True
+        rows[0]['aggregation_eligible']=False
+        self.assertEqual(rank_rows(rows,CFG)['candidate'],'few')
 
     def test_recursive_scalar_proposals_screen_every_resource(self):
         data=dict(atoms=[[a] for a in range(4)],
@@ -168,8 +171,12 @@ class PipelineTests(unittest.TestCase):
             cfg=json.loads((SOURCE/'balanced_config.json').read_text())
             for f in ['structure_config.json','resource_partition_config.json','directed_config.json']:
                 shutil.copy2(SOURCE/f,run/'source'/f)
+            rcfg=json.loads((run/'source/resource_partition_config.json').read_text())
+            rcfg.update(merge_affinity_threshold=.05,guard_component_affinity=True,
+                        reuse_historical_candidates=False)
+            dump(run/'source/resource_partition_config.json',rcfg)
             dump(run/'source/balanced_config.json',cfg)
-            dump(run/'request.json',dict(source_run=str(old)))
+            dump(run/'request.json',dict(source_run=str(old),directed_units=dict(enabled=True)))
             d=fixture();d['totals']={'FF':4};d['stats']={}
             d['active_atoms']=[0,1,2]  # isolated atom 3 must still be exported
             with (run/'graph.pkl').open('wb') as stream:pickle.dump(d,stream)
@@ -187,6 +194,15 @@ class PipelineTests(unittest.TestCase):
                  patch('balanced_regions.evaluate',side_effect=AssertionError('partition chose CRs')), \
                  patch('balanced_regions.initialize',side_effect=AssertionError('partition placed modules')):
                 generate(run);evaluate(run)
+            admission=json.loads((run/'historical_candidate_admission.json').read_text())
+            self.assertFalse(admission['eligible'])
+            rows=json.loads((run/'balanced/comparison.json').read_text())
+            self.assertFalse(next(r for r in rows if r['candidate']=='control_current')['aggregation_eligible'])
+            for folder in (run/'generated').iterdir():
+                binding=json.loads((folder/'premerge_binding.json').read_text())
+                self.assertEqual(digest(folder/'premerge_groups.json'),binding['groups_sha256'])
+                refinement=json.loads((run/(folder.name+'.refinement.json')).read_text())
+                self.assertEqual(refinement['refinement']['component_affinity_threshold'],.05)
             selected=run/'balanced/selected'
             meta=json.loads((selected/'modules.json').read_text())
             self.assertEqual(meta['validation']['all_cells'],4)
@@ -194,6 +210,8 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(meta['partition_objective']['score'],0)
             self.assertFalse((selected/'static_regions.json').exists())
             self.assertFalse((run/'floorplan').exists())
+            self.assertTrue((run/'directed_units/discovery.json').exists())
+            self.assertTrue(any(r['candidate'].endswith('_directed') for r in rows))
             self.assertTrue(all(m['floorplan_eligible'] for m in meta['modules']))
             # Exercise the actual phase boundary. The native MIP is substituted
             # only here; physical scoring, overlap checks and preparation are real.

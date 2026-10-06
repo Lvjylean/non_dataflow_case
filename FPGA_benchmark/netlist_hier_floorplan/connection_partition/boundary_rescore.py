@@ -54,8 +54,9 @@ def compare(graph,groups_path,device_path,solution_path,output,slr_weight=None):
     if cfg.get('hypernet_model',LEGACY)==LEGACY and 'J' in previous:
         if abs(old['physical_cost']-previous['physical_cost'])>max(1e-6,abs(old['physical_cost'])*1e-10):
             raise ValueError('Legacy rescore does not match the supplied solution; input binding is inconsistent.')
-        result['J_with_only_D_hyper_changed']=previous['J']-old['physical_cost']+new['physical_cost']
-        result['remaining_terms_unchanged']=previous['J']-old['physical_cost']
+        weight=cfg.get('hypernet_weight',1.)
+        result['J_with_only_D_hyper_changed']=previous['J']+weight*(new['physical_cost']-old['physical_cost'])
+        result['remaining_terms_unchanged']=previous['J']-weight*old['physical_cost']
     output.mkdir(parents=True)
     (output/'comparison.json').write_text(json.dumps(result,indent=2)+'\n')
     return result

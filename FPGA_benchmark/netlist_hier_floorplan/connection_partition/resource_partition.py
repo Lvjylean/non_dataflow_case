@@ -80,7 +80,7 @@ def score(metrics,cfg):
 
 def rank_rows(rows,cfg):
     feasible=[r for r in rows if r['resource_feasible'] and r.get('admissible',True)
-              and r.get('protection_feasible',True)]
+              and r.get('protection_feasible',True) and r.get('aggregation_eligible',True)]
     if not feasible:
         return None
     # No module-count tie-break and no relative tolerance preferring fewer blocks.

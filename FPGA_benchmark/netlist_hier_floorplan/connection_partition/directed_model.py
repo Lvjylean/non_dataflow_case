@@ -8,6 +8,9 @@ from routed_density import region_cache_key
 class DirectedModel:
     def __init__(self, data, device, cfg):
         self.data, self.device, self.cfg = data, device, cfg
+        self.module_ids = data.get('module_ids', [f'S{i:02d}' for i in range(data['module_count'])])
+        if len(self.module_ids) != data['module_count'] or len(set(self.module_ids)) != len(self.module_ids):
+            raise ValueError('Directed module IDs must uniquely match the slot order.')
         self.count = data['module_count'] * len(RESOURCES)
         self.dimensions = [max(d[key] for d in device.values()) for key in ('x','y','slr')]
         self.weights = np.zeros((self.count, self.count))
@@ -19,6 +22,10 @@ class DirectedModel:
         self.cache = {}
         indices = np.arange(self.count)//len(RESOURCES)
         self.internal_mask = indices[:,None] == indices[None,:]
+        from boundary_directed import selection, SCHEMA, BoundaryDirectedModel
+        self.spatial = None
+        if selection(cfg) == SCHEMA:
+            self.spatial = BoundaryDirectedModel(data.get('spatial',{}),device,cfg,self.module_ids)
 
     def profile(self, region):
         key = region_cache_key(region)
@@ -42,7 +49,7 @@ class DirectedModel:
         return dx,dy,ds,square,far,separation
 
     def components(self, chosen, details=False):
-        profiles = [self.profile(chosen[f'S{i:02d}']) for i in range(self.data['module_count'])]
+        profiles = [self.profile(chosen[mid]) for mid in self.module_ids]
         table = np.vstack([p[0] for p in profiles]);prob = np.vstack([p[1] for p in profiles])
         dx,dy,ds,square,far,separation = self.distances(table,prob)
         weighted = lambda m: float(np.sum(self.weights*m))
@@ -53,6 +60,8 @@ class DirectedModel:
             directed_internal_distance=float(np.sum(self.weights*self.internal_mask*(dx+dy+self.cfg['slr_distance_weight']*ds))))
         result['directed_term'] = self.cfg['directed_weight']*direct
         result['branch_square_term'] = self.cfg['branch_square_weight']*result['branch_square']
+        if self.spatial:
+            result.update(self.spatial.components(chosen))
         if details:
             result['raw_boundary_histogram'] = {str(d):float(np.sum(self.counts*(prob@(separation==d)@prob.T))) for d in range(self.dimensions[2]+1)}
             result['raw_boundary_histogram']['0'] += self.data['coverage']['same_atom_pins']
@@ -62,10 +71,13 @@ class DirectedModel:
         n=len(RESOURCES);lo=module*n;hi=lo+n
         f,p=self.profile(region);dx,dy,ds,square,_,_=self.distances(f,p)
         value=self.cfg['directed_weight']*(dx+dy+self.cfg['slr_distance_weight']*ds)+self.cfg['branch_square_weight']*square
+        if self.spatial:
+            return (self.spatial.internal_cost(module,region) + self.cfg['branch_square_weight'] *
+                    float(np.sum(self.weights[lo:hi,lo:hi]*square)))
         return float(np.sum(self.weights[lo:hi,lo:hi]*value))
 
     def family_audit(self, chosen):
-        profiles=[self.profile(chosen[f'S{i:02d}'])[1] for i in range(self.data['module_count'])]
+        profiles=[self.profile(chosen[mid])[1] for mid in self.module_ids]
         p=np.vstack(profiles);z=self.dimensions[2]
         sep=abs(np.arange(z+1)[:,None]-np.arange(z+1)[None,:])
         output={}

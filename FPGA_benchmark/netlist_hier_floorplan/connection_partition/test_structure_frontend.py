@@ -23,6 +23,36 @@ CFG = dict(operator_min_cells=1,operator_max_cells=100,
 
 
 class StructureTests(unittest.TestCase):
+    def test_weak_component_merge_blocked_but_strong_merge_allowed(self):
+        data=fixture()
+        data['edges']=[((0,1),4),((0,),100),((1,2),100)]
+        data['nets']=[('weak',0,(1,),4),('strong',1,(2,),100)]
+        groups=[[0,3],[1,2]]
+        legacy,detail=refine(data,groups,[],dict(CFG,component_affinity_threshold=0.))
+        guarded,audit=refine(data,groups,[],dict(CFG,component_affinity_threshold=.05))
+        self.assertNotEqual(legacy,groups)
+        self.assertEqual(guarded,groups)
+        self.assertGreater(audit['affinity_rejections'],0)
+        data['edges'][0]=((0,1),40)
+        data['nets'][0]=('stronger',0,(1,),40)
+        strong,audit=refine(data,groups,[],dict(CFG,component_affinity_threshold=.05))
+        self.assertNotEqual(strong,groups)
+        self.assertTrue(all(p['merge_affinity']>=.05 for p in audit['history']))
+
+    def test_incremental_module_volumes_match_full_recount(self):
+        from collections import Counter
+        data=fixture()
+        data['edges'] += [((0,1,2,3),5),((0,2),1)]
+        index=OriginalIndex(data,[[0],[1,2],[3]],[])
+        for atoms,target in [([0],1),([2],2),([3],1)]:
+            p=index.proposal(atoms,target)
+            self.assertIsNotNone(p)
+            index.apply(p)
+            expected=Counter()
+            for aa,w in data['edges']:
+                for m in {index.labels[a] for a in aa}:expected[m]+=w
+            self.assertEqual(index.module_volumes,expected)
+
     def test_all_coarse_assignments_preserve_cut_and_km1(self):
         data=fixture()
         data['edges'] += [((0,1,2),8),((0,2),3),((1,2),2),((2,3),1)]

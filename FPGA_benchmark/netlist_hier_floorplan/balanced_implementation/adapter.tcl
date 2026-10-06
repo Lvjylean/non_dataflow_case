@@ -1,5 +1,6 @@
 # Frozen membership adapter; keep original netlist hierarchy intact.
 proc bi_load {input} {
+    set ::bi_resource_extra_crs [dict create]
     source $input/regions.tcl
     set ::planned_regions $planned_regions
     set ::planned_bounds $planned_bounds

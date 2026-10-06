@@ -1,12 +1,25 @@
 {
   "schema": "fixed11-all-directed-branches-v1",
   "hypernet_model": "boundary_spatial_v1",
+  "directed_distance_model": "boundary_directed_v1",
   "boundary_frontier_max_entries": 10000000,
   "slr_distance_weight": 8.0,
-  "directed_weight": 1.0,
+  "directed_weight": 0.1,
+  "hypernet_weight": 0.1,
   "branch_square_weight": 32.0,
   "critical_distance_weight": 0.0,
   "path_square_weight": 0.0,
+  "cumulative_paths": {
+    "enabled": true,
+    "schema": "cumulative-slr-paths-v1",
+    "penalty": "exponential",
+    "base": 2.0,
+    "weight": 128.0,
+    "region_policy": "single_slr",
+    "incremental_max_nodes": 20000,
+    "assignment_cache_entries": 512,
+    "topology_model": "macro_timing_v2"
+  },
   "region_max_area_factor": 1.5,
   "region_max_area_extra_crs": 4,
   "mip_seconds": 120,
@@ -20,7 +33,7 @@
     17,
     31
   ],
-  "notes": "Fixed supplied memberships; SLR distance 8, URAM 100%, other resources 70%. Original area window and all SLR spans. Local exact-J heuristic; no density fit, MIP or physical implementation.",
+  "notes": "Fixed supplied memberships; SLR distance 8, branch square 32, exponential register-bounded path term 128*(2^max(N-1,0)-1). Enabled path model uses single-SLR core candidates and uniform endpoint weights; existing area/resource/soft rules retained. Structural proxy, no routed feedback or STA prediction. Legacy configurations without cumulative_paths retain their original behavior.",
   "resource_limits": {
     "LUT": 0.7,
     "FF": 0.7,

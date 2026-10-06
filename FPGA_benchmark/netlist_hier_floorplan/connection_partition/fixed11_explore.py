@@ -78,6 +78,7 @@ result=dict(base,**best,objective=best['components']['J'],
     total_module_crs=sum(r['area'] for r in best['regions'].values()),
     maximum_slrs_per_unit=max(len(r['slrs']) for r in best['regions'].values()),
     movement_from_reference=movement(best),runtime_seconds=base['runtime_seconds']+time.perf_counter()-started,
+    cumulative_path_updates=dict(search.paths.stats) if search.paths else {},
     search_certificate='Resource-repaired and packed starts; all feasible starting-layout coordinate descents; 3x8000 initial and 8x24000 joint annealing proposals, final exact local refinement and legal die permutations. No MIP or global optimality proof.')
 dump(ROOT/'solution.json',result);dump(ROOT/'export/static_regions.json',result);dump(ROOT/'comparison.json',search.trials)
 emit(dict(stage='exploration_complete',J=result['objective'],initial_J=base['objective'],tag=best['tag'],

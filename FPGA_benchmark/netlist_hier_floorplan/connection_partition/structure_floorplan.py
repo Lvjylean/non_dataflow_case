@@ -26,6 +26,8 @@ def seed_regions(meta,model,device,cfg):
     from balanced_regions import options_for, initialize, polish
     from static_regions import all_rectangles, overlap_audit, LIMITS
     rectangles=all_rectangles(device)
+    from cumulative_paths import settings
+    if settings(cfg):rectangles=[r for r in rectangles if len(r['slrs'])==1]
     options={};stats={}
     for m in meta['modules']:
         mid=m['module_id']
@@ -54,7 +56,7 @@ def seed_regions(meta,model,device,cfg):
         stage='floorplan_only_after_partition_selection')
 
 
-def prepare(root):
+def prepare(root,macro_timing=None):
     from balanced_physical import atom_resource
     from physical_model import build as build_physical_model
     from static_regions import load_device, RESOURCES, LIMITS
@@ -74,6 +76,11 @@ def prepare(root):
     assert cfg['resource_limits']==LIMITS
     assert cfg['soft_expansion_threshold']==POLICY['threshold']
     assert not cfg.get('routed_density_profile')
+    from cumulative_paths import settings
+    from macro_timing import macros, read as read_macros
+    if settings(cfg) and settings(cfg)['topology_model']=='macro_timing_v2' and macros(data):
+        macro_timing=Path(macro_timing) if macro_timing else root/'macro_timing'
+        read_macros(macro_timing,digest(root/'graph.pkl'),meta['input_sha256'])
     run=root/'floorplan'
     run.mkdir()
     shutil.copytree(root/'source',run/'source',ignore=shutil.ignore_patterns('__pycache__'))
@@ -85,6 +92,7 @@ def prepare(root):
         initial_cfg=dict(load(root/'source/balanced_config.json'))
         # Physical seeding adopts the unchanged downstream resource/SLR settings.
         initial_cfg.update({k:v for k,v in cfg.items() if k in initial_cfg})
+        if 'cumulative_paths' in cfg:initial_cfg['cumulative_paths']=cfg['cumulative_paths']
         static=seed_regions(meta,model,device,initial_cfg)
         dump(run/'input/export/static_regions.json',static)
     else:
@@ -130,17 +138,26 @@ def prepare(root):
     assert coverage['signal_sink_pins']==coverage['modeled_sink_pins']+sum(coverage[k] for k in (
         'unlocated_port_source_pins','unlocated_port_sink_pins',
         'unlocated_infrastructure_source_pins','unlocated_infrastructure_sink_pins'))
-    dump(run/'directed.json',dict(module_count=len(groups),coverage=dict(coverage),families={},
+    from boundary_directed import attach
+    if hasattr(model,'directed_data'):
+        model.directed_data['binding']=dict(graph_sha256=digest(root/'graph.pkl'),
+            membership_sha256=digest(run/'input/export/leaf_cells.tsv.gz'),
+            module_ids=[m['module_id'] for m in meta['modules']])
+    dump(run/'directed.json',attach(dict(module_count=len(groups),coverage=dict(coverage),families={},
         pairs=[dict(source=a,sink=b,weight=w,pins=counts[a,b]) for (a,b),w in sorted(weights.items())],
-        semantics='Original atom netlist and every modeled sink-pin multiplicity; operator contraction is not used in physical scoring.'))
+        semantics='Original atom sink-pin multiplicity for branch risks; spatial distance uses the explicitly selected model.'),model,cfg))
     dump(run/'binding.json',dict(input_dcp=meta['input_dcp'],input_sha256=meta['input_sha256'],
         graph_sha256=digest(root/'graph.pkl'),module_count=len(groups),
         fixed_partition_cost=static['objective']-static['components']['physical_cost'],
         hypernet_model=cfg.get('hypernet_model','all_atom_v1')))
+    from cumulative_paths import settings
+    from path_cache import write as write_paths, FILES
+    if settings(cfg):write_paths(run,data,labels,[m['module_id'] for m in meta['modules']],digest(root/'graph.pkl'),macro_timing)
     dump(run/'hypernet_audit.json',getattr(model,'audit',{}))
     dump(run/'search_references.json',[dict(name='partition',path='input/export/static_regions.json')])
     files=[p for p in (run/'input').rglob('*') if p.is_file()]
     files += [run/n for n in ['netmodel.pkl','directed.json','search_references.json']]
+    if settings(cfg):files += [run/n for n in FILES]
     dump(run/'local_binding.json',dict(source_sha256={str(p.relative_to(run)):digest(p) for p in files},
                                      scope='New expanded membership on immutable original netlist.'))
     dump(run/'source/manifest.json',{p.name:digest(p) for p in (run/'source').iterdir()
@@ -183,7 +200,7 @@ def implementation_input(root,run):
         scope='Expanded leaf membership with core-resource accounting and geometric soft extensions. No P&R.'))
 
 
-def finish(root):
+def finish(root, chain_guidance=False):
     from floorplan_cached import export
     run=prepare(root)
     for name in ['fixed11_search','fixed11_explore','fixed11_verify']:
@@ -195,3 +212,6 @@ def finish(root):
     export(run)
     implementation_input(root,run)
     assert load(run/'verification.json')['status']=='PASS'
+    if chain_guidance:
+        from chain_guidance import run as guide
+        guide(root, root/'chain_guidance')

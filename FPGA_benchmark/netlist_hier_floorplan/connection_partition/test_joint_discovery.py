@@ -98,6 +98,26 @@ class DiscoveryTests(unittest.TestCase):
                 prepare(run)
             self.assertFalse((run/'floorplan').exists())
             dump(run/'balanced/candidates'/selected/'groups.json',selected_groups)
+            # The current floorplan requires graph-bound native macro semantics.
+            # Supply synthetic registered D/Q arcs for this synthetic fixture;
+            # never disable the production missing-metadata admission check.
+            from macro_timing import compile_overlay, macros, SCHEMA as MACRO_SCHEMA
+            native=run/'synthetic_native';native.mkdir()
+            mids=sorted(macros(d))
+            (native/'macros.tsv').write_text('cell_id\tcell_name\tprimitive\n'+''.join(
+                f"c{i}\t{d['cells'][i]['cell_name']}\t{d['cells'][i]['primitive']}\n" for i in mids))
+            (native/'complete.txt').write_text(f'macros={len(mids)}\n')
+            (native/'arcs.tsv').write_text('cell_id\tkind\tfrom_pin\tto_pin\n'+''.join(
+                f'c{i}\tcapture\tD\t@state\nc{i}\tlaunch\t@state\tQ\n' for i in mids))
+            raw=run/'synthetic_nets.tsv'
+            raw.write_text('net_id\ttype\tdrivers\tsinks\n'+''.join(
+                f'{n}\tSIGNAL\tc{a}:Q\t'+','.join(f'c{b}:D' for b in ss)+'\n'
+                for n,a,ss,w in d['nets']))
+            overlay=compile_overlay(d,native,raw)
+            cache=run/'macro_timing';cache.mkdir()
+            with (cache/'macro_timing.pkl').open('wb') as stream:pickle.dump(overlay,stream)
+            dump(cache/'binding.json',dict(schema=MACRO_SCHEMA,graph_sha256=digest(run/'graph.pkl'),
+                input_sha256=meta['input_sha256'],payload_sha256=digest(cache/'macro_timing.pkl')))
             def initializer(modules,connections,options,model,device,cfg):
                 chosen={m:values[0] for m,values in options.items()}
                 return chosen,dict(status='fixture'),{m:[0.]*len(v) for m,v in options.items()}

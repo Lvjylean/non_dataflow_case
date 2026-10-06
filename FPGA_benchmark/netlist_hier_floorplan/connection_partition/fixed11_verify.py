@@ -20,6 +20,11 @@ def verify(run):
     solution=load('solution.json');data=load('directed.json');cfg=solution['configuration']
     modules=load('input/export/modules.json')['modules'];binding=load('binding.json')
     with (run/'netmodel.pkl').open('rb') as f:netmodel=pickle.load(f)
+    path_graph=None
+    if cfg.get('cumulative_paths',{}).get('enabled',False):
+        from cumulative_paths import settings, independent_score
+        from path_cache import read
+        path_cfg=settings(cfg);path_graph=read(run)
     device={}
     for row in csv.DictReader((run/'input/cr.tsv').open(),delimiter='\t'):
         n=int(row['SLICEL'])+int(row['SLICEM']);sm=int(row['SLICEM'])
@@ -86,9 +91,26 @@ def verify(run):
             assert abs(family[name]['far_sink_pins']-plan['families'][name]['far_sink_pins'])<1e-6
         physical=spans['x']+spans['y']+cfg['slr_distance_weight']*spans['slr']
         direct=values['x']+values['y']+cfg['slr_distance_weight']*values['slr']
+        from boundary_directed import selection, SCHEMA, independent_components
+        spatial={}
+        if selection(cfg)==SCHEMA:
+            spatial=independent_components(data['spatial'],chosen,
+                {c:dict(d,resources=d['capacity']) for c,d in device.items()},cfg,
+                [m['module_id'] for m in modules])
+            direct=spatial['directed_distance']
+        hypernet_term=cfg.get('hypernet_weight',1.)*physical
         result=dict(physical_cost=physical,directed_distance=direct,branch_square=values['square'],
             raw_far_pins=sum(v for k,v in hist.items() if k>1),raw_branch_boundaries=sum(k*v for k,v in hist.items()),
-            J=physical+binding['fixed_partition_cost']+cfg['directed_weight']*direct+cfg['branch_square_weight']*values['square'])
+            J=hypernet_term+binding['fixed_partition_cost']+cfg['directed_weight']*direct+cfg['branch_square_weight']*values['square'])
+        if 'hypernet_weight' in cfg or 'hypernet_term' in plan['components']:
+            result['hypernet_term']=hypernet_term
+        result.update(spatial)
+        if path_graph is not None:
+            path=independent_score(path_graph,chosen,path_cfg)
+            result['J']+=path['cumulative_path_term']
+            histogram=path.pop('cumulative_path_endpoint_histogram')
+            assert {str(k):v for k,v in histogram.items()}==plan['components']['cumulative_path_endpoint_histogram']
+            result.update(path)
         for k,v in result.items():assert abs(v-plan['components'][k])<max(1e-6,abs(v)*1e-10),(k,v,plan['components'][k])
         assert abs(sum(hist.values())-data['coverage']['modeled_sink_pins'])<1e-6
         result.update(raw_boundary_histogram=dict(hist),families=family,peak_utilization={r:max(o[r] for o in occupancy.values()) for r in RESOURCES})
@@ -109,7 +131,8 @@ def verify(run):
     result=dict(status='PASS',independent=independent,unchanged_export_files=members,
         immutable_input_count=len(local['source_sha256']),source_manifest_verified=True,
         input_dcp_sha256_verified=False,original_cache_hash_verified=True,remote_accessed=False,
-        method='Independent CR-pair enumeration for directed branches, probability products for hypernet spans, direct resource/geometry checks. No optimizer scoring methods reused.')
+        cumulative_paths_verified=path_graph is not None,
+        method='Independent CR-pair enumeration, hypernet probability products, scalar register-bounded propagation and resource/geometry checks. No optimizer scoring methods reused.')
     (run/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(dict(stage='verified',status='PASS',J=independent['selected']['J'])),flush=True)
 

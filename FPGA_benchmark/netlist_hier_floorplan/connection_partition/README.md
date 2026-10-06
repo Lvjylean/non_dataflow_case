@@ -1,5 +1,11 @@
 # Connectivity-only coarse modules
 
+The local optional [chain-region guidance](CHAIN_GUIDANCE.md) stage can subdivide
+large floorplan parents into intact-chain physical groups without changing the
+logical partition. Enable `--chain-guidance` for a new parent floorplan, or use
+`chain_guidance.py` to reuse a validated parent result. This local extension is
+separate from the published 9/25 snapshot below.
+
 The 2026-09-25 source snapshot uses **resource-constrained partition (C+L)**
 followed by independent floorplanning. It removes D and the module-count penalty
 from the active partition objective and enables automatic local memory/compute
@@ -78,6 +84,15 @@ is marked ineligible for floorplan constraints. No netlist rewrite is performed.
 
 ## Execution
 
+The current main floorplanner adds a register-bounded exponential SLR term.
+See [CUMULATIVE_PATH_FLOORPLAN.md](CUMULATIVE_PATH_FLOORPLAN.md) for the formula,
+single-SLR core policy, incremental propagation, coverage and cache migration.
+
+The optional post-floorplan control repair is documented in
+[CONTROL_PATH_REFINEMENT.md](CONTROL_PATH_REFINEMENT.md). It consumes a frozen
+post-opt graph plus validated routed paths and exports a separate input; it does
+not change the default standalone partition objective.
+
 Run all native Vivado operations and full-netlist work on eda070 in a fresh run
 directory. `partition.py prepare RUN` creates a cached graph;
 `partition.py partition RUN --k 8 --cell-cap 150000 --seed SEED` creates a candidate;
@@ -86,3 +101,20 @@ KaHyPar environment and place its km1 configuration at `RUN/source/km1.ini`.
 
 `test_partition.py` checks independent expected hypernet and sink-pin counts,
 control weights, port separation, resources and dedicated-connection semantics.
+
+
+### Resource-specific URAM soft envelopes
+
+`uram_soft_export.py` exports a new input directory from a verified core/soft input. It requires the requested module's core URAM demand to equal its core capacity, and permits vertical envelopes only. Core geometry, resource accounting, objective and membership are preserved byte-for-byte where applicable. Only URAM288 site ranges are appended to each existing soft Pblock. This is additional placement guidance, not capacity credit or a utilization prediction.
+
+Supply `--previous`, `--output` (new directory), `--device` (`cr.tsv`) and `--requests` (JSON mapping module IDs to `[x0,y0,x1,y1]`). The generated `regions.tcl` loads its bundled `uram_resource_adapter.tcl`. Backend audits must honor `bi_expected_sites` and `bi_cell_inside_soft`; the common `backend_generic/audit.tcl` supports these optional hooks. `bi_load` clears prior resource additions when changing inputs. Historical backends that compare only whole-CR site sets need the compatible audit patch.
+
+Validated GETRF input and compact native evidence: [S02/S14 URAM extension](../../reports/getrf_uram_soft_20260926_01/README.md). No placement or route is invoked by this exporter.
+# Optional directed local-unit refinement (2026-09-27)
+
+Use `structure_pipeline.py partition ... --directed-units --macro-timing ...`
+to add name-independent register-bounded cones and joint moves while retaining
+KaHyPar, the experiment's resource/affinity settings and exact C+L selection.
+See [DIRECTED_UNITS.md](DIRECTED_UNITS.md) for the isolated cache-validation
+entry point, coverage boundaries and output semantics. This is not a new
+floorplan or a routed-timing certificate.

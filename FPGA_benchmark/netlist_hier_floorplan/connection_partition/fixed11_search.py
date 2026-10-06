@@ -40,7 +40,10 @@ def main():
     comparisons={}
     for name,regions in refs:
         occupancy=sum(search.occupancy(m,regions[m['module_id']]) for m in search.modules)
-        comparisons[name]=dict(legal_under_70=search.legal(regions),components_at_w8=search.score(regions,True),
+        supported=not search.paths or all(len(r['slrs'])==1 for r in regions.values())
+        comparisons[name]=dict(legal_under_70=search.legal(regions),
+            components_at_w8=search.score(regions,True) if supported else None,
+            cumulative_path_geometry_supported=supported,
             peak_utilization={r:float(occupancy[:,i].max()) for i,r in enumerate(RESOURCES)},
             violations=[dict(cr=search.keys[c],resource=RESOURCES[r],utilization=float(occupancy[c,r]),limit=float(limits[r]))
                 for c,r in zip(*np.where(occupancy>limits+1e-8))])
@@ -143,7 +146,9 @@ def main():
         resource_distribution='capacity proportional; no routed fit',runtime_seconds=time.perf_counter()-started,
         movement_from_reference=movement(best),tie_break='Within absolute J 1e-6: minimum summed center L1 movement from selected partition core, then tag.',
         search_certificate='Finite local search: resource-repaired and packed starts, three exact coordinate descents, 3x8000 annealing proposals, exact final refinement and legal die permutations. No MIP or global optimality proof.',
-        timing_validation='Not run; no WNS prediction.')
+        timing_validation='Not run; no WNS prediction.',
+        cumulative_path_coverage=search.paths.graph['coverage'] if search.paths else None,
+        cumulative_path_updates=dict(search.paths.stats) if search.paths else {})
     dump(ROOT/'solution.json',result);dump(ROOT/'comparison.json',search.trials)
     shutil.copytree(ROOT/'input/export',ROOT/'export');dump(ROOT/'export/static_regions.json',result)
     emit(dict(stage='complete',J=result['objective'],runtime_seconds=result['runtime_seconds'],regions={m:r['bounds'] for m,r in result['regions'].items()},peak=result['overlap']['maximum_utilization']))

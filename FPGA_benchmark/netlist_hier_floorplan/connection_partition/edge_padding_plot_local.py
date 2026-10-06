@@ -3,6 +3,7 @@
 Used when matplotlib is unavailable; reads the same explicit core-only schema.
 """
 import csv
+import colorsys
 import json
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
@@ -61,14 +62,20 @@ def plots(folder):
     def box(c,ox,oy,t):
         d=device[c];x=ox+d['x']*t;y=oy+(15-d['y'])*t
         return (x,y,x+t,y+t)
-    image=Image.new('RGB',(1160,900),'white');draw=ImageDraw.Draw(image)
+    count=len(core['regions'])
+    palette=list(COLORS)
+    for i in range(len(palette),count):
+        rgb=colorsys.hsv_to_rgb((i*.61803398875)%1,.7,.7)
+        palette.append('#'+''.join(f'{round(v*255):02x}' for v in rgb))
+    legend_rows=(count+5)//6
+    image=Image.new('RGB',(1160,max(900,850+29*legend_rows)),'white');draw=ImageDraw.Draw(image)
     for panel,plan in enumerate([core,new]):
         ox=75+panel*570;oy=70;t=42
         title='J-selected core floorplan' if panel==0 else 'Soft Pblock: core + extensions'
         text(draw,(ox-20,25),title,23,bold=True)
         for i,(mid,r) in enumerate(sorted(plan['regions'].items())):
             for c in r['crs']:
-                color=tuple(int(COLORS[i][j:j+2],16) for j in (1,3,5))
+                color=tuple(int(palette[i][j:j+2],16) for j in (1,3,5))
                 light=tuple(round(.8*255+.2*v) for v in color)
                 draw.rectangle(box(c,ox,oy,t),fill=light)
         if panel==1:
@@ -80,15 +87,15 @@ def plots(folder):
             for c in r['crs']:
                 x,y=device[c]['x'],device[c]['y'];a,b,d,e=box(c,ox,oy,t)
                 for dx,dy,coords in [(-1,0,(a,b,a,e)),(1,0,(d,b,d,e)),(0,1,(a,b,d,b)),(0,-1,(a,e,d,e))]:
-                    if (x+dx,y+dy) not in cells:draw.line(coords,fill=COLORS[i],width=3)
+                    if (x+dx,y+dy) not in cells:draw.line(coords,fill=palette[i],width=3)
             x,y=min(cells,key=lambda xy:(xy[1],xy[0]));slot=slots.get((x,y),0);slots[x,y]=slot+1
             px=ox+x*t+4;py=oy+(16-y)*t-4-slot*19
             draw.rectangle((px-1,py-18,px+39,py+1),fill='white')
             text(draw,(px,py),mid,16,anchor='ld',bold=True)
     for i,mid in enumerate(sorted(core['regions'])):
         x=35+(i%6)*182;y=813+(i//6)*29
-        draw.rectangle((x,y,x+17,y+17),fill=COLORS[i]);text(draw,(x+24,y),mid,16)
-    x,y=35+5*182,842
+        draw.rectangle((x,y,x+17,y+17),fill=palette[i]);text(draw,(x+24,y),mid,16)
+    x,y=35,813+29*legend_rows
     draw.rectangle((x,y,x+17,y+17),fill='#fef3c7');hatch(draw,(x,y,x+17,y+17),'#b45309',True)
     text(draw,(x+23,y),'Soft extension',16)
     image.save(figdir/'regions.png')

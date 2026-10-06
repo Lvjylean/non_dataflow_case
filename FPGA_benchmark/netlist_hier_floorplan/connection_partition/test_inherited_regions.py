@@ -7,6 +7,7 @@ from static_regions import RESOURCES,all_rectangles
 class InheritedRegionsTests(unittest.TestCase):
     def fixture(self):
         s=Search.__new__(Search)
+        s.paths=None
         s.device={f'X{x}Y0':dict(x=x,y=0,slr=0,resources=dict.fromkeys(RESOURCES,100)) for x in range(3)}
         s.rectangles=all_rectangles(s.device);s.lookup={tuple(r['bounds']):r for r in s.rectangles}
         s.modules=[dict(module_id=m,**dict(dict.fromkeys(RESOURCES,0),LUT=60)) for m in ['S00','S01']]

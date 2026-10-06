@@ -17,6 +17,8 @@ class CachedFloorplanTests(unittest.TestCase):
         source.mkdir(parents=True)
         cfg=json.loads((floorplan_cached.SOURCE/'directed_config.json').read_text())
         cfg['hypernet_model']='all_atom_v1'
+        cfg.pop('cumulative_paths',None)  # Explicit legacy pair-only fixture.
+        cfg.pop('directed_distance_model',None)
         (source/'directed_config.json').write_text(json.dumps(cfg))
         adapter = root/'code/balanced_implementation/adapter.tcl'
         adapter.parent.mkdir(parents=True)
