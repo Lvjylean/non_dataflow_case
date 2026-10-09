@@ -1,0 +1,33 @@
+{
+  "source": "/Users/jinyanglyu/Documents/ChatGPT/New project/workareas/nondataflow-partition-v2/FPGA_benchmark/netlist_hier_floorplan/regional_fanout_eco",
+  "files": {
+    "core.tcl": "c70ccd0c7585d0bf091c2a5a54d03dde9e0abdb42926a81ce1b22d4644e5b960",
+    "origin_manifest.json": "81ef69654265e75cd26a5c417c77e6bf8aece809ee608fc47b8fabdf6fdff423",
+    "native_seed_mixed.tcl": "3b291836b85d764654dade0cc61d9b949471ede43aaaecc9ae862c19fc84f036",
+    "regional_policy.tcl": "949737414222e500805624a5974dd861cf93db979ac266141f38a9e276593853",
+    "test_protection.tcl": "9d0aa5726c29364b60057160fb77d536661e66195c0f7987c47ce65a90d869ca",
+    "structural.tcl": "dbc66525bc490991df30222ffbcce8de44217500968f84da84e0f0847e9d1697",
+    "test_regional_regions.tcl": "bd4e36a7ec419eebe4621a7e0aaf307164bce2a6faaaa85e3b2a44a079c87679",
+    "test_regional_protection.tcl": "56dd5231216ec7a81387040f24d596c468eef71630b633a5259db1f7893c466f",
+    "native_seed.tcl": "c203c3ba7e2e5763ff88deb642136c5210ae31ab335294883634360a29b24654",
+    "native_probe.tcl": "114168b9f23b2bbec44c6c9e45c8c6e9838f93111c1e1ef60a0bf1badfc2ce5b",
+    "test_memory_ff.tcl": "6ad83e04e78fe1ffb4428665e9f042a345a95ed9e4307091536a6afcd643d8d7",
+    "test_recovery.py": "38518ec33f67e02064f727b2311104fdee6ef60dfb1cd8a37ca7070afa6b7be7",
+    "test_structural.tcl": "a3386409876f4954d13d1bd2f29d02ec9ee8b2ce9db92c5652b101214022a3a2",
+    "run.tcl": "8a24b405ce97412618946a5d29a482cb37a4f653396b6b11d22c243a9e1624de",
+    "run_case.py": "787bd9703f82e5629e9a53ad86c70ed082099fc7d75d18a458e5b1726590bc23",
+    "test_regional_security.tcl": "4d890b2ee5d14e345c713e2dcd1fdfba25a0823f64872040d40c7709cab09d9d",
+    "README.md": "58699964452ce3adef5dbafd507fd04eeb2aba47119cd80fca2851cee60a9135",
+    "test_tracking_alias.tcl": "9d1eb0454754966c96ac0c4ca3b6b503e40036165966e47f4248ebb18ad3ef4f",
+    "test_native_lut_protection.tcl": "b376c630957965113379c352bcbf2120fe4b4f51fa6e11c0096de042562cecb1",
+    "native_unit.tcl": "bb54b3e34a3a3ee7946ce0f9146e74d1fc6cb6a2f81d0ff44b454a0666207f3f",
+    "test_regional_policy.tcl": "12c1f6767495dbf4cb1fad0fcbaef60ac10bf04a375882fd05fe06a99a22425c",
+    "regional.tcl": "1ef4da8b9d27a0017115d1e590ab66cab210356102cea9d7fb7cb7ffc83f61a9",
+    "view_result.tcl": "dcba54bb8ef7ec401d4d9a22642fe10d6c53b1706221483612d3251fcb84ef0f",
+    "policy.tcl": "0f5d6276e363764b4bf11942c4e99e3ed4c7c1de571d522e81b340dc0437294a",
+    "test_receivers.tcl": "09b93403b98cee35a89673eab725671debe0acb00b992d380e2a38807880bc14",
+    "recovery.tcl": "6315409072275a21f51c2867d0770a8275e455cb3208488a9c1616b24c00ecba",
+    "test_policy.tcl": "925440ef34714301164f92337b9e248011f31246329de382f095fe9dc2bf0459"
+  },
+  "source_policy": "Independent copy; original common and fixed remain immutable."
+}
